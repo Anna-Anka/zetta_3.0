@@ -1,0 +1,13 @@
+.header {
+	position: relative;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 2;
+
+	&--fixed {
+		position: fixed;
+		transform: translateY(0);
+		transition: transform 0.35s ease-out;
+	}
+}
