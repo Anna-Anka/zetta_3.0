@@ -1,39 +1,39 @@
 .breadcrumbs {
-	padding-top: 40px;
-	padding-bottom: 17px;
+	padding-bottom: 12px;
 
 	&__items {
 		display: flex;
 		align-items: center;
 		overflow-x: auto;
-		padding-bottom: 8px;
+		gap: 6px;
 	}
 
 	&__item {
 		&:not(:last-child) {
 			position: relative;
-			margin-right: 4px;
-			padding-right: 28px;
+			padding-right: 10px;
 
 			&::before {
 				content: '';
 				position: absolute;
 				right: 0;
 				top: 50%;
-				width: 10px;
-				height: 20px;
-				background-image: url('../img/icons/arrow.svg');
+				border-radius: 50%;
+				width: 4px;
+				height: 4px;
+				background-color: var(--color-grey-300);
 				transform: translateY(-50%);
-
-				@include bg-properties(contain);
 			}
 		}
 	}
 
 	&__link {
+		font-size: 12px;
 		white-space: nowrap;
+		color: var(--color-dark-600);
 
 		&--current {
+			color: var(--color-grey-500);
 			pointer-events: none;
 		}
 	}
