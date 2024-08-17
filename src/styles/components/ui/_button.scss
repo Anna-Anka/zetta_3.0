@@ -1,0 +1,17 @@
+.button {
+	@include flex;
+
+	padding: 15px 30px;
+	font-size: 16px;
+	letter-spacing: 0.04rem;
+	color: var(--color-white);
+	gap: 4px;
+
+	&--dark {
+		background-color: var(--color-dark-600);
+	}
+
+	&--light {
+		background-color: var(--color-orange-400);
+	}
+}
