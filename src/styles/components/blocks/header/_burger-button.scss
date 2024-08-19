@@ -1,71 +1,90 @@
 .burger-button {
-	--burger-width: 30px;
-	--burger-height: 30px;
-	--burger-line-height: 2px;
-	--burger-border-radius: 0;
-	--burger-color: var(--color-black);
+	--burger-line-height: 1px;
+	--burger-line-width: 16px;
+	--burger-line-border-radius: 2px;
+
+	@include flex(flex-start);
 
 	position: relative;
-	width: $burger-width;
-	height: $burger-height;
-	color: var(--burger-color);
+	z-index: 10;
+	font-size: 12px;
+	gap: 10px;
 
-	&::before,
-	&::after {
-		content: '';
-		position: absolute;
-		left: 0;
-		width: 100%;
-		height: var(--burger-line-height);
-		background-color: currentcolor;
+	&__plate {
+		@include flex;
+
+		border: 1px solid transparent;
+		border-radius: 1000px;
+		width: 52px;
+		height: 39px;
+		background-color: var(--color-dark-600);
 		transition:
-			transform 0.3s ease-in-out,
-			top 0.3s ease-in-out;
-	}
+			border-color 0.3s,
+			background-color 0.3s,
+			left 0.3s;
 
-	&::before {
-		top: 0;
-	}
-
-	&::after {
-		top: calc(100% - var(--burger-line-height));
-	}
-
-	@include mq(lg, min) {
-		display: none;
+		@include mq(sm) {
+			width: 42px;
+			height: 32px;
+		}
 	}
 
 	&__line {
-		position: absolute;
-		left: 0;
-		top: 50%;
-		width: 100%;
+		position: relative;
+		display: block;
+		width: var(--burger-line-width);
 		height: var(--burger-line-height);
-		background-color: currentcolor;
-		transform: translateY(-50%);
-		transition: transform 0.3s ease-in-out;
-	}
 
-	&--active {
 		&::before,
 		&::after {
-			top: 50%;
+			content: '';
+			position: absolute;
+			left: 0;
+			border-radius: var(--burger-line-border-radius);
+			width: 100%;
+			height: 100%;
+			background-color: var(--color-white);
 			transition:
 				transform 0.3s ease-in-out,
-				top 0.3s ease-in-out;
+				top 0.3s ease-in-out,
+				background-color 0.3s ease-in-out;
 		}
 
 		&::before {
-			transform: rotate(45deg);
+			top: -5px;
 		}
 
 		&::after {
-			transform: rotate(-45deg);
+			bottom: -5px;
 		}
+	}
 
-		.burger-button__line {
-			transform: scale(0);
-			transition: transform 0.3s ease-in-out;
+	&--active {
+		.burger-button {
+			&__plate {
+				border-color: var(--color-grey-200);
+				background-color: transparent;
+			}
+
+			&__line {
+				&::before,
+				&::after {
+					top: 50%;
+					background-color: var(--color-dark-600);
+					transition:
+						transform 0.3s ease-in-out,
+						top 0.3s ease-in-out;
+				}
+
+				&::before {
+					transform: rotate(45deg);
+				}
+
+				&::after {
+					bottom: unset;
+					transform: rotate(-45deg);
+				}
+			}
 		}
 	}
 }

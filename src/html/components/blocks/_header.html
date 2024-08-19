@@ -1,3 +1,53 @@
-<header class="header">
+<!-- 
+ light - светлый фон, темный текст;  
+ dark - темный фон, светлый текст ; 
+-->
+<header class="header header--light">
+    <div class="overlay" data-menu-overlay aria-hidden></div>
+    <nav class="header__navigation">
+        <div class="header__wrapper-logo">
+            <a class="header__logo logo" href="#">
+                <img class="logo__img" src="img/logo.svg" alt="Логотип" width="155" height="28">
+            </a>
+        </div>
 
+        <div class="header__inner">
+            <div class="header__item">
+                <button class="header__button button" type="button">
+                    Кухни и мебель
+                    <svg class="button__icon">
+                        <use xlink:href="img/sprite.svg#plus">
+                    </svg>
+                </button>
+
+                <a class="header__button header__button--link button" href="#">
+                    Акции
+                    <svg class="button__icon">
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </a>
+            </div>
+
+            <div class="header__item header__item--contacts">
+                <button class="header__consultation button button--with-point" type="button">
+                    Консультация дизайнера
+                </button>
+
+                <a class="header__contact" href="tel:+74951011919">
+                    +7 (495)-101-19-19
+                </a>
+            </div>
+
+            <button class="burger-button" aria-expanded="false" data-burger-button>
+                <span class="burger-button__text">Меню</span>
+                <span class="burger-button__plate" aria-hidden>
+                    <span class="burger-button__line"></span>
+                </span>
+            </button>
+        </div>
+
+        <div class="burger-menu" data-menu>
+
+        </div>
+    </nav>
 </header>

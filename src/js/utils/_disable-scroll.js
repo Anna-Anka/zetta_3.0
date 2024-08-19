@@ -1,4 +1,4 @@
-import vars from '../_vars.js';
+import vars from '../vars.js';
 
 export const disableScroll = () => {
     const pagePosition = window.scrollY;
