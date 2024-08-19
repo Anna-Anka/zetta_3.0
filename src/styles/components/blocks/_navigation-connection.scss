@@ -1,0 +1,15 @@
+.navigation-connection {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	&__link {
+		@include link-border-bottom;
+	}
+}

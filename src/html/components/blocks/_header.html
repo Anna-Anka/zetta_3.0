@@ -47,7 +47,122 @@
         </div>
 
         <div class="burger-menu" data-menu>
-
+            <span class="burger-menu__title">Навигация</span>
+            <form class="burger-menu__search form" action="#">
+                <label class="sr-only" for="burger-menu-search">
+                    Введите, что вы хотите найти
+                </label>
+                <input class="form__field form__field--search" id="burger-menu-search" name="search" type="search" placeholder="Поиск по каталогу" required>
+                <button class="form__button-search" type="submit" aria-label="Найти">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#search">
+                    </svg>
+                </button>
+            </form>
+            <ul class="burger-menu__lists">
+                <li>
+                    <span class="burger-menu__subtitle subtitle">
+                        Клиентам
+                    </span>
+                    <ul class="burger-menu__items">
+                        <li>
+                            <a href="#" data-menu-link>Адреса салонов</a>
+                        </li>
+                        <li>
+                            <a href="#" data-menu-link>3D проекты</a>
+                        </li>
+                        <li>
+                            <a href="#" data-menu-link>Доставка</a>
+                        </li>
+                        <li>
+                            <a href="#" data-menu-link>Замер помещения</a>
+                        </li>
+                        <li>
+                            <a href="#" data-menu-link>Гарантия 12 лет</a>
+                        </li>
+                        <li>
+                            <a href="#" data-menu-link>Монтаж мебели</a>
+                        </li>
+                        <li>
+                            <a href="#" data-menu-link>Покупателям</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="burger-menu__subtitle subtitle">
+                        О компании
+                    </span>
+                    <ul class="burger-menu__items">
+                        <li>
+                            <a href="#" data-menu-link>Производство</a>
+                        </li>
+                        <li>
+                            <a href="#" data-menu-link>История компании</a>
+                        </li>
+                        <li>
+                            <a href="#" data-menu-link>Миссия и ценности</a>
+                        </li>
+                        <li>
+                            <a href="#" data-menu-link>Замер помещения</a>
+                        </li>
+                        <li>
+                            <a href="#" data-menu-link>Работа в Zetta</a>
+                        </li>
+                        <li>
+                            <a href="#" data-menu-link>Франшиза</a>
+                        </li>
+                        <li>
+                            <a href="#" data-menu-link>Блог</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="burger-menu__connection">
+                <div class="navigation-connection">
+                    <ul class="navigation-connection__contacts">
+                        <li>
+                            <a class="navigation-connection__link" href="tel:+70070000880">
+                                +7 (007)-000-08-80
+                            </a>
+                        </li>
+                        <li>
+                            <a class="navigation-connection__link" href="mailto:info@zetta.ru">
+                                info@zetta.ru
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="socials">
+                        <li>
+                            <a class="socials__link" href="#" target="_blank" aria-label="ВКонтакте">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#vk">
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="socials__link" href="#" target="_blank" aria-label="Ютуб">
+                                <svg>
+                                    <use xlink:href="img/sprite.svg#youtube">
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="burger-menu__button button button--light" type="button">
+                    Записаться в салон
+                    <svg class="button__icon">
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </button>
+            </div>
+            <div class="burger-menu__bottom">
+                <a class="burger-menu__privacy" href="#" data-menu-link>
+                    Политика конфиденциальности
+                </a>
+                <span>
+                    Copyright © 1998-2023 Zetta. All rights reserved
+                </span>
+            </div>
         </div>
     </nav>
 </header>

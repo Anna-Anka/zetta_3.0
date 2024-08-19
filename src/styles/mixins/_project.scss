@@ -1,0 +1,16 @@
+@mixin link-border-bottom {
+	display: inline-block;
+	border-bottom: 1px solid var(--color-grey-200);
+	padding-bottom: 5px;
+	transition: border-bottom-color 0.3s;
+
+	&:focus {
+		border-bottom-color: var(--color-orange-400);
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			border-bottom-color: var(--color-dark-600);
+		}
+	}
+}

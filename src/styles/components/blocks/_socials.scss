@@ -1,0 +1,42 @@
+.socials {
+	display: flex;
+	gap: 10px;
+
+	&__link {
+		@include flex;
+
+		outline: 0;
+		border: 1px solid transparent;
+		border-radius: 50%;
+		width: 30px;
+		height: 30px;
+		color: var(--color-white);
+
+		svg {
+			width: 14px;
+			height: 14px;
+		}
+
+		background-color: var(--color-dark-600);
+		transition:
+			background-color 0.3s,
+			border-color 0.3s,
+			color 0.3s;
+
+		&:focus-visible {
+			border-color: var(--color-orange-400);
+			color: var(--color-dark-600);
+			background-color: transparent;
+
+			svg {
+				// fill: var(--color-dark-600);
+			}
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--color-orange-400);
+			}
+		}
+	}
+}

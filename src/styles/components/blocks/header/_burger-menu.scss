@@ -1,36 +1,110 @@
 .burger-menu {
+	position: fixed;
+	right: 0;
+	top: 0;
 	display: flex;
 	align-items: center;
-	margin-right: 40px;
-	gap: 30px;
+	overflow: hidden;
+	padding: 154px 50px 64px 109px;
+	width: 100%;
+	max-width: 785px;
+	background-color: var(--color-white);
+	visibility: hidden;
+	transform: translateX(100%);
+	transition: transform 0.5s;
 
-	@include mq(lg) {
-		position: fixed;
-		right: 0;
-		top: 0;
-		overflow: hidden;
-		margin-right: 0;
-		padding: 40px 24px;
-		width: 100%;
-		max-width: 270px;
-		background-color: var(--color-white);
-		visibility: hidden;
-		transform: translateX(100%);
-		transition: transform 0.5s;
-
-		@include flex(start, start, column);
-	}
+	@include flex(start, start, column);
 
 	&--active {
-		@include mq(lg) {
-			right: 0;
-			z-index: 50;
-			overflow-y: auto;
-			height: 100vh;
-			opacity: 1;
-			visibility: visible;
-			transform: translateX(0);
-			transition: transform 0.3s ease-in-out;
+		z-index: -1;
+		overflow-y: auto;
+		height: 100vh;
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(0);
+		transition: transform 0.3s ease-in-out;
+	}
+
+	&__title {
+		margin-bottom: 30px;
+		font-weight: 500;
+		font-size: 28px;
+		line-height: 1.2;
+		letter-spacing: -0.05em;
+	}
+
+	&__search {
+		margin-bottom: 52px;
+	}
+
+	&__lists {
+		display: flex;
+		margin-right: -40px;
+		margin-bottom: 10vh;
+		width: 100%;
+
+		& > li {
+			padding-right: 40px;
+			width: 50%;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: 15px;
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		color: var(--color-grey-600);
+		gap: 10px;
+
+		a {
+			transition: color 0.3s;
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: var(--color-orange-400);
+				}
+			}
+		}
+	}
+
+	&__connection {
+		display: flex;
+		align-items: center;
+		margin-bottom: 20vh;
+		width: 100%;
+
+		.navigation-connection {
+			padding-right: 40px;
+			width: 50%;
+			gap: 30px;
+		}
+	}
+
+	&__button {
+		svg {
+			stroke: var(--color-white);
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		flex-direction: column;
+		margin-top: auto;
+		color: var(--color-grey-500);
+		gap: 8px;
+	}
+
+	&__privacy {
+		color: var(--color-dark-600);
+		transition: color 0.3s;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--color-orange-400);
+			}
 		}
 	}
 }
