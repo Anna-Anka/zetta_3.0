@@ -12,12 +12,10 @@ export const burger = () => {
         if (burgerButton.classList.contains('burger-button--active')) {
             burgerButton.setAttribute('aria-expanded', 'true');
             burgerButtonText.innerHTML = 'Закрыть';
-            // burgerButton.setAttribute('aria-label', 'закрыть меню');
             disableScroll();
         } else {
             burgerButton.setAttribute('aria-expanded', 'false');
             burgerButtonText.innerHTML = 'Меню';
-            // burgerButton.setAttribute('aria-label', 'открыть меню');
             enableScroll();
         }
     };

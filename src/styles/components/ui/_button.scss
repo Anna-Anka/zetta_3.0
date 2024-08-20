@@ -7,14 +7,29 @@
 	font-size: 12px;
 	letter-spacing: -0.03em;
 	color: var(--color-white);
+	transition:
+		background-color 0.3s,
+		color 0.3s;
 	gap: 4px;
 
 	&--dark {
 		background-color: var(--color-dark-600);
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--color-orange-400);
+			}
+		}
 	}
 
-	&--light {
+	&--accent {
 		background-color: var(--color-orange-400);
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--color-orange-600);
+			}
+		}
 	}
 
 	&--with-point {
@@ -31,6 +46,18 @@
 			height: 6px;
 			background-color: var(--color-orange-400);
 			transform: translateY(-50%);
+			transition: background-color 0.3s;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--color-white);
+				background-color: var(--color-orange-400);
+
+				&::before {
+					background-color: var(--color-white);
+				}
+			}
 		}
 	}
 

@@ -58,6 +58,12 @@
 			color: var(--color-dark-600);
 			background-color: var(--color-grey-100);
 
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: var(--color-grey-300);
+				}
+			}
+
 			&--link {
 				svg {
 					stroke: var(--color-dark-600);
