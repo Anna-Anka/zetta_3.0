@@ -3,6 +3,7 @@ import { enableScroll } from '../utils/_enable-scroll.js';
 
 export const burger = () => {
     const burgerButton = document.querySelector('[data-burger-button]');
+    const burgerButtonText = document.querySelector('[data-burger-button-text]');
     const menu = document.querySelector('[data-menu]');
     const menuLinks = document.querySelectorAll('[data-menu-link]');
     const overlay = document.querySelector('[data-menu-overlay]');
@@ -10,11 +11,13 @@ export const burger = () => {
     const checkClass = () => {
         if (burgerButton.classList.contains('burger-button--active')) {
             burgerButton.setAttribute('aria-expanded', 'true');
-            burgerButton.setAttribute('aria-label', 'закрыть меню');
+            burgerButtonText.innerHTML = 'Закрыть';
+            // burgerButton.setAttribute('aria-label', 'закрыть меню');
             disableScroll();
         } else {
             burgerButton.setAttribute('aria-expanded', 'false');
-            burgerButton.setAttribute('aria-label', 'открыть меню');
+            burgerButtonText.innerHTML = 'Меню';
+            // burgerButton.setAttribute('aria-label', 'открыть меню');
             enableScroll();
         }
     };

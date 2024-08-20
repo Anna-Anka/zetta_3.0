@@ -3,13 +3,18 @@
 	--burger-line-width: 16px;
 	--burger-line-border-radius: 2px;
 
-	@include flex(flex-start);
+	@include flex(flex-end);
 
 	position: relative;
 	z-index: 10;
 	outline: 0;
+	min-width: 110px;
 	font-size: 12px;
 	gap: 10px;
+
+	@include mq(sm) {
+		min-width: 100px;
+	}
 
 	&__plate {
 		@include flex;
@@ -18,6 +23,7 @@
 		border-radius: 1000px;
 		width: 52px;
 		height: 39px;
+		color: var(--color-white);
 		background-color: var(--color-dark-600);
 		transition:
 			border-color 0.3s,
@@ -44,7 +50,7 @@
 			border-radius: var(--burger-line-border-radius);
 			width: 100%;
 			height: 100%;
-			background-color: var(--color-white);
+			background-color: currentcolor;
 			transition:
 				transform 0.3s ease-in-out,
 				top 0.3s ease-in-out,
@@ -73,14 +79,8 @@
 		&:hover {
 			.burger-button {
 				&__plate {
+					color: var(--color-white);
 					background-color: var(--color-orange-400);
-				}
-
-				&__line {
-					&::after,
-					&::before {
-						background-color: var(--color-white);
-					}
 				}
 			}
 		}
@@ -90,6 +90,7 @@
 		.burger-button {
 			&__plate {
 				border-color: var(--color-grey-200);
+				color: var(--color-dark-600);
 				background-color: transparent;
 			}
 
@@ -97,7 +98,6 @@
 				&::before,
 				&::after {
 					top: 50%;
-					background-color: var(--color-dark-600);
 					transition:
 						transform 0.3s ease-in-out,
 						top 0.3s ease-in-out;
@@ -118,6 +118,7 @@
 			&:hover {
 				.burger-button {
 					&__plate {
+						color: var(--color-dark-600);
 						background-color: var(--color-grey-100);
 					}
 				}
