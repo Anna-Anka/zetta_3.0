@@ -15,6 +15,11 @@
 
 	@include flex(start, start, column);
 
+	@include mq(lg) {
+		padding: 120px 20px 40px;
+		max-width: 100%;
+	}
+
 	&--active {
 		z-index: -1;
 		overflow-y: auto;
@@ -27,14 +32,38 @@
 
 	&__title {
 		margin-bottom: 30px;
-		font-weight: 500;
-		font-size: 28px;
-		line-height: 1.2;
-		letter-spacing: -0.05em;
+
+		@include title(28px, -0.04em);
+
+		@include mq(lg) {
+			display: none;
+		}
+	}
+
+	&__subtitle {
+		@include title(18px, -0.03em);
+
+		margin-bottom: 15px;
+
+		@include mq(sm) {
+			font-size: 16px;
+		}
 	}
 
 	&__search {
 		margin-bottom: 52px;
+
+		@include mq(lg) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__mobile {
+		margin-bottom: 60px;
+
+		@include mq(lg, min) {
+			display: none;
+		}
 	}
 
 	&__lists {
@@ -47,10 +76,6 @@
 			padding-right: 40px;
 			width: 50%;
 		}
-	}
-
-	&__subtitle {
-		margin-bottom: 15px;
 	}
 
 	&__items {
@@ -72,7 +97,6 @@
 
 	&__connection {
 		display: flex;
-		align-items: center;
 		margin-bottom: 20vh;
 		width: 100%;
 
@@ -83,9 +107,33 @@
 		}
 	}
 
+	&__buttons {
+		display: none;
+
+		@include mq(lg) {
+			display: flex;
+			margin-bottom: 40px;
+			width: 100%;
+			gap: 10px;
+		}
+
+		@include mq(sm) {
+			margin-bottom: 20px;
+			gap: 5px;
+		}
+	}
+
 	&__button {
-		svg {
-			stroke: var(--color-white);
+		@include mq(lg) {
+			width: 100%;
+		}
+
+		&--desktop {
+			align-self: flex-start;
+
+			@include mq(lg) {
+				display: none;
+			}
 		}
 	}
 

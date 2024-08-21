@@ -13,24 +13,34 @@
 		display: flex;
 		height: 100%;
 		background-color: var(--color-white);
+
+		@include mq(lg) {
+			padding: 0 20px;
+		}
 	}
 
 	&__wrapper-logo {
 		@include flex;
 
-		padding: 8px 12px;
-		width: 100%;
 		height: 100%;
-		max-width: 255px;
+
+		@include mq(lg, min) {
+			padding: 8px 12px;
+			width: 100%;
+			max-width: 255px;
+		}
 	}
 
 	&__inner {
 		@include flex(space-between);
 
-		padding: 8px 45px;
 		width: 100%;
 		background-color: var(--color-white);
 		gap: 24px;
+
+		@include mq(lg, min) {
+			padding: 8px 45px;
+		}
 	}
 
 	&__item {
@@ -38,8 +48,24 @@
 
 		gap: 10px;
 
+		&--buttons {
+			@include mq(xl) {
+				display: none;
+			}
+		}
+
 		&--contacts {
 			gap: 20px;
+
+			@include mq(xl) {
+				margin: 0 auto;
+			}
+		}
+	}
+
+	&__consultation {
+		@include mq(lg) {
+			display: none;
 		}
 	}
 
@@ -52,6 +78,10 @@
 
 		.header__wrapper-logo {
 			background-color: var(--color-grey-100);
+
+			@include mq(lg) {
+				background-color: var(--color-white);
+			}
 		}
 
 		.header__button {

@@ -10,7 +10,7 @@
 	transition:
 		background-color 0.3s,
 		color 0.3s;
-	gap: 4px;
+	gap: 6px;
 
 	&--dark {
 		background-color: var(--color-dark-600);
@@ -32,36 +32,23 @@
 		}
 	}
 
-	&--with-point {
-		position: relative;
-		padding-left: 34px;
+	&__point {
+		border-radius: 50%;
+		width: 6px;
+		height: 6px;
+		background-color: var(--color-orange-400);
+		transition: background-color 0.3s;
+	}
 
-		&::before {
-			content: '';
-			position: absolute;
-			left: 20px;
-			top: 50%;
-			border-radius: 50%;
-			width: 6px;
-			height: 6px;
-			background-color: var(--color-orange-400);
-			transform: translateY(-50%);
-			transition: background-color 0.3s;
-		}
-
-		@media (any-hover: hover) {
-			&:hover {
-				color: var(--color-white);
-				background-color: var(--color-orange-400);
-
-				&::before {
-					background-color: var(--color-white);
-				}
+	@media (any-hover: hover) {
+		&:hover {
+			.button__point {
+				background-color: var(--color-white);
 			}
 		}
 	}
 
-	&__icon {
+	svg {
 		width: 14px;
 		height: 14px;
 	}

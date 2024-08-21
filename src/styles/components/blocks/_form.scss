@@ -10,13 +10,34 @@
 		width: 100%;
 		transition: border-bottom-color 0.3s;
 
-		&--search {
-			padding-right: 36px;
-		}
-
 		&::placeholder {
 			color: var(--color-grey-500);
 			transition: color 0.3s;
+
+			@include mq(sm) {
+				font-size: 14px;
+			}
+		}
+
+		&--search {
+			padding-right: 36px;
+
+			@include mq(lg) {
+				border-bottom: 0;
+				border-radius: 15px;
+				padding: 18px 58px 18px 20px;
+				background-color: var(--color-grey-100);
+			}
+
+			&::placeholder {
+				@include mq(lg) {
+					font-size: 14px;
+				}
+
+				@include mq(sm) {
+					font-size: 12px;
+				}
+			}
 		}
 
 		&:focus {
@@ -34,7 +55,7 @@
 
 	&__button-search {
 		position: absolute;
-		right: 0;
+		right: 20px;
 		top: 50%;
 		outline: 0;
 		border: 1px solid transparent;
@@ -48,7 +69,6 @@
 		svg {
 			width: 100%;
 			height: 100%;
-			stroke: var(--color-dark-600);
 			transition: stroke 0.3s;
 		}
 
@@ -56,11 +76,13 @@
 			border-color: var(--color-orange-400);
 		}
 
+		@include mq(lg) {
+			color: var(--color-grey-400);
+		}
+
 		@media (any-hover: hover) {
 			&:hover {
-				svg {
-					stroke: var(--color-orange-400);
-				}
+				color: var(--color-orange-400);
 			}
 		}
 	}

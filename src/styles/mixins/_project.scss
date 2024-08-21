@@ -14,3 +14,23 @@
 		}
 	}
 }
+
+@mixin title($font-size: 22px, $letter-spacing: -0.04em) {
+	display: inline-block;
+	font-weight: 500;
+	font-size: $font-size;
+	letter-spacing: $letter-spacing;
+	color: var(--color-dark-600);
+}
+
+@mixin link-cover {
+	content: '';
+	position: absolute;
+	inset: 0;
+}
+
+@mixin img-base($object-fit: cover) {
+	width: 100%;
+	height: 100%;
+	object-fit: $object-fit;
+}
