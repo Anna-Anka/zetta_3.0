@@ -1,0 +1,88 @@
+.banner-card {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	border-radius: 20px;
+	width: 100%;
+	height: 190px;
+	background-color: var(--color-grey-100);
+
+	&--border {
+		border: 1px solid var(--color-grey-200);
+		background-color: transparent;
+
+		.banner-card__img {
+			border-radius: 0;
+		}
+	}
+
+	&--img-small {
+		.banner-card__picture {
+			width: 50%;
+
+			@include mq(sm) {
+				width: 45%;
+			}
+		}
+	}
+
+	@include mq(sm) {
+		border-radius: 12px;
+		height: 100px;
+	}
+
+	&__content {
+		padding: 20px 25px;
+		width: 45%;
+		gap: 4px;
+
+		@include flex(center, flex-start, column);
+
+		@include mq(sm) {
+			padding: 12px;
+			width: 50%;
+		}
+	}
+
+	&__link {
+		@include title;
+		@include line-clamp(2);
+
+		&::before {
+			@include link-cover;
+		}
+
+		@include mq(sm) {
+			font-size: 14px;
+		}
+	}
+
+	&__text {
+		font-size: 14px;
+		color: var(--color-grey-500);
+
+		@include line-clamp(3);
+
+		@include mq(sm) {
+			font-size: 8px;
+		}
+	}
+
+	&__picture {
+		width: 55%;
+
+		@include mq(sm) {
+			width: 50%;
+		}
+	}
+
+	&__img {
+		@include img-base;
+
+		border-radius: 0 20px 20px 0;
+
+		@include mq(sm) {
+			border-radius: 0 12px 12px 0;
+		}
+	}
+}
