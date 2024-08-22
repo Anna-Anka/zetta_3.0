@@ -1,0 +1,21 @@
+.burger-mobile {
+	width: 100%;
+
+	@include mq(lg, min) {
+		display: none;
+	}
+
+	&__subtitle {
+		@include title;
+
+		@include mq(sm) {
+			font-size: 14px;
+		}
+	}
+
+	&__block {
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
+	}
+}

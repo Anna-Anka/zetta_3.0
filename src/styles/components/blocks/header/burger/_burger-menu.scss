@@ -40,16 +40,6 @@
 		}
 	}
 
-	&__subtitle {
-		@include title(18px, -0.03em);
-
-		margin-bottom: 15px;
-
-		@include mq(sm) {
-			font-size: 16px;
-		}
-	}
-
 	&__search {
 		margin-bottom: 52px;
 
@@ -66,45 +56,39 @@
 		}
 	}
 
-	&__lists {
-		display: flex;
+	.nav-menu {
 		margin-right: -40px;
 		margin-bottom: 10vh;
-		width: 100%;
 
-		& > li {
-			padding-right: 40px;
-			width: 50%;
-		}
-	}
+		&__title {
+			@include title(18px, -0.03em);
 
-	&__items {
-		display: flex;
-		flex-direction: column;
-		color: var(--color-grey-600);
-		gap: 10px;
+			margin-bottom: 15px;
 
-		a {
-			transition: color 0.3s;
+			@include mq(md) {
+				font-size: 28px;
+			}
 
-			@media (any-hover: hover) {
-				&:hover {
-					color: var(--color-orange-400);
-				}
+			@include mq(sm) {
+				font-size: 16px;
 			}
 		}
 	}
 
-	&__connection {
+	&__contacts {
 		display: flex;
 		margin-bottom: 20vh;
 		width: 100%;
 
-		.navigation-connection {
-			padding-right: 40px;
-			width: 50%;
-			gap: 30px;
+		@include mq(md) {
+			margin-bottom: 30px;
 		}
+	}
+
+	&__connection {
+		padding-right: 40px;
+		width: 50%;
+		gap: 30px;
 	}
 
 	&__buttons {
@@ -112,6 +96,7 @@
 
 		@include mq(lg) {
 			display: flex;
+			flex-wrap: wrap;
 			margin-bottom: 40px;
 			width: 100%;
 			gap: 10px;
@@ -125,7 +110,8 @@
 
 	&__button {
 		@include mq(lg) {
-			width: 100%;
+			flex: 1 0 49%;
+			white-space: nowrap;
 		}
 
 		&--desktop {
@@ -143,11 +129,26 @@
 		margin-top: auto;
 		color: var(--color-grey-500);
 		gap: 8px;
+
+		@include mq(md) {
+			border-top: 1px solid var(--color-grey-200);
+			padding-top: 10px;
+			width: 100%;
+			font-size: 12px;
+		}
+
+		@include mq(sm) {
+			font-size: 10px;
+		}
 	}
 
 	&__privacy {
 		color: var(--color-dark-600);
 		transition: color 0.3s;
+
+		@include mq(md) {
+			display: none;
+		}
 
 		@media (any-hover: hover) {
 			&:hover {

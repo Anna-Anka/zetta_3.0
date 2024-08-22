@@ -1,0 +1,32 @@
+.nav-menu {
+	display: flex;
+	width: 100%;
+
+	& > li {
+		padding-right: 40px;
+		width: 50%;
+	}
+
+	&__title {
+		@include title(18px, -0.03em);
+
+		margin-bottom: 15px;
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		color: var(--color-grey-600);
+		gap: 10px;
+
+		a {
+			transition: color 0.3s;
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: var(--color-orange-400);
+				}
+			}
+		}
+	}
+}

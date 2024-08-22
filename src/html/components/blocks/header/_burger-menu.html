@@ -1,4 +1,4 @@
-<div class="burger-menu burger-menu--active" id="header-burger-menu" data-menu>
+<div class="burger-menu" id="header-burger-menu" data-menu>
     <div class="burger-menu__buttons">
         <button class="burger-menu__button button button--dark" type="button">
             <span class="button__point" aria-hidden></span>
@@ -33,9 +33,9 @@
         })
 
         <div class="burger-mobile__block burger-block">
-            <h3 class="burger-block__title">
+            <span class="burger-block__title">
                 Корпусная мебель
-            </h3>
+            </span>
             <ul class="burger-block__items burger-block__items--overflow">
                 <li class="burger-block__item">
                     @include('./../../cards/_nav-card.html', {
@@ -152,12 +152,12 @@
 
     </div>
 
-    <ul class="burger-menu__lists">
+    <ul class="nav-menu">
         <li>
-            <span class="burger-menu__subtitle">
+            <span class="nav-menu__title">
                 Клиентам
             </span>
-            <ul class="burger-menu__items">
+            <ul class="nav-menu__items">
                 <li>
                     <a href="#" data-menu-link>Адреса салонов</a>
                 </li>
@@ -182,10 +182,10 @@
             </ul>
         </li>
         <li>
-            <span class="burger-menu__subtitle">
+            <span class="nav-menu__title">
                 О компании
             </span>
-            <ul class="burger-menu__items">
+            <ul class="nav-menu__items">
                 <li>
                     <a href="#" data-menu-link>Производство</a>
                 </li>
@@ -210,32 +210,48 @@
             </ul>
         </li>
     </ul>
-    <div class="burger-menu__connection">
-        <div class="navigation-connection">
+    <div class="burger-menu__contacts">
+        <div class="navigation-connection burger-menu__connection">
             <ul class="navigation-connection__contacts">
-                <li>
+                <li class="navigation-connection__contact">
                     <a class="navigation-connection__link" href="tel:+70070000880">
                         +7 (007)-000-08-80
                     </a>
                 </li>
-                <li>
+                <li class="navigation-connection__contact">
                     <a class="navigation-connection__link" href="mailto:info@zetta.ru">
                         info@zetta.ru
                     </a>
                 </li>
             </ul>
             <ul class="socials">
-                <li>
+                <li class="socials__item">
                     <a class="socials__link" href="#" target="_blank" aria-label="ВКонтакте">
                         <svg>
                             <use xlink:href="img/sprite.svg#vk">
                         </svg>
                     </a>
                 </li>
-                <li>
+                <li class="socials__item">
                     <a class="socials__link" href="#" target="_blank" aria-label="Ютуб">
                         <svg>
                             <use xlink:href="img/sprite.svg#youtube">
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <ul class="socials socials--mobile">
+                <li class="socials__item">
+                    <a class="socials__link" href="#" target="_blank" aria-label="Ватсап">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#whatsapp">
+                        </svg>
+                    </a>
+                </li>
+                <li class="socials__item">
+                    <a class="socials__link" href="#" target="_blank" aria-label="Ютуб">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#telegram">
                         </svg>
                     </a>
                 </li>

@@ -1,0 +1,35 @@
+.burger-block {
+	&--large {
+		.burger-block__item {
+			flex-basis: 31.5%;
+		}
+	}
+
+	&__title {
+		@include title;
+
+		margin-bottom: 15px;
+
+		@include mq(sm) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__items {
+		display: flex;
+		gap: 10px;
+
+		&--overflow {
+			overflow-x: auto;
+			padding-bottom: 8px;
+		}
+	}
+
+	&__item {
+		flex: 1 0 137px;
+
+		@include mq(sm) {
+			flex-basis: 87px;
+		}
+	}
+}

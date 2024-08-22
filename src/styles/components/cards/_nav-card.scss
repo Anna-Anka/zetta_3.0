@@ -45,7 +45,7 @@
 	&__bg {
 		border-radius: 18px;
 
-		@include mq(ab) {
+		@include mq(sm) {
 			border-radius: 12px;
 		}
 	}

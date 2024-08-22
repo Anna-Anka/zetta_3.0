@@ -2,14 +2,23 @@
 	display: flex;
 	gap: 10px;
 
+	@include mq(md) {
+		gap: 5px;
+	}
+
+	&__item {
+		width: 30px;
+		height: 30px;
+	}
+
 	&__link {
 		@include flex;
 
 		outline: 0;
 		border: 1px solid transparent;
 		border-radius: 50%;
-		width: 30px;
-		height: 30px;
+		width: 100%;
+		height: 100%;
 		color: var(--color-white);
 
 		svg {
@@ -27,16 +36,45 @@
 			border-color: var(--color-orange-400);
 			color: var(--color-dark-600);
 			background-color: transparent;
-
-			svg {
-				// fill: var(--color-dark-600);
-			}
 		}
 
 		@media (any-hover: hover) {
 			&:hover {
 				background-color: var(--color-orange-400);
 			}
+		}
+	}
+
+	@include mq(md) {
+		display: none;
+	}
+
+	&--mobile {
+		display: none;
+
+		.socials__item {
+			@include mq(md) {
+				width: 50px;
+				height: 50px;
+			}
+
+			@include mq(sm) {
+				width: 38px;
+				height: 38px;
+			}
+		}
+
+		.socials__link {
+			border-radius: 12px;
+			background-color: var(--color-grey-100);
+
+			@include mq(sm) {
+				border-radius: 8px;
+			}
+		}
+
+		@include mq(md) {
+			display: flex;
 		}
 	}
 }
