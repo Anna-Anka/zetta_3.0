@@ -19,6 +19,16 @@
 		color: var(--color-grey-600);
 		gap: 10px;
 
+		&--root {
+			gap: 15px;
+
+			a {
+				@include title(16px);
+
+				line-height: 1.4;
+			}
+		}
+
 		a {
 			transition: color 0.3s;
 
