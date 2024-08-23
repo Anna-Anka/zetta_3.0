@@ -1,6 +1,6 @@
 .navigation-connection {
 	display: flex;
-	flex-flow: column wrap;
+	flex-direction: column;
 	gap: 25px;
 
 	&__contacts {
@@ -43,6 +43,10 @@
 			padding: 12px;
 			font-size: 10px;
 		}
+	}
+
+	&__text {
+		color: var(--color-grey-600);
 	}
 
 	@include mq(md) {
