@@ -6,13 +6,15 @@
 'ogImage' : 'img/og-image.jpg',
 })
 
+<!-- TODO: связь модалок и кнопок -->
+
 @include('./components/blocks/header/_header.html')
 @include('./components/blocks/_menu-mobile.html')
 
-<!-- <div class="graph-modal">
-    @include('./components/blocks/modals/_modal.html')
-    @include('./components/blocks/modals/_thank-modal.html')
-</div> -->
+<div class="graph-modal">
+    @include('./components/blocks/modals/_consultation.html')
+    <!-- @include('./components/blocks/modals/_thank-modal.html') -->
+</div>
 
 <div class="content">
     @include('./components/blocks/_side-menu.html')

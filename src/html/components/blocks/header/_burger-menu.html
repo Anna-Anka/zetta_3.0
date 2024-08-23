@@ -13,15 +13,17 @@
     </div>
     <span class="burger-menu__title">Навигация</span>
     <form class="burger-menu__search form" action="#">
-        <label class="sr-only" for="burger-menu-search">
-            Введите, что вы хотите найти
-        </label>
-        <input class="form__field form__field--search" id="burger-menu-search" name="search" type="search" placeholder="Поиск по каталогу" required>
-        <button class="form__button-search" type="submit" aria-label="Найти">
-            <svg>
-                <use xlink:href="img/sprite.svg#search">
-            </svg>
-        </button>
+        <div class="form__item">
+            <label class="sr-only" for="burger-menu-search">
+                Введите, что вы хотите найти
+            </label>
+            <input class="form__field form__field--search" id="burger-menu-search" name="search" type="search" placeholder="Поиск по каталогу" required>
+            <button class="form__button-search" type="submit" aria-label="Найти">
+                <svg>
+                    <use xlink:href="img/sprite.svg#search">
+                </svg>
+            </button>
+        </div>
     </form>
     <div class="burger-mobile burger-menu__mobile">
         @include('./../../cards/_banner-card.html', {

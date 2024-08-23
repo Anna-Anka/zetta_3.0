@@ -71,6 +71,8 @@
 		"webpack-stream": "latest"
 	},
 	"dependencies": {
-		"@popperjs/core": "2.11.6"
+		"@popperjs/core": "2.11.6",
+		"graph-modal": "^1.0.7",
+		"inputmask": "^5.0.9"
 	}
 }

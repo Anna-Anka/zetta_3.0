@@ -1,0 +1,43 @@
+<!-- TODO: refactor modal: center, hover and active for close button, include for others buttons -->
+
+<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="consultation">
+    <div class="graph-modal__box">
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <form class="graph-modal__form form" action="#">
+            <div class="form__header">
+                <span class="form__title">
+                    Консультация дизайнера
+                </span>
+                <div class="form__text">
+                    <p>
+                        Оставьте заявку, наши менеджеры свяжутся с вами в течение ближайшего времени
+                    </p>
+                </div>
+            </div>
+            <div class="form__items">
+                <div class="form__item">
+                    <label class="sr-only" for="consultation-name">Введите ваше имя</label>
+                    <input class="form__field" id="consultation-name" name="name" type="text" placeholder="Имя" required>
+                </div>
+                <div class="form__item">
+                    <label class="sr-only" for="consultation-phone">Введите номер телефона</label>
+                    <input class="form__field" id="consultation-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+                </div>
+            </div>
+            <div class="form__bottom">
+                <button class="form__button button button--dark" type="submit">
+                    Отправить заявку
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </button>
+                <p>
+                    Нажимая на кнопку, вы принимаете условия 
+                    <a href="#">
+                        публичной оферты
+                    </a> .
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
