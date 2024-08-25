@@ -1,40 +1,42 @@
 .side-menu {
-	display: flex;
-	flex-direction: column;
+	@include flex-simple(100px, column);
+
 	padding: 60px 20px 60px 50px;
 	width: 100%;
 	height: 100vh;
 	max-width: 255px;
 	background-color: var(--color-grey-100);
-	gap: 100px;
 
 	&__items {
 		@include flex-simple(20px, column);
 
 		&--dots {
+			padding-right: 16px;
+
 			.side-menu__link {
 				position: relative;
+				color: var(--color-grey-600);
 				transition: color 0.3s;
 
 				&::before {
 					content: '';
 					position: absolute;
-					right: 0;
+					right: -16px;
 					top: 50%;
 					border-radius: 50%;
 					width: 6px;
 					height: 6px;
 					background-color: transparent;
-					transform: translateY(-50%);
 					transition: background-color 0.3s;
 				}
 
-				&--active {
-					padding-right: 16px;
-					color: var(--color-dark-600);
+				@media (any-hover: hover) {
+					&:hover {
+						color: var(--color-dark-600);
 
-					&::before {
-						background-color: var(--color-orange-400);
+						&::before {
+							background-color: var(--color-orange-400);
+						}
 					}
 				}
 			}
