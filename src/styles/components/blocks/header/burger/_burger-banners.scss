@@ -26,13 +26,12 @@
 	}
 
 	&__card {
-		@include flex(center, center, column);
+		@include flex-alignment(5px, center, center, column);
 
 		border-radius: 18px;
 		padding: 20px 45px;
 		width: 100%;
 		height: 100%;
-		gap: 5px;
 
 		&--light {
 			background-image: linear-gradient(155.53deg, #ff7843 4%, #fa523d 68.71%);

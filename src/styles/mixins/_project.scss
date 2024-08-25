@@ -34,3 +34,24 @@
 	height: 100%;
 	object-fit: $object-fit;
 }
+
+@mixin link-with-arrows {
+	@include link-border-bottom;
+
+	position: relative;
+	padding-right: 22px;
+	color: var(--color-dark-600);
+
+	&::before {
+		@include bg-properties(contain);
+
+		content: '';
+		position: absolute;
+		right: 0;
+		top: calc(50% - 2px);
+		width: 14px;
+		height: 14px;
+		background-image: url('../img/sprite.svg#arrows-double');
+		transform: translateY(-50%);
+	}
+}

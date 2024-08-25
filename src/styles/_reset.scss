@@ -1,4 +1,5 @@
 html {
+	// height: 100%;
 	box-sizing: border-box;
 }
 
@@ -53,13 +54,13 @@ input,
 button,
 textarea,
 select {
-	color: inherit;
 	font: inherit;
+	color: inherit;
 }
 
 a {
-	color: inherit;
 	text-decoration: none;
+	color: inherit;
 }
 
 address {
@@ -70,14 +71,14 @@ button,
 input,
 textarea {
 	display: inline-block;
+	border: 0;
 	padding: 0;
 	background-color: transparent;
-	border: 0;
 }
 
 button {
-	cursor: pointer;
 	appearance: none;
+	cursor: pointer;
 }
 
 input {
@@ -86,8 +87,8 @@ input {
 
 fieldset {
 	margin: 0;
-	padding: 0;
 	border: 0;
+	padding: 0;
 }
 
 legend {

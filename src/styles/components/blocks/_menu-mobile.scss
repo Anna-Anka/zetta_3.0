@@ -25,12 +25,11 @@
 	}
 
 	&__link {
-		@include flex(center, center, column);
+		@include flex-alignment(2px, center, center, column);
 
 		padding: 13px;
 		text-align: center;
 		color: var(--color-dark-600);
-		gap: 2px;
 
 		@include mq(sm) {
 			padding: 9px;
@@ -52,7 +51,7 @@
 	}
 
 	&__icon {
-		@include flex;
+		@include flex-alignment;
 
 		border-radius: 50%;
 		width: 35px;

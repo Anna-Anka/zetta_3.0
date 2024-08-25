@@ -1,14 +1,11 @@
 .form {
-	display: flex;
-	flex-direction: column;
+	@include flex-simple(40px, column);
+
 	width: 100%;
 	font-size: 18px;
-	gap: 40px;
 
 	&__header {
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
+		@include flex-simple(10px, column);
 
 		@include mq(sm) {
 			gap: 8px;
@@ -31,10 +28,9 @@
 	}
 
 	&__items {
-		display: flex;
-		flex-direction: column;
+		@include flex-simple(30px, column);
+
 		width: 100%;
-		gap: 30px;
 	}
 
 	&__item {

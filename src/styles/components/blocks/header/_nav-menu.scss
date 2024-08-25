@@ -2,7 +2,7 @@
 	display: flex;
 	width: 100%;
 
-	& > li {
+	&__category {
 		padding-right: 40px;
 		width: 50%;
 	}
@@ -14,10 +14,9 @@
 	}
 
 	&__items {
-		display: flex;
-		flex-direction: column;
+		@include flex-simple(10px, column);
+
 		color: var(--color-grey-600);
-		gap: 10px;
 
 		&--root {
 			gap: 15px;
@@ -34,7 +33,7 @@
 
 			@media (any-hover: hover) {
 				&:hover {
-					color: var(--color-orange-400);
+					color: var(--color-dark-600);
 				}
 			}
 		}

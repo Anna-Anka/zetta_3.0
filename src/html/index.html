@@ -9,21 +9,21 @@
 <!-- TODO: связь модалок и кнопок -->
 <!-- ? Записаться в салон в бургер-меню,  будет модалка открываться? -->
 
-@include('./components/blocks/header/_header.html')
-@include('./components/blocks/_menu-mobile.html')
+@include('./components/blocks/_side-menu.html')
+<div class="inner">
+    @include('./components/blocks/header/_header.html')
+    <!-- @include('./components/blocks/_menu-mobile.html') -->
 
-<div class="graph-modal">
-    @include('./components/blocks/modals/_consultation.html')
-    <!-- @include('./components/blocks/modals/_thank-modal.html') -->
-</div>
+    <div class="graph-modal">
+        @include('./components/blocks/modals/_consultation.html')
+        <!-- @include('./components/blocks/modals/_thank-modal.html') -->
+    </div>
 
-<div class="content">
-    @include('./components/blocks/_side-menu.html')
     <main class="main">
 
     </main>
+    @include('./components/blocks/_footer.html')
 </div>
 
 
-@include('./components/blocks/_footer.html')
 @include('./settings/_bottom.html')

@@ -94,7 +94,7 @@
 		}
 
 		&__bottom {
-			@include flex(center, center, column);
+			@include flex-alignment(12px, center, center, column);
 
 			text-align: center;
 			gap: 12px;

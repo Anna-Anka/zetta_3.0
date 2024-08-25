@@ -1,20 +1,8 @@
 .navigation-connection {
-	display: flex;
-	flex-direction: column;
-	gap: 25px;
+	@include flex-simple(25px, column);
 
 	&__contacts {
-		display: flex;
-		flex-direction: column;
-		gap: 15px;
-
-		@include mq(md) {
-			flex: 1 1 auto;
-			flex-direction: row-reverse;
-			align-self: flex-start;
-			justify-content: flex-end;
-			gap: 5px;
-		}
+		@include flex-simple(8px, column);
 	}
 
 	&__contact {
@@ -22,37 +10,14 @@
 	}
 
 	&__link {
-		@include link-border-bottom;
+		@include title(16px);
 
+		line-height: 1.4;
 		white-space: nowrap;
-
-		@include mq(md) {
-			@include flex;
-
-			flex-direction: row-reverse;
-			border-bottom: 0;
-			border-radius: 12px;
-			padding: 15px;
-			text-align: center;
-			background-color: var(--color-grey-100);
-			gap: 5px;
-		}
-
-		@include mq(sm) {
-			border-radius: 8px;
-			padding: 12px;
-			font-size: 10px;
-		}
+		color: var(--color-dark-600);
 	}
 
 	&__text {
 		color: var(--color-grey-600);
-	}
-
-	@include mq(md) {
-		flex-direction: row;
-		padding-right: 0;
-		width: 100%;
-		gap: 5px;
 	}
 }

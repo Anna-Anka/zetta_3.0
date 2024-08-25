@@ -32,11 +32,10 @@
 	}
 
 	&__content {
+		@include flex-alignment(4px, center, flex-start, column);
+
 		padding: 20px 25px;
 		width: 45%;
-		gap: 4px;
-
-		@include flex(center, flex-start, column);
 
 		@include mq(sm) {
 			padding: 12px;

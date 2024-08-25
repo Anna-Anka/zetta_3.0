@@ -28,7 +28,7 @@
 	}
 
 	&__wrapper-logo {
-		@include flex;
+		@include flex-alignment;
 
 		height: 100%;
 
@@ -40,11 +40,10 @@
 	}
 
 	&__inner {
-		@include flex(space-between);
+		@include flex-alignment(24px, space-between);
 
 		width: 100%;
 		background-color: var(--color-white);
-		gap: 24px;
 
 		@include mq(lg, min) {
 			padding: 8px 45px;
@@ -52,9 +51,7 @@
 	}
 
 	&__item {
-		@include flex(flex-start);
-
-		gap: 10px;
+		@include flex-alignment(10px, flex-start);
 
 		&--buttons {
 			@include mq(xl) {

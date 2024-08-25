@@ -1,5 +1,5 @@
 .button {
-	@include flex;
+	@include flex-alignment(6px);
 
 	border-radius: 1000px;
 	padding: 15px 20px;
@@ -10,7 +10,6 @@
 	transition:
 		background-color 0.3s,
 		color 0.3s;
-	gap: 6px;
 
 	&--dark {
 		background-color: var(--color-dark-600);

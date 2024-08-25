@@ -3,21 +3,20 @@
 	--burger-line-width: 16px;
 	--burger-line-border-radius: 2px;
 
-	@include flex(flex-end);
+	@include flex-alignment(10px, flex-end);
 
 	position: relative;
 	z-index: 10;
 	outline: 0;
 	min-width: 110px;
 	font-size: 12px;
-	gap: 10px;
 
 	@include mq(sm) {
 		min-width: 100px;
 	}
 
 	&__plate {
-		@include flex;
+		@include flex-alignment;
 
 		border: 1px solid transparent;
 		border-radius: 1000px;
