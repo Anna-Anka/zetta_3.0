@@ -1,0 +1,22 @@
+.questions {
+	&__container {
+		@include flex-alignment(40px, space-between, flex-start);
+		@include container;
+	}
+
+	&__list {
+		@include mq(lg, min) {
+			width: 50%;
+		}
+	}
+
+	.form {
+		&__title {
+			font-size: 18px;
+		}
+
+		@include mq(lg, min) {
+			width: 36%;
+		}
+	}
+}

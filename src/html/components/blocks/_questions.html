@@ -1,0 +1,78 @@
+<section class="questions section">
+    <div class="questions__container">
+        <form class="form" action="#">
+            <div class="form__header">
+                <span class="form__title">
+                    Консультация специалиста
+                </span>
+                <div class="form__text">
+                    <p>
+                        Если у вас другой вопрос, оставьте заявку и получите бесплатную консультацию от специалиста.
+                    </p>
+                </div>
+            </div>
+            <div class="form__items">
+                <div class="form__item">
+                    <label class="sr-only" for="questions-name">Введите ваше имя</label>
+                    <input class="form__field" id="questions-name" name="name" type="text" placeholder="Имя" required>
+                </div>
+                <div class="form__item">
+                    <label class="sr-only" for="questions-phone">Введите номер телефона</label>
+                    <input class="form__field" id="questions-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+                </div>
+            </div>
+            <div class="form__bottom">
+                <button class="form__button button button--dark" type="submit">
+                    Получить консультацию
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </button>
+                <p>
+                    Нажимая на кнопку, вы принимаете условия 
+                    <a href="#">
+                            публичной оферты
+                    </a> .
+                </p>
+            </div>
+        </form>
+        <div class="questions__list">
+            <h2 class="questions__title title">
+                Вопрос-ответ
+            </h2>
+
+            <ul class="spollers" data-spollers data-one-spoller>
+                <li class="spollers__item">
+                    @include('../cards/_spoller-card.html', {
+                    'title' : 'Срок изготовления проекта?',
+                    'text' : ['Обычно полноценный проект кухни занимает от 1 месяца до 4 месяцев. При индивидуальном заказе, срок может увеличиваться от 4 месяцев до 8 месяцев.']
+                    })
+                </li>
+                <li class="spollers__item">
+                    @include('../cards/_spoller-card.html', {
+                    'title' : 'Сколько лет гарантия?',
+                    'text' : ['Обычно полноценный проект кухни занимает от 1 месяца до 4 месяцев. При индивидуальном заказе, срок может увеличиваться от 4 месяцев до 8 месяцев.']
+                    })
+                </li>
+                <li class="spollers__item">
+                    @include('../cards/_spoller-card.html', {
+                    'title' : 'Как заказать индивидуальный проект?',
+                    'text' : ['Обычно полноценный проект кухни занимает от 1 месяца до 4 месяцев. При индивидуальном заказе, срок может увеличиваться от 4 месяцев до 8 месяцев.']
+                    })
+                </li>
+                <li class="spollers__item">
+                    @include('../cards/_spoller-card.html', {
+                    'title' : 'Есть ли доставка?',
+                    'text' : ['Обычно полноценный проект кухни занимает от 1 месяца до 4 месяцев. При индивидуальном заказе, срок может увеличиваться от 4 месяцев до 8 месяцев.']
+                    })
+                </li>
+                <li class="spollers__item">
+                    @include('../cards/_spoller-card.html', {
+                    'title' : 'Как выполнить замер?',
+                    'text' : ['Обычно полноценный проект кухни занимает от 1 месяца до 4 месяцев. При индивидуальном заказе, срок может увеличиваться от 4 месяцев до 8 месяцев.']
+                    })
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

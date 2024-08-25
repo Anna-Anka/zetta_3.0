@@ -55,3 +55,11 @@
 		transform: translateY(-50%);
 	}
 }
+
+@mixin container {
+	padding: 0 45px;
+
+	@include mq(lg) {
+		padding: 0 20px;
+	}
+}

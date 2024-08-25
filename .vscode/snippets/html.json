@@ -298,5 +298,11 @@
 			"</div>"
 		],
 		"description": "Snippet for select with plugin choices"
+	},
+
+	"array in gulp-file-include": {
+		"scope": "html",
+		"prefix": "g-@for",
+		"body": ["@for (var i = 0; i < text.length; i++) { <p> `+text[i]+` </p> }"]
 	}
 }
