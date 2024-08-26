@@ -1,4 +1,6 @@
 .questions {
+	margin-top: 300px;
+
 	&__container {
 		@include flex-alignment(40px, space-between, flex-start);
 		@include container;

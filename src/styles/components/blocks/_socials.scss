@@ -1,6 +1,5 @@
 .socials {
-	display: flex;
-	gap: 10px;
+	@include flex-simple(5px);
 
 	@include mq(md) {
 		gap: 5px;

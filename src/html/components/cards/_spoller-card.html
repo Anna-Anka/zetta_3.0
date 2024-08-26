@@ -1,13 +1,11 @@
-<div class="spollers__header">
-    <h3 class="spollers__title">
-        @title
-    </h3>
-    <button class="spollers__button" type="button" data-spoller-button>
-        <svg class="spolleres__icon">
-            <use xlink:href="img/sprite.svg#close">
-        </svg>
-    </button>
-</div>
+<h3 class="spollers__title">
+    @title
+</h3>
+<button class="spollers__button" type="button" data-spoller-button>
+    <svg class="spolleres__icon">
+        <use xlink:href="img/sprite.svg#close">
+    </svg>
+</button>
 <div class="spollers__body">
     @for (var i = 0; i < text.length; i++) { <p> `+text[i]+` </p> }
 </div>

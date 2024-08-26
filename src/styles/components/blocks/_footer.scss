@@ -199,11 +199,15 @@
 		}
 	}
 
+	@include mq(lg) {
+		padding-bottom: 80px;
+	}
+
 	@include mq(md) {
 		padding-top: 80px;
 	}
 
 	@include mq(sm) {
-		padding: 60px 0 20px;
+		padding: 60px 0 80px;
 	}
 }

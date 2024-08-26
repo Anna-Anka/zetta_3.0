@@ -134,7 +134,9 @@
 		}
 
 		&--mobile {
-			display: none;
+			@include mq(lg, min) {
+				display: none;
+			}
 
 			.socials__item {
 				@include mq(md) {
@@ -151,6 +153,10 @@
 			.socials__link {
 				border-radius: 12px;
 				background-color: var(--color-grey-100);
+
+				@include mq(md) {
+					color: var(--color-dark-600);
+				}
 
 				@include mq(sm) {
 					border-radius: 8px;
