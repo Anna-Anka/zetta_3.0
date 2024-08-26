@@ -1,0 +1,10 @@
+<div class="address-card">
+    <h4 class="address-card__title">
+        @title
+    </h4>
+    <span class="address-card__time">@time</span>
+    <span class="address-card__subtitle">Станции метро:</span>
+    <ul class="address-card__items">
+        @for (var i = 0; i < items.length; i++) { <li class="address-card__item"> <span class="address-card__circle" style="background-color: `+items[i].color+`;" aria-hidden></span> `+items[i].text+` </li> }
+    </ul>
+</div>

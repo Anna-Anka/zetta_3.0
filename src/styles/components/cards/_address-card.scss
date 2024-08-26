@@ -1,0 +1,43 @@
+.address-card {
+	width: 100%;
+	font-size: 12px;
+	letter-spacing: -0.03em;
+
+	&__title {
+		@include title(18px, -0.03em);
+
+		margin-bottom: 5px;
+	}
+
+	&__time {
+		display: block;
+		margin-bottom: 15px;
+		color: var(--color-dark-600);
+	}
+
+	&__subtitle {
+		display: block;
+		margin-bottom: 8px;
+		color: var(--color-grey-600);
+	}
+
+	&__items {
+		@include flex-simple(5px, column);
+	}
+
+	&__item {
+		position: relative;
+		padding-left: 10px;
+		color: var(--color-dark-600);
+	}
+
+	&__circle {
+		position: absolute;
+		left: 0;
+		top: 4px;
+		display: block;
+		border-radius: 50%;
+		width: 6px;
+		height: 6px;
+	}
+}
