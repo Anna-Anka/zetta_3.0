@@ -13,6 +13,7 @@
 	}
 
 	&__title {
+		font-weight: 500;
 		color: var(--color-dark-600);
 	}
 
@@ -126,13 +127,24 @@
 		}
 	}
 
+	&__subtext {
+		flex: 1 0 40%;
+	}
+
 	&__bottom {
+		@include flex-alignment(12px, flex-start, center);
+
+		flex-wrap: wrap;
 		font-size: 12px;
 		letter-spacing: -0.03em;
 
 		@include mq(sm) {
 			font-size: 10px;
 		}
+	}
+
+	&__button {
+		white-space: nowrap;
 	}
 
 	a {

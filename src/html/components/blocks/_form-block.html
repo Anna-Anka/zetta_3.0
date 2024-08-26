@@ -1,0 +1,41 @@
+<section class="form-block section">
+    <form class="form" action="#">
+        <div class="form__header">
+            <h2 class="form__title title">
+                Закажите бесплатную разработку дизайн-проекта
+            </h2>
+            <div class="form__text">
+                <p>
+                    Оставьте заявку, наши менеджеры свяжутся с вами в течение ближайшего времени
+                </p>
+            </div>
+        </div>
+        <div class="form__items">
+            <div class="form__item">
+                <label class="sr-only" for="form-block-name">Введите ваше имя</label>
+                <input class="form__field" id="form-block-name" name="name" type="text" placeholder="Имя" required>
+            </div>
+            <div class="form__item">
+                <label class="sr-only" for="form-block-phone">Введите номер телефона</label>
+                <input class="form__field" id="form-block-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+            </div>
+        </div>
+        <div class="form__bottom">
+            <button class="form__button button button--dark" type="submit">
+                Отправить заявку
+                <svg>
+                    <use xlink:href="img/sprite.svg#arrows-double">
+                </svg>
+            </button>
+            <p class="form__subtext">
+                Нажимая на кнопку, вы принимаете условия 
+                <a href="#">
+                    публичной оферты
+                </a> .
+            </p>
+        </div>
+    </form>
+    <div class="form-block__img">
+        <span class="form-block__bg" style="background-image: url('img/blocks/form/bg.jpg');" aria-hidden> </span>
+    </div>
+</section>

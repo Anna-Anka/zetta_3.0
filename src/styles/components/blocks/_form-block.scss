@@ -1,0 +1,41 @@
+.form-block {
+	@include container;
+	@include flex-alignment(20px, space-between, center);
+
+	.form {
+		@include mq(md, min) {
+			flex-basis: 500px;
+		}
+
+		&__title {
+			margin-bottom: 0;
+		}
+
+		&__bottom {
+			@include mq(lg) {
+				flex-direction: column;
+				align-items: flex-start;
+			}
+		}
+	}
+
+	&__img {
+		position: relative;
+		flex-basis: 50%;
+		padding-bottom: 29.5%;
+
+		@include mq(lg) {
+			height: 400px;
+		}
+
+		@include mq(md) {
+			display: none;
+		}
+	}
+
+	&__bg {
+		@include resize-img;
+
+		display: block;
+	}
+}

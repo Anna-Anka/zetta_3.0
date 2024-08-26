@@ -1,9 +1,9 @@
 .questions {
-	margin-top: 300px;
-
 	&__container {
 		@include flex-alignment(40px, space-between, flex-start);
 		@include container;
+
+		width: 100%;
 
 		@include mq(lg) {
 			flex-direction: column-reverse;
@@ -25,25 +25,15 @@
 
 	.form {
 		&__title {
-			font-weight: 500;
 			font-size: 18px;
-		}
-
-		@include mq(lg, min) {
-			width: 35%;
-		}
-
-		&__bottom {
-			@include flex-simple(12px, column);
-		}
-
-		&__button {
-			margin-right: auto;
-			white-space: nowrap;
 		}
 
 		@include mq(md) {
 			gap: 30px;
+		}
+
+		@include mq(lg, min) {
+			width: 35%;
 		}
 	}
 }
