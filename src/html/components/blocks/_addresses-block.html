@@ -1,115 +1,118 @@
 <section class="addresses-block section">
     <h2 class="sr-only">Наши адреса</h2>
-    <div class="addresses-block__wrapper">
-        <div class="tabs" data-tabs="addresses-block">
-            <ul class="tabs__nav">
-                <li class="tabs__nav-item">
-                    <h3 class="tabs__nav-btn">
-                        <button type="button">Москва</button>
-                    </h3>
-                </li>
-                <li class="tabs__nav-item">
-                    <h3 class="tabs__nav-btn">
-                        <button type="button">Воронеж</button>
-                    </h3>
-                </li>
-                <li class="tabs__nav-item">
-                    <h3 class="tabs__nav-btn">
-                        <button type="button">Владикавказ</button>
-                    </h3>
-                </li>
-            </ul>
-            <div class="tabs__content">
-                <div class="tabs__panel">
-                    <ul class="tabs__list">
-                        <li class="tabs__panel-item">
-                            @include('../cards/_address-card.html', {
-                            'title' : 'Расторгуевский пер., д.1',
-                            'time' : 'Ежедневно с 11:00 до 21:00',
-                            'items' : [ {'text': 'Краснопресненская', 'color': '#C22B2D'}, {'text': 'ул. 1905 года', 'color': '#991699'}]
-                            })
-                        </li>
-                        <li class="tabs__panel-item">
-                            @include('../cards/_address-card.html', {
-                            'title' : 'Симоновский вал, д.12 к.2',
-                            'time' : 'Ежедневно с 11:00 до 21:00',
-                            'items' : [ {'text': 'Крестьянская застава', 'color': '#90EE8F'}, {'text': 'Пролетарская', 'color': '#991699'}]
-                            })
-                        </li>
-                        <li class="tabs__panel-item">
-                            @include('../cards/_address-card.html', {
-                            'title' : 'Варшавское шоссе, д.26, с.32',
-                            'time' : 'Ежедневно с 11:00 до 21:00',
-                            'items' : [ {'text': 'Нагатинская', 'color': '#808080'}]
-                            })
-                        </li>
-                        <li class="tabs__panel-item">
-                            @include('../cards/_address-card.html', {
-                            'title' : 'ТЦ Квартал-1 эт., Аминьевское шоссе д.6',
-                            'time' : 'Ежедневно с 11:00 до 21:00',
-                            'items' : [ {'text': 'Аминьевская', 'color': '#5FBFBF'}]
-                            })
-                        </li>
-                    </ul>
-                    <div class="tabs__demo">
-                        <div class="tabs__map" style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a href="https://yandex.ru/maps/213/moscow/house/aminyevskoye_shosse_6/Z04YcgJmQUcPQFtvfXtxdn5qbQ==/?indoorLevel=1&ll=37.456828%2C55.707299&utm_medium=mapframe&utm_source=maps&z=17.12" style="color:#eee;font-size:12px;position:absolute;top:14px;">Аминьевское шоссе, 6 — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=37.456828%2C55.707299&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxOTMxNjc4NjIxEkDQoNC-0YHRgdC40Y8sINCc0L7RgdC60LLQsCwg0JDQvNC40L3RjNC10LLRgdC60L7QtSDRiNC-0YHRgdC1LCA2IgoNzNMVQhVG1F5C&z=17.12" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
-                    </div>
-                </div>
-
-                <div class="tabs__panel">
-                    <ul class="tabs__list">
-                        <li class="tabs__panel-item">
-                            @include('../cards/_address-card.html', {
-                            'title' : 'Расторгуевский пер., д.1',
-                            'time' : 'Ежедневно с 11:00 до 21:00',
-                            'items' : [ {'text': 'Краснопресненская', 'color': '#C22B2D'}, {'text': 'ул. 1905 года', 'color': '#991699'}]
-                            })
-                        </li>
-                        <li class="tabs__panel-item">
-                            @include('../cards/_address-card.html', {
-                            'title' : 'Симоновский вал, д.12 к.2',
-                            'time' : 'Ежедневно с 11:00 до 21:00',
-                            'items' : [ {'text': 'Крестьянская застава', 'color': '#90EE8F'}, {'text': 'Пролетарская', 'color': '#991699'}]
-                            })
-                        </li>
-                    </ul>
-                    <div class="tabs__demo">
-                        <div class="tabs__map" style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a href="https://yandex.ru/maps/213/moscow/house/aminyevskoye_shosse_6/Z04YcgJmQUcPQFtvfXtxdn5qbQ==/?indoorLevel=1&ll=37.456828%2C55.707299&utm_medium=mapframe&utm_source=maps&z=17.12" style="color:#eee;font-size:12px;position:absolute;top:14px;">Аминьевское шоссе, 6 — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=37.456828%2C55.707299&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxOTMxNjc4NjIxEkDQoNC-0YHRgdC40Y8sINCc0L7RgdC60LLQsCwg0JDQvNC40L3RjNC10LLRgdC60L7QtSDRiNC-0YHRgdC1LCA2IgoNzNMVQhVG1F5C&z=17.12" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
-                    </div>
-                </div>
-
-                <div class="tabs__panel">
-                    <ul class="tabs__list">
-                        <li class="tabs__panel-item">
-                            @include('../cards/_address-card.html', {
-                            'title' : 'Варшавское шоссе, д.26, с.32',
-                            'time' : 'Ежедневно с 11:00 до 21:00',
-                            'items' : [ {'text': 'Нагатинская', 'color': '#808080'}]
-                            })
-                        </li>
-                        <li class="tabs__panel-item">
-                            @include('../cards/_address-card.html', {
-                            'title' : 'ТЦ Квартал-1 эт., Аминьевское шоссе д.6',
-                            'time' : 'Ежедневно с 11:00 до 21:00',
-                            'items' : [ {'text': 'Аминьевская', 'color': '#5FBFBF'}]
-                            })
-                        </li>
-                    </ul>
-                    <div class="tabs__demo">
-                        <div class="tabs__map" style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a href="https://yandex.ru/maps/213/moscow/house/aminyevskoye_shosse_6/Z04YcgJmQUcPQFtvfXtxdn5qbQ==/?indoorLevel=1&ll=37.456828%2C55.707299&utm_medium=mapframe&utm_source=maps&z=17.12" style="color:#eee;font-size:12px;position:absolute;top:14px;">Аминьевское шоссе, 6 — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=37.456828%2C55.707299&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxOTMxNjc4NjIxEkDQoNC-0YHRgdC40Y8sINCc0L7RgdC60LLQsCwg0JDQvNC40L3RjNC10LLRgdC60L7QtSDRiNC-0YHRgdC1LCA2IgoNzNMVQhVG1F5C&z=17.12" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
-                    </div>
+    <div class="tabs" data-tabs="addresses-block">
+        <ul class="tabs__nav">
+            <li class="tabs__nav-item">
+                <h3 class="tabs__nav-btn">
+                    <button type="button">Москва</button>
+                </h3>
+            </li>
+            <li class="tabs__nav-item">
+                <h3 class="tabs__nav-btn">
+                    <button type="button">Воронеж</button>
+                </h3>
+            </li>
+            <li class="tabs__nav-item">
+                <h3 class="tabs__nav-btn">
+                    <button type="button">Владикавказ</button>
+                </h3>
+            </li>
+        </ul>
+        <div class="tabs__content">
+            <div class="tabs__panel">
+                <ul class="tabs__list">
+                    <li class="tabs__panel-item">
+                        @include('../cards/_address-card.html', {
+                        'title' : 'Расторгуевский пер., д.1',
+                        'time' : 'Ежедневно с 11:00 до 21:00',
+                        'items' : [ {'text': 'Краснопресненская', 'color': '#C22B2D'}, {'text': 'ул. 1905 года', 'color': '#991699'}]
+                        })
+                    </li>
+                    <li class="tabs__panel-item">
+                        @include('../cards/_address-card.html', {
+                        'title' : 'Симоновский вал, д.12 к.2',
+                        'time' : 'Ежедневно с 11:00 до 21:00',
+                        'items' : [ {'text': 'Крестьянская застава', 'color': '#90EE8F'}, {'text': 'Пролетарская', 'color': '#991699'}]
+                        })
+                    </li>
+                    <li class="tabs__panel-item">
+                        @include('../cards/_address-card.html', {
+                        'title' : 'Варшавское шоссе, д.26, с.32',
+                        'time' : 'Ежедневно с 11:00 до 21:00',
+                        'items' : [ {'text': 'Нагатинская', 'color': '#808080'}]
+                        })
+                    </li>
+                    <li class="tabs__panel-item">
+                        @include('../cards/_address-card.html', {
+                        'title' : 'ТЦ Квартал-1 эт., Аминьевское шоссе д.6',
+                        'time' : 'Ежедневно с 11:00 до 21:00',
+                        'items' : [ {'text': 'Аминьевская', 'color': '#5FBFBF'}]
+                        })
+                    </li>
+                </ul>
+                <div class="tabs__demo">
+                    <div class="tabs__map" style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a href="https://yandex.ru/maps/213/moscow/house/aminyevskoye_shosse_6/Z04YcgJmQUcPQFtvfXtxdn5qbQ==/?indoorLevel=1&ll=37.456828%2C55.707299&utm_medium=mapframe&utm_source=maps&z=17.12" style="color:#eee;font-size:12px;position:absolute;top:14px;">Аминьевское шоссе, 6 — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=37.456828%2C55.707299&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxOTMxNjc4NjIxEkDQoNC-0YHRgdC40Y8sINCc0L7RgdC60LLQsCwg0JDQvNC40L3RjNC10LLRgdC60L7QtSDRiNC-0YHRgdC1LCA2IgoNzNMVQhVG1F5C&z=17.12" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
                 </div>
             </div>
-        </div>
 
-        <div class="addresses-block__visit">
-            <h3 class="addresses-block__subtitle">Посетить салон</h3>
-            <span class="addresses-block__subtext">
-                Оставьте заявку на сайте, и приходите в наш салон.
-            </span>
-            <button class="addresses-block__button" type="button">
-                Записаться в салон
-            </button>
+            <div class="tabs__panel">
+                <ul class="tabs__list">
+                    <li class="tabs__panel-item">
+                        @include('../cards/_address-card.html', {
+                        'title' : 'Расторгуевский пер., д.1',
+                        'time' : 'Ежедневно с 11:00 до 21:00',
+                        'items' : [ {'text': 'Краснопресненская', 'color': '#C22B2D'}, {'text': 'ул. 1905 года', 'color': '#991699'}]
+                        })
+                    </li>
+                    <li class="tabs__panel-item">
+                        @include('../cards/_address-card.html', {
+                        'title' : 'Симоновский вал, д.12 к.2',
+                        'time' : 'Ежедневно с 11:00 до 21:00',
+                        'items' : [ {'text': 'Крестьянская застава', 'color': '#90EE8F'}, {'text': 'Пролетарская', 'color': '#991699'}]
+                        })
+                    </li>
+                </ul>
+                <div class="tabs__demo">
+                    <div class="tabs__map" style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a href="https://yandex.ru/maps/213/moscow/house/aminyevskoye_shosse_6/Z04YcgJmQUcPQFtvfXtxdn5qbQ==/?indoorLevel=1&ll=37.456828%2C55.707299&utm_medium=mapframe&utm_source=maps&z=17.12" style="color:#eee;font-size:12px;position:absolute;top:14px;">Аминьевское шоссе, 6 — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=37.456828%2C55.707299&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxOTMxNjc4NjIxEkDQoNC-0YHRgdC40Y8sINCc0L7RgdC60LLQsCwg0JDQvNC40L3RjNC10LLRgdC60L7QtSDRiNC-0YHRgdC1LCA2IgoNzNMVQhVG1F5C&z=17.12" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+                </div>
+            </div>
+
+            <div class="tabs__panel">
+                <ul class="tabs__list">
+                    <li class="tabs__panel-item">
+                        @include('../cards/_address-card.html', {
+                        'title' : 'Варшавское шоссе, д.26, с.32',
+                        'time' : 'Ежедневно с 11:00 до 21:00',
+                        'items' : [ {'text': 'Нагатинская', 'color': '#808080'}]
+                        })
+                    </li>
+                    <li class="tabs__panel-item">
+                        @include('../cards/_address-card.html', {
+                        'title' : 'ТЦ Квартал-1 эт., Аминьевское шоссе д.6',
+                        'time' : 'Ежедневно с 11:00 до 21:00',
+                        'items' : [ {'text': 'Аминьевская', 'color': '#5FBFBF'}]
+                        })
+                    </li>
+                </ul>
+                <div class="tabs__demo">
+                    <div class="tabs__map" style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a href="https://yandex.ru/maps/213/moscow/house/aminyevskoye_shosse_6/Z04YcgJmQUcPQFtvfXtxdn5qbQ==/?indoorLevel=1&ll=37.456828%2C55.707299&utm_medium=mapframe&utm_source=maps&z=17.12" style="color:#eee;font-size:12px;position:absolute;top:14px;">Аминьевское шоссе, 6 — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=37.456828%2C55.707299&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxOTMxNjc4NjIxEkDQoNC-0YHRgdC40Y8sINCc0L7RgdC60LLQsCwg0JDQvNC40L3RjNC10LLRgdC60L7QtSDRiNC-0YHRgdC1LCA2IgoNzNMVQhVG1F5C&z=17.12" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+                </div>
+            </div>
+
+            <div class="addresses-block__visit">
+                <h3 class="addresses-block__subtitle">Посетить салон</h3>
+                <span class="addresses-block__subtext">
+                    Оставьте заявку на сайте, и приходите в наш салон.
+                </span>
+                <button class="addresses-block__button button button--decor" type="button">
+                    Записаться в салон
+                    <span class="button__decor" aria-hidden>
+                        <svg>
+                            <use xlink:href="img/sprite.svg#arrows-double">
+                        </svg>
+                    </span>
+                </button>
+            </div>
         </div>
     </div>
 </section>

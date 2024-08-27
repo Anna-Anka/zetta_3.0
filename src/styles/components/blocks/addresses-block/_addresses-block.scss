@@ -1,0 +1,33 @@
+.addresses-block {
+	@include container;
+
+	&__map {
+		padding: 50px 0;
+	}
+
+	&__visit {
+		@include mq(md, min) {
+			margin-left: auto;
+			padding-left: 25px;
+			width: 55%;
+		}
+	}
+
+	&__subtitle {
+		@include title(18px, -0.03em);
+
+		margin-bottom: 5px;
+	}
+
+	&__subtext {
+		display: block;
+		margin-bottom: 22px;
+	}
+
+	&__button {
+		@include title(12px, -0.03em);
+		@include flex-alignment(8px);
+
+		color: var(--color-dark-600);
+	}
+}

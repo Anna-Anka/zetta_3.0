@@ -1,11 +1,9 @@
 .button {
 	@include flex-alignment(6px);
+	@include title(12px, -0.03em);
 
 	border-radius: 1000px;
 	padding: 15px 20px;
-	font-weight: 500;
-	font-size: 12px;
-	letter-spacing: -0.03em;
 	color: var(--color-white);
 	transition:
 		background-color 0.3s,
@@ -27,6 +25,41 @@
 		@media (any-hover: hover) {
 			&:hover {
 				background-color: var(--color-orange-600);
+			}
+		}
+	}
+
+	&--decor {
+		border-radius: 0;
+		padding: 0;
+		gap: 8px;
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--color-orange-400);
+			}
+		}
+	}
+
+	&__decor {
+		@include flex-alignment;
+
+		border-radius: 1000px;
+		padding: 4px;
+		width: 44px;
+		height: 30px;
+		color: var(--color-white);
+		background-color: var(--color-orange-400);
+
+		@include mq(sm) {
+			height: 28px;
+			letter-spacing: -0.04em;
+		}
+
+		svg {
+			@include mq(sm) {
+				width: 12px;
+				height: 12px;
 			}
 		}
 	}

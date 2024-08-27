@@ -1,7 +1,7 @@
 // Ui
 @import '../components/ui/button';
 
-// Blocks
+// header
 @import '../components/blocks/header/header';
 @import '../components/blocks/header/burger/burger-button';
 @import '../components/blocks/header/burger/burger-menu';
@@ -9,16 +9,21 @@
 @import '../components/blocks/header/burger/burger-block';
 @import '../components/blocks/header/menu-categories';
 @import '../components/blocks/header/nav-menu';
+
+// base
 @import '../components/blocks/form';
 @import '../components/blocks/navigation-connection';
 @import '../components/blocks/side-menu';
 @import '../components/blocks/socials';
 @import '../components/blocks/form-block';
-@import '../components/blocks/addresses-block';
 @import '../components/blocks/questions';
 @import '../components/blocks/menu-mobile';
 @import '../components/blocks/breadcrumbs';
 @import '../components/blocks/footer';
+
+// addresses-block
+@import '../components/blocks/addresses-block/addresses-block';
+@import '../components/blocks/addresses-block/addresses-block-tabs';
 
 // Cards
 @import '../components/cards/banner-card';
