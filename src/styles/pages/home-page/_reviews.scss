@@ -1,0 +1,56 @@
+.reviews {
+	@include container;
+
+	padding-top: 180px;
+	background-color: var(--color-grey-100);
+
+	@include mq(sm) {
+		padding-top: 120px;
+	}
+
+	&__wrapper {
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__title {
+		@include mq(md, min) {
+			padding-right: 150px;
+		}
+	}
+
+	&__swiper {
+		position: static;
+		overflow: visible;
+	}
+
+	&__buttons {
+		position: absolute;
+		right: 0;
+		top: 10px;
+		display: flex;
+		transform: translateY(100%);
+		gap: 8px;
+
+		@include mq(md) {
+			display: none;
+		}
+	}
+
+	&__items {
+		align-items: stretch;
+
+		@include mq(md) {
+			margin-bottom: 30px;
+		}
+
+		@include mq(sm) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__item {
+		height: auto;
+		min-height: 268px;
+	}
+}

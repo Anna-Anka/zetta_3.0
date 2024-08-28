@@ -1,9 +1,11 @@
 .button {
 	@include flex-alignment(6px);
-	@include title(12px, -0.03em);
 
 	border-radius: 1000px;
 	padding: 15px 20px;
+	font-weight: 500;
+	font-size: 12px;
+	letter-spacing: -0.03em;
 	color: var(--color-white);
 	transition:
 		background-color 0.3s,
@@ -32,6 +34,7 @@
 	&--decor {
 		border-radius: 0;
 		padding: 0;
+		color: var(--color-dark-600);
 		gap: 8px;
 
 		@media (any-hover: hover) {
@@ -70,6 +73,12 @@
 		height: 6px;
 		background-color: var(--color-orange-400);
 		transition: background-color 0.3s;
+	}
+
+	&__text {
+		@include mq(sm) {
+			display: none;
+		}
 	}
 
 	@media (any-hover: hover) {

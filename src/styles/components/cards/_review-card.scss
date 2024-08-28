@@ -1,0 +1,78 @@
+.review-card {
+	@include flex-simple(20px, column);
+
+	justify-content: space-between;
+	padding: 30px;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-white);
+
+	@include mq(sm) {
+		padding: 20px;
+	}
+
+	&__count {
+		display: inline-block;
+		margin-bottom: 15px;
+		border: 1px solid var(--color-grey-200);
+		border-radius: 1000px;
+		padding: 7px 12px;
+		font-size: 12px;
+		letter-spacing: -0.03em;
+		color: var(--color-dark-600);
+
+		@include mq(sm) {
+			font-size: 10px;
+		}
+	}
+
+	&__info {
+		@include flex-alignment(20px, space-between);
+
+		flex-wrap: wrap;
+
+		@include mq(sm) {
+			@include flex-alignment(10px, flex-start, flex-start, column);
+		}
+	}
+
+	&__logo {
+		width: 100%;
+		height: 30px;
+		max-width: 120px;
+		object-fit: contain;
+
+		@include mq(sm) {
+			height: 20px;
+			max-width: 80px;
+		}
+	}
+
+	&__rating {
+		@include title(18px, -0.03em);
+
+		position: relative;
+		padding-right: 21px;
+
+		&::before {
+			@include bg-properties(contain);
+
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 2px;
+			width: 16px;
+			height: 16px;
+			background-image: url('../img/sprite.svg#star');
+		}
+
+		@include mq(sm) {
+			font-size: 14px;
+			line-height: 1.1;
+		}
+	}
+
+	&__link {
+		margin: auto auto 0 0;
+	}
+}

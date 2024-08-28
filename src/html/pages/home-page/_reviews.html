@@ -1,0 +1,58 @@
+<section class="reviews section">
+    <div class="reviews__wrapper">
+        <h2 class="reviews__title title">
+            Отзывы о нас
+        </h2>
+        <div class="reviews__swiper swiper">
+            <ul class="reviews__items swiper-wrapper">
+                <li class="reviews__item swiper-slide">
+                    @include('../../components/cards/_review-card.html', {
+                    'count' : '16 отзывов',
+                    'rating' : '4.4',
+                    'alt' : 'yandex',
+                    'img' : 'yandex'
+                    })
+                </li>
+                <li class="reviews__item swiper-slide">
+                    @include('../../components/cards/_review-card.html', {
+                    'count' : '174 отзывов',
+                    'rating' : '4.8',
+                    'alt' : 'houzz',
+                    'img' : 'houzz'
+                    })
+                </li>
+                <li class="reviews__item swiper-slide">
+                    @include('../../components/cards/_review-card.html', {
+                    'count' : '529 отзывов',
+                    'rating' : '4.5',
+                    'alt' : 'zoon',
+                    'img' : 'zoon'
+                    })
+                </li>
+                <li class="reviews__item swiper-slide">
+                    @include('../../components/cards/_review-card.html', {
+                    'count' : '59 отзывов',
+                    'rating' : '4.8',
+                    'alt' : '2гис',
+                    'img' : '2gis'
+                    })
+                </li>
+                <li class="reviews__item swiper-slide">
+                    @include('../../components/cards/_review-card.html', {
+                    'count' : '4 отзыва',
+                    'rating' : '4.8',
+                    'alt' : 'yell',
+                    'img' : 'yell'
+                    })
+                </li>
+            </ul>
+            <div class="swiper-pagination"></div>
+            <div class="reviews__buttons">
+                <button class="reviews__button reviews__button--prev swiper-button-prev" type="button">
+                </button>
+                <button class="reviews__button reviews__button--next swiper-button-next" type="button">
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

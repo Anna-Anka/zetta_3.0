@@ -1,0 +1,1 @@
+import './sliders/_reviews-slider.js'

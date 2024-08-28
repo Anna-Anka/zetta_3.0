@@ -2,6 +2,12 @@
 	@include container;
 	@include flex-alignment(20px, space-between, center);
 
+	padding-top: 180px;
+
+	@include mq(sm) {
+		padding-top: 130px;
+	}
+
 	.form {
 		@include mq(md, min) {
 			flex-basis: 500px;
