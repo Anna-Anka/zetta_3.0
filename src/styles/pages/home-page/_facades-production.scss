@@ -1,0 +1,111 @@
+.facades-production {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 200px;
+
+	@include container;
+
+	@include mq(md) {
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	&__content {
+		@include mq(md, min) {
+			flex-basis: 50%;
+			padding-right: 40px;
+		}
+
+		@include mq(lg, min) {
+			flex-basis: 35%;
+		}
+	}
+
+	&__subtitle {
+		@include title(18px, -0.03em);
+
+		@include mq(sm) {
+			font-size: 16px;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__text {
+		p {
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+
+			@include mq(sm) {
+				margin-bottom: 12px;
+			}
+		}
+	}
+
+	&__images {
+		@include mq(lg, min) {
+			display: flex;
+			flex-basis: 50%;
+			gap: 30px;
+		}
+	}
+
+	&__image {
+		position: relative;
+
+		&--big {
+			@include mq(lg, min) {
+				flex-basis: 70%;
+			}
+
+			@include mq(md, min) {
+				aspect-ratio: 1 / 1;
+			}
+
+			@include mq(md) {
+				padding-bottom: 62%;
+			}
+
+			@include mq(sm) {
+				padding-bottom: 95%;
+			}
+
+			img {
+				@include mq(md) {
+					position: absolute;
+					left: 0;
+					top: 0;
+				}
+			}
+		}
+
+		&--small {
+			flex-basis: 30%;
+			align-self: flex-start;
+			padding-bottom: 34%;
+
+			@include mq(lg) {
+				display: none;
+			}
+
+			img {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
