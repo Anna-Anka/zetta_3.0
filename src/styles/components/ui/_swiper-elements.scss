@@ -5,10 +5,16 @@
 	bottom: unset;
 	text-align: left;
 	transform: translateX(0);
+}
 
-	@include mq(md, min) {
-		display: none;
-	}
+.swiper-pagination-fraction {
+	font-size: 12px;
+}
+
+.swiper-pagination-current {
+	font-size: 18px;
+	letter-spacing: 0;
+	color: var(--color-dark-600);
 }
 
 .swiper-pagination-bullet {
@@ -26,6 +32,7 @@
 	position: relative;
 	left: unset;
 	right: unset;
+	margin-top: 0;
 	border-radius: 1000px;
 	padding: 8px;
 	width: 56px;

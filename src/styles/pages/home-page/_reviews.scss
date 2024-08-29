@@ -25,11 +25,12 @@
 	}
 
 	&__buttons {
+		@include flex-simple(8px);
+
 		position: absolute;
 		right: 0;
 		top: 10px;
 		display: flex;
-		transform: translateY(100%);
 		gap: 8px;
 
 		@include mq(md) {
@@ -52,5 +53,11 @@
 	&__item {
 		height: auto;
 		min-height: 268px;
+	}
+
+	.swiper-pagination {
+		@include mq(md, min) {
+			display: none;
+		}
 	}
 }

@@ -3,7 +3,6 @@
 
 	display: flex;
 	flex-wrap: wrap;
-	margin-top: 200px;
 	gap: 30px 250px;
 
 	@include mq(lg) {
