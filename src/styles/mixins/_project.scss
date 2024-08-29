@@ -15,12 +15,16 @@
 	}
 }
 
-@mixin title($font-size: 22px, $letter-spacing: -0.04em) {
+@mixin title(
+	$font-size: 22px,
+	$letter-spacing: -0.04em,
+	$color: var(--color-dark-600)
+) {
 	display: inline-block;
 	font-weight: 500;
 	font-size: $font-size;
 	letter-spacing: $letter-spacing;
-	color: var(--color-dark-600);
+	color: $color;
 }
 
 @mixin link-cover {

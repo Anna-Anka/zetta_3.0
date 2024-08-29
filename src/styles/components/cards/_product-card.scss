@@ -1,0 +1,77 @@
+.product-card {
+	width: 100%;
+	height: 100%;
+
+	&__image {
+		display: inline-block;
+		margin-bottom: 10px;
+		width: 100%;
+	}
+
+	picture {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__img {
+		@include img-base;
+	}
+
+	&__content {
+		@include flex-alignment(20px, space-between, flex-start);
+
+		margin-bottom: 20px;
+	}
+
+	&__title,
+	&__price {
+		@include title(18px, -0.03em);
+	}
+
+	&__title {
+		&:not(:last-child) {
+			margin-bottom: 6px;
+		}
+	}
+
+	&__question,
+	&__subtext {
+		color: var(--color-grey-600);
+	}
+
+	&__question {
+		@include flex-alignment(5px, flex-start, center);
+
+		@media (any-hover: hover) {
+			&:hover {
+				svg {
+					color: var(--color-dark-600);
+				}
+			}
+		}
+
+		svg {
+			width: 20px;
+			height: 20px;
+			color: var(--color-grey-400);
+			transition: color 0.3s;
+		}
+	}
+
+	&__answer {
+		display: none;
+
+		&--active {
+			display: flex;
+		}
+	}
+
+	&__info {
+		@include flex-alignment(5px, flex-start, flex-end, column);
+	}
+
+	&__footer {
+		@include flex-simple(10px);
+	}
+}

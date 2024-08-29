@@ -1,0 +1,45 @@
+.tabs {
+	&__nav {
+		@include flex-simple(8px);
+	}
+
+	&__nav-btn {
+		position: relative;
+		color: var(--color-grey-500);
+		background-color: transparent;
+		transition: color 0.3s;
+
+		&:focus {
+			background-color: transparent;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: -11px;
+			top: 50%;
+			border-radius: 50%;
+			width: 6px;
+			height: 6px;
+			background-color: transparent;
+			opacity: 0;
+			transform: translateY(-50%);
+			transition: background-color 0.3s;
+
+			@include mq(sm) {
+				left: -7px;
+				width: 4px;
+				height: 4px;
+			}
+		}
+
+		&--active {
+			color: var(--color-dark-600);
+
+			&::before {
+				background-color: var(--color-orange-400);
+				opacity: 1;
+			}
+		}
+	}
+}

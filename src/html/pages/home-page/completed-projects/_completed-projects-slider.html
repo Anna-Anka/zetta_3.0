@@ -1,0 +1,24 @@
+<div class="completed-projects__swiper swiper">
+    <ul class="completed-projects__items swiper-wrapper">
+        @for (var i = 0; i < data.length; i++) { <li class="completed-projects__item swiper-slide">
+            @include('../../../components/cards/_product-card.html', {
+            'img' : '`+data[i].img+`',
+            'alt' : '`+data[i].alt+`',
+            'title' : '`+data[i].title+`',
+            'price' : '`+data[i].price+`',
+            'question' : '`+data[i].question+`',
+            'answer' : '`+data[i].answer+`',
+            'detail' : '`+data[i].detail+`'
+            })
+            </li>
+            }
+    </ul>
+    <div class="swiper-pagination"></div>
+    <div class="completed-projects__buttons">
+        <div class="swiper-pagination-fractions"></div>
+        <button class="completed-projects__button completed-projects__button--prev swiper-button-prev" type="button">
+        </button>
+        <button class="completed-projects__button completed-projects__button--next swiper-button-next" type="button">
+        </button>
+    </div>
+</div>

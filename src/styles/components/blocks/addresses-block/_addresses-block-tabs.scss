@@ -51,11 +51,11 @@
 			}
 
 			@include mq(lg) {
-				display: flex;
+				@include flex-simple(8px);
+
 				overflow-x: auto;
 				border-bottom: 1px solid var(--color-grey-200);
 				padding-bottom: 15px;
-				gap: 8px;
 			}
 		}
 
@@ -73,6 +73,7 @@
 
 		&__nav-btn {
 			position: relative;
+			flex-direction: column;
 			color: var(--color-grey-500);
 			background-color: transparent;
 			transition: color 0.3s;
@@ -85,17 +86,17 @@
 				content: '';
 				position: absolute;
 				left: -11px;
-				top: 50%;
+				top: 12px;
 				border-radius: 50%;
 				width: 6px;
 				height: 6px;
 				background-color: transparent;
 				opacity: 0;
-				transform: translateY(-50%);
 				transition: background-color 0.3s;
 
 				@include mq(sm) {
 					left: -7px;
+					top: 10px;
 					width: 4px;
 					height: 4px;
 				}

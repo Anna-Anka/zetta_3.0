@@ -6,7 +6,7 @@
 'ogImage' : 'img/og-image.jpg',
 })
 
-<!-- TODO: aria: связь модалок и кнопок, связь в спойлере
+<!-- TODO: aria: связь модалок и кнопок, связь в спойлере; в модалке кнопка (непонято для чего); в хедере при hover выпадает меню; focus active для всех добавить; в форме с фоткой исправить заголовок; в реализованных проектах сделать тултип
 -->
 
 @include('./components/blocks/header/_header.html')
@@ -20,6 +20,7 @@
     </div>
 
     <main class="main">
+        @include('./pages/home-page/completed-projects/_completed-projects.html')
         @include('./pages/home-page/_design-production.html')
         @include('./pages/home-page/_video-reviews.html')
         @include('./pages/home-page/_facades-production.html')

@@ -1,0 +1,62 @@
+.completed-projects {
+	@include container;
+
+	&__title {
+		margin-bottom: 10px;
+	}
+
+	&__controls {
+		@include flex-alignment(15px, flex-start, center);
+
+		position: absolute;
+		right: 0;
+		top: 10px;
+
+		@include mq(md) {
+			display: none;
+		}
+	}
+
+	&__buttons {
+		@include flex-simple(8px);
+	}
+
+	&__button {
+		background-color: var(--color-grey-100);
+	}
+}
+
+.completed-projects {
+	.tabs {
+		position: relative;
+		overflow: visible;
+
+		&__nav {
+			margin-bottom: 30px;
+			padding-right: 200px;
+
+			@include mq(lg) {
+				overflow-x: auto;
+				margin-bottom: 22px;
+				padding-right: 0;
+				padding-bottom: 8px;
+			}
+
+			@include mq(sm) {
+				margin-bottom: 8px;
+			}
+		}
+
+		&__nav-item {
+			padding-left: 11px;
+		}
+
+		&__nav-btn {
+			@include title(16px, -0.04em, var(--color-grey-500));
+
+			&--active {
+				color: var(--color-dark-600);
+			}
+		}
+	}
+}

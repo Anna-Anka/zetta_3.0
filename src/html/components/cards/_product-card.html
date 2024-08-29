@@ -1,0 +1,47 @@
+<article class="product-card">
+    <a class="product-card__image" href="#">
+        <picture>
+            <source srcset="img/blocks/products/kitchens/@img.avif" type="image/avif">
+            <source srcset="img/blocks/products/kitchens/@img.webp" type="image/webp">
+            <img class="product-card__img" src="img/blocks/products/kitchens/@img." alt="@alt" width="605" height="410" loading="lazy">
+        </picture>
+    </a>
+    <div class="product-card__content">
+        <div class="product-card__name">
+            <a class="product-card__title" href="#">
+                <h3>@title</h3>
+            </a>
+            @if(typeof question !== 'undefined' && question) {
+            <button class="product-card__question" type="button">
+                @question
+                <svg>
+                    <use xlink:href="img/sprite.svg#question">
+                </svg>
+            </button>
+            <div class="product-card__answer">
+                @answer
+            </div>
+            }
+        </div>
+        <div class="product-card__info">
+            <span class="product-card__price">@price</span>
+            @if(typeof detail !== 'undefined' && detail) {
+            <span class="product-card__subtext">@detail</span>
+            }
+        </div>
+    </div>
+    <div class="product-card__footer">
+        <a class="product-card__link button button--border" href="#">
+            Подробнее о модели
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </a>
+        <button class="product-card__button button" type="button">
+            Заказать проект
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </button>
+    </div>
+</article>
