@@ -1,0 +1,63 @@
+.step-card {
+	@include flex-alignment(12px, center, center);
+
+	border: 1px solid var(--color-grey-200);
+	border-radius: 50%;
+	padding: 20px;
+	width: 100%;
+	height: 100%;
+
+	@include mq(lg) {
+		flex-direction: column;
+	}
+
+	&__number {
+		@include title(18px, -0.03em);
+		@include flex-alignment;
+
+		flex-basis: 60px;
+		border-radius: 50%;
+		padding: 8px;
+		background-color: var(--color-grey-100);
+		aspect-ratio: 1 / 1;
+
+		@include mq(lg) {
+			flex-basis: 50px;
+			font-size: 14px;
+		}
+	}
+
+	&__content {
+		@include flex-simple(4px, column);
+
+		@include mq(lg) {
+			justify-content: center;
+			text-align: center;
+		}
+
+		@include mq(xl, min) {
+			width: 100%;
+			max-width: 215px;
+		}
+	}
+
+	&__title {
+		@include title(18px, -0.03em);
+
+		@include mq(md) {
+			font-size: 14px;
+		}
+	}
+
+	&__text {
+		@include mq(md) {
+			font-size: 12px;
+		}
+
+		p {
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+		}
+	}
+}

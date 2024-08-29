@@ -94,7 +94,7 @@ body {
 .title {
 	margin-bottom: 32px;
 	font-size: 30px;
-	letter-spacing: 0.05rem;
+	letter-spacing: -0.05em;
 	color: var(--color-dark-600);
 
 	@include mq(sm) {

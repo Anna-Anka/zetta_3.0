@@ -1,0 +1,108 @@
+.design-production {
+	@include container;
+
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 200px;
+	gap: 30px 250px;
+
+	@include mq(lg) {
+		justify-content: space-between;
+		gap: 30px;
+	}
+
+	@include mq(md) {
+		flex-direction: column;
+	}
+
+	&__head,
+	&__consultation {
+		@include mq(md) {
+			@include flex-alignment(0, flex-start, center, column);
+
+			text-align: center;
+		}
+	}
+
+	&__head {
+		@include mq(md, min) {
+			flex-basis: 40%;
+		}
+
+		@include mq(lg, min) {
+			flex-basis: 29%;
+		}
+	}
+
+	&__title {
+		margin-bottom: 5px;
+	}
+
+	&__subtitle {
+		@include title(18px, -0.03em);
+
+		margin-bottom: 5px;
+	}
+
+	&__text {
+		&--consultation {
+			&:not(:last-child) {
+				margin-bottom: 15px;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+	}
+
+	&__consultation {
+		@include mq(md, min) {
+			position: relative;
+			flex-basis: 40%;
+			padding-left: 14px;
+		}
+
+		@include mq(lg, min) {
+			flex-basis: 27%;
+		}
+
+		@include mq(md) {
+			order: 1;
+		}
+
+		&::before {
+			@include mq(md, min) {
+				@include circle(5px);
+
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 6px;
+			}
+		}
+	}
+
+	&__items {
+		display: flex;
+
+		@include mq(md) {
+			flex-direction: column;
+			margin: 0 auto;
+			width: 100%;
+			max-width: 242px;
+		}
+
+		@include mq(md, min) {
+			flex: 1 0 100%;
+		}
+	}
+
+	&__item {
+		aspect-ratio: 1 / 1;
+
+		@include mq(md, min) {
+			flex: 1 1 33.333%;
+		}
+	}
+}

@@ -1,0 +1,51 @@
+<section class="design-production section">
+    <div class="design-production__head">
+        <h2 class="design-production__title title">
+            Разработка индивидуального дизайна
+        </h2>
+        <div class="design-production__text">
+            <p>
+                Дизайнер сделает 3D-рендера в 3-х вариантах. Чтобы вы выбрали лучшее решение.
+            </p>
+        </div>
+    </div>
+    <div class="design-production__consultation">
+        <h3 class="design-production__subtitle">
+            Бесплатная консультация
+        </h3>
+        <div class="design-production__text design-production__text--consultation">
+            <p>
+                Бесплатная консультация и замер помещения опытным дизайнером-технологом.
+            </p>
+        </div>
+        <button class="design-production__button button button--accent" type="button">
+            Получить дизайн проект
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </button>
+    </div>
+    <ul class="design-production__items">
+        <li class="design-production__item">
+            @include('../../components/cards/_step-card.html', {
+            'number' : '1',
+            'title' : 'Как видите вы:',
+            'text' : ['Дизайнер сделает рендер по вашим задумкам и желаниям']
+            })
+        </li>
+        <li class="design-production__item">
+            @include('../../components/cards/_step-card.html', {
+            'number' : '2',
+            'title' : 'Как видит дизайнер:',
+            'text' : ['Ваша кухня, но исключительно видение дизайнера']
+            })
+        </li>
+        <li class="design-production__item">
+            @include('../../components/cards/_step-card.html', {
+            'number' : '3',
+            'title' : 'Бюджетная версия',
+            'text' : ['Ваша кухня, но максимально удешевленный проект.']
+            })
+        </li>
+    </ul>
+</section>

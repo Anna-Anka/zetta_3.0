@@ -7,6 +7,7 @@ if (document.querySelector('.reviews__swiper')) {
     new Swiper('.reviews__swiper', {
         loop: true,
         speed: 800,
+        spaceBetween: 15,
 
         navigation: {
             nextEl: '.reviews__button--next',
