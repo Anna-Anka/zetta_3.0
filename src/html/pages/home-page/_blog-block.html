@@ -1,0 +1,71 @@
+<section class="blog-block section">
+    <div class="blog-block__wrapper">
+        <h2 class="blog-block__title title">
+            Блог
+        </h2>
+        <div class="blog-block__inner">
+            <div class="blog-block__item blog-block__item--picture">
+                <div class="blog-block__image">
+                    <picture>
+                        <source srcset="img/blocks/blog/1.avif" type="image/avif">
+                        <source srcset="img/blocks/blog/1.webp" type="image/webp">
+                        <img class="blog-block__img" src="img/blocks/blog/1.jpg" alt="девушка" width="250" height="190" loading="lazy">
+                    </picture>
+                </div>
+            </div>
+            <div class="blog-block__swiper swiper">
+                <ul class="blog-block__items swiper-wrapper">
+                    <li class="blog-block__item swiper-slide">
+                        @include('../../components/cards/_blog-card.html', {
+                        'title' : 'Секреты долгожительства многолетней кухни',
+                        'date' : '27.02.2022',
+                        'datetime' : '2022-02-27'
+                        })
+                    </li>
+                    <li class="blog-block__item swiper-slide">
+                        @include('../../components/cards/_blog-card.html', {
+                        'title' : 'Умная техника в помощь',
+                        'date' : '27.02.2022',
+                        'datetime' : '2022-02-27'
+                        })
+                    </li>
+                    <li class="blog-block__item swiper-slide">
+                        @include('../../components/cards/_blog-card.html', {
+                        'title' : 'Как правильно выбрать посуду для кухни?',
+                        'date' : '27.02.2022',
+                        'datetime' : '2022-02-27'
+                        })
+                    </li>
+                    <li class="blog-block__item swiper-slide">
+                        @include('../../components/cards/_blog-card.html', {
+                        'title' : 'Секреты долгожительства многолетней кухни',
+                        'date' : '27.02.2022',
+                        'datetime' : '2022-02-27'
+                        })
+                    </li>
+                    <li class="blog-block__item swiper-slide">
+                        @include('../../components/cards/_blog-card.html', {
+                        'title' : 'Умная техника в помощь',
+                        'date' : '27.02.2022',
+                        'datetime' : '2022-02-27'
+                        })
+                    </li>
+                    <li class="blog-block__item swiper-slide">
+                        @include('../../components/cards/_blog-card.html', {
+                        'title' : 'Как правильно выбрать посуду для кухни?',
+                        'date' : '27.02.2022',
+                        'datetime' : '2022-02-27'
+                        })
+                    </li>
+                </ul>
+                <div class="swiper-pagination"></div>
+                <div class="blog-block__buttons">
+                    <button class="blog-block__button blog-block__button--prev swiper-button-prev" type="button">
+                    </button>
+                    <button class="blog-block__button blog-block__button--next swiper-button-next" type="button">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
