@@ -5,11 +5,13 @@
 
 	&__nav-btn {
 		position: relative;
+		font-weight: 500;
 		color: var(--color-grey-500);
 		background-color: transparent;
 		transition: color 0.3s;
 
 		&:focus {
+			color: var(--color-dark-600);
 			background-color: transparent;
 		}
 

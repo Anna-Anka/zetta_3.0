@@ -1,0 +1,25 @@
+<div class="convenience__wrapper">
+    <div class="convenience__content">
+        <h3 class="convenience__subtitle subtitle">
+            @title
+        </h3>
+        @if(typeof text !== 'undefined' && text) {
+        <div class="convenience__text">
+            @for (var i = 0; i < text.length; i++) { <p> `+text[i]+` </p> }
+        </div>
+
+        }
+        @if(typeof advantages !== 'undefined' && advantages) {
+        <ul class="convenience__advantages">
+            @for (var i = 0; i < advantages.length; i++) { <li> `+advantages[i]+` </li> }
+        </ul>
+        }
+    </div>
+    <div class="convenience__image">
+        <picture>
+            <source srcset="img/blocks/convenience/@img.avif" type="image/avif">
+            <source srcset="img/blocks/convenience/@img.webp" type="image/webp">
+            <img class="convenience__img" src="img/blocks/convenience/@img.png" alt="@alt" width="410" height="410" loading="lazy">
+        </picture>
+    </div>
+</div>

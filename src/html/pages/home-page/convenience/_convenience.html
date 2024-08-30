@@ -1,0 +1,79 @@
+<section class="convenience section">
+    <h2 class="convenience__title title">
+        Удобство и практичность
+    </h2>
+    <div class="tabs" data-tabs="convenience-block">
+        <ul class="tabs__nav">
+            <li class="tabs__nav-item">
+                <button class="tabs__nav-btn" type="button">
+                    Фурнитура
+                </button>
+            </li>
+            <li class="tabs__nav-item">
+                <button class="tabs__nav-btn" type="button">
+                    Гарантия
+                </button>
+            </li>
+            <li class="tabs__nav-item">
+                <button class="tabs__nav-btn" type="button">
+                    Корпус
+                </button>
+            </li>
+            <li class="tabs__nav-item">
+                <button class="tabs__nav-btn" type="button">
+                    Петли
+                </button>
+            </li>
+            <li class="tabs__nav-item">
+                <button class="tabs__nav-btn" type="button">
+                    Производство
+                </button>
+            </li>
+        </ul>
+        <div class="tabs__content">
+            <div class="tabs__panel">
+                @include('./_convenience-tabs.html', {
+                'title' : 'Австрийская фурнитура Grass',
+                'text' : ['Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов.', 'Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий.', 'Срок службы фурнитуры составляет более 25 лет.'],
+                'advantages' : ['Рассчитана на 65 000 открытий/закрытий', 'На срок службы от 25 лет'],
+                'img' : '1',
+                'alt' : 'Фото 1'
+                })
+            </div>
+            <div class="tabs__panel">
+                @include('./_convenience-tabs.html', {
+                'title' : 'Гарантия',
+                'text' : ['Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов.', 'Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий.', 'Срок службы фурнитуры составляет более 25 лет.'],
+                'img' : '2',
+                'alt' : 'Фото 2'
+                })
+            </div>
+            <div class="tabs__panel">
+                @include('./_convenience-tabs.html', {
+                'title' : 'Корпус',
+                'advantages' : ['Рассчитана на 65 000 открытий/закрытий', 'На срок службы от 25 лет'],
+                'img' : '1',
+                'alt' : 'Фото 3'
+                })
+            </div>
+            <div class="tabs__panel">
+                @include('./_convenience-tabs.html', {
+                'title' : 'Петли',
+                'text' : ['Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов.', 'Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий.', 'Срок службы фурнитуры составляет более 25 лет.'],
+                'advantages' : ['Рассчитана на 65 000 открытий/закрытий', 'На срок службы от 25 лет'],
+                'img' : '1',
+                'alt' : 'Фото 4'
+                })
+            </div>
+            <div class="tabs__panel">
+                @include('./_convenience-tabs.html', {
+                'title' : 'Производство',
+                'text' : ['Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов.', 'Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий.', 'Срок службы фурнитуры составляет более 25 лет.'],
+                'advantages' : ['Рассчитана на 65 000 открытий/закрытий', 'На срок службы от 25 лет'],
+                'img' : '1',
+                'alt' : 'Фото 5'
+                })
+            </div>
+        </div>
+    </div>
+</section>

@@ -74,9 +74,6 @@
 		&__nav-btn {
 			position: relative;
 			flex-direction: column;
-			color: var(--color-grey-500);
-			background-color: transparent;
-			transition: color 0.3s;
 
 			@include mq(sm) {
 				font-size: 18px;

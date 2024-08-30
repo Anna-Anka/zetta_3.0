@@ -1,0 +1,178 @@
+.convenience {
+	@include container;
+
+	&__wrapper {
+		@include flex-alignment(40px, space-between, flex-start);
+
+		@include mq(sm) {
+			flex-direction: column;
+		}
+	}
+
+	&__content {
+		@include mq(sm, min) {
+			flex-basis: 59%;
+		}
+
+		@include mq(lg, min) {
+			flex-basis: 35%;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: 10px;
+
+		@include mq(sm) {
+			margin-bottom: 5px;
+		}
+	}
+
+	&__text {
+		&:not(:last-child) {
+			margin-bottom: 25px;
+
+			@include mq(sm) {
+				margin-bottom: 20px;
+			}
+		}
+
+		p {
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+		}
+
+		@include mq(sm) {
+			font-size: 12px;
+		}
+	}
+
+	&__advantages {
+		list-style-type: disc;
+		padding-left: 20px;
+
+		@include mq(md, min) {
+			border-top: 1px solid var(--color-grey-200);
+			padding-top: 20px;
+		}
+
+		@include mq(lg, min) {
+			padding-top: 25px;
+		}
+
+		li {
+			font-weight: 500;
+			font-size: 18px;
+			letter-spacing: -0.03em;
+			color: var(--color-dark-600);
+
+			&::marker {
+				color: var(--color-orange-400);
+			}
+
+			@include mq(sm) {
+				font-size: 14px;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 5px;
+			}
+		}
+	}
+
+	&__image {
+		border-radius: 100%;
+		aspect-ratio: 1 / 1;
+
+		@include mq(sm, min) {
+			flex-basis: 30%;
+		}
+
+		@include mq(lg, min) {
+			flex-basis: 40%;
+			margin-top: -70px;
+			border: 1px solid var(--color-grey-200);
+			padding: 24px;
+		}
+
+		@include mq(sm) {
+			flex-basis: 90%;
+			margin: 0 auto;
+		}
+	}
+
+	&__img {
+		@include img-base;
+
+		border-radius: 100%;
+	}
+}
+
+.convenience {
+	.tabs {
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 20px;
+
+		@include mq(lg) {
+			flex-direction: column;
+			gap: 30px;
+		}
+
+		&__nav {
+			margin-left: auto;
+
+			@include mq(lg) {
+				overflow-x: auto;
+				margin-left: 0;
+				padding-bottom: 12px;
+			}
+		}
+
+		&__nav-item {
+			@include mq(lg) {
+				width: 100%;
+			}
+		}
+
+		&__nav-btn {
+			padding-left: 11px;
+			font-size: 18px;
+			letter-spacing: -0.03em;
+
+			&::after {
+				@include mq(lg) {
+					content: '';
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					height: 1px;
+					background-color: var(--color-grey-200);
+					transition: background-color 0.3s;
+				}
+			}
+
+			&::before {
+				left: 0;
+				top: 9px;
+				transform: translateY(0);
+			}
+
+			&--active {
+				&::after {
+					@include mq(lg) {
+						background-color: var(--color-orange-400);
+					}
+				}
+			}
+
+			@include mq(lg) {
+				position: relative;
+				padding: 0 11px 11px;
+				width: 100%;
+				text-align: left;
+			}
+		}
+	}
+}
