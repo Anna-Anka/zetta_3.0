@@ -1,0 +1,51 @@
+.completed-projects {
+	.tabs {
+		position: relative;
+		overflow: hidden;
+		padding-top: 10px;
+
+		&__nav {
+			overflow-x: auto;
+			margin: 0 200px 30px 0;
+
+			@include mq(lg) {
+				margin: 0 0 22px;
+				padding-bottom: 8px;
+			}
+
+			@include mq(md) {
+				padding-right: 0;
+			}
+
+			@include mq(sm) {
+				margin-bottom: 8px;
+			}
+		}
+
+		&__nav-item {
+			padding-left: 11px;
+		}
+
+		&__nav-btn {
+			@include title(16px, -0.04em, var(--color-grey-500));
+
+			white-space: nowrap;
+
+			@include mq(sm) {
+				font-size: 12px;
+			}
+
+			&--active {
+				color: var(--color-dark-600);
+			}
+		}
+
+		&__content {
+			padding-right: 40px;
+
+			@include mq(lg) {
+				padding-right: 20px;
+			}
+		}
+	}
+}

@@ -1,0 +1,43 @@
+.completed-projects {
+	padding-left: 45px;
+
+	@include mq(lg) {
+		padding-left: 20px;
+	}
+
+	&__title {
+		margin-bottom: 0;
+	}
+
+	&__controls {
+		@include flex-alignment(15px, flex-start, center);
+
+		position: absolute;
+		right: 0;
+		top: 0;
+		padding-right: 45px;
+
+		@include mq(lg) {
+			display: none;
+		}
+	}
+
+	&__swiper {
+		position: static;
+		overflow: visible;
+	}
+
+	&__items {
+		@include mq(lg) {
+			margin-bottom: 30px;
+		}
+	}
+
+	&__buttons {
+		@include flex-simple(8px);
+	}
+
+	&__button {
+		background-color: var(--color-grey-100);
+	}
+}

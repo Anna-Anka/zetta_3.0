@@ -11,8 +11,8 @@
             <a class="product-card__title" href="#">
                 <h3>@title</h3>
             </a>
-            @if(typeof question !== 'undefined' && question) {
-            <button class="product-card__question" type="button">
+            @if(question !== 'null' && question !== 'null') {
+            <button class="product-card__question" type="button" data-tippy-content>
                 @question
                 <svg>
                     <use xlink:href="img/sprite.svg#question">
@@ -25,7 +25,7 @@
         </div>
         <div class="product-card__info">
             <span class="product-card__price">@price</span>
-            @if(typeof detail !== 'undefined' && detail) {
+            @if(detail !== 'null') {
             <span class="product-card__subtext">@detail</span>
             }
         </div>
@@ -37,7 +37,7 @@
                 <use xlink:href="img/sprite.svg#arrows-double">
             </svg>
         </a>
-        <button class="product-card__button button" type="button">
+        <button class="product-card__button button button--secondary" type="button">
             Заказать проект
             <svg>
                 <use xlink:href="img/sprite.svg#arrows-double">

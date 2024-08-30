@@ -17,7 +17,7 @@ if (document.querySelector('.video-reviews__swiper')) {
         },
 
         breakpoints: {
-            992: {
+            768: {
                 pagination: {
                     el: '.swiper-pagination-fraction',
                     type: 'fraction',

@@ -8,7 +8,7 @@
 
 	&__title {
 		@include mq(md, min) {
-			padding-right: 150px;
+			margin-right: 150px;
 		}
 	}
 

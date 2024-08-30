@@ -18,7 +18,7 @@ if (document.querySelector('.completed-projects__swiper')) {
             },
 
             breakpoints: {
-                992: {
+                768: {
                     slidesPerGroup: 2,
                     slidesPerView: 2,
 

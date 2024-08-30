@@ -19,14 +19,31 @@
 	}
 
 	&__content {
-		@include flex-alignment(20px, space-between, flex-start);
+		@include flex-alignment(0, space-between, flex-start);
 
 		margin-bottom: 20px;
+
+		@include mq(sm) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__name,
+	&__info {
+		flex-basis: 50%;
+	}
+
+	&__name {
+		padding-right: 20px;
 	}
 
 	&__title,
 	&__price {
 		@include title(18px, -0.03em);
+
+		@include mq(sm) {
+			font-size: 16px;
+		}
 	}
 
 	&__title {
@@ -38,6 +55,10 @@
 	&__question,
 	&__subtext {
 		color: var(--color-grey-600);
+
+		@include mq(sm) {
+			font-size: 12px;
+		}
 	}
 
 	&__question {
@@ -60,10 +81,21 @@
 	}
 
 	&__answer {
-		display: none;
+		padding: 15px;
+		box-shadow: 3px 3px 2px 0 #0000001a;
+		font-size: 12px;
+		color: var(--color-dark-600);
+		background-color: var(--color-grey-100);
 
-		&--active {
-			display: flex;
+		@include mq(sm) {
+			width: 80%;
+			font-size: 10px;
+		}
+
+		p {
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
 		}
 	}
 
@@ -71,7 +103,24 @@
 		@include flex-alignment(5px, flex-start, flex-end, column);
 	}
 
+	&__subtext {
+		text-align: right;
+	}
+
 	&__footer {
 		@include flex-simple(10px);
+
+		@include mq(sm) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__link,
+	&__button {
+		@include mq(sm) {
+			flex: 1 0 48%;
+			font-size: 10px;
+			white-space: nowrap;
+		}
 	}
 }
