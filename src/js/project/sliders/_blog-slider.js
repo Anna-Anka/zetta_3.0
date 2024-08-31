@@ -30,8 +30,8 @@ if (document.querySelector('.blog-block__swiper')) {
             },
 
             0: {
-                slidesPerGroup: 1.2,
-                slidesPerView: 1,
+                slidesPerGroup: 1,
+                slidesPerView: 1.2,
             },
         },
     });

@@ -75,16 +75,25 @@
 		}
 	}
 
-	&__image {
+	&__images {
 		position: relative;
 		padding-bottom: 20%;
 		width: 90%;
 	}
 
-	&__img {
+	&__image {
 		position: absolute;
 		inset: 0;
-		object-fit: cover;
+		opacity: 0;
+		transition: opacity 0.3s;
+
+		&--active {
+			opacity: 1;
+		}
+	}
+
+	&__img {
+		@include img-base;
 	}
 
 	&__buttons {

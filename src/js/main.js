@@ -1,7 +1,7 @@
 import { burger } from './templates/index.js'
 burger();
 
-// import './includes/libs.js';
+// import './utils/index.js';
 import './libs/index.js';
 import './project/index.js'
 // import './includes/utils.js';

@@ -5,8 +5,8 @@ export const throttle = (func, delay = 250) => {
 
     return function wrap(...args) {
         if (isThrottled) {
-            savedArgs = args;
-            savedThis = this;
+            savedArgs = args,
+                savedThis = this;
             return;
         }
 
@@ -21,6 +21,7 @@ export const throttle = (func, delay = 250) => {
                 savedThis = null;
                 savedArgs = null;
             }
+
         }, delay);
-    };
+    }
 };
