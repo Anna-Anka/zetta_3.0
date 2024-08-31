@@ -1,8 +1,8 @@
 .convenience {
 	.tabs {
-		display: flex;
-		flex-direction: column-reverse;
-		gap: 20px;
+		@include flex-alignment(20px, flex-start, center);
+
+		flex-wrap: wrap;
 
 		@include mq(lg) {
 			flex-direction: column;
@@ -10,9 +10,11 @@
 		}
 
 		&__nav {
+			order: 1;
 			margin-left: auto;
 
 			@include mq(lg) {
+				order: unset;
 				overflow-x: auto;
 				margin-left: 0;
 				padding-bottom: 12px;
@@ -63,6 +65,55 @@
 				width: 100%;
 				text-align: left;
 			}
+		}
+
+		&__content {
+			flex-basis: 100%;
+		}
+
+		&__controls {
+			@include flex-alignment(15px, flex-start, center);
+		}
+
+		&__controls-btns {
+			@include flex-simple(8px);
+		}
+
+		&__controls-btn {
+			position: relative;
+			border-radius: 1000px;
+			padding: 8px;
+			width: 56px;
+			height: 36px;
+			color: currentcolor;
+			background-color: var(--color-grey-100);
+
+			&::before {
+				@include bg-properties(contain);
+
+				content: '';
+				position: absolute;
+				right: 50%;
+				top: 50%;
+				width: 20px;
+				height: 20px;
+				background-image: url('../img/sprite.svg#arrow');
+				transform: translate(50%, -50%);
+			}
+
+			&--prev {
+				transform: rotate(180deg);
+			}
+		}
+
+		&__counter {
+			font-size: 12px;
+		}
+
+		&__counter-current {
+			font-size: 18px;
+			letter-spacing: 0;
+			color: var(--color-dark-600);
 		}
 	}
 }
