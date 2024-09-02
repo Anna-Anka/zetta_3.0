@@ -18,6 +18,7 @@
  10) в логике convenience не нравится, что использую setTimeout. Нужно попробовать отрисовывать точки внутри класса
 -->
 
+<h1 class="sr-only">Фабрика Zetta — производство кухонь!</h1>
 @include('./components/blocks/header/_header.html')
 @include('./components/blocks/_side-menu.html')
 <div class="wrapper">
@@ -29,9 +30,9 @@
     </div>
 
     <main class="main">
-        <!-- @include('./pages/home-page/hero/hero.html') -->
+        @include('./pages/home-page/_hero.html')
         <div class="content">
-            <div class="content__side-bg"></div>
+            <div class="content__side-bg" aria-hidden></div>
             <div class="content__blocks">
                 @include('./pages/home-page/completed-projects/_completed-projects.html')
                 @include('./pages/home-page/_design-production.html')
