@@ -25,7 +25,11 @@
 
 	.form {
 		&__title {
-			font-size: 18px;
+			font-size: 22px;
+
+			@include mq(lg) {
+				font-size: 18px;
+			}
 		}
 
 		@include mq(md) {

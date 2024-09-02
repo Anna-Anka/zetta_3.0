@@ -21,7 +21,10 @@
 @import '../components/blocks/questions';
 @import '../components/blocks/menu-mobile';
 @import '../components/blocks/breadcrumbs';
-@import '../components/blocks/footer';
+
+// footer
+@import '../components/blocks/footer/footer';
+@import '../components/blocks/footer/footer-nav-menu';
 
 // addresses-block
 @import '../components/blocks/addresses-block/addresses-block';
