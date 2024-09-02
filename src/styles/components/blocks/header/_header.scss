@@ -99,7 +99,7 @@
 		.header__wrapper-logo {
 			background-color: var(--color-grey-100);
 
-			@include mq(lg) {
+			@include mq(xl) {
 				background-color: var(--color-white);
 			}
 		}

@@ -10,7 +10,7 @@
 	padding: 6.5vh 20px 6.5vh 50px;
 	width: 100%;
 	max-width: 255px;
-	background-color: var(--color-grey-100);
+	// background-color: var(--color-grey-100);
 
 	&__items {
 		@include flex-simple(20px, column);
