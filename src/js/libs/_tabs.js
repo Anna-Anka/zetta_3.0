@@ -12,8 +12,15 @@ class GraphTabsWithPagination extends GraphTabs {
     init() {
         super.init();
 
-        this.currentTabElement = this.tabs.querySelector('.tabs__counter-current');
-        this.totalTabsElement = this.tabs.querySelector('.tabs__counter-total');
+        this.counterTabCurrent = this.tabs.querySelector('.tabs__counter-current');
+        this.counterTabTotal = this.tabs.querySelector('.tabs__counter-total');
+        this.wrappersPoints = this.tabs.querySelectorAll('.convenience__points');
+        this.wrappersPoints.forEach((wrapper) => {
+            setTimeout(() => {
+                const points = wrapper.querySelectorAll('.convenience__point')
+                points[0].classList.add('convenience__point--active')
+            })
+        })
 
         this.updateCounter();
 
@@ -37,6 +44,7 @@ class GraphTabsWithPagination extends GraphTabs {
         if (this.currentIndex > 0) {
             this.currentIndex--;
             this.updateCounter();
+            this.updatePoints();
             this.switchTabs(this.tabsBtns[this.currentIndex]);
             this.prevBtn.disabled = this.currentIndex === 0;
             this.nextBtn.disabled = false;
@@ -47,6 +55,7 @@ class GraphTabsWithPagination extends GraphTabs {
         if (this.currentIndex < this.totalTabs - 1) {
             this.currentIndex++;
             this.updateCounter();
+            this.updatePoints();
             this.switchTabs(this.tabsBtns[this.currentIndex]);
             this.prevBtn.disabled = false;
             this.nextBtn.disabled = this.currentIndex === this.totalTabs - 1;
@@ -55,8 +64,19 @@ class GraphTabsWithPagination extends GraphTabs {
 
     updateCounter() {
         const currentTab = this.currentIndex ? this.currentIndex + 1 : 0 + 1
-        this.currentTabElement.textContent = currentTab > 9 ? currentTab : `0${currentTab}`
-        this.totalTabsElement.textContent = this.tabsBtns.length > 9 ? `/ ${this.tabsBtns.length}` : `/ 0${this.tabsBtns.length}`
+        this.counterTabCurrent.textContent = currentTab > 9 ? currentTab : `0${currentTab}`
+        this.counterTabTotal.textContent = this.tabsBtns.length > 9 ? `/ ${this.tabsBtns.length}` : `/ 0${this.tabsBtns.length}`
+    }
+
+    updatePoints() {
+        this.wrappersPoints.forEach((container) => {
+            const points = container.querySelectorAll('.convenience__point')
+            console.log(points)
+
+            points.forEach((point, index) => {
+                index === this.currentIndex ? point.classList.add('convenience__point--active') : point.classList.remove('convenience__point--active')
+            })
+        })
     }
 
     switchTabs(newTab) {
@@ -64,6 +84,7 @@ class GraphTabsWithPagination extends GraphTabs {
 
         this.currentIndex = Array.prototype.indexOf.call(this.tabsBtns, newTab);
         this.updateCounter();
+        this.updatePoints();
 
         this.prevBtn.disabled = this.currentIndex === 0;
         this.nextBtn.disabled = this.currentIndex === this.totalTabs - 1;

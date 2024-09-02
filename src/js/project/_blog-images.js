@@ -31,7 +31,6 @@ export const changeBlogImages = () => {
 
                 const showImage = (event) => {
                     const oldSelectedCard = block.querySelector('[aria-selected]')
-                    console.log(oldSelectedCard)
                     oldSelectedCard && oldSelectedCard.removeAttribute('aria-selected')
 
                     if (card === event.target) {

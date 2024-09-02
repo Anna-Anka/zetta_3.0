@@ -71,9 +71,9 @@
 	}
 }
 
-@mixin circle($sizes: 6px) {
+@mixin circle($sizes: 6px, $bg-color: var(--color-orange-400)) {
 	border-radius: 50%;
 	width: $sizes;
 	height: $sizes;
-	background-color: var(--color-orange-400);
+	background-color: $bg-color;
 }
