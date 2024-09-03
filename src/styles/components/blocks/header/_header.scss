@@ -1,12 +1,20 @@
 .header {
-	position: fixed;
+	position: absolute;
 	right: 0;
 	top: 0;
 	z-index: 10;
 	width: 100%;
 	height: 95px;
 	font-weight: 500;
+	color: var(--color-dark-600);
 	background-color: var(--color-white);
+	transition:
+		background-color 0.3s,
+		color 0.3s;
+
+	&--fixed {
+		position: fixed;
+	}
 
 	@include mq(sm) {
 		height: 72px;
@@ -17,6 +25,7 @@
 		z-index: 5;
 		display: flex;
 		height: 100%;
+		background-color: var(--color-white);
 
 		&::before {
 			content: '';
@@ -26,6 +35,7 @@
 			width: 100%;
 			height: 0.5px;
 			background-color: var(--color-grey-200);
+			transition: background-color 0.3s;
 		}
 
 		@include mq(lg) {
@@ -37,6 +47,12 @@
 		@include flex-alignment;
 
 		height: 100%;
+		background-color: var(--color-grey-100);
+		transition: background-color 0.3s;
+
+		@include mq(xl) {
+			background-color: var(--color-white);
+		}
 
 		@include mq(lg, min) {
 			padding: 8px 12px;
@@ -50,6 +66,7 @@
 
 		width: 100%;
 		background-color: var(--color-white);
+		transition: background-color 0.3s;
 
 		@include mq(lg, min) {
 			padding: 8px 45px;
@@ -75,6 +92,9 @@
 	}
 
 	&__consultation {
+		color: var(--color-white);
+		background-color: var(--color-dark-600);
+
 		@include mq(lg) {
 			display: none;
 		}
@@ -88,56 +108,23 @@
 		}
 	}
 
-	&--light {
+	&__button {
 		color: var(--color-dark-600);
-		background-color: var(--color-white);
+		background-color: var(--color-grey-100);
+		transition:
+			background-color 0.3s,
+			color 0.3s,
+			backdrop-filter 0.3s;
 
-		.header__navigation {
-			background-color: var(--color-white);
-		}
-
-		.header__wrapper-logo {
-			background-color: var(--color-grey-100);
-
-			@include mq(xl) {
-				background-color: var(--color-white);
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--color-grey-300);
 			}
 		}
 
-		.header__button {
-			color: var(--color-dark-600);
-			background-color: var(--color-grey-100);
-
-			@media (any-hover: hover) {
-				&:hover {
-					background-color: var(--color-grey-300);
-				}
-			}
-
-			&--link {
-				svg {
-					stroke: var(--color-dark-600);
-				}
-			}
-		}
-
-		.header__consultation {
-			color: var(--color-white);
-			background-color: var(--color-dark-600);
-		}
-	}
-
-	&--dark {
-		color: var(--color-white);
-
-		.header__consultation {
-			color: var(--color-dark-600);
-			background-color: var(--color-white);
-		}
-
-		.burger-button {
-			&__plate {
-				background-color: var(--color-white);
+		&--link {
+			svg {
+				stroke: var(--color-dark-600);
 			}
 		}
 	}

@@ -1,0 +1,52 @@
+.header {
+	&--transparent {
+		color: var(--color-white);
+		background-color: transparent;
+
+		.header__consultation {
+			color: var(--color-dark-600);
+			background-color: var(--color-white);
+		}
+
+		.header__navigation {
+			background-color: transparent;
+
+			&::before {
+				background-color: var(--rgba-white-200);
+			}
+		}
+
+		.header__inner {
+			background-color: transparent;
+		}
+
+		.header__wrapper-logo {
+			background-color: transparent;
+
+			@include mq(xl) {
+				background-color: transparent;
+			}
+		}
+
+		.header__logo {
+			filter: invert(99%) sepia(1%) saturate(9%) hue-rotate(182deg)
+				brightness(106%) contrast(100%);
+		}
+
+		.header__button {
+			color: var(--color-white);
+			background-color: var(--rgba-white-200);
+			backdrop-filter: blur(20px);
+		}
+
+		.burger-button {
+			&__plate {
+				background-color: var(--color-white);
+			}
+
+			&__line {
+				color: var(--color-dark-600);
+			}
+		}
+	}
+}

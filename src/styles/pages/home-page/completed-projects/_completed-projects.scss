@@ -1,8 +1,14 @@
 .completed-projects {
+	padding-top: 120px;
 	padding-left: 45px;
 
 	@include mq(lg) {
+		padding-top: 80px;
 		padding-left: 20px;
+	}
+
+	@include mq(sm) {
+		padding-top: 60px;
 	}
 
 	&__title {
