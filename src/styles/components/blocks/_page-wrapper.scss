@@ -1,0 +1,25 @@
+.page-wrapper {
+	display: flex;
+
+	&__side {
+		flex: 0 0 255px;
+		background-color: var(--color-grey-100);
+
+		@include mq(xl) {
+			display: none;
+		}
+	}
+
+	&__blocks {
+		overflow: hidden;
+		width: 100%;
+
+		&--padding {
+			padding-top: 155px;
+
+			@include mq(sm) {
+				padding-top: 112px;
+			}
+		}
+	}
+}

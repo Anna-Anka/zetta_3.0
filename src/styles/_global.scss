@@ -24,24 +24,6 @@ body {
 	}
 }
 
-.content {
-	display: flex;
-
-	&__side-bg {
-		flex: 0 0 255px;
-		background-color: var(--color-grey-100);
-
-		@include mq(xl) {
-			display: none;
-		}
-	}
-
-	&__blocks {
-		overflow: hidden;
-		width: 100%;
-	}
-}
-
 .section {
 	padding-bottom: 180px;
 
@@ -96,6 +78,7 @@ body {
 	}
 }
 
+.heading,
 .title,
 .subtitle {
 	display: inline-block;
@@ -107,10 +90,20 @@ body {
 	margin-bottom: 32px;
 	font-size: 30px;
 	letter-spacing: -0.05em;
-	color: var(--color-dark-600);
 
 	@include mq(sm) {
 		font-size: 24px;
+	}
+}
+
+.heading {
+	margin-bottom: 20px;
+	font-size: 56px;
+	line-height: 1;
+	letter-spacing: -0.05em;
+
+	@include mq(md) {
+		font-size: 38px;
 	}
 }
 

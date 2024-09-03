@@ -1,0 +1,119 @@
+<section class="catalog" data-products-parent>
+    <h1 class="heading">
+        Каталог кухонь
+    </h1>
+
+    <form class="filters" action="#">
+        <span class="filters__title">
+            Выбрать стиль:
+        </span>
+        <div class="filters__items">
+            <label class="filters__item">
+                Современный
+                <input class="filters__hidden" type="checkbox" name="style" value="Современный" checked>
+                <span class="filters__visible"></span>
+            </label>
+            <label class="filters__item">
+                Классика
+                <input class="filters__hidden" type="checkbox" name="style" value="Классика">
+                <span class="filters__visible"></span>
+            </label>
+            <label class="filters__item">
+                Нео-классика
+                <input class="filters__hidden" type="checkbox" name="style" value="Нео-классика">
+                <span class="filters__visible"></span>
+            </label>
+            <label class="filters__item">
+                Современный
+                <input class="filters__hidden" type="checkbox" name="style" value="Современный" checked>
+                <span class="filters__visible"></span>
+            </label>
+            <label class="filters__item">
+                Классика
+                <input class="filters__hidden" type="checkbox" name="style" value="Классика">
+                <span class="filters__visible"></span>
+            </label>
+            <label class="filters__item">
+                Нео-классика
+                <input class="filters__hidden" type="checkbox" name="style" value="Нео-классика">
+                <span class="filters__visible"></span>
+            </label>
+        </div>
+    </form>
+
+
+    <ul class="catalog__items">
+        <li class="catalog__item">
+            @include('../../components/cards/_product-card.html', {
+            'img' : 'arcobalena',
+            'alt' : 'Кухня',
+            'title' : 'Аркобалена',
+            'price' : '730 000 ₽',
+            'question' : 'Tranche',
+            'answer' : '<p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>',
+            'detail' : 'за кухню длиной 3 метра'
+            })
+        </li>
+        <li class="catalog__item">
+            @include('../../components/cards/_product-card.html', {
+            'img' : 'verona',
+            'alt' : 'Кухня',
+            'title' : 'Верона',
+            'price' : '730 000 ₽',
+            'question' : 'Tranche',
+            'answer' : '<p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>',
+            'detail' : 'null'
+            })
+        </li>
+        <li class="catalog__item">
+            @include('../../components/cards/_product-card.html', {
+            'img' : 'verona',
+            'alt' : 'Кухня',
+            'title' : 'Верона',
+            'price' : '730 000 ₽',
+            'question' : 'null',
+            'answer' : 'null',
+            'detail' : 'null'
+            })
+        </li>
+        <li class="catalog__item">
+            @include('../../components/cards/_product-card.html', {
+            'img' : 'verona',
+            'alt' : 'Кухня',
+            'title' : 'Верона',
+            'price' : '730 000 ₽',
+            'question' : 'Эмаль',
+            'answer' : '<p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов.</p> <p>Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p> ',
+            'detail' : 'null'
+            })
+        </li>
+        <li class="catalog__item">
+            @include('../../components/cards/_product-card.html', {
+            'img' : 'arcobalena',
+            'alt' : 'Кухня',
+            'title' : 'Аркобалена',
+            'price' : '730 000 ₽',
+            'question' : 'Tranche',
+            'answer' : '<p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>',
+            'detail' : 'за кухню длиной 3 метра'
+            })
+        </li>
+        <li class="catalog__item">
+            @include('../../components/cards/_product-card.html', {
+            'img' : 'verona',
+            'alt' : 'Кухня',
+            'title' : 'Верона',
+            'price' : '730 000 ₽',
+            'question' : 'Tranche',
+            'answer' : '<p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>',
+            'detail' : 'null'
+            })
+        </li>
+    </ul>
+    <button class="catalog__more" type="button">
+        <span>Показать еще модели</span>
+        <svg aria-hidden>
+            <use xlink:href="img/sprite.svg#plus">
+        </svg>
+    </button>
+</section>

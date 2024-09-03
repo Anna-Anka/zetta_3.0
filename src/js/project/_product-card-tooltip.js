@@ -17,7 +17,7 @@ export const showTooltipInProductCard = () => {
             return reference.nextElementSibling;
         },
         appendTo: function () {
-            return document.querySelector('.completed-projects')
+            return document.querySelector('[data-products-parent]')
         },
         interactive: true,
         trigger: 'click',

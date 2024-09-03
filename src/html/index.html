@@ -20,6 +20,7 @@
  13) ломается бургер
  14) fixedHeader, changeColorSideMenu учитывать, что высота экрана может меняться
  15) fixedHeader, changeColorSideMenu оптимизация 
+ 16) убрать лишние классы у заголовокв, добавить aria-hidden для ымп
 -->
 
 <h1 class="sr-only">Фабрика Zetta — производство кухонь!</h1>
@@ -28,9 +29,7 @@
 'class' : 'header--transparent'
 })
 
-@include('./components/blocks/_side-menu.html', {
-'class' : 'side-menu--change side-menu--transparent'
-})
+@include('./components/blocks/_side-menu.html')
 
 <div class="wrapper">
     @include('./components/blocks/_menu-mobile.html')
@@ -42,9 +41,9 @@
 
     <main class="main">
         @include('./pages/home-page/_hero.html')
-        <div class="content">
-            <div class="content__side-bg" aria-hidden></div>
-            <div class="content__blocks">
+        <div class="page-wrapper">
+            <div class="page-wrapper__side" aria-hidden></div>
+            <div class="page-wrapper__blocks">
                 @include('./pages/home-page/completed-projects/_completed-projects.html')
                 @include('./pages/home-page/_design-production.html')
                 @include('./pages/home-page/_video-reviews.html')
@@ -56,9 +55,9 @@
             </div>
         </div>
     </main>
-    <div class="content">
-        <div class="content__side-bg"></div>
-        <div class="content__blocks">
+    <div class="page-wrapper">
+        <div class="page-wrapper__side"></div>
+        <div class="page-wrapper__blocks">
             @include('./components/blocks/_form-block.html')
             @include('./components/blocks/_addresses-block.html')
             @include('./components/blocks/_questions.html')

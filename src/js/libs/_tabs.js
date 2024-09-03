@@ -1,6 +1,12 @@
 import GraphTabs from 'graph-tabs';
-new GraphTabs('addresses-block');
-new GraphTabs('completed-projects-block');
+
+if (document.querySelector('[data-tabs="addresses-block"]')) {
+    new GraphTabs('addresses-block');
+}
+
+if (document.querySelector('[data-tabs="completed-projects-block"]')) {
+    new GraphTabs('completed-projects-block');
+}
 
 class GraphTabsWithPagination extends GraphTabs {
     constructor(selector, options) {
@@ -91,4 +97,6 @@ class GraphTabsWithPagination extends GraphTabs {
     }
 }
 
-new GraphTabsWithPagination('convenience-block');
+if (document.querySelector('[data-tabs="convenience-block"]')) {
+    new GraphTabsWithPagination('convenience-block');
+}
