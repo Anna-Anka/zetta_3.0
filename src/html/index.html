@@ -17,14 +17,21 @@
  9) дизейбл кнопок (стрелок) в табах
  10) в логике convenience не нравится, что использую setTimeout. Нужно попробовать отрисовывать точки внутри класса
  11) не нравится, что фон задаю  и хедеру и header__navigation
- 13) transition всем в хедере + ломается бургер
+ 13) ломается бургер
+ 14) fixedHeader, changeColorSideMenu учитывать, что высота экрана может меняться
+ 15) fixedHeader, changeColorSideMenu оптимизация 
 -->
 
 <h1 class="sr-only">Фабрика Zetta — производство кухонь!</h1>
+
 @include('./components/blocks/header/_header.html', {
 'class' : 'header--transparent'
 })
-@include('./components/blocks/_side-menu.html')
+
+@include('./components/blocks/_side-menu.html', {
+'class' : 'side-menu--change side-menu--transparent'
+})
+
 <div class="wrapper">
     @include('./components/blocks/_menu-mobile.html')
 

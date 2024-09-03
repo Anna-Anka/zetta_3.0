@@ -1,29 +1,27 @@
 import {throttle} from '../utils/_throttle.js'
 
 export const fixedHeader = () => {
-    const header = document.querySelector('.header')
-    const hero = document.querySelector('.hero-home')
+    const header = document.querySelector('.header');
+    const hero = document.querySelector('.hero-home');
 
     if (hero && header) {
-        let heroHeight = hero.offsetHeight;
+        const heroHeight = hero.offsetHeight;
 
-        const addedClass = () => {
+        const changeClasses = () => {
             const scrollDistance = window.scrollY;
 
             if (scrollDistance > heroHeight) {
-                header.classList.add('header--fixed')
-                header.classList.remove('header--transparent')
+                header.classList.add('header--fixed');
+                header.classList.remove('header--transparent');
             } else {
-                header.classList.remove('header--fixed')
-                header.classList.add('header--transparent')
+                header.classList.remove('header--fixed');
+                header.classList.add('header--transparent');
             }
         }
 
-        addedClass();
+        changeClasses();
 
-        const addedClassTrottle = throttle(addedClass);
-        window.addEventListener('scroll', addedClassTrottle);
-    }
-
-    
+        const changeClassesTrottle = throttle(changeClasses);
+        window.addEventListener('scroll', changeClassesTrottle);
+    };
 }
