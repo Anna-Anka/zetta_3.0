@@ -1,0 +1,50 @@
+.characteristic-card {
+	@include flex-alignment(20px, space-between, center);
+
+	flex-wrap: wrap;
+	padding: 15px;
+	background-color: var(--color-white);
+
+	&__name {
+		color: var(--color-grey-600);
+	}
+
+	&__info,
+	&__value {
+		@include mq(sm) {
+			font-size: 12px;
+			letter-spacing: -0.03em;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		gap: 15px;
+
+		@include mq(sm) {
+			gap: 10px;
+		}
+	}
+
+	&__value {
+		display: flex;
+		color: var(--color-dark-600);
+		gap: 6px;
+
+		@include mq(sm) {
+			gap: 2px;
+		}
+
+		svg {
+			width: 18px;
+			height: 18px;
+
+			@include mq(sm) {
+				width: 15px;
+				height: 15px;
+			}
+		}
+	}
+}

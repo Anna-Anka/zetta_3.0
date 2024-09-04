@@ -76,15 +76,9 @@
 		}
 	}
 
-	&__name {
-		flex-basis: 50%;
-	}
-
 	&__info {
-		display: flex;
-		flex-basis: 60%;
-		flex-direction: column;
-		align-items: flex-end;
+		@include flex-alignment(0, flex-start, flex-end, column);
+
 		text-align: right;
 	}
 

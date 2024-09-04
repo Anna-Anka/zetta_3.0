@@ -1,0 +1,30 @@
+<article class="characteristic-card">
+    <span class="characteristic-card__name">
+        @name
+    </span>
+    <div class="characteristic-card__info">
+        @for (var i = 0; i < values.length; i++) { <div class="characteristic-card__item">
+            `+values[i].isButton+`
+            `+values[i].title+`
+            @if(`values[i].isButton` === true) {
+            <button class="characteristic-card__value" type="button" data-tippy-content>
+                `+values[i].title+`
+                <svg>
+                    <use xlink:href="img/sprite.svg#question">
+                </svg>
+            </button>
+            }
+            @if(`+values[i].isButton+` === 'false') {
+            <span class="characteristic-card__value">
+                `+values[i].title+`
+            </span>
+            }
+            @if(typeof `+values[i].tooltip+` !== 'undefined' && `+values[i].tooltip+`) {
+            <div class="characteristic-card__tooltip">
+                `+values[i].tooltip+`
+            </div>
+            }
+    </div>
+    }
+    </div>
+</article>

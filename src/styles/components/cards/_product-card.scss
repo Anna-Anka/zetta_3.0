@@ -82,25 +82,6 @@
 		}
 	}
 
-	&__answer {
-		padding: 15px;
-		box-shadow: 3px 3px 2px 0 #0000001a;
-		font-size: 12px;
-		color: var(--color-dark-600);
-		background-color: var(--color-grey-100);
-
-		@include mq(sm) {
-			width: 80%;
-			font-size: 10px;
-		}
-
-		p {
-			&:not(:last-child) {
-				margin-bottom: 8px;
-			}
-		}
-	}
-
 	&__info {
 		@include flex-alignment(5px, flex-start, flex-end, column);
 	}

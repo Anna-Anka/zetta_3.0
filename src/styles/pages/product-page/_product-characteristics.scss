@@ -1,0 +1,43 @@
+.product-characteristics {
+	@include container;
+
+	&__container {
+		padding: 30px 30px 85px;
+		background-color: var(--color-grey-100);
+
+		@include mq(sm) {
+			padding: 20px 20px 60px;
+		}
+	}
+
+	&__wrapper {
+		@include flex-alignment(40px, space-between, flex-start);
+
+		@include mq(md) {
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 0;
+
+		@include mq(md, min) {
+			flex-basis: 25%;
+		}
+	}
+
+	&__items {
+		width: 100%;
+
+		@include mq(md, min) {
+			flex-basis: 46%;
+		}
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 5px;
+		}
+	}
+}
