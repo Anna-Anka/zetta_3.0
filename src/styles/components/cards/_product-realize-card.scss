@@ -1,0 +1,75 @@
+.product-realize {
+	padding: 15px 15px 40px;
+	width: 100%;
+	height: 100%;
+	background-color: var(--color-grey-100);
+
+	@include mq(sm) {
+		padding: 10px 10px 25px;
+	}
+
+	&__image {
+		position: relative;
+		display: block;
+		margin-bottom: 15px;
+		padding-bottom: 67%;
+		width: 100%;
+
+		@include mq(sm) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__img {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__content {
+		@include flex-alignment(20px, space-between, flex-start);
+	}
+
+	&__info {
+		flex-basis: 65%;
+	}
+
+	&__actions {
+		display: flex;
+		flex-basis: 35%;
+		flex-direction: column;
+		align-items: flex-end;
+	}
+
+	&__price {
+		@include title(18px, -0.03em);
+
+		display: block;
+
+		@include mq(sm) {
+			font-size: 14px;
+			line-height: 1.1;
+		}
+
+		&:not(:last-child) {
+			@include mq(sm, min) {
+				margin-bottom: 6px;
+			}
+		}
+	}
+
+	&__subprice {
+		color: var(--color-grey-600);
+
+		@include mq(sm) {
+			font-size: 10px;
+		}
+	}
+
+	&__button {
+		color: var(--color-dark-600);
+	}
+}
