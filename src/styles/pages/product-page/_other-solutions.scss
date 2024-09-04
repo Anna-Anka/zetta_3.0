@@ -1,0 +1,53 @@
+.other-solutions {
+	@include container;
+
+	&__wrapper {
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__header {
+		@include flex-alignment(40px, space-between, flex-end);
+
+		margin-bottom: 36px;
+
+		@include mq(sm) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 0;
+
+		@include mq(xl, min) {
+			flex-basis: 20%;
+		}
+	}
+
+	&__controls {
+		@include flex-alignment(15px, flex-start, center);
+
+		@include mq(md) {
+			display: none;
+		}
+	}
+
+	&__items {
+		@include mq(md) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__swiper {
+		position: static;
+		overflow: visible;
+	}
+
+	&__buttons {
+		@include flex-simple(8px);
+	}
+
+	&__button {
+		background-color: var(--color-grey-100);
+	}
+}

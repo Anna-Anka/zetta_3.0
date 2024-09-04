@@ -1,0 +1,49 @@
+@include('./settings/_head.html', {
+'title' : 'Кухня «Велла» | Фабрика Zetta',
+'description' : 'Фабрика Кухни ZETTA продает кухни по индивидуальному заказу с итальянскими фасадам. Лучшие кухни из Италии в Москве.',
+'keywords' : 'Купить кухню, купить кухню в Москве, итальянские кухни, Кухни из Италии, кухни с итальянскими фасадами, кухни на заказ',
+'robots' : 'index, follow',
+'ogImage' : 'img/og-image.jpg',
+})
+
+@include('./components/blocks/header/_header.html', {
+'class' : 'header--fixed'
+})
+
+@include('./components/blocks/_side-menu.html')
+
+<div class="wrapper">
+    @include('./components/blocks/_menu-mobile.html')
+
+    <div class="graph-modal">
+        @include('./components/blocks/modals/_consultation.html')
+        <!-- @include('./components/blocks/modals/_thank-modal.html') -->
+    </div>
+
+    <div class="main">
+        <div class="page-wrapper">
+            <div class="page-wrapper__side" aria-hidden></div>
+            <div class="page-wrapper__blocks page-wrapper__blocks--padding">
+                @include('./components/blocks/_breadcrumbs.html', {
+                'links' : ['Главная', 'Каталог', 'Велла']
+                })
+
+                <main>
+                    @include('./components/blocks/_form-block.html')
+                    @include('./components/blocks/_addresses-block.html')
+                    @include('./pages/product-page/_other-solutions.html')
+                </main>
+            </div>
+        </div>
+    </div>
+    <div class="page-wrapper">
+        <div class="page-wrapper__side"></div>
+        <div class="page-wrapper__blocks">
+            @include('./components/blocks/_questions.html')
+            @include('./components/blocks/_footer.html')
+        </div>
+    </div>
+</div>
+
+
+@include('./settings/_bottom.html')

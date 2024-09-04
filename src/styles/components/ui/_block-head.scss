@@ -1,0 +1,42 @@
+.block-head {
+	margin-bottom: 15px;
+	border-bottom: 1px solid var(--color-grey-200);
+	padding-bottom: 17px;
+
+	@include mq(sm) {
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+	}
+
+	&__name {
+		@include flex-alignment(10px, flex-start);
+
+		border-radius: 1000px;
+		padding: 4px 20px 4px 4px;
+		width: max-content;
+		font-size: 12px;
+		letter-spacing: -0.03em;
+		color: var(--color-dark-600);
+		background-color: var(--color-grey-100);
+		gap: 10px;
+
+		@include mq(sm) {
+			padding: 2px 15px 2px 2px;
+			font-size: 10px;
+			gap: 8px;
+		}
+	}
+
+	&__number {
+		@include flex-alignment;
+
+		border-radius: inherit;
+		padding: 6px 16px;
+		text-align: center;
+		background-color: var(--color-white);
+
+		@include mq(sm) {
+			padding: 6px 14px;
+		}
+	}
+}

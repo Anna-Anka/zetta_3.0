@@ -1,0 +1,31 @@
+<article class="solution-card">
+    <div class="solution-card__image">
+        <picture>
+            <source srcset="img/blocks/other-solutions/@img.avif" type="image/avif">
+            <source srcset="img/blocks/other-solutions/@img.webp" type="image/webp">
+            <img class="solution-card__img" src="img/blocks/other-solutions/@img.jpg" alt="@alt" width="1558" height="636" loading="lazy">
+        </picture>
+    </div>
+    <div class="solution-card__content">
+        <div class="solution-card__name">
+            <h3 class="solution-card__title">@title</h3>
+            @if(typeof subtitle !== 'undefined' && subtitle) {
+            <span class="solution-card__subtext">@subtitle</span>
+            }
+        </div>
+        <div class="solution-card__info">
+            <a class="solution-card__link button button--decor" href="#">
+                <span class="sr-only">Узнать подробнее</span>
+                <div class="button__decor" aria-hidden>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </div>
+            </a>
+            <span class="solution-card__title">@price</span>
+            @if(typeof detail !== 'undefined' && detail) {
+            <span class="solution-card__subtext">@detail</span>
+            }
+        </div>
+    </div>
+</article>
