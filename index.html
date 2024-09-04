@@ -1,0 +1,2397 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <!-- base meta -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная страница | Фабрика Zetta</title>
+    <meta name="description" content="Фабрика Кухни ZETTA продает кухни по индивидуальному заказу с итальянскими фасадам. Лучшие кухни из Италии в Москве.">
+    
+    <meta name="keywords" content="Купить кухню, купить кухню в Москве, итальянские кухни, Кухни из Италии, кухни с итальянскими фасадами, кухни на заказ">
+    
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Главная страница | Фабрика Zetta">
+    <meta property="og:description" content="Фабрика Кухни ZETTA продает кухни по индивидуальному заказу с итальянскими фасадам. Лучшие кухни из Италии в Москве.">
+    <meta property="og:image" content="img/og-image.jpg"> <!-- min: 600 * 315, perfect: 1200 * 630 -->
+    <meta property="og:url" content="URL вашей страницы">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="img/favicons/favicon.svg" type="image/svg+xml"> <!--180 * 180-->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- stlyes, js -->
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/main.js"></script>
+</head>
+
+<body class="body">
+
+<!-- TODO: aria: 
+ 1) связь модалок и кнопок;
+ 2) связь в спойлере;
+ 3) в модалке кнопка (непонято для чего); 
+ 4) в хедере при hover выпадает меню; 
+ 5) focus active для всех добавить; 
+ 7) не удаляется aria-selected в блоге;
+ 8) сделать так, чтобы лишние скрипты не работали на мобилках
+ 9) дизейбл кнопок (стрелок) в табах
+ 10) в логике convenience не нравится, что использую setTimeout. Нужно попробовать отрисовывать точки внутри класса
+ 11) не нравится, что фон задаю  и хедеру и header__navigation
+ 13) ломается бургер
+ 14) fixedHeader, changeColorSideMenu учитывать, что высота экрана может меняться
+ 15) fixedHeader, changeColorSideMenu оптимизация 
+ 16) убрать лишние классы у заголовокв, добавить aria-hidden для ымп
+-->
+
+<h1 class="sr-only">Фабрика Zetta — производство кухонь!</h1>
+
+<!-- 
+ light - светлый фон, темный текст;  
+ dark - темный фон, светлый текст ; 
+-->
+<div class="overlay" data-menu-overlay aria-hidden></div>
+<header class="header header--transparent">
+    <nav class="header__navigation">
+        <div class="header__wrapper-logo">
+            <a class="header__logo logo" href="#">
+                <img class="logo__img" src="img/logo.svg" alt="Логотип" width="155" height="28">
+            </a>
+        </div>
+
+        <div class="header__inner">
+            <div class="header__item header__item--buttons">
+                <button class="header__button button" type="button">
+                    Кухни и мебель
+                    <svg class="button__icon">
+                        <use xlink:href="img/sprite.svg#plus">
+                    </svg>
+                </button>
+
+                <a class="header__button header__button--link button" href="#">
+                    Акции
+                    <svg class="button__icon">
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </a>
+            </div>
+
+            <div class="header__item header__item--contacts">
+                <button class="header__consultation button button--dark" type="button" data-graph-path="consultation">
+                    <span class="button__point" aria-hidden></span>
+                    Консультация дизайнера
+                </button>
+
+                <a class="header__contact" href="tel:+74951011919">
+                    +7 (495)-101-19-19
+                </a>
+            </div>
+
+            <button class="burger-button" aria-expanded="false" aria-controls="header-burger-menu" data-burger-button>
+                <span class="burger-button__text" aria-live="polite" data-burger-button-text>Меню</span>
+                <span class="burger-button__plate" aria-hidden>
+                    <span class="burger-button__line"></span>
+                </span>
+            </button>
+        </div>
+
+        <div class="burger-menu" id="header-burger-menu" data-menu>
+    <div class="burger-menu__buttons">
+        <button class="burger-menu__button button button--dark" type="button">
+            <span class="button__point" aria-hidden></span>
+            Консультация дизайнера
+        </button>
+        <button class="burger-menu__button button button--accent" type="button">
+            Записаться в салон
+            <svg class="button__icon">
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </button>
+    </div>
+    <span class="burger-menu__title">Навигация</span>
+    <form class="burger-menu__search form" action="#">
+        <div class="form__item">
+            <label class="sr-only" for="burger-menu-search">
+                Введите, что вы хотите найти
+            </label>
+            <input class="form__field form__field--search" id="burger-menu-search" name="search" type="search" placeholder="Поиск по каталогу" required>
+            <button class="form__button-search" type="submit" aria-label="Найти">
+                <svg>
+                    <use xlink:href="img/sprite.svg#search">
+                </svg>
+            </button>
+        </div>
+    </form>
+    <div class="burger-mobile burger-menu__mobile">
+        <div class="banner-card burger-mobile__block">
+    <div class="banner-card__content">
+        <a class="banner-card__link" href="#">
+            Кухонные решения
+        </a>
+        
+        <p class="banner-card__text">
+                Современный стиль, классический стиль, нео-классика.
+            </p>
+        
+    </div>
+    <picture class="banner-card__picture">
+        <source srcset="img/banners/kitchen.avif" type="image/avif">
+        <source srcset="img/banners/kitchen.webp" type="image/webp">
+        <img class="banner-card__img" src="img/banners/kitchen.jpg" alt="Кухня" width="400" height="190" loading="lazy">
+    </picture>
+</div>
+
+        <div class="burger-mobile__block burger-block">
+            <span class="burger-block__title">
+                Корпусная мебель
+            </span>
+            <ul class="burger-block__items burger-block__items--overflow">
+                <li class="burger-block__item">
+                    <div class="nav-card">
+    <a class="nav-card__link" href="#">Шкафы</a>
+    <picture class="nav-card__picture">
+        <source srcset="img/blocks/nav/sliding-wardrobe.avif" type="image/avif">
+        <source srcset="img/blocks/nav/sliding-wardrobe.webp" type="image/webp">
+        <img class="nav-card__img" src="img/blocks/nav/sliding-wardrobe." alt="Шкаф-купе" width="137" height="137" loading="lazy">
+    </picture>
+</div>
+                </li>
+                <li class="burger-block__item">
+                    <div class="nav-card">
+    <a class="nav-card__link" href="#">Гостинные</a>
+    <picture class="nav-card__picture">
+        <source srcset="img/blocks/nav/wardrobe-living.avif" type="image/avif">
+        <source srcset="img/blocks/nav/wardrobe-living.webp" type="image/webp">
+        <img class="nav-card__img" src="img/blocks/nav/wardrobe-living." alt="Стенка для гостиной" width="137" height="137" loading="lazy">
+    </picture>
+</div>
+                </li>
+                <li class="burger-block__item">
+                    <div class="nav-card">
+    <a class="nav-card__link" href="#">Гардеробные</a>
+    <picture class="nav-card__picture">
+        <source srcset="img/blocks/nav/closet-in-room.avif" type="image/avif">
+        <source srcset="img/blocks/nav/closet-in-room.webp" type="image/webp">
+        <img class="nav-card__img" src="img/blocks/nav/closet-in-room." alt="Шкаф-гардероб" width="137" height="137" loading="lazy">
+    </picture>
+</div>
+                </li>
+                <li class="burger-block__item">
+                    <div class="nav-card">
+    <a class="nav-card__link" href="#">Прихожие</a>
+    <picture class="nav-card__picture">
+        <source srcset="img/blocks/nav/hallway.avif" type="image/avif">
+        <source srcset="img/blocks/nav/hallway.webp" type="image/webp">
+        <img class="nav-card__img" src="img/blocks/nav/hallway." alt="Светлая прихожая" width="137" height="137" loading="lazy">
+    </picture>
+</div>
+                </li>
+                <li class="burger-block__item">
+                    <div class="nav-card">
+    <a class="nav-card__link" href="#">Аксессуары для шкафов</a>
+    <picture class="nav-card__picture">
+        <source srcset="img/blocks/nav/clothes-rail.avif" type="image/avif">
+        <source srcset="img/blocks/nav/clothes-rail.webp" type="image/webp">
+        <img class="nav-card__img" src="img/blocks/nav/clothes-rail." alt="Штанга для одежды" width="137" height="137" loading="lazy">
+    </picture>
+</div>
+                </li>
+            </ul>
+        </div>
+
+        <ul class="burger-mobile__block burger-banners">
+            <li class="burger-banners__item burger-banners__item--big">
+                <div class="banner-card banner-card--img-small banner-card--appliances">
+    <div class="banner-card__content">
+        <a class="banner-card__link" href="#">
+            Бытовая техника
+        </a>
+        
+    </div>
+    <picture class="banner-card__picture">
+        <source srcset="img/banners/household-appliances.avif" type="image/avif">
+        <source srcset="img/banners/household-appliances.webp" type="image/webp">
+        <img class="banner-card__img" src="img/banners/household-appliances.jpg" alt="Духовка" width="400" height="190" loading="lazy">
+    </picture>
+</div>
+            </li>
+            <li class="burger-banners__item burger-banners__item--small">
+                <div class="burger-banners__card burger-banners__card--light">
+                    <span class="burger-banners__icon" style="background-image: url('img/icons/percent.svg');" aria-hidden></span>
+                    <span class="burger-banners__subtitle">
+                        Акции и скидки
+                    </span>
+                </div>
+            </li>
+            <li class="burger-banners__item burger-banners__item--small">
+                <div class="burger-banners__card burger-banners__card--dark">
+                    <span class="burger-banners__icon" style="background-image: url('img/icons/marker.svg');" aria-hidden></span>
+                    <span class="burger-banners__subtitle">
+                        Адреса салонов
+                    </span>
+                </div>
+            </li>
+            <li class="burger-banners__item burger-banners__item--washes burger-banners__item--big">
+                <div class="banner-card banner-card--img-small banner-card--border">
+    <div class="banner-card__content">
+        <a class="banner-card__link" href="#">
+            Мойки и акссуары
+        </a>
+        
+    </div>
+    <picture class="banner-card__picture">
+        <source srcset="img/banners/washes.avif" type="image/avif">
+        <source srcset="img/banners/washes.webp" type="image/webp">
+        <img class="banner-card__img" src="img/banners/washes.jpg" alt="Мойка" width="400" height="190" loading="lazy">
+    </picture>
+</div>
+            </li>
+            <li class="burger-banners__item burger-banners__item--big">
+                <div class="banner-card ">
+    <div class="banner-card__content">
+        <a class="banner-card__link" href="#">
+            Реализованные проекты
+        </a>
+        
+    </div>
+    <picture class="banner-card__picture">
+        <source srcset="img/banners/kitchen2.avif" type="image/avif">
+        <source srcset="img/banners/kitchen2.webp" type="image/webp">
+        <img class="banner-card__img" src="img/banners/kitchen2.jpg" alt="Кухня" width="400" height="190" loading="lazy">
+    </picture>
+</div>
+            </li>
+        </ul>
+
+        <div class="burger-mobile__block burger-block burger-block--large">
+            <ul class="burger-block__items">
+                <li class="burger-block__item">
+                    <div class="nav-card nav-card--large">
+                        <a class="nav-card__link" href="#">
+                            Cashback 25%
+                        </a>
+                        <span class="nav-card__bg" style="background-image: url('img/blocks/nav/cashback.jpg');" aria-hidden></span>
+                    </div>
+                </li>
+                <li class="burger-block__item">
+                    <div class="nav-card nav-card--large">
+                        <a class="nav-card__link" href="#">
+                            Гарантия 12 лет
+                        </a>
+                        <span class="nav-card__bg" style="background-image: url('img/blocks/nav/guarantee.jpg');" aria-hidden></span>
+                    </div>
+                </li>
+                <li class="burger-block__item">
+                    <div class="nav-card nav-card--large">
+                        <a class="nav-card__link" href="#">
+                            О компании
+                        </a>
+                        <span class="nav-card__bg" style="background-image: url('img/blocks/nav/about.jpg');" aria-hidden></span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <ul class="nav-menu">
+        <li class="nav-menu__category">
+            <span class="nav-menu__title">
+                Клиентам
+            </span>
+            <ul class="nav-menu__items">
+                <li>
+                    <a href="#" data-menu-link>Адреса салонов</a>
+                </li>
+                <li>
+                    <a href="#" data-menu-link>3D проекты</a>
+                </li>
+                <li>
+                    <a href="#" data-menu-link>Доставка</a>
+                </li>
+                <li>
+                    <a href="#" data-menu-link>Замер помещения</a>
+                </li>
+                <li>
+                    <a href="#" data-menu-link>Гарантия 12 лет</a>
+                </li>
+                <li>
+                    <a href="#" data-menu-link>Монтаж мебели</a>
+                </li>
+                <li>
+                    <a href="#" data-menu-link>Покупателям</a>
+                </li>
+            </ul>
+        </li>
+        <li class="nav-menu__category">
+            <span class="nav-menu__title">
+                О компании
+            </span>
+            <ul class="nav-menu__items">
+                <li>
+                    <a href="#" data-menu-link>Производство</a>
+                </li>
+                <li>
+                    <a href="#" data-menu-link>История компании</a>
+                </li>
+                <li>
+                    <a href="#" data-menu-link>Миссия и ценности</a>
+                </li>
+                <li>
+                    <a href="#" data-menu-link>Замер помещения</a>
+                </li>
+                <li>
+                    <a href="#" data-menu-link>Работа в Zetta</a>
+                </li>
+                <li>
+                    <a href="#" data-menu-link>Франшиза</a>
+                </li>
+                <li>
+                    <a href="#" data-menu-link>Блог</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="burger-menu__contacts">
+        <div class="navigation-connection">
+            <ul class="navigation-connection__contacts">
+                <li class="navigation-connection__contact">
+                    <a class="navigation-connection__link" href="tel:+70070000880">
+                        +7 (007)-000-08-80
+                    </a>
+                </li>
+                <li class="navigation-connection__contact">
+                    <a class="navigation-connection__link" href="mailto:info@zetta.ru">
+                        info@zetta.ru
+                    </a>
+                </li>
+            </ul>
+            <ul class="socials burger-menu__socials">
+                <li class="socials__item">
+                    <a class="socials__link" href="#" target="_blank" aria-label="ВКонтакте">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#vk">
+                        </svg>
+                    </a>
+                </li>
+                <li class="socials__item">
+                    <a class="socials__link" href="#" target="_blank" aria-label="youtube">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#youtube">
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <ul class="socials burger-menu__socials burger-menu__socials--mobile">
+                <li class="socials__item">
+                    <a class="socials__link" href="#" target="_blank" aria-label="whatsapp">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#whatsapp">
+                        </svg>
+                    </a>
+                </li>
+                <li class="socials__item">
+                    <a class="socials__link" href="#" target="_blank" aria-label="telegram">
+                        <svg>
+                            <use xlink:href="img/sprite.svg#telegram">
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <button class="burger-menu__button burger-menu__button--desktop button button--accent" type="button">
+            Записаться в салон
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </button>
+    </div>
+    <div class="burger-menu__bottom">
+        <a class="burger-menu__privacy" href="#" data-menu-link>
+            Политика конфиденциальности
+        </a>
+        <span>
+            Copyright © 1998-2023 Zetta. All rights reserved
+        </span>
+    </div>
+</div>
+        <div class="menu-categories">
+    <span class="menu-categories__title">
+        Категории
+    </span>
+    <div class="menu-categories__wrapper">
+        <ul class="nav-menu menu-categories__list">
+            <li class="nav-menu__category">
+                <span class="nav-menu__title">
+                    Кухонные решения
+                </span>
+                <ul class="nav-menu__items">
+                    <li>
+                        <a href="#">Современный стиль</a>
+                    </li>
+                    <li>
+                        <a href="#">Нео классика</a>
+                    </li>
+                    <li>
+                        <a href="#">Классический стиль</a>
+                    </li>
+                    <li>
+                        <a href="#">Все кухни</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-menu__category">
+                <span class="nav-menu__title">
+                    Корпусная мебель
+                </span>
+                <ul class="nav-menu__items">
+                    <li>
+                        <a href="#">Шкафы</a>
+                    </li>
+                    <li>
+                        <a href="#">Гостинные</a>
+                    </li>
+                    <li>
+                        <a href="#">Гардеробные</a>
+                    </li>
+                    <li>
+                        <a href="#">Прихожие</a>
+                    </li>
+                    <li>
+                        <a href="#">Аксессуары для шкафов</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-menu__category">
+                <ul class="nav-menu__items nav-menu__items--root">
+                    <li>
+                        <a href="#">Бытовая техника</a>
+                    </li>
+                    <li>
+                        <a href="#">Реализованные проекты</a>
+                    </li>
+                    <li>
+                        <a href="#">Продажа образцов</a>
+                    </li>
+                    <li>
+                        <a href="#">Мойки и аксессуары</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <form class="menu-categories__search form" action="#">
+            <div class="form__item">
+                <label class="sr-only" for="nav-menu-search">
+                    Введите, что вы хотите найти
+                </label>
+                <input class="form__field form__field--search" id="nav-menu-search" name="search" type="search" placeholder="Поиск по каталогу" required>
+                <button class="form__button-search" type="submit" aria-label="Найти">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#search">
+                    </svg>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+    </nav>
+</header>
+
+<nav class="side-menu">
+    <ul class="side-menu__items side-menu__items--arrows" data-color>
+        <li>
+            <a class="side-menu__link" href="#">
+                Каталог
+            </a>
+        </li>
+        <li>
+            <a class="side-menu__link" href="#">
+                Cashback 25%
+            </a>
+        </li>
+        <li>
+            <a class="side-menu__link" href="#">
+                Адреса салонов
+            </a>
+        </li>
+        <li>
+            <a class="side-menu__link" href="#">
+                Заказать проект
+            </a>
+        </li>
+    </ul>
+
+    <ul class="side-menu__items side-menu__items--dots" data-color>
+        <li>
+            <a class="side-menu__link" href="#">
+                Портфолио
+            </a>
+        </li>
+        <li>
+            <a class="side-menu__link" href="#">
+                История с 1998 года
+            </a>
+        </li>
+        <li>
+            <a class="side-menu__link" href="#">
+                Гарантия 12 лет
+            </a>
+        </li>
+        <li>
+            <a class="side-menu__link" href="#">
+                Производство
+            </a>
+        </li>
+        <li>
+            <a class="side-menu__link" href="#">
+                Отзывы
+            </a>
+        </li>
+        <li>
+            <a class="side-menu__link" href="#">
+                СМИ о нас
+            </a>
+        </li>
+    </ul>
+
+    <div class="navigation-connection">
+        <ul class="socials" data-color>
+            <li class="socials__item">
+                <a class="socials__link" href="#" target="_blank" aria-label="whatsapp">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#whatsapp">
+                    </svg>
+                </a>
+            </li>
+            <li class="socials__item">
+                <a class="socials__link" href="#" target="_blank" aria-label="telegram">
+                    <svg>
+                        <use xlink:href="img/sprite.svg#telegram">
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <ul class="navigation-connection__contacts" data-color>
+            <li class="navigation-connection__contact">
+                <a class="navigation-connection__link" href="tel:+70070000880">
+                    +7 (007)-000-08-80
+                </a>
+            </li>
+            <li class="navigation-connection__contact">
+                <a class="navigation-connection__link" href="mailto:info@zetta.ru">
+                    info@zetta.ru
+                </a>
+            </li>
+        </ul>
+        <p class="navigation-connection__text" data-color>
+            Ежедневно с 11:00 до 21:00
+        </p>
+    </div>
+</nav>
+
+<div class="wrapper">
+    <nav class="menu-mobile">
+    <ul class="menu-mobile__items">
+        <li class="menu-mobile__item">
+            <a class="menu-mobile__link" href="#">
+                <span class="menu-mobile__icon" aria-hidden>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#burger">
+                    </svg>
+                </span>
+                Каталог
+            </a>
+        </li>
+        <li class="menu-mobile__item">
+            <a class="menu-mobile__link" href="#">
+                <span class="menu-mobile__icon" aria-hidden>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#percent">
+                    </svg>
+                </span>
+                Акции
+            </a>
+        </li>
+        <li class="menu-mobile__item">
+            <a class="menu-mobile__link" href="#">
+                <span class="menu-mobile__icon" aria-hidden>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#pin">
+                    </svg>
+                </span>
+                Адреса
+            </a>
+        </li>
+        <li class="menu-mobile__item">
+            <a class="menu-mobile__link menu-mobile__link--dark" href="#">
+                <span class="menu-mobile__icon" aria-hidden>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </span>
+                Хочу проект
+            </a>
+        </li>
+    </ul>
+</nav>
+
+    <div class="graph-modal">
+        <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="consultation">
+    <div class="graph-modal__box">
+        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+        <form class="graph-modal__form form" action="#">
+            <div class="form__header">
+                <span class="form__title">
+                    Консультация дизайнера
+                </span>
+                <div class="form__text">
+                    <p>
+                        Оставьте заявку, наши менеджеры свяжутся с вами в течение ближайшего времени
+                    </p>
+                </div>
+            </div>
+            <div class="form__items">
+                <div class="form__item">
+                    <label class="sr-only" for="consultation-name">Введите ваше имя</label>
+                    <input class="form__field" id="consultation-name" name="name" type="text" placeholder="Имя" required>
+                </div>
+                <div class="form__item">
+                    <label class="sr-only" for="consultation-phone">Введите номер телефона</label>
+                    <input class="form__field" id="consultation-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+                </div>
+            </div>
+            <div class="form__bottom">
+                <button class="form__button button button--dark" type="submit">
+                    Отправить заявку
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </button>
+                <p>
+                    Нажимая на кнопку, вы принимаете условия 
+                    <a href="#">
+                        публичной оферты
+                    </a> .
+                </p>
+            </div>
+        </form>
+    </div>
+</div>
+        
+    </div>
+
+    <main class="main">
+        <section class="hero-home">
+    <div class="hero-home__side-bg" aria-hidden></div>
+    <div class="hero-home__swiper swiper">
+        <ul class="hero-home__items swiper-wrapper">
+            <li class="hero-home__item swiper-slide" style="background-image: url('img/blocks/hero-home/1.jpg');">
+                <div class="hero-home__container">
+                    <span class="hero-home__title title">
+                        Комплектующие из Италии. Сборка кухонь в России. Так мы снижаем цены в два раза.
+                    </span>
+                    <button class="hero-home__button button button--accent" type="button">
+                        В каталог
+                        <svg aria-hidden>
+                            <use xlink:href="img/sprite.svg#arrows-double">
+                        </svg>
+                    </button>
+                </div>
+            </li>
+            <li class="hero-home__item swiper-slide" style="background-image: url('img/blocks/hero-home/2.jpg');">
+                <div class="hero-home__container">
+                    <span class="hero-home__title title">
+                        Комплектующие из Италии
+                    </span>
+                    <button class="hero-home__button button button--accent" type="button">
+                        Купить
+                        <svg aria-hidden>
+                            <use xlink:href="img/sprite.svg#arrows-double">
+                        </svg>
+                    </button>
+                </div>
+            </li>
+            <li class="hero-home__item swiper-slide" style="background-image: url('img/blocks/hero-home/3.jpg');">
+                <div class="hero-home__container">
+                    <span class="hero-home__title title">
+                        Сборка кухонь в России
+                    </span>
+                    <button class="hero-home__button button button--accent" type="button">
+                        Выбрать
+                        <svg aria-hidden>
+                            <use xlink:href="img/sprite.svg#arrows-double">
+                        </svg>
+                    </button>
+                </div>
+            </li>
+        </ul>
+        <div class="hero-home__controls">
+            <div class="swiper-pagination-fraction"></div>
+            <div class="hero-home__buttons">
+                <button class="hero-home__button hero-home__button--prev swiper-button-prev" type="button">
+                </button>
+                <button class="hero-home__button hero-home__button--next swiper-button-next" type="button">
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+        <div class="page-wrapper">
+            <div class="page-wrapper__side" aria-hidden></div>
+            <div class="page-wrapper__blocks">
+                <section class="completed-projects section" data-products-parent>
+    <h2 class="completed-projects__title title">
+        Реализованные проекты
+    </h2>
+    <div class="tabs" data-tabs="completed-projects-block">
+        <ul class="tabs__nav">
+            <li class="tabs__nav-item">
+                <button class="tabs__nav-btn" type="button">
+                    Все кухни
+                </button>
+            </li>
+            <li class="tabs__nav-item">
+                <button class="tabs__nav-btn" type="button">
+                    Современный стиль
+                </button>
+            </li>
+            <li class="tabs__nav-item">
+                <button class="tabs__nav-btn" type="button">
+                    Нео классика
+                </button>
+            </li>
+            <li class="tabs__nav-item">
+                <button class="tabs__nav-btn" type="button">
+                    Классический стиль
+                </button>
+            </li>
+        </ul>
+        <div class="tabs__content">
+            <div class="tabs__panel">
+                <div class="completed-projects__swiper swiper">
+    <ul class="completed-projects__items swiper-wrapper">
+         <li class="completed-projects__item swiper-slide">
+            <article class="product-card">
+    <a class="product-card__image" href="#">
+        <picture>
+            <source srcset="img/blocks/products/kitchens/arcobalena.avif" type="image/avif">
+            <source srcset="img/blocks/products/kitchens/arcobalena.webp" type="image/webp">
+            <img class="product-card__img" src="img/blocks/products/kitchens/arcobalena." alt="Кухня" width="605" height="410" loading="lazy">
+        </picture>
+    </a>
+    <div class="product-card__content">
+        <div class="product-card__name">
+            <a class="product-card__title" href="#">
+                <h3>Аркобалена</h3>
+            </a>
+            
+            <button class="product-card__question" type="button" data-tippy-content>
+                Tranche
+                <svg>
+                    <use xlink:href="img/sprite.svg#question">
+                </svg>
+            </button>
+            <div class="product-card__answer">
+                <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
+            </div>
+            
+        </div>
+        <div class="product-card__info">
+            <span class="product-card__price">730 000 ₽</span>
+            
+            <span class="product-card__subtext">за кухню длиной 3 метра</span>
+            
+        </div>
+    </div>
+    <div class="product-card__footer">
+        <a class="product-card__link button button--border" href="#">
+            Подробнее о модели
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </a>
+        <button class="product-card__button button button--secondary" type="button">
+            Заказать проект
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </button>
+    </div>
+</article>
+            </li>
+             <li class="completed-projects__item swiper-slide">
+            <article class="product-card">
+    <a class="product-card__image" href="#">
+        <picture>
+            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
+            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
+            <img class="product-card__img" src="img/blocks/products/kitchens/verona." alt="Кухня" width="605" height="410" loading="lazy">
+        </picture>
+    </a>
+    <div class="product-card__content">
+        <div class="product-card__name">
+            <a class="product-card__title" href="#">
+                <h3>Верона</h3>
+            </a>
+            
+            <button class="product-card__question" type="button" data-tippy-content>
+                Tranche
+                <svg>
+                    <use xlink:href="img/sprite.svg#question">
+                </svg>
+            </button>
+            <div class="product-card__answer">
+                <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
+            </div>
+            
+        </div>
+        <div class="product-card__info">
+            <span class="product-card__price">730 000 ₽</span>
+            
+        </div>
+    </div>
+    <div class="product-card__footer">
+        <a class="product-card__link button button--border" href="#">
+            Подробнее о модели
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </a>
+        <button class="product-card__button button button--secondary" type="button">
+            Заказать проект
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </button>
+    </div>
+</article>
+            </li>
+             <li class="completed-projects__item swiper-slide">
+            <article class="product-card">
+    <a class="product-card__image" href="#">
+        <picture>
+            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
+            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
+            <img class="product-card__img" src="img/blocks/products/kitchens/verona." alt="Кухня" width="605" height="410" loading="lazy">
+        </picture>
+    </a>
+    <div class="product-card__content">
+        <div class="product-card__name">
+            <a class="product-card__title" href="#">
+                <h3>Верона</h3>
+            </a>
+            
+        </div>
+        <div class="product-card__info">
+            <span class="product-card__price">730 000 ₽</span>
+            
+        </div>
+    </div>
+    <div class="product-card__footer">
+        <a class="product-card__link button button--border" href="#">
+            Подробнее о модели
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </a>
+        <button class="product-card__button button button--secondary" type="button">
+            Заказать проект
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </button>
+    </div>
+</article>
+            </li>
+             <li class="completed-projects__item swiper-slide">
+            <article class="product-card">
+    <a class="product-card__image" href="#">
+        <picture>
+            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
+            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
+            <img class="product-card__img" src="img/blocks/products/kitchens/verona." alt="Кухня" width="605" height="410" loading="lazy">
+        </picture>
+    </a>
+    <div class="product-card__content">
+        <div class="product-card__name">
+            <a class="product-card__title" href="#">
+                <h3>Верона</h3>
+            </a>
+            
+            <button class="product-card__question" type="button" data-tippy-content>
+                Эмаль
+                <svg>
+                    <use xlink:href="img/sprite.svg#question">
+                </svg>
+            </button>
+            <div class="product-card__answer">
+                <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов.</p> <p>Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p> 
+            </div>
+            
+        </div>
+        <div class="product-card__info">
+            <span class="product-card__price">730 000 ₽</span>
+            
+        </div>
+    </div>
+    <div class="product-card__footer">
+        <a class="product-card__link button button--border" href="#">
+            Подробнее о модели
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </a>
+        <button class="product-card__button button button--secondary" type="button">
+            Заказать проект
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </button>
+    </div>
+</article>
+            </li>
+            
+    </ul>
+    <div class="swiper-pagination"></div>
+    <div class="completed-projects__controls">
+        <div class="swiper-pagination-fraction"></div>
+        <div class="completed-projects__buttons">
+            <button class="completed-projects__button completed-projects__button--prev swiper-button-prev" type="button">
+            </button>
+            <button class="completed-projects__button completed-projects__button--next swiper-button-next" type="button">
+            </button>
+        </div>
+    </div>
+</div>
+            </div>
+            <div class="tabs__panel">
+                <div class="completed-projects__swiper swiper">
+    <ul class="completed-projects__items swiper-wrapper">
+         <li class="completed-projects__item swiper-slide">
+            <article class="product-card">
+    <a class="product-card__image" href="#">
+        <picture>
+            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
+            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
+            <img class="product-card__img" src="img/blocks/products/kitchens/verona." alt="Кухня" width="605" height="410" loading="lazy">
+        </picture>
+    </a>
+    <div class="product-card__content">
+        <div class="product-card__name">
+            <a class="product-card__title" href="#">
+                <h3>Верона</h3>
+            </a>
+            
+            <button class="product-card__question" type="button" data-tippy-content>
+                Tranche
+                <svg>
+                    <use xlink:href="img/sprite.svg#question">
+                </svg>
+            </button>
+            <div class="product-card__answer">
+                <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
+            </div>
+            
+        </div>
+        <div class="product-card__info">
+            <span class="product-card__price">23 730 000 ₽</span>
+            
+        </div>
+    </div>
+    <div class="product-card__footer">
+        <a class="product-card__link button button--border" href="#">
+            Подробнее о модели
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </a>
+        <button class="product-card__button button button--secondary" type="button">
+            Заказать проект
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </button>
+    </div>
+</article>
+            </li>
+             <li class="completed-projects__item swiper-slide">
+            <article class="product-card">
+    <a class="product-card__image" href="#">
+        <picture>
+            <source srcset="img/blocks/products/kitchens/arcobalena.avif" type="image/avif">
+            <source srcset="img/blocks/products/kitchens/arcobalena.webp" type="image/webp">
+            <img class="product-card__img" src="img/blocks/products/kitchens/arcobalena." alt="Кухня" width="605" height="410" loading="lazy">
+        </picture>
+    </a>
+    <div class="product-card__content">
+        <div class="product-card__name">
+            <a class="product-card__title" href="#">
+                <h3>Аркобалена</h3>
+            </a>
+            
+            <button class="product-card__question" type="button" data-tippy-content>
+                Tranche
+                <svg>
+                    <use xlink:href="img/sprite.svg#question">
+                </svg>
+            </button>
+            <div class="product-card__answer">
+                <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
+            </div>
+            
+        </div>
+        <div class="product-card__info">
+            <span class="product-card__price">730 000 ₽</span>
+            
+            <span class="product-card__subtext">за великолепнейшую кухню длиной целых 3 метра и несколько сантиметров</span>
+            
+        </div>
+    </div>
+    <div class="product-card__footer">
+        <a class="product-card__link button button--border" href="#">
+            Подробнее о модели
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </a>
+        <button class="product-card__button button button--secondary" type="button">
+            Заказать проект
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </button>
+    </div>
+</article>
+            </li>
+            
+    </ul>
+    <div class="swiper-pagination"></div>
+    <div class="completed-projects__controls">
+        <div class="swiper-pagination-fraction"></div>
+        <div class="completed-projects__buttons">
+            <button class="completed-projects__button completed-projects__button--prev swiper-button-prev" type="button">
+            </button>
+            <button class="completed-projects__button completed-projects__button--next swiper-button-next" type="button">
+            </button>
+        </div>
+    </div>
+</div>
+            </div>
+            <div class="tabs__panel">
+                <div class="completed-projects__swiper swiper">
+    <ul class="completed-projects__items swiper-wrapper">
+         <li class="completed-projects__item swiper-slide">
+            <article class="product-card">
+    <a class="product-card__image" href="#">
+        <picture>
+            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
+            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
+            <img class="product-card__img" src="img/blocks/products/kitchens/verona." alt="Кухня" width="605" height="410" loading="lazy">
+        </picture>
+    </a>
+    <div class="product-card__content">
+        <div class="product-card__name">
+            <a class="product-card__title" href="#">
+                <h3>Верона</h3>
+            </a>
+            
+            <button class="product-card__question" type="button" data-tippy-content>
+                Tranche
+                <svg>
+                    <use xlink:href="img/sprite.svg#question">
+                </svg>
+            </button>
+            <div class="product-card__answer">
+                <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
+            </div>
+            
+        </div>
+        <div class="product-card__info">
+            <span class="product-card__price">730 000 ₽</span>
+            
+            <span class="product-card__subtext">за 3 метра</span>
+            
+        </div>
+    </div>
+    <div class="product-card__footer">
+        <a class="product-card__link button button--border" href="#">
+            Подробнее о модели
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </a>
+        <button class="product-card__button button button--secondary" type="button">
+            Заказать проект
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </button>
+    </div>
+</article>
+            </li>
+            
+    </ul>
+    <div class="swiper-pagination"></div>
+    <div class="completed-projects__controls">
+        <div class="swiper-pagination-fraction"></div>
+        <div class="completed-projects__buttons">
+            <button class="completed-projects__button completed-projects__button--prev swiper-button-prev" type="button">
+            </button>
+            <button class="completed-projects__button completed-projects__button--next swiper-button-next" type="button">
+            </button>
+        </div>
+    </div>
+</div>
+            </div>
+            <div class="tabs__panel">
+                <div class="completed-projects__swiper swiper">
+    <ul class="completed-projects__items swiper-wrapper">
+         <li class="completed-projects__item swiper-slide">
+            <article class="product-card">
+    <a class="product-card__image" href="#">
+        <picture>
+            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
+            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
+            <img class="product-card__img" src="img/blocks/products/kitchens/verona." alt="Кухня" width="605" height="410" loading="lazy">
+        </picture>
+    </a>
+    <div class="product-card__content">
+        <div class="product-card__name">
+            <a class="product-card__title" href="#">
+                <h3>Верона</h3>
+            </a>
+            
+            <button class="product-card__question" type="button" data-tippy-content>
+                Tranche
+                <svg>
+                    <use xlink:href="img/sprite.svg#question">
+                </svg>
+            </button>
+            <div class="product-card__answer">
+                <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
+            </div>
+            
+        </div>
+        <div class="product-card__info">
+            <span class="product-card__price">730 000 ₽</span>
+            
+            <span class="product-card__subtext">за 3 метра</span>
+            
+        </div>
+    </div>
+    <div class="product-card__footer">
+        <a class="product-card__link button button--border" href="#">
+            Подробнее о модели
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </a>
+        <button class="product-card__button button button--secondary" type="button">
+            Заказать проект
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </button>
+    </div>
+</article>
+            </li>
+            
+    </ul>
+    <div class="swiper-pagination"></div>
+    <div class="completed-projects__controls">
+        <div class="swiper-pagination-fraction"></div>
+        <div class="completed-projects__buttons">
+            <button class="completed-projects__button completed-projects__button--prev swiper-button-prev" type="button">
+            </button>
+            <button class="completed-projects__button completed-projects__button--next swiper-button-next" type="button">
+            </button>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+                <section class="design-production section">
+    <div class="design-production__head">
+        <h2 class="design-production__title title">
+            Разработка индивидуального дизайна
+        </h2>
+        <div class="design-production__text">
+            <p>
+                Дизайнер сделает 3D-рендера в 3-х вариантах. Чтобы вы выбрали лучшее решение.
+            </p>
+        </div>
+    </div>
+    <div class="design-production__consultation">
+        <h3 class="design-production__subtitle">
+            Бесплатная консультация
+        </h3>
+        <div class="design-production__text design-production__text--consultation">
+            <p>
+                Бесплатная консультация и замер помещения опытным дизайнером-технологом.
+            </p>
+        </div>
+        <button class="design-production__button button button--accent" type="button">
+            Получить дизайн проект
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </button>
+    </div>
+    <ul class="design-production__items">
+        <li class="design-production__item">
+            <article class="step-card">
+    <span class="step-card__number">1</span>
+    <div class="step-card__content">
+        <h3 class="step-card__title">Как видите вы:</h3>
+        <div class="step-card__text">
+             <p> Дизайнер сделает рендер по вашим задумкам и желаниям </p> 
+        </div>
+    </div>
+</article>
+        </li>
+        <li class="design-production__item">
+            <article class="step-card">
+    <span class="step-card__number">2</span>
+    <div class="step-card__content">
+        <h3 class="step-card__title">Как видит дизайнер:</h3>
+        <div class="step-card__text">
+             <p> Ваша кухня, но исключительно видение дизайнера </p> 
+        </div>
+    </div>
+</article>
+        </li>
+        <li class="design-production__item">
+            <article class="step-card">
+    <span class="step-card__number">3</span>
+    <div class="step-card__content">
+        <h3 class="step-card__title">Бюджетная версия</h3>
+        <div class="step-card__text">
+             <p> Ваша кухня, но максимально удешевленный проект. </p> 
+        </div>
+    </div>
+</article>
+        </li>
+    </ul>
+</section>
+                <section class="video-reviews section">
+    <div class="container">
+        <div class="video-reviews__wrapper">
+            <h2 class="video-reviews__title title">
+                Видео-обзоры
+            </h2>
+            <div class="video-reviews__swiper swiper">
+                <ul class="video-reviews__items swiper-wrapper">
+                    <li class="video-reviews__item swiper-slide">
+                        <div class="video-reviews__card">
+                            <div class="video-reviews__video"></div>
+                            <div class="video-reviews__content">
+                                <h3 class="video-reviews__subtitle">
+                                    Как выбрать фурнитуру и корпус?
+                                </h3>
+                                <div class="video-reviews__text">
+                                    <p>
+                                        Рассказываем о главных критериях на примере кухни “Вектор”.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="video-reviews__item swiper-slide">
+                        <div class="video-reviews__card">
+                            <div class="video-reviews__video"></div>
+                            <div class="video-reviews__content">
+                                <h3 class="video-reviews__subtitle">
+                                    Как выбрать фурнитуру и корпус?
+                                </h3>
+                                <div class="video-reviews__text">
+                                    <p>
+                                        Рассказываем о главных критериях на примере кухни “Вектор”.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="video-reviews__item swiper-slide">
+                        <div class="video-reviews__card">
+                            <div class="video-reviews__video"></div>
+                            <div class="video-reviews__content">
+                                <h3 class="video-reviews__subtitle">
+                                    Как выбрать фурнитуру и корпус?
+                                </h3>
+                                <div class="video-reviews__text">
+                                    <p>
+                                        Рассказываем о главных критериях на примере кухни “Вектор”.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="swiper-pagination"></div>
+                <div class="video-reviews__controls">
+                    <div class="swiper-pagination-fraction"></div>
+                    <div class="video-reviews__buttons">
+                        <button class="video-reviews__button video-reviews__button--prev swiper-button-prev" type="button">
+                        </button>
+                        <button class="video-reviews__button video-reviews__button--next swiper-button-next" type="button">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                <section class="convenience section">
+    <h2 class="convenience__title title">
+        Удобство и практичность
+    </h2>
+    <div class="tabs" data-tabs="convenience-block">
+        <ul class="tabs__nav">
+            <li class="tabs__nav-item">
+                <button class="tabs__nav-btn" type="button">
+                    Фурнитура
+                </button>
+            </li>
+            <li class="tabs__nav-item">
+                <button class="tabs__nav-btn" type="button">
+                    Гарантия
+                </button>
+            </li>
+            <li class="tabs__nav-item">
+                <button class="tabs__nav-btn" type="button">
+                    Корпус
+                </button>
+            </li>
+            <li class="tabs__nav-item">
+                <button class="tabs__nav-btn" type="button">
+                    Петли
+                </button>
+            </li>
+            <li class="tabs__nav-item">
+                <button class="tabs__nav-btn" type="button">
+                    Производство
+                </button>
+            </li>
+        </ul>
+        <div class="tabs__content">
+            <div class="tabs__panel">
+                <div class="convenience__wrapper">
+    <div class="convenience__content">
+        <h3 class="convenience__subtitle subtitle">
+            Австрийская фурнитура Grass
+        </h3>
+        
+        <div class="convenience__text">
+             <p> Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. </p>  <p> Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий. </p>  <p> Срок службы фурнитуры составляет более 25 лет. </p> 
+        </div>
+
+        
+        
+        <ul class="convenience__advantages">
+             <li> Рассчитана на 65 000 открытий/закрытий </li>  <li> На срок службы от 25 лет </li> 
+        </ul>
+        
+    </div>
+    <div class="convenience__image">
+        <div class="convenience__points" aria-hidden>
+
+        </div>
+        <picture>
+            <source srcset="img/blocks/convenience/1.avif" type="image/avif">
+            <source srcset="img/blocks/convenience/1.webp" type="image/webp">
+            <img class="convenience__img" src="img/blocks/convenience/1.png" alt="Фото 1" width="410" height="410" loading="lazy">
+        </picture>
+    </div>
+</div>
+            </div>
+            <div class="tabs__panel">
+                <div class="convenience__wrapper">
+    <div class="convenience__content">
+        <h3 class="convenience__subtitle subtitle">
+            Гарантия
+        </h3>
+        
+        <div class="convenience__text">
+             <p> Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. </p>  <p> Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий. </p>  <p> Срок службы фурнитуры составляет более 25 лет. </p> 
+        </div>
+
+        
+        
+    </div>
+    <div class="convenience__image">
+        <div class="convenience__points" aria-hidden>
+
+        </div>
+        <picture>
+            <source srcset="img/blocks/convenience/2.avif" type="image/avif">
+            <source srcset="img/blocks/convenience/2.webp" type="image/webp">
+            <img class="convenience__img" src="img/blocks/convenience/2.png" alt="Фото 2" width="410" height="410" loading="lazy">
+        </picture>
+    </div>
+</div>
+            </div>
+            <div class="tabs__panel">
+                <div class="convenience__wrapper">
+    <div class="convenience__content">
+        <h3 class="convenience__subtitle subtitle">
+            Корпус
+        </h3>
+        
+        
+        <ul class="convenience__advantages">
+             <li> Рассчитана на 65 000 открытий/закрытий </li>  <li> На срок службы от 25 лет </li> 
+        </ul>
+        
+    </div>
+    <div class="convenience__image">
+        <div class="convenience__points" aria-hidden>
+
+        </div>
+        <picture>
+            <source srcset="img/blocks/convenience/1.avif" type="image/avif">
+            <source srcset="img/blocks/convenience/1.webp" type="image/webp">
+            <img class="convenience__img" src="img/blocks/convenience/1.png" alt="Фото 3" width="410" height="410" loading="lazy">
+        </picture>
+    </div>
+</div>
+            </div>
+            <div class="tabs__panel">
+                <div class="convenience__wrapper">
+    <div class="convenience__content">
+        <h3 class="convenience__subtitle subtitle">
+            Петли
+        </h3>
+        
+        <div class="convenience__text">
+             <p> Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. </p>  <p> Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий. </p>  <p> Срок службы фурнитуры составляет более 25 лет. </p> 
+        </div>
+
+        
+        
+        <ul class="convenience__advantages">
+             <li> Рассчитана на 65 000 открытий/закрытий </li>  <li> На срок службы от 25 лет </li> 
+        </ul>
+        
+    </div>
+    <div class="convenience__image">
+        <div class="convenience__points" aria-hidden>
+
+        </div>
+        <picture>
+            <source srcset="img/blocks/convenience/1.avif" type="image/avif">
+            <source srcset="img/blocks/convenience/1.webp" type="image/webp">
+            <img class="convenience__img" src="img/blocks/convenience/1.png" alt="Фото 4" width="410" height="410" loading="lazy">
+        </picture>
+    </div>
+</div>
+            </div>
+            <div class="tabs__panel">
+                <div class="convenience__wrapper">
+    <div class="convenience__content">
+        <h3 class="convenience__subtitle subtitle">
+            Производство
+        </h3>
+        
+        <div class="convenience__text">
+             <p> Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. </p>  <p> Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий. </p>  <p> Срок службы фурнитуры составляет более 25 лет. </p> 
+        </div>
+
+        
+        
+        <ul class="convenience__advantages">
+             <li> Рассчитана на 65 000 открытий/закрытий </li>  <li> На срок службы от 25 лет </li> 
+        </ul>
+        
+    </div>
+    <div class="convenience__image">
+        <div class="convenience__points" aria-hidden>
+
+        </div>
+        <picture>
+            <source srcset="img/blocks/convenience/1.avif" type="image/avif">
+            <source srcset="img/blocks/convenience/1.webp" type="image/webp">
+            <img class="convenience__img" src="img/blocks/convenience/1.png" alt="Фото 5" width="410" height="410" loading="lazy">
+        </picture>
+    </div>
+</div>
+            </div>
+        </div>
+        <div class="tabs__controls">
+            <div class="tabs__controls-btns">
+                <button class="tabs__controls-btn tabs__controls-btn--prev" aria-label="Назад" type="button">
+                </button>
+                <button class="tabs__controls-btn tabs__controls-btn--next" aria-label="Вперед" type="button">
+                </button>
+            </div>
+            <div class="tabs__counter">
+                <span class="tabs__counter-current"></span>
+                <span class="tabs__counter-total">/</span>
+            </div>
+        </div>
+    </div>
+</section>
+                <section class="facades-production section">
+    <div class="facades-production__content">
+        <h2 class="facades-production__title title">
+            Производство фасадов
+        </h2>
+        <div class="facades-production__subtitle">
+            <p>
+                Фасады производятся на автоматизированных станках. Никакого брака по вине сотрудников
+            </p>
+        </div>
+        <div class="facades-production__text">
+            <p>
+                Наш основной поставщик Итальянская фабрика ILCAM s.p.a. - лидер по производству мебельных фасадов
+            </p>
+        </div>
+        <a class="facades-production__link button button--decor" href="#" target="_blank">
+            на сайт ILCAM
+            <span class="button__decor" aria-hidden>
+                <svg>
+                    <use xlink:href="img/sprite.svg#arrows-double">
+                </svg>
+            </span>
+        </a>
+    </div>
+    <div class="facades-production__images">
+        <div class="facades-production__image facades-production__image--big">
+            <picture>
+                <source srcset="img/blocks/facades-production/big.avif" type="image/avif">
+                <source srcset="img/blocks/facades-production/big.webp" type="image/webp">
+                <img src="img/blocks/facades-production/big.jpg" alt="Производство фасадов 1" width="420" height="425" loading="lazy">
+            </picture>
+        </div>
+        <div class="facades-production__image facades-production__image--small">
+            <picture>
+                <source srcset="img/blocks/facades-production/small.avif" type="image/avif">
+                <source srcset="img/blocks/facades-production/small.webp" type="image/webp">
+                <img src="img/blocks/facades-production/small.jpg" alt="Производство фасадов 2" width="178" height="212" loading="lazy">
+            </picture>
+        </div>
+    </div>
+</section>
+                <section class="blog-block section">
+    <div class="blog-block__wrapper">
+        <h2 class="blog-block__title title">
+            Блог
+        </h2>
+        <div class="blog-block__inner" data-blog-images="blog-home-page">
+            <div class="blog-block__item blog-block__item--picture">
+                <div class="blog-block__images">
+                    <div class="blog-block__image blog-block__image--active">
+                        <picture>
+                            <source srcset="img/blocks/blog/1.avif" type="image/avif">
+                            <source srcset="img/blocks/blog/1.webp" type="image/webp">
+                            <img class="blog-block__img" src="img/blocks/blog/1.jpg" alt="девушка" width="250" height="190" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="blog-block__image">
+                        <picture>
+                            <source srcset="img/blocks/facades-production/big.avif" type="image/avif">
+                            <source srcset="img/blocks/facades-production/big.webp" type="image/webp">
+                            <img class="blog-block__img" src="img/blocks/facades-production/big.jpg" alt="Производство" width="250" height="190" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="blog-block__image">
+                        <picture>
+                            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
+                            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
+                            <img class="blog-block__img" src="img/blocks/products/kitchens/verona.jpg" alt="девушка" width="250" height="190" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="blog-block__image">
+                        <picture>
+                            <source srcset="img/blocks/blog/1.avif" type="image/avif">
+                            <source srcset="img/blocks/blog/1.webp" type="image/webp">
+                            <img class="blog-block__img" src="img/blocks/blog/1.jpg" alt="девушка" width="250" height="190" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="blog-block__image">
+                        <picture>
+                            <source srcset="img/blocks/facades-production/big.avif" type="image/avif">
+                            <source srcset="img/blocks/facades-production/big.webp" type="image/webp">
+                            <img class="blog-block__img" src="img/blocks/facades-production/big.jpg" alt="Производство" width="250" height="190" loading="lazy">
+                        </picture>
+                    </div>
+                    <div class="blog-block__image">
+                        <picture>
+                            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
+                            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
+                            <img class="blog-block__img" src="img/blocks/products/kitchens/verona.jpg" alt="девушка" width="250" height="190" loading="lazy">
+                        </picture>
+                    </div>
+                </div>
+            </div>
+            <div class="blog-block__swiper swiper">
+                <ul class="blog-block__items swiper-wrapper">
+                    <li class="blog-block__item swiper-slide">
+                        <article class="blog-card">
+    <h3 class="blog-card__title subtitle">Секреты долгожительства многолетней кухни</h3>
+    <time datetime="2022-02-27">
+        27.02.2022
+    </time>
+    <a class="blog-card__link button button--decor" href="#">
+        Читать статью
+        <span class="button__decor" aria-hidden>
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </span>
+    </a>
+</article>
+                    </li>
+                    <li class="blog-block__item swiper-slide">
+                        <article class="blog-card">
+    <h3 class="blog-card__title subtitle">Умная техника в помощь</h3>
+    <time datetime="2022-02-27">
+        27.02.2022
+    </time>
+    <a class="blog-card__link button button--decor" href="#">
+        Читать статью
+        <span class="button__decor" aria-hidden>
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </span>
+    </a>
+</article>
+                    </li>
+                    <li class="blog-block__item swiper-slide">
+                        <article class="blog-card">
+    <h3 class="blog-card__title subtitle">Как правильно выбрать посуду для кухни?</h3>
+    <time datetime="2022-02-27">
+        27.02.2022
+    </time>
+    <a class="blog-card__link button button--decor" href="#">
+        Читать статью
+        <span class="button__decor" aria-hidden>
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </span>
+    </a>
+</article>
+                    </li>
+                    <li class="blog-block__item swiper-slide">
+                        <article class="blog-card">
+    <h3 class="blog-card__title subtitle">Секреты долгожительства многолетней кухни</h3>
+    <time datetime="2022-02-27">
+        27.02.2022
+    </time>
+    <a class="blog-card__link button button--decor" href="#">
+        Читать статью
+        <span class="button__decor" aria-hidden>
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </span>
+    </a>
+</article>
+                    </li>
+                    <li class="blog-block__item swiper-slide">
+                        <article class="blog-card">
+    <h3 class="blog-card__title subtitle">Умная техника в помощь</h3>
+    <time datetime="2022-02-27">
+        27.02.2022
+    </time>
+    <a class="blog-card__link button button--decor" href="#">
+        Читать статью
+        <span class="button__decor" aria-hidden>
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </span>
+    </a>
+</article>
+                    </li>
+                    <li class="blog-block__item swiper-slide">
+                        <article class="blog-card">
+    <h3 class="blog-card__title subtitle">Как правильно выбрать посуду для кухни?</h3>
+    <time datetime="2022-02-27">
+        27.02.2022
+    </time>
+    <a class="blog-card__link button button--decor" href="#">
+        Читать статью
+        <span class="button__decor" aria-hidden>
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </span>
+    </a>
+</article>
+                    </li>
+                </ul>
+                <div class="swiper-pagination"></div>
+                <div class="blog-block__buttons">
+                    <button class="blog-block__button blog-block__button--prev swiper-button-prev" type="button">
+                    </button>
+                    <button class="blog-block__button blog-block__button--next swiper-button-next" type="button">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+                <section class="reviews section">
+    <div class="reviews__wrapper">
+        <h2 class="reviews__title title">
+            Отзывы о нас
+        </h2>
+        <div class="reviews__swiper swiper">
+            <ul class="reviews__items swiper-wrapper">
+                <li class="reviews__item swiper-slide">
+                    <article class="review-card">
+    <div class="review-card__header">
+        <span class="review-card__count">16 отзывов</span>
+        <div class="review-card__info">
+            <img class="review-card__logo" src="img/blocks/reviews-logos/yandex.svg" alt="yandex" width="120" height="30" loading="lazy">
+            <span class="review-card__rating">4.4</span>
+        </div>
+    </div>
+    <a class="review-card__link button button--decor" href="#" target="_blank">
+        <span class="button__text">Читать отзывы</span>
+        <span class="button__decor" aria-hidden>
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </span>
+    </a>
+</article>
+                </li>
+                <li class="reviews__item swiper-slide">
+                    <article class="review-card">
+    <div class="review-card__header">
+        <span class="review-card__count">174 отзывов</span>
+        <div class="review-card__info">
+            <img class="review-card__logo" src="img/blocks/reviews-logos/houzz.svg" alt="houzz" width="120" height="30" loading="lazy">
+            <span class="review-card__rating">4.8</span>
+        </div>
+    </div>
+    <a class="review-card__link button button--decor" href="#" target="_blank">
+        <span class="button__text">Читать отзывы</span>
+        <span class="button__decor" aria-hidden>
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </span>
+    </a>
+</article>
+                </li>
+                <li class="reviews__item swiper-slide">
+                    <article class="review-card">
+    <div class="review-card__header">
+        <span class="review-card__count">529 отзывов</span>
+        <div class="review-card__info">
+            <img class="review-card__logo" src="img/blocks/reviews-logos/zoon.svg" alt="zoon" width="120" height="30" loading="lazy">
+            <span class="review-card__rating">4.5</span>
+        </div>
+    </div>
+    <a class="review-card__link button button--decor" href="#" target="_blank">
+        <span class="button__text">Читать отзывы</span>
+        <span class="button__decor" aria-hidden>
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </span>
+    </a>
+</article>
+                </li>
+                <li class="reviews__item swiper-slide">
+                    <article class="review-card">
+    <div class="review-card__header">
+        <span class="review-card__count">59 отзывов</span>
+        <div class="review-card__info">
+            <img class="review-card__logo" src="img/blocks/reviews-logos/2gis.svg" alt="2гис" width="120" height="30" loading="lazy">
+            <span class="review-card__rating">4.8</span>
+        </div>
+    </div>
+    <a class="review-card__link button button--decor" href="#" target="_blank">
+        <span class="button__text">Читать отзывы</span>
+        <span class="button__decor" aria-hidden>
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </span>
+    </a>
+</article>
+                </li>
+                <li class="reviews__item swiper-slide">
+                    <article class="review-card">
+    <div class="review-card__header">
+        <span class="review-card__count">4 отзыва</span>
+        <div class="review-card__info">
+            <img class="review-card__logo" src="img/blocks/reviews-logos/yell.svg" alt="yell" width="120" height="30" loading="lazy">
+            <span class="review-card__rating">4.8</span>
+        </div>
+    </div>
+    <a class="review-card__link button button--decor" href="#" target="_blank">
+        <span class="button__text">Читать отзывы</span>
+        <span class="button__decor" aria-hidden>
+            <svg>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </span>
+    </a>
+</article>
+                </li>
+            </ul>
+            <div class="swiper-pagination"></div>
+            <div class="reviews__buttons">
+                <button class="reviews__button reviews__button--prev swiper-button-prev" type="button">
+                </button>
+                <button class="reviews__button reviews__button--next swiper-button-next" type="button">
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+                <section class="media section">
+    <h2 class="media__title title">
+        СМИ о нас
+    </h2>
+    <ul class="media__items">
+        <li class="media__item">
+            <a class="media__link" href="#" target="_blank">
+                <img class="media__img" src="img/blocks/media-logos/habr.svg" alt="habr" width="124" height="40" loading="lazy">
+            </a>
+        </li>
+        <li class="media__item">
+            <a class="media__link" href="#" target="_blank">
+                <img class="media__img" src="img/blocks/media-logos/ya_zen.svg" alt="Яндекс Дзен" width="150" height="45" loading="lazy">
+            </a>
+        </li>
+        <li class="media__item">
+            <a class="media__link" href="#" target="_blank">
+                <img class="media__img" src="img/blocks/media-logos/tinkoff_journal.svg" alt="Тинькофф Журнал" width="156" height="24" loading="lazy">
+            </a>
+        </li>
+        <li class="media__item">
+            <a class="media__link" href="#" target="_blank">
+                <img class="media__img" src="img/blocks/media-logos/vc.svg" alt="vc.ru" width="148" height="50" loading="lazy">
+            </a>
+        </li>
+    </ul>
+</section>
+            </div>
+        </div>
+    </main>
+    <div class="page-wrapper">
+        <div class="page-wrapper__side"></div>
+        <div class="page-wrapper__blocks">
+            <section class="form-block section">
+    <form class="form" action="#">
+        <div class="form__header">
+            <h2 class="form__title title">
+                Закажите бесплатную разработку дизайн-проекта
+            </h2>
+            <div class="form__text">
+                <p>
+                    Оставьте заявку, наши менеджеры свяжутся с вами в течение ближайшего времени
+                </p>
+            </div>
+        </div>
+        <div class="form__items">
+            <div class="form__item">
+                <label class="sr-only" for="form-block-name">Введите ваше имя</label>
+                <input class="form__field" id="form-block-name" name="name" type="text" placeholder="Имя" required>
+            </div>
+            <div class="form__item">
+                <label class="sr-only" for="form-block-phone">Введите номер телефона</label>
+                <input class="form__field" id="form-block-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+            </div>
+        </div>
+        <div class="form__bottom">
+            <button class="form__button button button--dark" type="submit">
+                Отправить заявку
+                <svg>
+                    <use xlink:href="img/sprite.svg#arrows-double">
+                </svg>
+            </button>
+            <p class="form__subtext">
+                Нажимая на кнопку, вы принимаете условия 
+                <a href="#">
+                    публичной оферты
+                </a> .
+            </p>
+        </div>
+    </form>
+    <div class="form-block__img">
+        <span class="form-block__bg" style="background-image: url('img/blocks/form/bg.jpg');" aria-hidden> </span>
+    </div>
+</section>
+            <section class="addresses-block section">
+    <h2 class="sr-only">Наши адреса</h2>
+    <div class="tabs" data-tabs="addresses-block">
+        <ul class="tabs__nav">
+            <li class="tabs__nav-item">
+                <h3 class="tabs__nav-btn">
+                    <button type="button">Москва</button>
+                </h3>
+            </li>
+            <li class="tabs__nav-item">
+                <h3 class="tabs__nav-btn">
+                    <button type="button">Воронеж</button>
+                </h3>
+            </li>
+            <li class="tabs__nav-item">
+                <h3 class="tabs__nav-btn">
+                    <button type="button">Владикавказ</button>
+                </h3>
+            </li>
+        </ul>
+        <div class="tabs__content">
+            <div class="tabs__panel">
+                <ul class="tabs__list">
+                    <li class="tabs__panel-item">
+                        <div class="address-card">
+    <h4 class="address-card__title">
+        Расторгуевский пер., д.1
+    </h4>
+    <span class="address-card__time">Ежедневно с 11:00 до 21:00</span>
+    <span class="address-card__subtitle">Станции метро:</span>
+    <ul class="address-card__items">
+         <li class="address-card__item"> <span class="address-card__circle" style="background-color: #C22B2D;" aria-hidden></span> Краснопресненская </li>  <li class="address-card__item"> <span class="address-card__circle" style="background-color: #991699;" aria-hidden></span> ул. 1905 года </li> 
+    </ul>
+</div>
+                    </li>
+                    <li class="tabs__panel-item">
+                        <div class="address-card">
+    <h4 class="address-card__title">
+        Симоновский вал, д.12 к.2
+    </h4>
+    <span class="address-card__time">Ежедневно с 11:00 до 21:00</span>
+    <span class="address-card__subtitle">Станции метро:</span>
+    <ul class="address-card__items">
+         <li class="address-card__item"> <span class="address-card__circle" style="background-color: #90EE8F;" aria-hidden></span> Крестьянская застава </li>  <li class="address-card__item"> <span class="address-card__circle" style="background-color: #991699;" aria-hidden></span> Пролетарская </li> 
+    </ul>
+</div>
+                    </li>
+                    <li class="tabs__panel-item">
+                        <div class="address-card">
+    <h4 class="address-card__title">
+        Варшавское шоссе, д.26, с.32
+    </h4>
+    <span class="address-card__time">Ежедневно с 11:00 до 21:00</span>
+    <span class="address-card__subtitle">Станции метро:</span>
+    <ul class="address-card__items">
+         <li class="address-card__item"> <span class="address-card__circle" style="background-color: #808080;" aria-hidden></span> Нагатинская </li> 
+    </ul>
+</div>
+                    </li>
+                    <li class="tabs__panel-item">
+                        <div class="address-card">
+    <h4 class="address-card__title">
+        ТЦ Квартал-1 эт., Аминьевское шоссе д.6
+    </h4>
+    <span class="address-card__time">Ежедневно с 11:00 до 21:00</span>
+    <span class="address-card__subtitle">Станции метро:</span>
+    <ul class="address-card__items">
+         <li class="address-card__item"> <span class="address-card__circle" style="background-color: #5FBFBF;" aria-hidden></span> Аминьевская </li> 
+    </ul>
+</div>
+                    </li>
+                </ul>
+                <div class="tabs__demo">
+                    <div class="tabs__map" style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a href="https://yandex.ru/maps/213/moscow/house/aminyevskoye_shosse_6/Z04YcgJmQUcPQFtvfXtxdn5qbQ==/?indoorLevel=1&ll=37.456828%2C55.707299&utm_medium=mapframe&utm_source=maps&z=17.12" style="color:#eee;font-size:12px;position:absolute;top:14px;">Аминьевское шоссе, 6 — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=37.456828%2C55.707299&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxOTMxNjc4NjIxEkDQoNC-0YHRgdC40Y8sINCc0L7RgdC60LLQsCwg0JDQvNC40L3RjNC10LLRgdC60L7QtSDRiNC-0YHRgdC1LCA2IgoNzNMVQhVG1F5C&z=17.12" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+                </div>
+            </div>
+
+            <div class="tabs__panel">
+                <ul class="tabs__list">
+                    <li class="tabs__panel-item">
+                        <div class="address-card">
+    <h4 class="address-card__title">
+        Расторгуевский пер., д.1
+    </h4>
+    <span class="address-card__time">Ежедневно с 11:00 до 21:00</span>
+    <span class="address-card__subtitle">Станции метро:</span>
+    <ul class="address-card__items">
+         <li class="address-card__item"> <span class="address-card__circle" style="background-color: #C22B2D;" aria-hidden></span> Краснопресненская </li>  <li class="address-card__item"> <span class="address-card__circle" style="background-color: #991699;" aria-hidden></span> ул. 1905 года </li> 
+    </ul>
+</div>
+                    </li>
+                    <li class="tabs__panel-item">
+                        <div class="address-card">
+    <h4 class="address-card__title">
+        Симоновский вал, д.12 к.2
+    </h4>
+    <span class="address-card__time">Ежедневно с 11:00 до 21:00</span>
+    <span class="address-card__subtitle">Станции метро:</span>
+    <ul class="address-card__items">
+         <li class="address-card__item"> <span class="address-card__circle" style="background-color: #90EE8F;" aria-hidden></span> Крестьянская застава </li>  <li class="address-card__item"> <span class="address-card__circle" style="background-color: #991699;" aria-hidden></span> Пролетарская </li> 
+    </ul>
+</div>
+                    </li>
+                </ul>
+                <div class="tabs__demo">
+                    <div class="tabs__map" style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a href="https://yandex.ru/maps/213/moscow/house/aminyevskoye_shosse_6/Z04YcgJmQUcPQFtvfXtxdn5qbQ==/?indoorLevel=1&ll=37.456828%2C55.707299&utm_medium=mapframe&utm_source=maps&z=17.12" style="color:#eee;font-size:12px;position:absolute;top:14px;">Аминьевское шоссе, 6 — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=37.456828%2C55.707299&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxOTMxNjc4NjIxEkDQoNC-0YHRgdC40Y8sINCc0L7RgdC60LLQsCwg0JDQvNC40L3RjNC10LLRgdC60L7QtSDRiNC-0YHRgdC1LCA2IgoNzNMVQhVG1F5C&z=17.12" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+                </div>
+            </div>
+
+            <div class="tabs__panel">
+                <ul class="tabs__list">
+                    <li class="tabs__panel-item">
+                        <div class="address-card">
+    <h4 class="address-card__title">
+        Варшавское шоссе, д.26, с.32
+    </h4>
+    <span class="address-card__time">Ежедневно с 11:00 до 21:00</span>
+    <span class="address-card__subtitle">Станции метро:</span>
+    <ul class="address-card__items">
+         <li class="address-card__item"> <span class="address-card__circle" style="background-color: #808080;" aria-hidden></span> Нагатинская </li> 
+    </ul>
+</div>
+                    </li>
+                    <li class="tabs__panel-item">
+                        <div class="address-card">
+    <h4 class="address-card__title">
+        ТЦ Квартал-1 эт., Аминьевское шоссе д.6
+    </h4>
+    <span class="address-card__time">Ежедневно с 11:00 до 21:00</span>
+    <span class="address-card__subtitle">Станции метро:</span>
+    <ul class="address-card__items">
+         <li class="address-card__item"> <span class="address-card__circle" style="background-color: #5FBFBF;" aria-hidden></span> Аминьевская </li> 
+    </ul>
+</div>
+                    </li>
+                </ul>
+                <div class="tabs__demo">
+                    <div class="tabs__map" style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a href="https://yandex.ru/maps/213/moscow/house/aminyevskoye_shosse_6/Z04YcgJmQUcPQFtvfXtxdn5qbQ==/?indoorLevel=1&ll=37.456828%2C55.707299&utm_medium=mapframe&utm_source=maps&z=17.12" style="color:#eee;font-size:12px;position:absolute;top:14px;">Аминьевское шоссе, 6 — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=37.456828%2C55.707299&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxOTMxNjc4NjIxEkDQoNC-0YHRgdC40Y8sINCc0L7RgdC60LLQsCwg0JDQvNC40L3RjNC10LLRgdC60L7QtSDRiNC-0YHRgdC1LCA2IgoNzNMVQhVG1F5C&z=17.12" width="560" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+                </div>
+            </div>
+
+            <div class="addresses-block__visit">
+                <h3 class="addresses-block__subtitle">
+                    Посетить салон
+                </h3>
+                <span class="addresses-block__subtext">
+                    Оставьте заявку на сайте, и приходите в наш салон.
+                </span>
+                <button class="addresses-block__button button button--decor" type="button">
+                    Записаться в салон
+                    <span class="button__decor" aria-hidden>
+                        <svg>
+                            <use xlink:href="img/sprite.svg#arrows-double">
+                        </svg>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+            <section class="questions section">
+    <div class="questions__container">
+        <form class="form" action="#">
+            <div class="form__header">
+                <span class="form__title">
+                    Консультация специалиста
+                </span>
+                <div class="form__text">
+                    <p>
+                        Если у вас другой вопрос, оставьте заявку и получите бесплатную консультацию от специалиста.
+                    </p>
+                </div>
+            </div>
+            <div class="form__items">
+                <div class="form__item">
+                    <label class="sr-only" for="questions-name">Введите ваше имя</label>
+                    <input class="form__field" id="questions-name" name="name" type="text" placeholder="Имя" required>
+                </div>
+                <div class="form__item">
+                    <label class="sr-only" for="questions-phone">Введите номер телефона</label>
+                    <input class="form__field" id="questions-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+                </div>
+            </div>
+            <div class="form__bottom">
+                <button class="form__button button button--dark" type="submit">
+                    Получить консультацию
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </button>
+                <p class="form__subtext">
+                    Нажимая на кнопку, вы принимаете условия 
+                    <a href="#">
+                        публичной оферты
+                    </a> .
+                </p>
+            </div>
+        </form>
+        <div class="questions__list">
+            <h2 class="questions__title title">
+                Вопрос-ответ
+            </h2>
+
+            <ul class="spollers" data-spollers data-one-spoller>
+                <li class="spollers__item">
+                    <button class="spollers__button" type="button" data-spoller-button>
+    Срок изготовления проекта?
+    <svg class="spolleres__icon">
+        <use xlink:href="img/sprite.svg#close">
+    </svg>
+</button>
+<div class="spollers__body">
+     <p> Обычно полноценный проект кухни занимает от 1 месяца до 4 месяцев. При индивидуальном заказе, срок может увеличиваться от 4 месяцев до 8 месяцев. </p> 
+</div>
+                </li>
+                <li class="spollers__item">
+                    <button class="spollers__button" type="button" data-spoller-button>
+    Сколько лет гарантия?
+    <svg class="spolleres__icon">
+        <use xlink:href="img/sprite.svg#close">
+    </svg>
+</button>
+<div class="spollers__body">
+     <p> Обычно полноценный проект кухни занимает от 1 месяца до 4 месяцев. При индивидуальном заказе, срок может увеличиваться от 4 месяцев до 8 месяцев. </p> 
+</div>
+                </li>
+                <li class="spollers__item">
+                    <button class="spollers__button" type="button" data-spoller-button>
+    Как заказать индивидуальный проект?
+    <svg class="spolleres__icon">
+        <use xlink:href="img/sprite.svg#close">
+    </svg>
+</button>
+<div class="spollers__body">
+     <p> Обычно полноценный проект кухни занимает от 1 месяца до 4 месяцев. При индивидуальном заказе, срок может увеличиваться от 4 месяцев до 8 месяцев. </p> 
+</div>
+                </li>
+                <li class="spollers__item">
+                    <button class="spollers__button" type="button" data-spoller-button>
+    Есть ли доставка?
+    <svg class="spolleres__icon">
+        <use xlink:href="img/sprite.svg#close">
+    </svg>
+</button>
+<div class="spollers__body">
+     <p> Обычно полноценный проект кухни занимает от 1 месяца до 4 месяцев. При индивидуальном заказе, срок может увеличиваться от 4 месяцев до 8 месяцев. </p> 
+</div>
+                </li>
+                <li class="spollers__item">
+                    <button class="spollers__button" type="button" data-spoller-button>
+    Как выполнить замер?
+    <svg class="spolleres__icon">
+        <use xlink:href="img/sprite.svg#close">
+    </svg>
+</button>
+<div class="spollers__body">
+     <p> Обычно полноценный проект кухни занимает от 1 месяца до 4 месяцев. При индивидуальном заказе, срок может увеличиваться от 4 месяцев до 8 месяцев. </p> 
+</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+            <footer class="footer">
+    <div class="footer__top">
+        <div class="footer__contacts">
+            <a class="footer__logo logo" href="#">
+                <img class="logo__img" src="img/logo.svg" alt="Логотип" width="155" height="28">
+            </a>
+            <div class="navigation-connection">
+                <ul class="socials">
+                    <li class="socials__item">
+                        <a class="socials__link" href="#" target="_blank" aria-label="whatsapp">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#whatsapp">
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="socials__item">
+                        <a class="socials__link" href="#" target="_blank" aria-label="telegram">
+                            <svg>
+                                <use xlink:href="img/sprite.svg#telegram">
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navigation-connection__contacts">
+                    <li class="navigation-connection__contact">
+                        <a class="navigation-connection__link" href="tel:+70070000880">
+                            +7 (007)-000-08-80
+                        </a>
+                    </li>
+                    <li class="navigation-connection__contact">
+                        <a class="navigation-connection__link" href="mailto:info@zetta.ru">
+                            info@zetta.ru
+                        </a>
+                    </li>
+                </ul>
+                <p class="navigation-connection__text">
+                    Ежедневно с 11:00 до 21:00
+                </p>
+            </div>
+        </div>
+        <ul class="footer__items">
+            <li>
+                <a class="footer__link" href="#">
+                    Каталог
+                </a>
+            </li>
+            <li>
+                <a class="footer__link" href="#">
+                    Cashback 25%
+                </a>
+            </li>
+            <li>
+                <a class="footer__link" href="#">
+                    Адреса салонов
+                </a>
+            </li>
+            <li>
+                <a class="footer__link" href="#">
+                    Заказать проект
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="footer__nav">
+        <ul class="nav-menu">
+            <li class="nav-menu__category">
+                <span class="nav-menu__title">
+                    Кухонные решения
+                </span>
+                <ul class="nav-menu__items">
+                    <li>
+                        <a href="#">Современный стиль</a>
+                    </li>
+                    <li>
+                        <a href="#">Нео классика</a>
+                    </li>
+                    <li>
+                        <a href="#">Классический стиль</a>
+                    </li>
+                    <li>
+                        <a href="#">Все кухни</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-menu__category">
+                <span class="nav-menu__title">
+                    Корпусная мебель
+                </span>
+                <ul class="nav-menu__items">
+                    <li>
+                        <a href="#">Шкафы</a>
+                    </li>
+                    <li>
+                        <a href="#">Гостинные</a>
+                    </li>
+                    <li>
+                        <a href="#">Гардеробные</a>
+                    </li>
+                    <li>
+                        <a href="#">Прихожие</a>
+                    </li>
+                    <li>
+                        <a href="#">Аксессуары для шкафов</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-menu__category">
+                <span class="nav-menu__title">
+                    Дополнительно
+                </span>
+                <ul class="nav-menu__items">
+                    <li>
+                        <a href="#">Бытовая техника</a>
+                    </li>
+                    <li>
+                        <a href="#">Продажа образцов</a>
+                    </li>
+                    <li>
+                        <a href="#">Реализованные проекты</a>
+                    </li>
+                    <li>
+                        <a href="#">Мойки и аксессуары</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-menu__category">
+                <span class="nav-menu__title">
+                    Клиентам
+                </span>
+                <ul class="nav-menu__items">
+                    <li>
+                        <a href="#">Адреса салонов</a>
+                    </li>
+                    <li>
+                        <a href="#">3D проекты</a>
+                    </li>
+                    <li>
+                        <a href="#">Доставка</a>
+                    </li>
+                    <li>
+                        <a href="#">Замер помещения</a>
+                    </li>
+                    <li>
+                        <a href="#">Гарантия 12 лет</a>
+                    </li>
+                    <li>
+                        <a href="#">Монтаж мебели</a>
+                    </li>
+                    <li>
+                        <a href="#">Покупателям</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-menu__category">
+                <span class="nav-menu__title">
+                    О компании
+                </span>
+                <ul class="nav-menu__items">
+                    <li>
+                        <a href="#">Производство</a>
+                    </li>
+                    <li>
+                        <a href="#">История компании</a>
+                    </li>
+                    <li>
+                        <a href="#">Миссия и ценности</a>
+                    </li>
+                    <li>
+                        <a href="#">Работа в Zetta</a>
+                    </li>
+                    <li>
+                        <a href="#">Франшиза</a>
+                    </li>
+                    <li>
+                        <a href="#">Блог</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-menu__category">
+                <span class="nav-menu__title">
+                    Документация
+                </span>
+                <ul class="nav-menu__items">
+                    <li>
+                        <a href="#">Политика конфиденциальности</a>
+                    </li>
+                    <li>
+                        <a href="#">Карта сайта</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <span class="footer__copyright">
+            Copyright © 1998-2023 Zetta. All rights reserved.
+        </span>
+    </div>
+</footer>
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>
