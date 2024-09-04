@@ -76,6 +76,18 @@
 		}
 	}
 
+	&__name {
+		flex-basis: 50%;
+	}
+
+	&__info {
+		display: flex;
+		flex-basis: 60%;
+		flex-direction: column;
+		align-items: flex-end;
+		text-align: right;
+	}
+
 	&__link {
 		margin-bottom: 20px;
 

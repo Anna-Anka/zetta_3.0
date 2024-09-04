@@ -19,7 +19,7 @@ if (document.querySelector('.other-solutions__swiper')) {
         breakpoints: {
             768: {
                 pagination: {
-                    el: '.swiper-pagination-fraction',
+                    el: '.other-solutions__fraction',
                     type: 'fraction',
                     formatFractionCurrent: function (number) {
                         return number > 9 ? number : ('0' + number);
