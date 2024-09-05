@@ -56,8 +56,12 @@
 
 	&__image {
 		position: relative;
-		padding-bottom: 50%;
+		padding-bottom: 36%;
 		width: 100%;
+
+		@include mq(md) {
+			padding-bottom: 50%;
+		}
 
 		@include mq(sm) {
 			flex-shrink: 1;
