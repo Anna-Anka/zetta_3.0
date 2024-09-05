@@ -1,6 +1,6 @@
 import tippy from 'tippy.js';
 
-tippy('[data-tippy-content]', {
+export const tippySettings = {
     animation: 'shift-toward',
     duration: 100,
     placement: 'auto-end',
@@ -15,4 +15,6 @@ tippy('[data-tippy-content]', {
     trigger: 'click',
     arrow: false,
     zIndex: 4,
-});
+}
+
+tippy('[data-tippy-content]', tippySettings);

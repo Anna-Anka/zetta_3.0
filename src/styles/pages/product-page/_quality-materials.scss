@@ -1,0 +1,114 @@
+.quality-materials {
+	@include container;
+
+	&__title {
+		@include mq(sm) {
+			margin-bottom: 20px;
+		}
+
+		@include mq(md, min) {
+			width: 50%;
+		}
+
+		@include mq(lg, min) {
+			width: 25%;
+		}
+	}
+
+	&__content {
+		position: relative;
+	}
+
+	&__items {
+		@include mq(md, min) {
+			position: absolute;
+			z-index: 2;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__item {
+		@include mq(md, min) {
+			position: absolute;
+			display: inline-block;
+		}
+	}
+
+	&__button {
+		position: relative;
+		border-radius: 50%;
+		width: 36px;
+		height: 36px;
+		background-color: var(--color-orange-400);
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			border-radius: 2px;
+			background-color: var(--color-white);
+		}
+
+		&::before {
+			right: 50%;
+			top: 50%;
+			width: 1px;
+			height: 8px;
+			transform: translate(50%, -50%);
+			transition: opacity 0.3s;
+		}
+
+		&::after {
+			right: 50%;
+			width: 8px;
+			height: 1px;
+			transform: translateX(50%);
+		}
+
+		&[aria-expanded='true'] {
+			&::before {
+				opacity: 0;
+			}
+		}
+
+		@include mq(md) {
+			display: none;
+		}
+	}
+
+	&__tooltip {
+		padding: 20px;
+		max-width: 290px;
+		background-color: var(--color-white);
+	}
+
+	&__subtitle {
+		@include title(18px, -0.03em);
+
+		margin-bottom: 6px;
+	}
+
+	&__text {
+		color: var(--color-grey-600);
+	}
+
+	&__image {
+		padding-bottom: 46%;
+
+		@include mq(lg) {
+			padding-bottom: 52%;
+		}
+
+		@include mq(sm) {
+			padding-bottom: 66%;
+		}
+	}
+
+	&__img {
+		@include img-base;
+
+		position: absolute;
+		inset: 0;
+	}
+}
