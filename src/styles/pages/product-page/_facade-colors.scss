@@ -1,0 +1,18 @@
+.facade-colors {
+	@include container;
+
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(170px, 0.15fr));
+		gap: 20px 10px;
+
+		@include mq(lg) {
+			grid-template-columns: repeat(auto-fit, minmax(170px, 0.25fr));
+		}
+
+		@include mq(md) {
+			grid-template-columns: repeat(auto-fit, minmax(140px, 0.5fr));
+			gap: 15px 5px;
+		}
+	}
+}
