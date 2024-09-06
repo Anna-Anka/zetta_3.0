@@ -9,11 +9,9 @@ import { fixedHeader } from './_fixed-header.js'
 import { changeColorSideMenu } from './_side-menu.js'
 import { changeBlogImages } from './_blog-images.js'
 import { createConveniencePoints, arrangeConveniencePoints } from './_convenience.js'
-import { removeQualityMaterialsTooltip } from './_quality-materials-tooltip.js'
 
 fixedHeader();
 changeColorSideMenu();
 changeBlogImages();
 createConveniencePoints();
 arrangeConveniencePoints();
-removeQualityMaterialsTooltip();
