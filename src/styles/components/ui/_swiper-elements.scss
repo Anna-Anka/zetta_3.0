@@ -43,6 +43,11 @@
 	color: currentcolor;
 	background-color: var(--color-white);
 
+	@include mq(sm) {
+		width: 38px;
+		height: 26px;
+	}
+
 	&::before {
 		@include bg-properties(contain);
 
@@ -54,6 +59,11 @@
 		height: 20px;
 		background-image: url('../img/sprite.svg#arrow');
 		transform: translate(50%, -50%);
+
+		@include mq(sm) {
+			width: 14px;
+			height: 14px;
+		}
 	}
 
 	&::after {

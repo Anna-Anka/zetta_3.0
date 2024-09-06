@@ -64,22 +64,7 @@
 	}
 
 	&__question {
-		@include flex-alignment(5px, flex-start, center);
-
-		@media (any-hover: hover) {
-			&:hover {
-				svg {
-					color: var(--color-dark-600);
-				}
-			}
-		}
-
-		svg {
-			width: 20px;
-			height: 20px;
-			color: var(--color-grey-400);
-			transition: color 0.3s;
-		}
+		@include question-button(5px);
 	}
 
 	&__info {
