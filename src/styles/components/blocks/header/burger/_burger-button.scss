@@ -54,6 +54,7 @@
 		display: block;
 		width: var(--burger-line-width);
 		height: var(--burger-line-height);
+		transition: color 0.3s;
 
 		&::before,
 		&::after {

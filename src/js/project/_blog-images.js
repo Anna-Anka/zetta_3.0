@@ -57,13 +57,21 @@ export const changeBlogImages = () => {
         const checkWidth = () => {
             const width = getWindowWidth()
 
-            if (width < 993) {
-                cards.forEach((card) => {
+            cards.forEach((card) => {
+
+                if (width < 993) {
                     card.removeAttribute('aria-selected');
-                })
-            }
+                } else {
+                    if (!card.hasAttribute('aria-selected')) {
+                        console.log('a')
+                        cards[0].setAttribute('aria-selected', 'true');
+                    }
+                }
+            })
         }
 
+        checkWidth();
+        
         let checkWidthWrapper = throttle(checkWidth);
 
         window.addEventListener('resize', checkWidthWrapper)

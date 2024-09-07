@@ -4,6 +4,10 @@
 	&__contact {
 		@include link-border-bottom;
 
+		transition:
+			color 0.3s,
+			border-bottom-color 0.3s;
+
 		@include mq(sm) {
 			display: none;
 		}

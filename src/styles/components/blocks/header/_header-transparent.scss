@@ -1,13 +1,5 @@
 .header {
 	&--transparent {
-		color: var(--color-white);
-		background-color: transparent;
-
-		.header__consultation {
-			color: var(--color-dark-600);
-			background-color: var(--color-white);
-		}
-
 		.header__navigation {
 			background-color: transparent;
 
@@ -18,6 +10,45 @@
 
 		.header__inner {
 			background-color: transparent;
+
+			.header-consultation {
+				&__button {
+					color: var(--color-dark-600);
+					background-color: var(--color-white);
+
+					@media (any-hover: hover) {
+						&:hover {
+							color: var(--color-white);
+							background-color: var(--color-orange-400);
+						}
+					}
+				}
+
+				&__contact {
+					border-bottom-color: var(--rgba-white-500);
+					color: var(--color-white);
+				}
+			}
+
+			.burger-button {
+				color: var(--color-white);
+
+				@media (any-hover: hover) {
+					&:hover {
+						.burger-button__line {
+							color: var(--color-white);
+						}
+					}
+				}
+
+				&__plate {
+					background-color: var(--color-white);
+				}
+
+				&__line {
+					color: var(--color-dark-600);
+				}
+			}
 		}
 
 		.header__wrapper-logo {
@@ -34,18 +65,17 @@
 		}
 
 		.header__button {
+			border: 1px solid transparent;
 			color: var(--color-white);
 			background-color: var(--rgba-white-200);
+			transition: border-color 0.3s;
 			backdrop-filter: blur(20px);
-		}
 
-		.burger-button {
-			&__plate {
-				background-color: var(--color-white);
-			}
-
-			&__line {
-				color: var(--color-dark-600);
+			@media (any-hover: hover) {
+				&:hover {
+					border-color: var(--rgba-white-200);
+					background-color: var(--rgba-white-200);
+				}
 			}
 		}
 	}
