@@ -35,6 +35,20 @@
 		}
 	}
 
+	&__text {
+		@include mq(lg) {
+			display: none;
+		}
+
+		&[data-burger-button-text] {
+			display: none;
+
+			@include mq(lg) {
+				display: flex;
+			}
+		}
+	}
+
 	&__line {
 		position: relative;
 		display: block;

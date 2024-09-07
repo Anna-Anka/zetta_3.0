@@ -5,7 +5,6 @@
 	right: 0;
 	top: 0;
 	overflow: hidden;
-	padding: 154px 50px 64px 109px;
 	width: 100%;
 	max-width: 785px;
 	background-color: var(--color-white);
@@ -18,14 +17,43 @@
 		max-width: 100%;
 	}
 
+	@include mq(sm) {
+		padding-top: 102px;
+	}
+
 	&--active {
-		z-index: -1;
+		z-index: 20;
 		overflow-y: auto;
 		height: 100vh;
 		opacity: 1;
 		visibility: visible;
 		transform: translateX(0);
 		transition: transform 0.3s ease-in-out;
+
+		@include mq(lg) {
+			z-index: -1;
+		}
+	}
+
+	&__header {
+		@include flex-alignment(32px, space-between, center);
+
+		border-bottom: 1px solid var(--color-grey-200);
+		padding: 30px 50px 25px 110px;
+		width: 100%;
+
+		@include mq(lg) {
+			display: none;
+		}
+	}
+
+	&__body {
+		padding: 60px 50px 64px 110px;
+		width: 100%;
+
+		@include mq(lg) {
+			padding: 0;
+		}
 	}
 
 	&__title {
@@ -80,92 +108,6 @@
 
 		@include mq(md) {
 			margin-bottom: 30px;
-		}
-	}
-
-	.navigation-connection {
-		padding-right: 40px;
-		width: 50%;
-		gap: 30px;
-
-		&__contacts {
-			gap: 15px;
-
-			@include mq(md) {
-				flex: 1 1 auto;
-				flex-direction: row-reverse;
-				align-self: flex-start;
-				justify-content: flex-end;
-				gap: 5px;
-			}
-		}
-
-		&__link {
-			@include link-border-bottom;
-
-			@include mq(md) {
-				@include flex-alignment(5px);
-
-				border-bottom: 0;
-				border-radius: 12px;
-				padding: 15px;
-				text-align: center;
-				background-color: var(--color-grey-100);
-			}
-
-			@include mq(sm) {
-				border-radius: 8px;
-				padding: 12px;
-				font-size: 10px;
-			}
-		}
-
-		@include mq(md) {
-			flex-direction: row;
-			padding-right: 0;
-			width: 100%;
-			gap: 5px;
-		}
-	}
-
-	&__socials {
-		@include mq(md) {
-			display: none;
-		}
-
-		&--mobile {
-			@include mq(lg, min) {
-				display: none;
-			}
-
-			.socials__item {
-				@include mq(md) {
-					width: 50px;
-					height: 50px;
-				}
-
-				@include mq(sm) {
-					width: 38px;
-					height: 38px;
-				}
-			}
-
-			.socials__link {
-				border-radius: 12px;
-				background-color: var(--color-grey-100);
-
-				@include mq(md) {
-					color: var(--color-dark-600);
-				}
-
-				@include mq(sm) {
-					border-radius: 8px;
-				}
-			}
-
-			@include mq(md) {
-				display: flex;
-			}
 		}
 	}
 

@@ -1,277 +1,297 @@
 <div class="burger-menu" id="header-burger-menu" data-menu>
-    <div class="burger-menu__buttons">
-        <button class="burger-menu__button button button--dark" type="button">
-            <span class="button__point" aria-hidden></span>
-            Консультация дизайнера
-        </button>
-        <button class="burger-menu__button button button--accent" type="button">
-            Записаться в салон
-            <svg class="button__icon">
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
+    <div class="burger-menu__header">
+        <div class="header-consultation">
+            <button class="header-consultation__button button button--dark" type="button" data-graph-path="consultation">
+                <span class="button__point" aria-hidden></span>
+                Консультация дизайнера
+            </button>
+
+            <a class="header-consultation__contact" href="tel:+74951011919">
+                +7 (495)-101-19-19
+            </a>
+        </div>
+
+        <button class="burger-button burger-button--active" aria-expanded aria-controls="header-burger-menu">
+            <span class="burger-button__text" aria-live="polite">Закрыть</span>
+            <span class="burger-button__plate" aria-hidden>
+                <span class="burger-button__line"></span>
+            </span>
         </button>
     </div>
-    <span class="burger-menu__title">Навигация</span>
-    <form class="burger-menu__search form" action="#">
-        <div class="form__item">
-            <label class="sr-only" for="burger-menu-search">
-                Введите, что вы хотите найти
-            </label>
-            <input class="form__field form__field--search" id="burger-menu-search" name="search" type="search" placeholder="Поиск по каталогу" required>
-            <button class="form__button-search" type="submit" aria-label="Найти">
-                <svg>
-                    <use xlink:href="img/sprite.svg#search">
+    <div class="burger-menu__body">
+        <div class="burger-menu__buttons">
+            <button class="burger-menu__button button button--dark" type="button">
+                <span class="button__point" aria-hidden></span>
+                Консультация дизайнера
+            </button>
+            <button class="burger-menu__button button button--accent" type="button">
+                Записаться в салон
+                <svg class="button__icon" aria-hidden>
+                    <use xlink:href="img/sprite.svg#arrows-double">
                 </svg>
             </button>
         </div>
-    </form>
-    <div class="burger-mobile burger-menu__mobile">
-        @include('./../../cards/_banner-card.html', {
-        'class' : 'burger-mobile__block',
-        'title': 'Кухонные решения',
-        'text': 'Современный стиль, классический стиль, нео-классика.',
-        'alt': 'Кухня',
-        'img': 'kitchen'
-        })
+        <span class="burger-menu__title">Навигация</span>
+        <form class="burger-menu__search form" action="#">
+            <div class="form__item">
+                <label class="sr-only" for="burger-menu-search">
+                    Введите, что вы хотите найти
+                </label>
+                <input class="form__field form__field--search" id="burger-menu-search" name="search" type="search" placeholder="Поиск по каталогу" required>
+                <button class="form__button-search" type="submit" aria-label="Найти">
+                    <svg aria-hidden>
+                        <use xlink:href="img/sprite.svg#search">
+                    </svg>
+                </button>
+            </div>
+        </form>
+        <div class="burger-mobile burger-menu__mobile">
+            @include('./../../cards/_banner-card.html', {
+            'class' : 'burger-mobile__block',
+            'title': 'Кухонные решения',
+            'text': 'Современный стиль, классический стиль, нео-классика.',
+            'alt': 'Кухня',
+            'img': 'kitchen'
+            })
 
-        <div class="burger-mobile__block burger-block">
-            <span class="burger-block__title">
-                Корпусная мебель
-            </span>
-            <ul class="burger-block__items burger-block__items--overflow">
-                <li class="burger-block__item">
-                    @include('./../../cards/_nav-card.html', {
-                    'title': 'Шкафы',
-                    'alt': 'Шкаф-купе',
-                    'img': 'sliding-wardrobe'
+            <div class="burger-mobile__block burger-block">
+                <span class="burger-block__title">
+                    Корпусная мебель
+                </span>
+                <ul class="burger-block__items burger-block__items--overflow">
+                    <li class="burger-block__item">
+                        @include('./../../cards/_nav-card.html', {
+                        'title': 'Шкафы',
+                        'alt': 'Шкаф-купе',
+                        'img': 'sliding-wardrobe'
+                        })
+                    </li>
+                    <li class="burger-block__item">
+                        @include('./../../cards/_nav-card.html', {
+                        'title': 'Гостинные',
+                        'alt': 'Стенка для гостиной',
+                        'img': 'wardrobe-living'
+                        })
+                    </li>
+                    <li class="burger-block__item">
+                        @include('./../../cards/_nav-card.html', {
+                        'title': 'Гардеробные',
+                        'alt': 'Шкаф-гардероб',
+                        'img': 'closet-in-room'
+                        })
+                    </li>
+                    <li class="burger-block__item">
+                        @include('./../../cards/_nav-card.html', {
+                        'title': 'Прихожие',
+                        'alt': 'Светлая прихожая',
+                        'img': 'hallway'
+                        })
+                    </li>
+                    <li class="burger-block__item">
+                        @include('./../../cards/_nav-card.html', {
+                        'title': 'Аксессуары для шкафов',
+                        'alt': 'Штанга для одежды',
+                        'img': 'clothes-rail'
+                        })
+                    </li>
+                </ul>
+            </div>
+
+            <ul class="burger-mobile__block burger-banners">
+                <li class="burger-banners__item burger-banners__item--big">
+                    @include('./../../cards/_banner-card.html', {
+                    'class' : 'banner-card--img-small banner-card--appliances',
+                    'title': 'Бытовая техника',
+                    'text': null,
+                    'alt': 'Духовка',
+                    'img': 'household-appliances'
                     })
                 </li>
-                <li class="burger-block__item">
-                    @include('./../../cards/_nav-card.html', {
-                    'title': 'Гостинные',
-                    'alt': 'Стенка для гостиной',
-                    'img': 'wardrobe-living'
+                <li class="burger-banners__item burger-banners__item--small">
+                    <div class="burger-banners__card burger-banners__card--light">
+                        <span class="burger-banners__icon" style="background-image: url('img/icons/percent.svg');" aria-hidden></span>
+                        <span class="burger-banners__subtitle">
+                            Акции и скидки
+                        </span>
+                    </div>
+                </li>
+                <li class="burger-banners__item burger-banners__item--small">
+                    <div class="burger-banners__card burger-banners__card--dark">
+                        <span class="burger-banners__icon" style="background-image: url('img/icons/marker.svg');" aria-hidden></span>
+                        <span class="burger-banners__subtitle">
+                            Адреса салонов
+                        </span>
+                    </div>
+                </li>
+                <li class="burger-banners__item burger-banners__item--washes burger-banners__item--big">
+                    @include('./../../cards/_banner-card.html', {
+                    'class' : 'banner-card--img-small banner-card--border',
+                    'title': 'Мойки и акссуары',
+                    'text': null,
+                    'alt': 'Мойка',
+                    'img': 'washes'
                     })
                 </li>
-                <li class="burger-block__item">
-                    @include('./../../cards/_nav-card.html', {
-                    'title': 'Гардеробные',
-                    'alt': 'Шкаф-гардероб',
-                    'img': 'closet-in-room'
-                    })
-                </li>
-                <li class="burger-block__item">
-                    @include('./../../cards/_nav-card.html', {
-                    'title': 'Прихожие',
-                    'alt': 'Светлая прихожая',
-                    'img': 'hallway'
-                    })
-                </li>
-                <li class="burger-block__item">
-                    @include('./../../cards/_nav-card.html', {
-                    'title': 'Аксессуары для шкафов',
-                    'alt': 'Штанга для одежды',
-                    'img': 'clothes-rail'
+                <li class="burger-banners__item burger-banners__item--big">
+                    @include('./../../cards/_banner-card.html', {
+                    'class' : '',
+                    'title': 'Реализованные проекты',
+                    'text': null,
+                    'alt': 'Кухня',
+                    'img': 'kitchen2'
                     })
                 </li>
             </ul>
-        </div>
 
-        <ul class="burger-mobile__block burger-banners">
-            <li class="burger-banners__item burger-banners__item--big">
-                @include('./../../cards/_banner-card.html', {
-                'class' : 'banner-card--img-small banner-card--appliances',
-                'title': 'Бытовая техника',
-                'text': null,
-                'alt': 'Духовка',
-                'img': 'household-appliances'
-                })
+            <div class="burger-mobile__block burger-block burger-block--large">
+                <ul class="burger-block__items">
+                    <li class="burger-block__item">
+                        <div class="nav-card nav-card--large">
+                            <a class="nav-card__link" href="#">
+                                Cashback 25%
+                            </a>
+                            <span class="nav-card__bg" style="background-image: url('img/blocks/nav/cashback.jpg');" aria-hidden></span>
+                        </div>
+                    </li>
+                    <li class="burger-block__item">
+                        <div class="nav-card nav-card--large">
+                            <a class="nav-card__link" href="#">
+                                Гарантия 12 лет
+                            </a>
+                            <span class="nav-card__bg" style="background-image: url('img/blocks/nav/guarantee.jpg');" aria-hidden></span>
+                        </div>
+                    </li>
+                    <li class="burger-block__item">
+                        <div class="nav-card nav-card--large">
+                            <a class="nav-card__link" href="#">
+                                О компании
+                            </a>
+                            <span class="nav-card__bg" style="background-image: url('img/blocks/nav/about.jpg');" aria-hidden></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-menu__category">
+                <span class="nav-menu__title">
+                    Клиентам
+                </span>
+                <ul class="nav-menu__items">
+                    <li>
+                        <a href="#" data-menu-link>Адреса салонов</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>3D проекты</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Доставка</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Замер помещения</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Гарантия 12 лет</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Монтаж мебели</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Покупателям</a>
+                    </li>
+                </ul>
             </li>
-            <li class="burger-banners__item burger-banners__item--small">
-                <div class="burger-banners__card burger-banners__card--light">
-                    <span class="burger-banners__icon" style="background-image: url('img/icons/percent.svg');" aria-hidden></span>
-                    <span class="burger-banners__subtitle">
-                        Акции и скидки
-                    </span>
-                </div>
-            </li>
-            <li class="burger-banners__item burger-banners__item--small">
-                <div class="burger-banners__card burger-banners__card--dark">
-                    <span class="burger-banners__icon" style="background-image: url('img/icons/marker.svg');" aria-hidden></span>
-                    <span class="burger-banners__subtitle">
-                        Адреса салонов
-                    </span>
-                </div>
-            </li>
-            <li class="burger-banners__item burger-banners__item--washes burger-banners__item--big">
-                @include('./../../cards/_banner-card.html', {
-                'class' : 'banner-card--img-small banner-card--border',
-                'title': 'Мойки и акссуары',
-                'text': null,
-                'alt': 'Мойка',
-                'img': 'washes'
-                })
-            </li>
-            <li class="burger-banners__item burger-banners__item--big">
-                @include('./../../cards/_banner-card.html', {
-                'class' : '',
-                'title': 'Реализованные проекты',
-                'text': null,
-                'alt': 'Кухня',
-                'img': 'kitchen2'
-                })
+            <li class="nav-menu__category">
+                <span class="nav-menu__title">
+                    О компании
+                </span>
+                <ul class="nav-menu__items">
+                    <li>
+                        <a href="#" data-menu-link>Производство</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>История компании</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Миссия и ценности</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Замер помещения</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Работа в Zetta</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Франшиза</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Блог</a>
+                    </li>
+                </ul>
             </li>
         </ul>
-
-        <div class="burger-mobile__block burger-block burger-block--large">
-            <ul class="burger-block__items">
-                <li class="burger-block__item">
-                    <div class="nav-card nav-card--large">
-                        <a class="nav-card__link" href="#">
-                            Cashback 25%
+        <div class="burger-menu__contacts">
+            <div class="navigation-connection">
+                <ul class="navigation-connection__contacts">
+                    <li class="navigation-connection__contact">
+                        <a class="navigation-connection__link" href="tel:+70070000880">
+                            +7 (007)-000-08-80
                         </a>
-                        <span class="nav-card__bg" style="background-image: url('img/blocks/nav/cashback.jpg');" aria-hidden></span>
-                    </div>
-                </li>
-                <li class="burger-block__item">
-                    <div class="nav-card nav-card--large">
-                        <a class="nav-card__link" href="#">
-                            Гарантия 12 лет
+                    </li>
+                    <li class="navigation-connection__contact">
+                        <a class="navigation-connection__link" href="mailto:info@zetta.ru">
+                            info@zetta.ru
                         </a>
-                        <span class="nav-card__bg" style="background-image: url('img/blocks/nav/guarantee.jpg');" aria-hidden></span>
-                    </div>
-                </li>
-                <li class="burger-block__item">
-                    <div class="nav-card nav-card--large">
-                        <a class="nav-card__link" href="#">
-                            О компании
+                    </li>
+                </ul>
+                <ul class="socials burger-menu__socials">
+                    <li class="socials__item">
+                        <a class="socials__link" href="#" target="_blank" aria-label="ВКонтакте">
+                            <svg aria-hidden>
+                                <use xlink:href="img/sprite.svg#vk">
+                            </svg>
                         </a>
-                        <span class="nav-card__bg" style="background-image: url('img/blocks/nav/about.jpg');" aria-hidden></span>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                    <li class="socials__item">
+                        <a class="socials__link" href="#" target="_blank" aria-label="youtube">
+                            <svg aria-hidden>
+                                <use xlink:href="img/sprite.svg#youtube">
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="socials burger-menu__socials burger-menu__socials--mobile">
+                    <li class="socials__item">
+                        <a class="socials__link" href="#" target="_blank" aria-label="whatsapp">
+                            <svg aria-hidden>
+                                <use xlink:href="img/sprite.svg#whatsapp">
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="socials__item">
+                        <a class="socials__link" href="#" target="_blank" aria-label="telegram">
+                            <svg aria-hidden>
+                                <use xlink:href="img/sprite.svg#telegram">
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button class="burger-menu__button burger-menu__button--desktop button button--accent" type="button">
+                Записаться в салон
+                <svg aria-hidden>
+                    <use xlink:href="img/sprite.svg#arrows-double">
+                </svg>
+            </button>
         </div>
-
-    </div>
-
-    <ul class="nav-menu">
-        <li class="nav-menu__category">
-            <span class="nav-menu__title">
-                Клиентам
+        <div class="burger-menu__bottom">
+            <a class="burger-menu__privacy" href="#" data-menu-link>
+                Политика конфиденциальности
+            </a>
+            <span>
+                Copyright © 1998-2023 Zetta. All rights reserved
             </span>
-            <ul class="nav-menu__items">
-                <li>
-                    <a href="#" data-menu-link>Адреса салонов</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>3D проекты</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Доставка</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Замер помещения</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Гарантия 12 лет</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Монтаж мебели</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Покупателям</a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-menu__category">
-            <span class="nav-menu__title">
-                О компании
-            </span>
-            <ul class="nav-menu__items">
-                <li>
-                    <a href="#" data-menu-link>Производство</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>История компании</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Миссия и ценности</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Замер помещения</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Работа в Zetta</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Франшиза</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Блог</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <div class="burger-menu__contacts">
-        <div class="navigation-connection">
-            <ul class="navigation-connection__contacts">
-                <li class="navigation-connection__contact">
-                    <a class="navigation-connection__link" href="tel:+70070000880">
-                        +7 (007)-000-08-80
-                    </a>
-                </li>
-                <li class="navigation-connection__contact">
-                    <a class="navigation-connection__link" href="mailto:info@zetta.ru">
-                        info@zetta.ru
-                    </a>
-                </li>
-            </ul>
-            <ul class="socials burger-menu__socials">
-                <li class="socials__item">
-                    <a class="socials__link" href="#" target="_blank" aria-label="ВКонтакте">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#vk">
-                        </svg>
-                    </a>
-                </li>
-                <li class="socials__item">
-                    <a class="socials__link" href="#" target="_blank" aria-label="youtube">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#youtube">
-                        </svg>
-                    </a>
-                </li>
-            </ul>
-            <ul class="socials burger-menu__socials burger-menu__socials--mobile">
-                <li class="socials__item">
-                    <a class="socials__link" href="#" target="_blank" aria-label="whatsapp">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#whatsapp">
-                        </svg>
-                    </a>
-                </li>
-                <li class="socials__item">
-                    <a class="socials__link" href="#" target="_blank" aria-label="telegram">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#telegram">
-                        </svg>
-                    </a>
-                </li>
-            </ul>
         </div>
-        <button class="burger-menu__button burger-menu__button--desktop button button--accent" type="button">
-            Записаться в салон
-            <svg>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </button>
-    </div>
-    <div class="burger-menu__bottom">
-        <a class="burger-menu__privacy" href="#" data-menu-link>
-            Политика конфиденциальности
-        </a>
-        <span>
-            Copyright © 1998-2023 Zetta. All rights reserved
-        </span>
     </div>
 </div>

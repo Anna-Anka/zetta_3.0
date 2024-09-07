@@ -1,0 +1,15 @@
+.header-consultation {
+	@include flex-alignment(20px, flex-start);
+
+	&__contact {
+		@include link-border-bottom;
+
+		@include mq(sm) {
+			display: none;
+		}
+	}
+
+	@include mq(lg) {
+		display: none;
+	}
+}

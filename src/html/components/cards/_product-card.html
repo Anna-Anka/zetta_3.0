@@ -14,7 +14,7 @@
             @if(question !== 'null') {
             <button class="product-card__question" type="button" data-tippy-content>
                 @question
-                <svg>
+                <svg aria-hidden>
                     <use xlink:href="img/sprite.svg#question">
                 </svg>
             </button>
@@ -33,13 +33,13 @@
     <div class="product-card__footer">
         <a class="product-card__link button button--border" href="#">
             Подробнее о модели
-            <svg>
+            <svg aria-hidden>
                 <use xlink:href="img/sprite.svg#arrows-double">
             </svg>
         </a>
         <button class="product-card__button button button--secondary" type="button">
             Заказать проект
-            <svg>
+            <svg aria-hidden>
                 <use xlink:href="img/sprite.svg#arrows-double">
             </svg>
         </button>

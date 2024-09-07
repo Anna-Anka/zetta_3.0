@@ -16,13 +16,19 @@
 		position: fixed;
 	}
 
+	&--burger {
+		z-index: 2;
+
+		@include mq(lg) {
+			z-index: 22;
+		}
+	}
+
 	@include mq(sm) {
 		height: 72px;
 	}
 
 	&__navigation {
-		position: relative;
-		z-index: 5;
 		display: flex;
 		height: 100%;
 		background-color: var(--color-white);
@@ -39,6 +45,8 @@
 		}
 
 		@include mq(lg) {
+			position: relative;
+			z-index: 5;
 			padding: 0 20px;
 		}
 	}
@@ -68,6 +76,10 @@
 		background-color: var(--color-white);
 		transition: background-color 0.3s;
 
+		@include mq(lg) {
+			justify-content: flex-end;
+		}
+
 		@include mq(lg, min) {
 			padding: 8px 45px;
 		}
@@ -83,28 +95,9 @@
 		}
 
 		&--contacts {
-			gap: 20px;
-
 			@include mq(xl) {
 				margin: 0 auto;
 			}
-		}
-	}
-
-	&__consultation {
-		color: var(--color-white);
-		background-color: var(--color-dark-600);
-
-		@include mq(lg) {
-			display: none;
-		}
-	}
-
-	&__contact {
-		@include link-border-bottom;
-
-		@include mq(sm) {
-			display: none;
 		}
 	}
 
