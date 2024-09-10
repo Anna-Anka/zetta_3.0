@@ -63,7 +63,6 @@ export const changeBlogImages = () => {
                     card.removeAttribute('aria-selected');
                 } else {
                     if (!card.hasAttribute('aria-selected')) {
-                        console.log('a')
                         cards[0].setAttribute('aria-selected', 'true');
                     }
                 }

@@ -1,13 +1,13 @@
 .menu-categories {
+	display: flex;
+	flex-direction: column;
 	position: fixed;
 	left: 0;
 	top: 0;
-	overflow: hidden;
-	padding: 154px 50px 85px;
 	width: 100%;
 	background-color: var(--color-white);
 	visibility: hidden;
-	transform: translateY(100%);
+	transform: translateY(-100%);
 	transition: transform 0.5s;
 
 	@include mq(xl) {
@@ -16,11 +16,18 @@
 
 	&--active {
 		z-index: -1;
-		overflow-y: auto;
 		opacity: 1;
 		visibility: visible;
 		transform: translateY(0);
 		transition: transform 0.3s ease-in-out;
+	}
+
+	&__inner {
+		overflow: auto;
+		position: relative;
+		height: -webkit-fill-available;
+		height: fill-available;
+		padding: 154px 50px 85px;
 	}
 
 	&__wrapper,
@@ -38,6 +45,7 @@
 
 	&__wrapper {
 		display: flex;
+		// overflow: auto;
 	}
 
 	&__list {

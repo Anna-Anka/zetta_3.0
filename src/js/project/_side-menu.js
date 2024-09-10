@@ -14,7 +14,7 @@ export const changeColorSideMenu = () => {
                 blocks.forEach((block) => {
                     const topPosition = block.offsetTop
 
-                    if (scrollDistance > heroHeight - (topPosition + 50)) {
+                    if (scrollDistance > heroHeight - (topPosition + 120)) {
                         block.setAttribute('data-color', 'dark')
                     } else {
                         block.setAttribute('data-color', 'light')
