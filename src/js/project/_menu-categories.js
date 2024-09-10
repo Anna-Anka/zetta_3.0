@@ -1,5 +1,6 @@
 import {disableScroll} from '../utils/_disable-scroll.js';
 import {enableScroll} from '../utils/_enable-scroll.js';
+import {throttle} from '../utils/_throttle.js';
 
 export const manageMenuCategories = () => {
     const header = document.querySelector('.header')
