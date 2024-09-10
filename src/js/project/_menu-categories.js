@@ -28,7 +28,7 @@ export const manageMenuCategories = () => {
     }
 
     const showMenu = () => {
-        header.classList.remove('header--transparent');
+        headerIsTransparent && header.classList.remove('header--transparent');
         menu.classList.add('menu-categories--active');
         button.setAttribute('aria-expanded', true);
         menu.setAttribute('aria-hidden', false);
