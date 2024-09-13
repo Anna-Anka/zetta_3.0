@@ -1,14 +1,7 @@
 import GraphModal from 'graph-modal';
 
 new GraphModal('consultation');
+new GraphModal('order-calc');
+new GraphModal('order-project');
+new GraphModal('sign-up-salon');
 
-// * Код к модальному окну для "спасибо"
-// if (document.querySelector('.modal-thank')) {
-//     const btnThank = document.querySelector('.modal-thank');
-
-//     btnThank.addEventListener('click', () => {
-//         new GraphModal('modal').open('modal-thank');
-//     });
-
-//     // btnThank.click();
-// }

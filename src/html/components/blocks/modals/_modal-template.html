@@ -1,0 +1,65 @@
+<div class="graph-modal__box">
+    <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
+    <form class="graph-modal__form form" action="#">
+        <div class="form__header">
+            <span class="form__title">
+                @title
+            </span>
+            <div class="form__text">
+                @for (var i = 0; i < text.length; i++) { <p> `+text[i]+` </p> }
+            </div>
+        </div>
+
+        @if(typeof tabs !== 'undefined' && tabs === 'true') {
+        <div class="form__tabs">
+            <div class="form__tab">
+                <input class="form__hidden" type="radio" name="order" id="@id-project" checked>
+                <label class="form__box" for="@id-project">
+                    Бесплатный 3D дизайн-проект
+                </label>
+            </div>
+            <div class="form__tab">
+                <input class="form__hidden" type="radio" name="order" id="@id-design">
+                <label class="form__box" for="@id-design">
+                    Бесплатный вызов дизайнера
+                </label>
+            </div>
+        </div>
+        }
+
+        <div class="form__items">
+            <div class="form__item">
+                <label class="sr-only" for="@id-name">
+                    Введите ваше имя
+                </label>
+                <input class="form__field" id="@id-name" name="name" type="text" placeholder="Имя" required>
+            </div>
+            <div class="form__item">
+                <label class="sr-only" for="@id-phone">
+                    Введите номер телефона
+                </label>
+                <input class="form__field" id="@id-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            @if(typeof email !== 'undefined' && email === 'true') {
+            <div class="form__item">
+                <label class="sr-only" for="@id-email">
+                    Введите почту
+                </label>
+                <input class="form__field" id="@id-email" name="email" type="email" placeholder="Почта" required>
+            </div>
+            }
+        </div>
+        <div class="form__bottom">
+            <button class="form__button button button--dark" type="submit">
+                Отправить заявку
+                <svg aria-hidden>
+                    <use xlink:href="img/sprite.svg#arrows-double">
+                </svg>
+            </button>
+            <p>
+                Нажимая на кнопку, вы принимаете условия 
+                <a href="#">публичной оферты</a> .
+            </p>
+        </div>
+    </form>
+</div>

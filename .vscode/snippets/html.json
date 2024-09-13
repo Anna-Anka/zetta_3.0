@@ -150,7 +150,7 @@
 	"graph modal btn": {
 		"prefix": "g-modal-btn",
 		"body": [
-			"<button class=\"$1__button button\" data-graph-path=\"$2\" type=\"button\">$3</button>"
+			"<button class=\"$1__button button\" data-graph-path=\"$2\" aria-controls=\"$3\" type=\"button\">$4</button>"
 		]
 	},
 

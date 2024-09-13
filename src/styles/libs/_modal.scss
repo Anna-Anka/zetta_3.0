@@ -70,7 +70,7 @@
 		margin: auto;
 		padding: 20px 0;
 		width: 100%;
-		max-width: 500px;
+		max-width: 580px;
 	}
 
 	.form {
@@ -90,6 +90,12 @@
 
 			@include mq(sm) {
 				font-size: 24px;
+			}
+		}
+
+		&__items {
+			@include mq(sm, min) {
+				max-width: 500px;
 			}
 		}
 

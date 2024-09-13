@@ -8,8 +8,9 @@
 
 <!-- TODO: aria: 
  1) связь в спойлере;
- 2) в модалке кнопка (непонято для чего); 
- 4) focus active для всех добавить; 
+ 2) увеличить лого
+ 3) в каталоге только 2 карточки
+ 4) focus hover для всех добавить; 
  5) сделать так, чтобы лишние скрипты не работали на мобилках
  6) дизейбл кнопок (стрелок) в табах
  7) в логике convenience не нравится, что использую setTimeout. Нужно попробовать отрисовывать точки внутри класса
@@ -36,10 +37,7 @@
 <div class="wrapper">
     @include('./components/blocks/_menu-mobile.html')
 
-    <div class="graph-modal">
-        @include('./components/blocks/modals/_consultation.html')
-        <!-- @include('./components/blocks/modals/_thank-modal.html') -->
-    </div>
+    @include('./components/blocks/modals/_modals.html')
 
     <main class="main">
         @include('./pages/home-page/_hero.html')
