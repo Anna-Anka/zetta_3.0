@@ -1,5 +1,9 @@
 .header {
 	&--transparent {
+		&::before {
+			background-color: var(--rgba-white-200);
+		}
+
 		.header__navigation {
 			background-color: transparent;
 
@@ -27,6 +31,12 @@
 				&__contact {
 					border-bottom-color: var(--rgba-white-500);
 					color: var(--color-white);
+
+					@media (any-hover: hover) {
+						&:hover {
+							border-bottom-color: var(--color-white);
+						}
+					}
 				}
 			}
 
