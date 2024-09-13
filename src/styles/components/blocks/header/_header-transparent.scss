@@ -69,9 +69,11 @@
 			}
 		}
 
-		.header__logo {
-			filter: invert(99%) sepia(1%) saturate(9%) hue-rotate(182deg)
-				brightness(106%) contrast(100%);
+		.logo {
+			&__img {
+				filter: invert(99%) sepia(1%) saturate(9%) hue-rotate(182deg)
+					brightness(106%) contrast(100%);
+			}
 		}
 
 		.header__button {

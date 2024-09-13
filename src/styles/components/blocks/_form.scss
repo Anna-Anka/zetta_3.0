@@ -57,11 +57,12 @@
 	}
 
 	&__box {
+		width: 100%;
+		display: inline-block;
 		border: 1px solid var(--color-grey-200);
 		padding: 35px;
 		font-size: 14px;
 		text-align: center;
-		display: inline-block;
 
 		@include mq(sm) {
 			padding: 22px;

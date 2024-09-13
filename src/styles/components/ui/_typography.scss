@@ -1,0 +1,38 @@
+.heading,
+.title,
+.subtitle {
+	display: inline-block;
+	font-weight: 500;
+	color: var(--color-dark-600);
+}
+
+.title {
+	margin-bottom: 32px;
+	font-size: 30px;
+	letter-spacing: -0.05em;
+
+	@include mq(sm) {
+		font-size: 24px;
+	}
+}
+
+.heading {
+	margin-bottom: 20px;
+	font-size: 56px;
+	line-height: 1;
+	letter-spacing: -0.05em;
+
+	@include mq(md) {
+		font-size: 38px;
+	}
+}
+
+.subtitle {
+	font-weight: 500;
+	font-size: 18px;
+	letter-spacing: 0.03rem;
+
+	@include mq(sm) {
+		font-size: 14px;
+	}
+}

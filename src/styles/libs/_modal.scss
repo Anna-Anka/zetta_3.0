@@ -68,9 +68,14 @@
 
 	&__box {
 		margin: auto;
-		padding: 20px 0;
+		padding: 20px;
 		width: 100%;
-		max-width: 580px;
+		max-width: 620px;
+
+		@include mq(sm) {
+			padding: 70px 15px 20px;
+			max-width: 100%;
+		}
 	}
 
 	.form {
@@ -102,12 +107,13 @@
 		&__bottom {
 			@include flex-alignment(12px, center, center, column);
 
+			width: 100%;
+			max-width: 258px;
 			text-align: center;
 			gap: 12px;
 
-			@include mq(sm, min) {
-				width: 100%;
-				max-width: 258px;
+			@include mq(sm) {
+				max-width: 100%;
 			}
 		}
 	}
