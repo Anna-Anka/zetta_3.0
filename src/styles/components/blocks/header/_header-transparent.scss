@@ -51,6 +51,14 @@
 					}
 				}
 
+				&:focus-visible {
+					.burger-button {
+						&__line {
+							color: var(--color-white);
+						}
+					}
+				}
+
 				&__plate {
 					background-color: var(--color-white);
 				}

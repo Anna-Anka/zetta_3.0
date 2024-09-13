@@ -13,7 +13,6 @@
 	&__link {
 		@include flex-alignment;
 
-		outline: 0;
 		border: 1px solid transparent;
 		border-radius: 50%;
 		width: 100%;
@@ -31,7 +30,8 @@
 		}
 
 		&:focus-visible {
-			border-color: var(--color-orange-400);
+			@include focus-visible;
+
 			color: var(--color-dark-600);
 			background-color: transparent;
 		}

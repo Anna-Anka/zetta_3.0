@@ -25,8 +25,23 @@
 	&__link {
 		margin-top: auto;
 
+		&:focus-visible {
+			&::before {
+				border-color: var(--color-orange-400);
+			}
+
+			.button__decor {
+				box-shadow: none;
+				color: var(--color-white);
+				background-color: var(--color-orange-400);
+			}
+		}
+
 		&::before {
 			@include link-cover;
+
+			border: 2px solid transparent;
+			transition: border-color 0.3s;
 		}
 	}
 }

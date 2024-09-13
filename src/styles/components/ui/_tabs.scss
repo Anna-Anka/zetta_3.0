@@ -3,16 +3,33 @@
 		@include flex-simple(8px);
 	}
 
+	&__nav-item {
+		padding: 2px 0;
+	}
+
 	&__nav-btn {
 		position: relative;
+		border-radius: 4px;
 		font-weight: 500;
 		color: var(--color-grey-500);
 		background-color: transparent;
-		transition: color 0.3s;
+		transition:
+			color 0.3s,
+			box-shadow 0.3s;
 
 		&:focus {
 			color: var(--color-dark-600);
 			background-color: transparent;
+		}
+
+		&:focus-visible {
+			@include focus-visible;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--color-dark-600);
+			}
 		}
 
 		&::before {

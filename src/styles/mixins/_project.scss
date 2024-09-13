@@ -96,3 +96,23 @@
 		transition: color 0.3s;
 	}
 }
+
+@mixin focus-visible($box-shadow-color: var(--rgba-orange-800)) {
+	outline: 0;
+	box-shadow: 0 0 0 2px $box-shadow-color;
+}
+
+@mixin swiper-buttons {
+	@include flex-simple(8px);
+
+	position: absolute;
+	right: 0;
+	top: 10px;
+	display: flex;
+	padding: 2px 0;
+	gap: 8px;
+
+	@include mq(md) {
+		display: none;
+	}
+}

@@ -9,7 +9,20 @@
 	color: var(--color-white);
 	transition:
 		background-color 0.3s,
-		color 0.3s;
+		color 0.3s,
+		box-shadow 0.3s;
+
+	&:focus-visible {
+		@include focus-visible;
+	}
+
+	@media (any-hover: hover) {
+		&:hover {
+			.button__point {
+				background-color: var(--color-white);
+			}
+		}
+	}
 
 	&--dark {
 		background-color: var(--color-dark-600);
@@ -18,6 +31,11 @@
 			&:hover {
 				background-color: var(--color-orange-400);
 			}
+		}
+
+		&:focus-visible {
+			color: var(--color-dark-600);
+			background-color: var(--color-grey-100);
 		}
 	}
 
@@ -29,6 +47,11 @@
 				background-color: var(--color-orange-600);
 			}
 		}
+
+		&:focus-visible {
+			color: var(--color-dark-600);
+			background-color: var(--color-grey-100);
+		}
 	}
 
 	&--decor {
@@ -38,9 +61,21 @@
 		color: var(--color-dark-600);
 		gap: 8px;
 
+		&:focus-visible {
+			box-shadow: none;
+
+			.button__decor {
+				box-shadow: var(--box-shadow-orange);
+				color: var(--color-dark-600);
+				background-color: var(--color-grey-200);
+			}
+		}
+
 		@media (any-hover: hover) {
 			&:hover {
-				color: var(--color-orange-400);
+				.button__decor {
+					background-color: var(--color-orange-600);
+				}
 			}
 		}
 	}
@@ -53,10 +88,30 @@
 
 	&--border {
 		border: 1px solid var(--color-grey-200);
+		transition:
+			border-color 0.3s,
+			box-shadow 0.3s;
+
+		&:focus-visible {
+			border-color: transparent;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-color: transparent;
+				background-color: var(--color-grey-100);
+			}
+		}
 	}
 
 	&--secondary {
 		background-color: var(--color-grey-100);
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--color-grey-300);
+			}
+		}
 	}
 
 	&__decor {
@@ -68,6 +123,10 @@
 		height: 30px;
 		color: var(--color-white);
 		background-color: var(--color-orange-400);
+		transition:
+			color 0.3s,
+			background-color 0.3s,
+			box-shadow 0.3s;
 
 		@include mq(sm) {
 			height: 28px;
@@ -93,14 +152,6 @@
 	&__text {
 		@include mq(sm) {
 			display: none;
-		}
-	}
-
-	@media (any-hover: hover) {
-		&:hover {
-			.button__point {
-				background-color: var(--color-white);
-			}
 		}
 	}
 

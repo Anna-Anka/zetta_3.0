@@ -12,9 +12,15 @@
 	&__link {
 		@include title(16px);
 
+		border-radius: 4px;
 		line-height: 1.4;
 		white-space: nowrap;
 		color: var(--color-dark-600);
+		transition: box-shadow 0.3s;
+
+		&:focus-visible {
+			@include focus-visible;
+		}
 	}
 
 	&__text {

@@ -96,6 +96,8 @@
 
 	&__buttons {
 		@include flex-simple(8px);
+
+		padding: 2px 0;
 	}
 
 	.swiper-pagination-fraction {

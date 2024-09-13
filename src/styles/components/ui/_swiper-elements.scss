@@ -46,6 +46,19 @@
 	height: 36px;
 	color: currentcolor;
 	background-color: var(--color-white);
+	transition:
+		background-color 0.3s,
+		box-shadow 0.3s;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: var(--color-grey-300);
+		}
+	}
+
+	&:focus-visible {
+		@include focus-visible;
+	}
 
 	@include mq(sm) {
 		width: 38px;

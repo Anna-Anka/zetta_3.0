@@ -162,17 +162,25 @@
 	}
 
 	&__privacy {
+		align-self: flex-start;
+		border-radius: 4px;
 		color: var(--color-dark-600);
-		transition: color 0.3s;
-
-		@include mq(md) {
-			display: none;
-		}
+		transition:
+			color 0.3s,
+			box-shadow 0.3s;
 
 		@media (any-hover: hover) {
 			&:hover {
 				color: var(--color-orange-400);
 			}
+		}
+
+		&:focus-visible {
+			@include focus-visible;
+		}
+
+		@include mq(md) {
+			display: none;
 		}
 	}
 }

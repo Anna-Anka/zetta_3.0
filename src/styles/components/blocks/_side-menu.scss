@@ -96,7 +96,16 @@
 		@include title(16px);
 
 		color: var(--color-grey-600);
-		transition: color 0.3s;
+		transition:
+			color 0.3s,
+			box-shadow 0.3s,
+			border-radius 0.3s;
+
+		&:focus-visible {
+			@include focus-visible;
+
+			border-radius: 4px;
+		}
 	}
 
 	@include mq(xl) {
@@ -133,6 +142,11 @@
 			.socials__link {
 				color: var(--color-dark-600);
 				background-color: var(--color-white);
+
+				&:focus-visible {
+					color: var(--color-white);
+					background-color: var(--color-dark-600);
+				}
 			}
 		}
 	}

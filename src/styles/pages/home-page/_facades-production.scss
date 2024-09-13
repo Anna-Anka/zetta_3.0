@@ -48,6 +48,10 @@
 		}
 	}
 
+	&__link {
+		width: max-content;
+	}
+
 	&__images {
 		@include mq(lg, min) {
 			display: flex;

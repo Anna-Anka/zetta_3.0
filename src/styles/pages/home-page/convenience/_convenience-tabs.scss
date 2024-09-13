@@ -22,13 +22,14 @@
 		}
 
 		&__nav-item {
+			padding-left: 11px;
+
 			@include mq(lg) {
 				width: 100%;
 			}
 		}
 
 		&__nav-btn {
-			padding-left: 11px;
 			font-size: 18px;
 			letter-spacing: -0.03em;
 
@@ -46,7 +47,7 @@
 			}
 
 			&::before {
-				left: 0;
+				left: -11px;
 				top: 9px;
 				transform: translateY(0);
 			}
