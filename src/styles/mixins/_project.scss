@@ -79,7 +79,7 @@
 }
 
 @mixin question-button($gap: 8px, $svg-size: 20px) {
-	@include flex-alignment($gap, flex-start, center);
+	@include flex-simple($gap);
 
 	@media (any-hover: hover) {
 		&:hover {
