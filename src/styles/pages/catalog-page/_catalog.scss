@@ -12,9 +12,20 @@
 	}
 
 	&__items {
-		@include flex-simple(40px);
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 40px 50px;
+		// @include flex-simple(40px);
 
-		flex-wrap: wrap;
+		// flex-wrap: wrap;
+
+		@include mq(lg) {
+			column-gap: 20px;
+		}
+
+		@include mq(md) {
+			grid-template-columns: 1fr;
+		}
 
 		&:not(:last-child) {
 			margin-bottom: 40px;
@@ -22,15 +33,15 @@
 	}
 
 	&__item {
-		flex: 1 1 400px;
+		// flex: 1 1 400px;
 
-		@include mq(lg) {
-			flex-basis: 300px;
-		}
+		// @include mq(lg) {
+		// 	flex-basis: 300px;
+		// }
 
-		@include mq(md) {
-			flex-basis: 400px;
-		}
+		// @include mq(md) {
+		// 	flex-basis: 400px;
+		// }
 	}
 
 	&__more {
