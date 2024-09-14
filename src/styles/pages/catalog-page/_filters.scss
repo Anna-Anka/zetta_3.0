@@ -51,6 +51,20 @@
 	&__hidden {
 		@include hidden;
 
+		&:focus {
+			& + .filters__visible {
+				border-color: var(--color-orange-400);
+			}
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				& + .filters__visible {
+					border-color: var(--color-dark-600);
+				}
+			}
+		}
+
 		&:checked {
 			& + .filters__visible {
 				&::before {
@@ -65,6 +79,7 @@
 
 		position: relative;
 		border: 1px solid var(--color-grey-200);
+		transition: border-color 0.3s;
 
 		@include mq(sm) {
 			width: 12px;

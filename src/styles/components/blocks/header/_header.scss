@@ -25,11 +25,7 @@
 	}
 
 	&--burger {
-		z-index: 2;
-
-		// @include mq(lg) {
-		// 	z-index: 22;
-		// }
+		z-index: 4;
 	}
 
 	@include mq(sm) {

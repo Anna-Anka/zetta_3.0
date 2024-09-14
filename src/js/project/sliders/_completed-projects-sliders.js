@@ -21,6 +21,7 @@ if (document.querySelector('.completed-projects__swiper')) {
                 768: {
                     slidesPerGroup: 2,
                     slidesPerView: 2,
+                    spaceBetween: 40,
 
                     pagination: {
                         el: '.swiper-pagination-fraction',
@@ -35,12 +36,6 @@ if (document.querySelector('.completed-projects__swiper')) {
                             return `<span class="${currentClass}"></span> / <span class="${totalClass}"></span>`
                         }
                     },
-                },
-
-                560: {
-                    slidesPerGroup: 1,
-                    slidesPerView: 1.2,
-                    spaceBetween: 40,
                 },
 
                 0: {

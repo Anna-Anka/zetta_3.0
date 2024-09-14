@@ -11,18 +11,25 @@
 	}
 
 	&__item {
+		padding: 2px;
+
 		&:not(:last-child) {
 			position: relative;
 			padding-right: 10px;
 
-			&::before {
-				@include circle(4px, var(--color-grey-300));
+			.breadcrumbs__link {
+				position: relative;
 
-				content: '';
-				position: absolute;
-				right: 0;
-				top: 50%;
-				transform: translateY(-50%);
+				&::before {
+					@include circle(4px, var(--color-grey-300));
+
+					content: '';
+					position: absolute;
+					right: -10px;
+					top: 50%;
+					transform: translateY(-50%);
+					transition: background-color 0.3s;
+				}
 			}
 		}
 
@@ -35,8 +42,22 @@
 	}
 
 	&__link {
+		border-radius: 2px;
 		font-size: 12px;
 		white-space: nowrap;
 		color: var(--color-dark-600);
+		transition: box-shadow 0.3s;
+
+		&:focus-visible {
+			@include focus-visible;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+					background-color: var(--color-dark-600);
+				}
+			}
+		}
 	}
 }
