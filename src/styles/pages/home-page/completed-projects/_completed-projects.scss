@@ -1,10 +1,10 @@
 .completed-projects {
+	@include container;
+
 	padding-top: 120px;
-	padding-left: 45px;
 
 	@include mq(lg) {
 		padding-top: 80px;
-		padding-left: 20px;
 	}
 
 	@include mq(sm) {
@@ -21,7 +21,6 @@
 		position: absolute;
 		right: 0;
 		top: 0;
-		padding-right: 45px;
 
 		@include mq(lg) {
 			display: none;
