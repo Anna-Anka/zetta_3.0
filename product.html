@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная страница | Фабрика Zetta</title>
+    <title>Кухня «Велла» | Фабрика Zetta</title>
     <meta name="description" content="Фабрика Кухни ZETTA продает кухни по индивидуальному заказу с итальянскими фасадам. Лучшие кухни из Италии в Москве.">
     
     <meta name="keywords" content="Купить кухню, купить кухню в Москве, итальянские кухни, Кухни из Италии, кухни с итальянскими фасадами, кухни на заказ">
@@ -14,7 +14,7 @@
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Главная страница | Фабрика Zetta">
+    <meta property="og:title" content="Кухня «Велла» | Фабрика Zetta">
     <meta property="og:description" content="Фабрика Кухни ZETTA продает кухни по индивидуальному заказу с итальянскими фасадам. Лучшие кухни из Италии в Москве.">
     <meta property="og:image" content="img/og-image.jpg"> <!-- min: 600 * 315, perfect: 1200 * 630 -->
     <meta property="og:url" content="URL вашей страницы">
@@ -32,30 +32,7 @@
 
 <body class="body">
 
-<!-- TODO: aria: 
- 0) консультация дизайнера прыгает наверх (попробовать e.preventDefault())
- 0) проверить все через скринридер
- 1) связь в спойлере;
-2) При открытой модалке (с меню), бурегр-меню первыми на фокус должны быть элементы в них
-3) При открытом бургре меню фокус на закрыть 
- 5) сделать так, чтобы лишние скрипты не работали на мобилках
- 6) дизейбл кнопок (стрелок) в табах
- 7) в логике convenience не нравится, что использую setTimeout. Нужно попробовать отрисовывать точки внутри класса
- 7) в мобильном бургер-меню focus и hover на карточки
- 8) неактивная хлебная крошка может быть в фокусе
- 8) fixedHeader, changeColorSideMenu учитывать, что высота экрана может меняться
- 9) fixedHeader, changeColorSideMenu оптимизация 
- 10) проверить хлебные крошки и мобильное меню на переполнение и вск остальное
- 11) ругается stylelint
- 13) чтобы на одном разрешение у всех слайдеров убирались стрелки
- 14) попробовать controls позиционирвоать не на абсолюте + в слайдере постараться не дублировать стили (сделать примерно как в других решениях на странице товара)
- 16) ДЛЯ product-projects и другие решения сделать что-то, чтобы не дублировать стили
- 17) unique-quality и guarantee-block что-то придумать, чтобы не дублирвать стили
--->
-
-<h1 class="sr-only">Фабрика Zetta — производство кухонь!</h1>
-
-<header class="header fixed-block header--transparent">
+<header class="header fixed-block header--fixed">
     <div class="overlay" data-menu-overlay aria-hidden></div>
     <nav class="header__navigation">
         <div class="header__wrapper-logo">
@@ -888,1211 +865,301 @@
 </div>
 </div>
 
-    <main class="main">
-        <section class="hero-home" data-fullscreen>
-    <div class="hero-home__side-bg" aria-hidden></div>
-    <div class="hero-home__swiper swiper">
-        <ul class="hero-home__items swiper-wrapper">
-            <li class="hero-home__item swiper-slide" style="background-image: url('img/blocks/hero-home/1.jpg');">
-                <div class="hero-home__container">
-                    <span class="hero-home__title title">
-                        Комплектующие из Италии. Сборка кухонь в России. Так мы снижаем цены в два раза.
-                    </span>
-                    <button class="hero-home__button button button--accent" type="button">
-                        В каталог
-                        <svg aria-hidden>
-                            <use xlink:href="img/sprite.svg#arrows-double">
-                        </svg>
-                    </button>
-                </div>
-            </li>
-            <li class="hero-home__item swiper-slide" style="background-image: url('img/blocks/hero-home/2.jpg');">
-                <div class="hero-home__container">
-                    <span class="hero-home__title title">
-                        Комплектующие из Италии
-                    </span>
-                    <button class="hero-home__button button button--accent" type="button">
-                        Купить
-                        <svg aria-hidden>
-                            <use xlink:href="img/sprite.svg#arrows-double">
-                        </svg>
-                    </button>
-                </div>
-            </li>
-            <li class="hero-home__item swiper-slide" style="background-image: url('img/blocks/hero-home/3.jpg');">
-                <div class="hero-home__container">
-                    <span class="hero-home__title title">
-                        Сборка кухонь в России
-                    </span>
-                    <button class="hero-home__button button button--accent" type="button">
-                        Выбрать
-                        <svg aria-hidden>
-                            <use xlink:href="img/sprite.svg#arrows-double">
-                        </svg>
-                    </button>
-                </div>
-            </li>
-        </ul>
-        <div class="hero-home__controls">
-            <div class="swiper-pagination-fraction"></div>
-            <div class="hero-home__buttons">
-                <button class="hero-home__button hero-home__button--prev swiper-button-prev" type="button">
-                </button>
-                <button class="hero-home__button hero-home__button--next swiper-button-next" type="button">
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
+    <div class="main">
         <div class="page-wrapper">
             <div class="page-wrapper__side" aria-hidden></div>
-            <div class="page-wrapper__blocks">
-                <section class="completed-projects section" data-tippy-parent>
-    <h2 class="completed-projects__title title">
-        Реализованные проекты
-    </h2>
-    <div class="tabs" data-tabs="completed-projects-block">
-        <ul class="tabs__nav">
-            <li class="tabs__nav-item">
-                <button class="tabs__nav-btn" type="button">
-                    Все кухни
-                </button>
+            <div class="page-wrapper__blocks page-wrapper__blocks--padding">
+                <div class="breadcrumbs">
+    <ul class="breadcrumbs__items">
+         <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">Главная</a>
             </li>
-            <li class="tabs__nav-item">
-                <button class="tabs__nav-btn" type="button">
-                    Современный стиль
-                </button>
+             <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">Каталог</a>
             </li>
-            <li class="tabs__nav-item">
-                <button class="tabs__nav-btn" type="button">
-                    Нео классика
-                </button>
-            </li>
-            <li class="tabs__nav-item">
-                <button class="tabs__nav-btn" type="button">
-                    Классический стиль
-                </button>
-            </li>
-        </ul>
-        <div class="tabs__content">
-            <div class="tabs__panel">
-                <div class="completed-projects__swiper swiper">
-    <ul class="completed-projects__items swiper-wrapper">
-         <li class="completed-projects__item swiper-slide">
-            <article class="product-card">
-    <a class="product-card__image" href="#">
-        <picture>
-            <source srcset="img/blocks/products/kitchens/arcobalena.avif" type="image/avif">
-            <source srcset="img/blocks/products/kitchens/arcobalena.webp" type="image/webp">
-            <img class="product-card__img" src="img/blocks/products/kitchens/arcobalena.jpg" alt="Кухня" loading="lazy">
-        </picture>
-    </a>
-    <div class="product-card__content">
-        <div class="product-card__name">
-            <a class="product-card__title" href="#">
-                <h3>Аркобалена</h3>
-            </a>
-            
-            <button class="product-card__question" type="button" data-tippy-content>
-                <span>Tranche</span>
-                <svg aria-hidden>
-                    <use xlink:href="img/sprite.svg#question">
-                </svg>
-            </button>
-            <div class="tooltip">
-                <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
-            </div>
-            
-        </div>
-        <div class="product-card__info">
-            <span class="product-card__price">730 000 ₽</span>
-            
-            <span class="product-card__subtext">за кухню длиной 3 метра</span>
-            
-        </div>
-    </div>
-    <div class="product-card__footer">
-        <a class="product-card__link button button--border" href="#">
-            Подробнее о модели
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </a>
-        <button class="product-card__button button button--secondary" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
-            Заказать проект
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </button>
-    </div>
-</article>
-            </li>
-             <li class="completed-projects__item swiper-slide">
-            <article class="product-card">
-    <a class="product-card__image" href="#">
-        <picture>
-            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
-            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
-            <img class="product-card__img" src="img/blocks/products/kitchens/verona.jpg" alt="Кухня" loading="lazy">
-        </picture>
-    </a>
-    <div class="product-card__content">
-        <div class="product-card__name">
-            <a class="product-card__title" href="#">
-                <h3>Верона</h3>
-            </a>
-            
-            <button class="product-card__question" type="button" data-tippy-content>
-                <span>Tranche</span>
-                <svg aria-hidden>
-                    <use xlink:href="img/sprite.svg#question">
-                </svg>
-            </button>
-            <div class="tooltip">
-                <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
-            </div>
-            
-        </div>
-        <div class="product-card__info">
-            <span class="product-card__price">730 000 ₽</span>
-            
-        </div>
-    </div>
-    <div class="product-card__footer">
-        <a class="product-card__link button button--border" href="#">
-            Подробнее о модели
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </a>
-        <button class="product-card__button button button--secondary" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
-            Заказать проект
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </button>
-    </div>
-</article>
-            </li>
-             <li class="completed-projects__item swiper-slide">
-            <article class="product-card">
-    <a class="product-card__image" href="#">
-        <picture>
-            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
-            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
-            <img class="product-card__img" src="img/blocks/products/kitchens/verona.jpg" alt="Кухня" loading="lazy">
-        </picture>
-    </a>
-    <div class="product-card__content">
-        <div class="product-card__name">
-            <a class="product-card__title" href="#">
-                <h3>Верона</h3>
-            </a>
-            
-        </div>
-        <div class="product-card__info">
-            <span class="product-card__price">730 000 ₽</span>
-            
-        </div>
-    </div>
-    <div class="product-card__footer">
-        <a class="product-card__link button button--border" href="#">
-            Подробнее о модели
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </a>
-        <button class="product-card__button button button--secondary" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
-            Заказать проект
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </button>
-    </div>
-</article>
-            </li>
-             <li class="completed-projects__item swiper-slide">
-            <article class="product-card">
-    <a class="product-card__image" href="#">
-        <picture>
-            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
-            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
-            <img class="product-card__img" src="img/blocks/products/kitchens/verona.jpg" alt="Кухня" loading="lazy">
-        </picture>
-    </a>
-    <div class="product-card__content">
-        <div class="product-card__name">
-            <a class="product-card__title" href="#">
-                <h3>Верона</h3>
-            </a>
-            
-            <button class="product-card__question" type="button" data-tippy-content>
-                <span>Эмаль</span>
-                <svg aria-hidden>
-                    <use xlink:href="img/sprite.svg#question">
-                </svg>
-            </button>
-            <div class="tooltip">
-                <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов.</p> <p>Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p> 
-            </div>
-            
-        </div>
-        <div class="product-card__info">
-            <span class="product-card__price">730 000 ₽</span>
-            
-        </div>
-    </div>
-    <div class="product-card__footer">
-        <a class="product-card__link button button--border" href="#">
-            Подробнее о модели
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </a>
-        <button class="product-card__button button button--secondary" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
-            Заказать проект
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </button>
-    </div>
-</article>
+             <li class="breadcrumbs__item">
+            <a class="breadcrumbs__link" href="#">Велла</a>
             </li>
             
     </ul>
-    <div class="swiper-pagination"></div>
-    <div class="completed-projects__controls">
-        <div class="swiper-pagination-fraction"></div>
-        <div class="completed-projects__buttons">
-            <button class="completed-projects__button completed-projects__button--prev swiper-button-prev" type="button">
-            </button>
-            <button class="completed-projects__button completed-projects__button--next swiper-button-next" type="button">
-            </button>
-        </div>
-    </div>
 </div>
-            </div>
-            <div class="tabs__panel">
-                <div class="completed-projects__swiper swiper">
-    <ul class="completed-projects__items swiper-wrapper">
-         <li class="completed-projects__item swiper-slide">
-            <article class="product-card">
-    <a class="product-card__image" href="#">
-        <picture>
-            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
-            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
-            <img class="product-card__img" src="img/blocks/products/kitchens/verona.jpg" alt="Кухня" loading="lazy">
-        </picture>
-    </a>
-    <div class="product-card__content">
-        <div class="product-card__name">
-            <a class="product-card__title" href="#">
-                <h3>Верона</h3>
-            </a>
-            
-            <button class="product-card__question" type="button" data-tippy-content>
-                <span>Tranche</span>
+
+                <main>
+                    <section class="product-about">
+    <div class="product-about__header">
+        <div class="product-about__name">
+            <h1 class="product-about__title heading">
+                Велла
+            </h1>
+            <button class="product-about__question" type="button" data-tippy-content>
+                <span>
+                    Экошпон
+                </span>
                 <svg aria-hidden>
                     <use xlink:href="img/sprite.svg#question">
                 </svg>
             </button>
             <div class="tooltip">
-                <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
+                <p>
+                    Каждый верхний модуль выдерживает нагрузку до 100 кг.
+                </p>
             </div>
-            
         </div>
-        <div class="product-card__info">
-            <span class="product-card__price">23 730 000 ₽</span>
-            
-        </div>
-    </div>
-    <div class="product-card__footer">
-        <a class="product-card__link button button--border" href="#">
-            Подробнее о модели
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </a>
-        <button class="product-card__button button button--secondary" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
-            Заказать проект
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </button>
-    </div>
-</article>
-            </li>
-             <li class="completed-projects__item swiper-slide">
-            <article class="product-card">
-    <a class="product-card__image" href="#">
-        <picture>
-            <source srcset="img/blocks/products/kitchens/arcobalena.avif" type="image/avif">
-            <source srcset="img/blocks/products/kitchens/arcobalena.webp" type="image/webp">
-            <img class="product-card__img" src="img/blocks/products/kitchens/arcobalena.jpg" alt="Кухня" loading="lazy">
-        </picture>
-    </a>
-    <div class="product-card__content">
-        <div class="product-card__name">
-            <a class="product-card__title" href="#">
-                <h3>Аркобалена</h3>
-            </a>
-            
-            <button class="product-card__question" type="button" data-tippy-content>
-                <span>Tranche</span>
+        <div class="product-about__info">
+            <div class="product-about__cost">
+                <span class="product-about__price">405 000 ₽</span>
+                <span class="product-about__detail">
+                    За кухню длиной 3 метра
+                </span>
+            </div>
+            <button class="product-about__button product-about__button--desktop button button--accent" data-graph-path="order-calc" aria-controls="modal-order-calc" type="button">
+                Онлайн просчет цены
                 <svg aria-hidden>
-                    <use xlink:href="img/sprite.svg#question">
-                </svg>
-            </button>
-            <div class="tooltip">
-                <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
-            </div>
-            
-        </div>
-        <div class="product-card__info">
-            <span class="product-card__price">730 000 ₽</span>
-            
-            <span class="product-card__subtext">за великолепнейшую кухню длиной целых 3 метра и несколько сантиметров</span>
-            
-        </div>
-    </div>
-    <div class="product-card__footer">
-        <a class="product-card__link button button--border" href="#">
-            Подробнее о модели
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </a>
-        <button class="product-card__button button button--secondary" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
-            Заказать проект
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </button>
-    </div>
-</article>
-            </li>
-            
-    </ul>
-    <div class="swiper-pagination"></div>
-    <div class="completed-projects__controls">
-        <div class="swiper-pagination-fraction"></div>
-        <div class="completed-projects__buttons">
-            <button class="completed-projects__button completed-projects__button--prev swiper-button-prev" type="button">
-            </button>
-            <button class="completed-projects__button completed-projects__button--next swiper-button-next" type="button">
-            </button>
-        </div>
-    </div>
-</div>
-            </div>
-            <div class="tabs__panel">
-                <div class="completed-projects__swiper swiper">
-    <ul class="completed-projects__items swiper-wrapper">
-         <li class="completed-projects__item swiper-slide">
-            <article class="product-card">
-    <a class="product-card__image" href="#">
-        <picture>
-            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
-            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
-            <img class="product-card__img" src="img/blocks/products/kitchens/verona.jpg" alt="Кухня" loading="lazy">
-        </picture>
-    </a>
-    <div class="product-card__content">
-        <div class="product-card__name">
-            <a class="product-card__title" href="#">
-                <h3>Верона</h3>
-            </a>
-            
-            <button class="product-card__question" type="button" data-tippy-content>
-                <span>Tranche</span>
-                <svg aria-hidden>
-                    <use xlink:href="img/sprite.svg#question">
-                </svg>
-            </button>
-            <div class="tooltip">
-                <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
-            </div>
-            
-        </div>
-        <div class="product-card__info">
-            <span class="product-card__price">730 000 ₽</span>
-            
-            <span class="product-card__subtext">за 3 метра</span>
-            
-        </div>
-    </div>
-    <div class="product-card__footer">
-        <a class="product-card__link button button--border" href="#">
-            Подробнее о модели
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </a>
-        <button class="product-card__button button button--secondary" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
-            Заказать проект
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </button>
-    </div>
-</article>
-            </li>
-            
-    </ul>
-    <div class="swiper-pagination"></div>
-    <div class="completed-projects__controls">
-        <div class="swiper-pagination-fraction"></div>
-        <div class="completed-projects__buttons">
-            <button class="completed-projects__button completed-projects__button--prev swiper-button-prev" type="button">
-            </button>
-            <button class="completed-projects__button completed-projects__button--next swiper-button-next" type="button">
-            </button>
-        </div>
-    </div>
-</div>
-            </div>
-            <div class="tabs__panel">
-                <div class="completed-projects__swiper swiper">
-    <ul class="completed-projects__items swiper-wrapper">
-         <li class="completed-projects__item swiper-slide">
-            <article class="product-card">
-    <a class="product-card__image" href="#">
-        <picture>
-            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
-            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
-            <img class="product-card__img" src="img/blocks/products/kitchens/verona.jpg" alt="Кухня" loading="lazy">
-        </picture>
-    </a>
-    <div class="product-card__content">
-        <div class="product-card__name">
-            <a class="product-card__title" href="#">
-                <h3>Верона</h3>
-            </a>
-            
-            <button class="product-card__question" type="button" data-tippy-content>
-                <span>Tranche</span>
-                <svg aria-hidden>
-                    <use xlink:href="img/sprite.svg#question">
-                </svg>
-            </button>
-            <div class="tooltip">
-                <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
-            </div>
-            
-        </div>
-        <div class="product-card__info">
-            <span class="product-card__price">730 000 ₽</span>
-            
-            <span class="product-card__subtext">за 3 метра</span>
-            
-        </div>
-    </div>
-    <div class="product-card__footer">
-        <a class="product-card__link button button--border" href="#">
-            Подробнее о модели
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </a>
-        <button class="product-card__button button button--secondary" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
-            Заказать проект
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </button>
-    </div>
-</article>
-            </li>
-            
-    </ul>
-    <div class="swiper-pagination"></div>
-    <div class="completed-projects__controls">
-        <div class="swiper-pagination-fraction"></div>
-        <div class="completed-projects__buttons">
-            <button class="completed-projects__button completed-projects__button--prev swiper-button-prev" type="button">
-            </button>
-            <button class="completed-projects__button completed-projects__button--next swiper-button-next" type="button">
-            </button>
-        </div>
-    </div>
-</div>
-            </div>
-        </div>
-    </div>
-</section>
-                <section class="design-production section">
-    <div class="design-production__head">
-        <h2 class="design-production__title title">
-            Разработка индивидуального дизайна
-        </h2>
-        <div class="design-production__text">
-            <p>
-                Дизайнер сделает 3D-рендера в 3-х вариантах. Чтобы вы выбрали лучшее решение.
-            </p>
-        </div>
-    </div>
-    <div class="design-production__consultation">
-        <h3 class="design-production__subtitle">
-            Бесплатная консультация
-        </h3>
-        <div class="design-production__text design-production__text--consultation">
-            <p>
-                Бесплатная консультация и замер помещения опытным дизайнером-технологом.
-            </p>
-        </div>
-        <button class="__button button" data-graph-path="" aria-controls="" type="button"></button>
-        <button class="design-production__button button button--accent" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
-            Получить дизайн проект
-            <svg aria-hidden>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </button>
-    </div>
-    <ul class="design-production__items">
-        <li class="design-production__item">
-            <article class="step-card">
-    <span class="step-card__number">1</span>
-    <div class="step-card__content">
-        <h3 class="step-card__title">Как видите вы:</h3>
-        <div class="step-card__text">
-             <p> Дизайнер сделает рендер по вашим задумкам и желаниям </p> 
-        </div>
-    </div>
-</article>
-        </li>
-        <li class="design-production__item">
-            <article class="step-card">
-    <span class="step-card__number">2</span>
-    <div class="step-card__content">
-        <h3 class="step-card__title">Как видит дизайнер:</h3>
-        <div class="step-card__text">
-             <p> Ваша кухня, но исключительно видение дизайнера </p> 
-        </div>
-    </div>
-</article>
-        </li>
-        <li class="design-production__item">
-            <article class="step-card">
-    <span class="step-card__number">3</span>
-    <div class="step-card__content">
-        <h3 class="step-card__title">Бюджетная версия</h3>
-        <div class="step-card__text">
-             <p> Ваша кухня, но максимально удешевленный проект. </p> 
-        </div>
-    </div>
-</article>
-        </li>
-    </ul>
-</section>
-                <section class="video-reviews section">
-    <div class="container">
-        <div class="swiper-header">
-            <h2 class="swiper-header__title title">
-                Видео-обзоры
-            </h2>
-            <div class="swiper-header__controls">
-                <div class="swiper-pagination-fraction"></div>
-                <div class="swiper-header__buttons">
-                    <button class="video-reviews__button video-reviews__button--prev swiper-button-prev" type="button">
-                    </button>
-                    <button class="video-reviews__button video-reviews__button--next swiper-button-next" type="button">
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-outer">
-            <div class="swiper">
-                <ul class="video-reviews__items swiper-wrapper">
-                    <li class="video-reviews__item swiper-slide">
-                        <div class="video-reviews__card">
-                            <div class="video-reviews__video"></div>
-                            <div class="video-reviews__content">
-                                <h3 class="video-reviews__subtitle">
-                                    Как выбрать фурнитуру и корпус?
-                                </h3>
-                                <div class="video-reviews__text">
-                                    <p>
-                                        Рассказываем о главных критериях на примере кухни “Вектор”.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="video-reviews__item swiper-slide">
-                        <div class="video-reviews__card">
-                            <div class="video-reviews__video"></div>
-                            <div class="video-reviews__content">
-                                <h3 class="video-reviews__subtitle">
-                                    Как выбрать фурнитуру и корпус?
-                                </h3>
-                                <div class="video-reviews__text">
-                                    <p>
-                                        Рассказываем о главных критериях на примере кухни “Вектор”.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="video-reviews__item swiper-slide">
-                        <div class="video-reviews__card">
-                            <div class="video-reviews__video"></div>
-                            <div class="video-reviews__content">
-                                <h3 class="video-reviews__subtitle">
-                                    Как выбрать фурнитуру и корпус?
-                                </h3>
-                                <div class="video-reviews__text">
-                                    <p>
-                                        Рассказываем о главных критериях на примере кухни “Вектор”.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </div>
-</section>
-                <section class="convenience section">
-    <h2 class="convenience__title title">
-        Удобство и практичность
-    </h2>
-    <div class="tabs" data-tabs="convenience-block">
-        <ul class="tabs__nav">
-            <li class="tabs__nav-item">
-                <button class="tabs__nav-btn" type="button">
-                    Фурнитура
-                </button>
-            </li>
-            <li class="tabs__nav-item">
-                <button class="tabs__nav-btn" type="button">
-                    Гарантия
-                </button>
-            </li>
-            <li class="tabs__nav-item">
-                <button class="tabs__nav-btn" type="button">
-                    Корпус
-                </button>
-            </li>
-            <li class="tabs__nav-item">
-                <button class="tabs__nav-btn" type="button">
-                    Петли
-                </button>
-            </li>
-            <li class="tabs__nav-item">
-                <button class="tabs__nav-btn" type="button">
-                    Производство
-                </button>
-            </li>
-        </ul>
-        <div class="tabs__content">
-            <div class="tabs__panel">
-                <div class="convenience__wrapper">
-    <div class="convenience__content">
-        <h3 class="convenience__subtitle subtitle">
-            Австрийская фурнитура Grass
-        </h3>
-        
-        <div class="convenience__text">
-             <p> Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. </p>  <p> Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий. </p>  <p> Срок службы фурнитуры составляет более 25 лет. </p> 
-        </div>
-
-        
-        
-        <ul class="convenience__advantages">
-             <li> 65 000 открытий/закрытий </li>  <li> На срок службы от 25 лет </li> 
-        </ul>
-        
-    </div>
-    <div class="convenience__image">
-        <div class="convenience__points" aria-hidden>
-
-        </div>
-        <picture>
-            <source srcset="img/blocks/convenience/1.avif" type="image/avif">
-            <source srcset="img/blocks/convenience/1.webp" type="image/webp">
-            <img class="convenience__img" src="img/blocks/convenience/1.png" alt="Фото 1" width="410" height="410" loading="lazy">
-        </picture>
-    </div>
-</div>
-            </div>
-            <div class="tabs__panel">
-                <div class="convenience__wrapper">
-    <div class="convenience__content">
-        <h3 class="convenience__subtitle subtitle">
-            Гарантия
-        </h3>
-        
-        <div class="convenience__text">
-             <p> Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. </p>  <p> Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий. </p>  <p> Срок службы фурнитуры составляет более 25 лет. </p> 
-        </div>
-
-        
-        
-    </div>
-    <div class="convenience__image">
-        <div class="convenience__points" aria-hidden>
-
-        </div>
-        <picture>
-            <source srcset="img/blocks/convenience/2.avif" type="image/avif">
-            <source srcset="img/blocks/convenience/2.webp" type="image/webp">
-            <img class="convenience__img" src="img/blocks/convenience/2.png" alt="Фото 2" width="410" height="410" loading="lazy">
-        </picture>
-    </div>
-</div>
-            </div>
-            <div class="tabs__panel">
-                <div class="convenience__wrapper">
-    <div class="convenience__content">
-        <h3 class="convenience__subtitle subtitle">
-            Корпус
-        </h3>
-        
-        
-        <ul class="convenience__advantages">
-             <li> Рассчитана на 65 000 открытий/закрытий </li>  <li> На срок службы от 25 лет </li> 
-        </ul>
-        
-    </div>
-    <div class="convenience__image">
-        <div class="convenience__points" aria-hidden>
-
-        </div>
-        <picture>
-            <source srcset="img/blocks/convenience/1.avif" type="image/avif">
-            <source srcset="img/blocks/convenience/1.webp" type="image/webp">
-            <img class="convenience__img" src="img/blocks/convenience/1.png" alt="Фото 3" width="410" height="410" loading="lazy">
-        </picture>
-    </div>
-</div>
-            </div>
-            <div class="tabs__panel">
-                <div class="convenience__wrapper">
-    <div class="convenience__content">
-        <h3 class="convenience__subtitle subtitle">
-            Петли
-        </h3>
-        
-        <div class="convenience__text">
-             <p> Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. </p>  <p> Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий. </p>  <p> Срок службы фурнитуры составляет более 25 лет. </p> 
-        </div>
-
-        
-        
-        <ul class="convenience__advantages">
-             <li> Рассчитана на 65 000 открытий/закрытий </li>  <li> На срок службы от 25 лет </li> 
-        </ul>
-        
-    </div>
-    <div class="convenience__image">
-        <div class="convenience__points" aria-hidden>
-
-        </div>
-        <picture>
-            <source srcset="img/blocks/convenience/1.avif" type="image/avif">
-            <source srcset="img/blocks/convenience/1.webp" type="image/webp">
-            <img class="convenience__img" src="img/blocks/convenience/1.png" alt="Фото 4" width="410" height="410" loading="lazy">
-        </picture>
-    </div>
-</div>
-            </div>
-            <div class="tabs__panel">
-                <div class="convenience__wrapper">
-    <div class="convenience__content">
-        <h3 class="convenience__subtitle subtitle">
-            Производство
-        </h3>
-        
-        <div class="convenience__text">
-             <p> Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. </p>  <p> Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий. </p>  <p> Срок службы фурнитуры составляет более 25 лет. </p> 
-        </div>
-
-        
-        
-        <ul class="convenience__advantages">
-             <li> Рассчитана на 65 000 открытий/закрытий </li>  <li> На срок службы от 25 лет </li> 
-        </ul>
-        
-    </div>
-    <div class="convenience__image">
-        <div class="convenience__points" aria-hidden>
-
-        </div>
-        <picture>
-            <source srcset="img/blocks/convenience/1.avif" type="image/avif">
-            <source srcset="img/blocks/convenience/1.webp" type="image/webp">
-            <img class="convenience__img" src="img/blocks/convenience/1.png" alt="Фото 5" width="410" height="410" loading="lazy">
-        </picture>
-    </div>
-</div>
-            </div>
-        </div>
-        <div class="tabs__controls">
-            <div class="tabs__controls-btns">
-                <button class="tabs__controls-btn tabs__controls-btn--prev" aria-label="Назад" type="button">
-                </button>
-                <button class="tabs__controls-btn tabs__controls-btn--next" aria-label="Вперед" type="button">
-                </button>
-            </div>
-            <div class="tabs__counter">
-                <span class="tabs__counter-current"></span>
-                <span class="tabs__counter-total">/</span>
-            </div>
-        </div>
-    </div>
-</section>
-                <section class="facades-production section">
-    <div class="facades-production__content">
-        <h2 class="facades-production__title title">
-            Производство фасадов
-        </h2>
-        <div class="facades-production__subtitle">
-            <p>
-                Фасады производятся на автоматизированных станках. Никакого брака по вине сотрудников
-            </p>
-        </div>
-        <div class="facades-production__text">
-            <p>
-                Наш основной поставщик Итальянская фабрика ILCAM s.p.a. - лидер по производству мебельных фасадов
-            </p>
-        </div>
-        <a class="facades-production__link button button--decor" href="#" target="_blank">
-            на сайт ILCAM
-            <span class="button__decor" aria-hidden>
-                <svg>
                     <use xlink:href="img/sprite.svg#arrows-double">
                 </svg>
-            </span>
-        </a>
-    </div>
-    <div class="facades-production__images">
-        <div class="facades-production__image facades-production__image--big">
-            <picture>
-                <source srcset="img/blocks/facades-production/big.avif" type="image/avif">
-                <source srcset="img/blocks/facades-production/big.webp" type="image/webp">
-                <img src="img/blocks/facades-production/big.jpg" alt="Производство фасадов 1" width="420" height="425" loading="lazy">
-            </picture>
-        </div>
-        <div class="facades-production__image facades-production__image--small">
-            <picture>
-                <source srcset="img/blocks/facades-production/small.avif" type="image/avif">
-                <source srcset="img/blocks/facades-production/small.webp" type="image/webp">
-                <img src="img/blocks/facades-production/small.jpg" alt="Производство фасадов 2" width="178" height="212" loading="lazy">
-            </picture>
+            </button>
         </div>
     </div>
-</section>
-                <section class="blog-block section">
-    <div class="blog-block__wrapper">
-        <h2 class="blog-block__title title">
-            Блог
-        </h2>
-        <div class="blog-block__inner" data-blog-images="blog-home-page">
-            <div class="blog-block__item blog-block__item--picture">
-                <div class="blog-block__images">
-                    <div class="blog-block__image blog-block__image--active">
-                        <picture>
-                            <source srcset="img/blocks/blog/1.avif" type="image/avif">
-                            <source srcset="img/blocks/blog/1.webp" type="image/webp">
-                            <img class="blog-block__img" src="img/blocks/blog/1.jpg" alt="девушка" loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="blog-block__image">
-                        <picture>
-                            <source srcset="img/blocks/facades-production/big.avif" type="image/avif">
-                            <source srcset="img/blocks/facades-production/big.webp" type="image/webp">
-                            <img class="blog-block__img" src="img/blocks/facades-production/big.jpg" alt="Производство" loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="blog-block__image">
-                        <picture>
-                            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
-                            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
-                            <img class="blog-block__img" src="img/blocks/products/kitchens/verona.jpg" alt="девушка" loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="blog-block__image">
-                        <picture>
-                            <source srcset="img/blocks/blog/1.avif" type="image/avif">
-                            <source srcset="img/blocks/blog/1.webp" type="image/webp">
-                            <img class="blog-block__img" src="img/blocks/blog/1.jpg" alt="девушка" loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="blog-block__image">
-                        <picture>
-                            <source srcset="img/blocks/facades-production/big.avif" type="image/avif">
-                            <source srcset="img/blocks/facades-production/big.webp" type="image/webp">
-                            <img class="blog-block__img" src="img/blocks/facades-production/big.jpg" alt="Производство" loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="blog-block__image">
-                        <picture>
-                            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
-                            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
-                            <img class="blog-block__img" src="img/blocks/products/kitchens/verona.jpg" alt="девушка" loading="lazy">
-                        </picture>
-                    </div>
-                </div>
-            </div>
-            <div class="blog-block__swiper swiper">
-                <ul class="blog-block__items swiper-wrapper">
-                    <li class="blog-block__item swiper-slide">
-                        <article class="blog-card">
-    <h3 class="blog-card__title subtitle">Секреты долгожительства многолетней кухни</h3>
-    <time datetime="2022-02-27">
-        27.02.2022
-    </time>
-    <a class="blog-card__link button button--decor" href="#">
-        Читать статью
-        <span class="button__decor" aria-hidden>
-            <svg>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </span>
-    </a>
-</article>
-                    </li>
-                    <li class="blog-block__item swiper-slide">
-                        <article class="blog-card">
-    <h3 class="blog-card__title subtitle">Умная техника в помощь</h3>
-    <time datetime="2022-02-27">
-        27.02.2022
-    </time>
-    <a class="blog-card__link button button--decor" href="#">
-        Читать статью
-        <span class="button__decor" aria-hidden>
-            <svg>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </span>
-    </a>
-</article>
-                    </li>
-                    <li class="blog-block__item swiper-slide">
-                        <article class="blog-card">
-    <h3 class="blog-card__title subtitle">Как правильно выбрать посуду для кухни?</h3>
-    <time datetime="2022-02-27">
-        27.02.2022
-    </time>
-    <a class="blog-card__link button button--decor" href="#">
-        Читать статью
-        <span class="button__decor" aria-hidden>
-            <svg>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </span>
-    </a>
-</article>
-                    </li>
-                    <li class="blog-block__item swiper-slide">
-                        <article class="blog-card">
-    <h3 class="blog-card__title subtitle">Секреты долгожительства многолетней кухни</h3>
-    <time datetime="2022-02-27">
-        27.02.2022
-    </time>
-    <a class="blog-card__link button button--decor" href="#">
-        Читать статью
-        <span class="button__decor" aria-hidden>
-            <svg>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </span>
-    </a>
-</article>
-                    </li>
-                    <li class="blog-block__item swiper-slide">
-                        <article class="blog-card">
-    <h3 class="blog-card__title subtitle">Умная техника в помощь</h3>
-    <time datetime="2022-02-27">
-        27.02.2022
-    </time>
-    <a class="blog-card__link button button--decor" href="#">
-        Читать статью
-        <span class="button__decor" aria-hidden>
-            <svg>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </span>
-    </a>
-</article>
-                    </li>
-                    <li class="blog-block__item swiper-slide">
-                        <article class="blog-card">
-    <h3 class="blog-card__title subtitle">Как правильно выбрать посуду для кухни?</h3>
-    <time datetime="2022-02-27">
-        27.02.2022
-    </time>
-    <a class="blog-card__link button button--decor" href="#">
-        Читать статью
-        <span class="button__decor" aria-hidden>
-            <svg>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </span>
-    </a>
-</article>
-                    </li>
-                </ul>
-                <div class="swiper-pagination"></div>
-                <div class="blog-block__buttons">
-                    <button class="blog-block__button blog-block__button--prev swiper-button-prev" type="button">
-                    </button>
-                    <button class="blog-block__button blog-block__button--next swiper-button-next" type="button">
-                    </button>
-                </div>
-            </div>
+    <div class="product-about__swiper swiper">
+        <ul class="product-about__items swiper-wrapper">
+            <li class="product-about__item swiper-slide">
+                <a class="product-about__image" href="img/blocks/product-about/1.jpg" data-fancybox="product-about-gallery">
+                    <picture>
+                        <source srcset="img/blocks/product-about/1.avif" type="image/avif">
+                        <source srcset="img/blocks/product-about/1.webp" type="image/webp">
+                        <img class="product-about__img" src="img/blocks/product-about/1.jpg" alt="Велла">
+                    </picture>
+                </a>
+            </li>
+            <li class="product-about__item swiper-slide">
+                <a class="product-about__image" href="img/blocks/product-about/2.jpg" data-fancybox="product-about-gallery">
+                    <picture>
+                        <source srcset="img/blocks/product-about/2.avif" type="image/avif">
+                        <source srcset="img/blocks/product-about/2.webp" type="image/webp">
+                        <img class="product-about__img" src="img/blocks/product-about/2.jpg" alt="Велла">
+                    </picture>
+                </a>
+            </li>
+            <li class="product-about__item swiper-slide">
+                <a class="product-about__image" href="img/blocks/product-about/1.jpg" data-fancybox="product-about-gallery">
+                    <picture>
+                        <source srcset="img/blocks/product-about/1.avif" type="image/avif">
+                        <source srcset="img/blocks/product-about/1.webp" type="image/webp">
+                        <img class="product-about__img" src="img/blocks/product-about/1.jpg" alt="Велла">
+                    </picture>
+                </a>
+            </li>
+            <li class="product-about__item swiper-slide">
+                <a class="product-about__image" href="img/blocks/product-about/2.jpg" data-fancybox="product-about-gallery">
+                    <picture>
+                        <source srcset="img/blocks/product-about/2.avif" type="image/avif">
+                        <source srcset="img/blocks/product-about/2.webp" type="image/webp">
+                        <img class="product-about__img" src="img/blocks/product-about/2.jpg" alt="Велла">
+                    </picture>
+                </a>
+            </li>
+        </ul>
+        <div class="product-about__arrows">
+            <button class="product-about__arrow product-about__arrow--prev swiper-button-prev" type="button">
+            </button>
+            <button class="product-about__arrow product-about__arrow--next swiper-button-next" type="button">
+            </button>
         </div>
+    </div>
+    <div class="product-about__footer">
+        <div class="product-about__pagination swiper-pagination"></div>
+        <button class="product-about__button product-about__button--mobile button button--accent" data-graph-path="order-calc" aria-controls="modal-order-calc" type="button">
+            Онлайн просчет цены
+            <svg aria-hidden>
+                <use xlink:href="img/sprite.svg#arrows-double">
+            </svg>
+        </button>
     </div>
 </section>
-                <section class="reviews section">
-    <div class="reviews__wrapper">
-        <h2 class="reviews__title title">
-            Отзывы о нас
-        </h2>
-        <div class="reviews__swiper swiper">
-            <ul class="reviews__items swiper-wrapper">
-                <li class="reviews__item swiper-slide">
-                    <article class="review-card">
-    <div class="review-card__header">
-        <span class="review-card__count">16 отзывов</span>
-        <div class="review-card__info">
-            <img class="review-card__logo" src="img/blocks/reviews-logos/yandex.svg" alt="yandex" width="120" height="30" loading="lazy">
-            <span class="review-card__rating">4.4</span>
+                    <section class="quality-materials section">
+    <div class="block-head">
+        <div class="block-head__name">
+            <span class="block-head__number">01</span>
+            Корпус
         </div>
     </div>
-    <a class="review-card__link button button--decor" href="#" target="_blank">
-        <span class="button__text">Перейти</span>
-        <span class="button__decor" aria-hidden>
-            <svg>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </span>
-    </a>
-</article>
-                </li>
-                <li class="reviews__item swiper-slide">
-                    <article class="review-card">
-    <div class="review-card__header">
-        <span class="review-card__count">174 отзывов</span>
-        <div class="review-card__info">
-            <img class="review-card__logo" src="img/blocks/reviews-logos/houzz.svg" alt="houzz" width="120" height="30" loading="lazy">
-            <span class="review-card__rating">4.8</span>
-        </div>
-    </div>
-    <a class="review-card__link button button--decor" href="#" target="_blank">
-        <span class="button__text">Перейти</span>
-        <span class="button__decor" aria-hidden>
-            <svg>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </span>
-    </a>
-</article>
-                </li>
-                <li class="reviews__item swiper-slide">
-                    <article class="review-card">
-    <div class="review-card__header">
-        <span class="review-card__count">529 отзывов</span>
-        <div class="review-card__info">
-            <img class="review-card__logo" src="img/blocks/reviews-logos/zoon.svg" alt="zoon" width="120" height="30" loading="lazy">
-            <span class="review-card__rating">4.5</span>
-        </div>
-    </div>
-    <a class="review-card__link button button--decor" href="#" target="_blank">
-        <span class="button__text">Перейти</span>
-        <span class="button__decor" aria-hidden>
-            <svg>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </span>
-    </a>
-</article>
-                </li>
-                <li class="reviews__item swiper-slide">
-                    <article class="review-card">
-    <div class="review-card__header">
-        <span class="review-card__count">59 отзывов</span>
-        <div class="review-card__info">
-            <img class="review-card__logo" src="img/blocks/reviews-logos/2gis.svg" alt="2гис" width="120" height="30" loading="lazy">
-            <span class="review-card__rating">4.8</span>
-        </div>
-    </div>
-    <a class="review-card__link button button--decor" href="#" target="_blank">
-        <span class="button__text">Перейти</span>
-        <span class="button__decor" aria-hidden>
-            <svg>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </span>
-    </a>
-</article>
-                </li>
-                <li class="reviews__item swiper-slide">
-                    <article class="review-card">
-    <div class="review-card__header">
-        <span class="review-card__count">4 отзыва</span>
-        <div class="review-card__info">
-            <img class="review-card__logo" src="img/blocks/reviews-logos/yell.svg" alt="yell" width="120" height="30" loading="lazy">
-            <span class="review-card__rating">4.8</span>
-        </div>
-    </div>
-    <a class="review-card__link button button--decor" href="#" target="_blank">
-        <span class="button__text">Перейти</span>
-        <span class="button__decor" aria-hidden>
-            <svg>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </span>
-    </a>
-</article>
-                </li>
-            </ul>
-            <div class="swiper-pagination"></div>
-            <div class="reviews__buttons">
-                <button class="reviews__button reviews__button--prev swiper-button-prev" type="button">
-                </button>
-                <button class="reviews__button reviews__button--next swiper-button-next" type="button">
-                </button>
-            </div>
-        </div>
-    </div>
-</section>
-                <section class="media section">
-    <h2 class="title">
-        СМИ о нас
+    <h2 class="quality-materials__title title">
+        Качество материалов бизнес-класса
     </h2>
-    <ul class="media__items">
-        <li class="media__item">
-            <a class="media__link" href="#" target="_blank">
-                <img class="media__img" src="img/blocks/media-logos/habr.svg" alt="habr" width="124" height="40" loading="lazy">
-            </a>
-        </li>
-        <li class="media__item">
-            <a class="media__link" href="#" target="_blank">
-                <img class="media__img" src="img/blocks/media-logos/ya_zen.svg" alt="Яндекс Дзен" width="150" height="45" loading="lazy">
-            </a>
-        </li>
-        <li class="media__item">
-            <a class="media__link" href="#" target="_blank">
-                <img class="media__img" src="img/blocks/media-logos/tinkoff_journal.svg" alt="Тинькофф Журнал" width="156" height="24" loading="lazy">
-            </a>
-        </li>
-        <li class="media__item">
-            <a class="media__link" href="#" target="_blank">
-                <img class="media__img" src="img/blocks/media-logos/vc.svg" alt="vc.ru" width="148" height="50" loading="lazy">
-            </a>
-        </li>
-    </ul>
+    <div class="quality-materials__content" data-tippy-parent>
+        <ul class="quality-materials__items quality-materials__items--desktop">
+            <li class="quality-materials__item" style="top: 12%; left: 44%;">
+                <button class="quality-materials__button" type="button" data-tippy-content>
+                    <span class="sr-only">Толщина корпуса</span>
+                </button>
+                <div class="quality-materials__tooltip tooltip">
+                    <h3 class="quality-materials__subtitle">
+                        Толщина корпуса
+                    </h3>
+                    <div class="quality-materials__text">
+                        <p>
+                            Мы используем корпус толщиной только 18мм, а не 16 мм, как большинство производителей, что обеспечивает максимальную жесткость и прочность конструкции. Корпуса закромлены по всему периметру, даже с невидимой стороны - это исключает риск разбухания.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="quality-materials__item" style="top: 48%; left: 15%;">
+                <button class="quality-materials__button" type="button" data-tippy-content>
+                    <span class="sr-only">Система крепления</span>
+                </button>
+                <div class="quality-materials__tooltip tooltip">
+                    <h3 class="quality-materials__subtitle">
+                        Система крепления
+                    </h3>
+                    <div class="quality-materials__text">
+                        <p>
+                            Система крепления шкафов к стене с использованием навески Camar (Италия) и рельсы-навески позволяет проводить регулировку нескольких плоскостях, что позволяет обойти возможные неровности стен. Каждый верхний модуль выдерживает нагрузку до 100 кг.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="quality-materials__item" style="top: 64%; left: 45%;">
+                <button class="quality-materials__button" type="button" data-tippy-content>
+                    <span class="sr-only">Стандарты</span>
+                </button>
+                <div class="quality-materials__tooltip tooltip">
+                    <h3 class="quality-materials__subtitle">
+                        Стандарты
+                    </h3>
+                    <div class="quality-materials__text">
+                        <p>
+                            Мы используем только эксцентриковую стяжку корпусов, которая является общепризнанным мировым стандартом.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="quality-materials__item" style="top: 72%; left: 78%;">
+                <button class="quality-materials__button" type="button" data-tippy-content>
+                    <span class="sr-only">Толщина корпуса</span>
+                </button>
+                <div class="quality-materials__tooltip tooltip">
+                    <h3 class="quality-materials__subtitle">
+                        Толщина корпуса
+                    </h3>
+                    <div class="quality-materials__text">
+                        <p>
+                            Мы используем корпус толщиной только 18мм, а не 16 мм, как большинство производителей, что обеспечивает максимальную жесткость и прочность конструкции. Корпуса закромлены по всему периметру, даже с невидимой стороны - это исключает риск разбухания.
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="quality-materials__image">
+            <picture>
+                <source srcset="img/blocks/quality-materials/1.avif" type="image/avif">
+                <source srcset="img/blocks/quality-materials/1.webp" type="image/webp">
+                <img class="quality-materials__img" src="img/blocks/quality-materials/1.jpg" alt="Кухня" loading="lazy">
+            </picture>
+        </div>
+        <ul class="quality-materials__items quality-materials__items--mobile">
+            <li class="quality-materials__item">
+                <div class="quality-materials__tooltip">
+                    <h3 class="quality-materials__subtitle">
+                        Толщина корпуса
+                    </h3>
+                    <div class="quality-materials__text">
+                        <p>
+                            Мы используем корпус толщиной только 18мм, а не 16 мм, как большинство производителей, что обеспечивает максимальную жесткость и прочность конструкции. Корпуса закромлены по всему периметру, даже с невидимой стороны - это исключает риск разбухания.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="quality-materials__item">
+                <div class="quality-materials__tooltip">
+                    <h3 class="quality-materials__subtitle">
+                        Толщина корпуса
+                    </h3>
+                    <div class="quality-materials__text">
+                        <p>
+                            Мы используем корпус толщиной только 18мм, а не 16 мм, как большинство производителей, что обеспечивает максимальную жесткость и прочность конструкции. Корпуса закромлены по всему периметру, даже с невидимой стороны - это исключает риск разбухания.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="quality-materials__item">
+                <div class="quality-materials__tooltip">
+                    <h3 class="quality-materials__subtitle">
+                        Система крепления
+                    </h3>
+                    <div class="quality-materials__text">
+                        <p>
+                            Система крепления шкафов к стене с использованием навески Camar (Италия) и рельсы-навески позволяет проводить регулировку нескольких плоскостях, что позволяет обойти возможные неровности стен. Каждый верхний модуль выдерживает нагрузку до 100 кг.
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="quality-materials__item">
+                <div class="quality-materials__tooltip">
+                    <h3 class="quality-materials__subtitle">
+                        Стандарты
+                    </h3>
+                    <div class="quality-materials__text">
+                        <p>
+                            Мы используем только эксцентриковую стяжку корпусов, которая является общепризнанным мировым стандартом.
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
 </section>
+                    <section class="guarantee-block section">
+    <div class="block-head">
+        <div class="block-head__name">
+            <span class="block-head__number">02</span>
+            Гарантия
+        </div>
+    </div>
+    <div class="guarantee-block__info">
+        <h2 class="guarantee-block__title title">
+            Гарантия 12 лет
+        </h2>
+        <div class="guarantee-block__descr">
+            <div class="guarantee-block__text">
+                <p>
+                    Мы используем автоматизированное поточное производство, где полностью исключен ручной труд. Это сводит вероятность производственного брака к нулю. Избыточный запас качества применяется во всех без исключения элементах: в корпусе , фурнитуре, системах открывания-закрывания и невидимых деталях кухни. Это позволяет давать гарантию 12 лет.
+                </p>
             </div>
         </div>
-    </main>
-    <div class="page-wrapper">
-        <div class="page-wrapper__side"></div>
-        <div class="page-wrapper__blocks">
-            <section class="form-block section">
+    </div>
+    <div class="guarantee-block__images" aria-hidden>
+        <div class="guarantee-block__image">
+            <span class="guarantee-block__bg" style="background-image: url('img/blocks/guarantee/1.jpg');"></span>
+        </div>
+        <div class="guarantee-block__image">
+            <span class="guarantee-block__bg" style="background-image: url('img/blocks/guarantee/2.jpg');"></span>
+        </div>
+    </div>
+</section>
+                    <section class="unique-quality">
+    <div class="block-head">
+        <div class="block-head__name">
+            <span class="block-head__number">03</span>
+            Качество фасадов
+        </div>
+    </div>
+    <div class="unique-quality__info">
+        <h2 class="unique-quality__title title">
+            Уникальное качество фасадов
+        </h2>
+        <div class="unique-quality__descr">
+            <div class="unique-quality__text">
+                <p>
+                Фасад толщиной 19 мм с вертикальной фасонной фрезеровкой с полимерным покрытием Экошпон наносимым методом 3D термо формования на основу из МДФ. Тыльная сторона фасада – белая ламинированная. Производство фасадов Россия.
+            </p>
+            </div>
+        </div>
+    </div>
+    <div class="unique-quality__image" aria-hidden>
+        <span class="unique-quality__bg" style="background-image: url('img/blocks/unique-quality/unique-quality.jpg');"></span>
+    </div>
+</section>
+                    <section class="form-block section">
     <form class="form" action="#">
         <div class="form__header">
             <h2 class="form__title title">
@@ -2133,7 +1200,385 @@
         <span class="form-block__bg" style="background-image: url('img/blocks/form/bg.jpg');" aria-hidden> </span>
     </div>
 </section>
-            <section class="addresses-block section">
+                    <section class="facade-colors section">
+    <div class="block-head">
+        <div class="block-head__name">
+            <span class="block-head__number">06</span>
+            Вариации фасадов
+        </div>
+    </div>
+    <h2 class="title">
+        Цвета фасадов для кухни
+    </h2>
+    <ul class="facade-colors__items">
+        <li>
+            <article class="facade-card">
+    <a class="facade-card__image" href="img/blocks/facades/amarok.jpg" data-fancybox="facades-gallery">
+        <picture>
+            <source srcset="img/blocks/facades/amarok.avif" type="image/avif">
+            <source srcset="img/blocks/facades/amarok.webp" type="image/webp">
+            <img class="facade-card__img" src="img/blocks/facades/amarok.jpg" alt="Аморок" loading="lazy">
+        </picture>
+    </a>
+    <h3 class="facade-card__title">Аморок коричневый увет №2345 - дерево</h3>
+    <span class="facade-card__id">AS1847-sft_</span>
+</article>
+        </li>
+        <li>
+            <article class="facade-card">
+    <a class="facade-card__image" href="img/blocks/facades/concrete-loft-natural.jpg" data-fancybox="facades-gallery">
+        <picture>
+            <source srcset="img/blocks/facades/concrete-loft-natural.avif" type="image/avif">
+            <source srcset="img/blocks/facades/concrete-loft-natural.webp" type="image/webp">
+            <img class="facade-card__img" src="img/blocks/facades/concrete-loft-natural.jpg" alt="Бетон лофт натуральный" loading="lazy">
+        </picture>
+    </a>
+    <h3 class="facade-card__title">Бетон лофт натуральный</h3>
+    <span class="facade-card__id">LS 935-2_</span>
+</article>
+        </li>
+        <li>
+            <article class="facade-card">
+    <a class="facade-card__image" href="img/blocks/facades/wenge-lux.jpg" data-fancybox="facades-gallery">
+        <picture>
+            <source srcset="img/blocks/facades/wenge-lux.avif" type="image/avif">
+            <source srcset="img/blocks/facades/wenge-lux.webp" type="image/webp">
+            <img class="facade-card__img" src="img/blocks/facades/wenge-lux.jpg" alt="Венге Люкс" loading="lazy">
+        </picture>
+    </a>
+    <h3 class="facade-card__title">Венге Люкс</h3>
+    <span class="facade-card__id">zb-275-sft_</span>
+</article>
+        </li>
+        <li>
+            <article class="facade-card">
+    <a class="facade-card__image" href="img/blocks/facades/monte-white.jpg" data-fancybox="facades-gallery">
+        <picture>
+            <source srcset="img/blocks/facades/monte-white.avif" type="image/avif">
+            <source srcset="img/blocks/facades/monte-white.webp" type="image/webp">
+            <img class="facade-card__img" src="img/blocks/facades/monte-white.jpg" alt="Монте белый" loading="lazy">
+        </picture>
+    </a>
+    <h3 class="facade-card__title">Монте белый</h3>
+    <span class="facade-card__id">MR 960-2 _ _00</span>
+</article>
+        </li>
+        <li>
+            <article class="facade-card">
+    <a class="facade-card__image" href="img/blocks/facades/toros-graphite.jpg" data-fancybox="facades-gallery">
+        <picture>
+            <source srcset="img/blocks/facades/toros-graphite.avif" type="image/avif">
+            <source srcset="img/blocks/facades/toros-graphite.webp" type="image/webp">
+            <img class="facade-card__img" src="img/blocks/facades/toros-graphite.jpg" alt="Торос Графит" loading="lazy">
+        </picture>
+    </a>
+    <h3 class="facade-card__title">Торос Графит</h3>
+    <span class="facade-card__id">MR 976-2 00</span>
+</article>
+        </li>
+        <li>
+            <article class="facade-card">
+    <a class="facade-card__image" href="img/blocks/facades/oak-madeira-amber.jpg" data-fancybox="facades-gallery">
+        <picture>
+            <source srcset="img/blocks/facades/oak-madeira-amber.avif" type="image/avif">
+            <source srcset="img/blocks/facades/oak-madeira-amber.webp" type="image/webp">
+            <img class="facade-card__img" src="img/blocks/facades/oak-madeira-amber.jpg" alt="Дуб мадейра янтарь" loading="lazy">
+        </picture>
+    </a>
+    <h3 class="facade-card__title">Дуб мадейра янтарь</h3>
+    <span class="facade-card__id">LW 674-2C 00</span>
+</article>
+        </li>
+        <li>
+            <article class="facade-card">
+    <a class="facade-card__image" href="img/blocks/facades/oak-madeira-amber.jpg" data-fancybox="facades-gallery">
+        <picture>
+            <source srcset="img/blocks/facades/oak-madeira-amber.avif" type="image/avif">
+            <source srcset="img/blocks/facades/oak-madeira-amber.webp" type="image/webp">
+            <img class="facade-card__img" src="img/blocks/facades/oak-madeira-amber.jpg" alt="Дуб мадейра янтарь" loading="lazy">
+        </picture>
+    </a>
+    <h3 class="facade-card__title">Дуб мадейра янтарь</h3>
+    <span class="facade-card__id">LW 674-2C 00</span>
+</article>
+        </li>
+    </ul>
+</section>
+                    <section class="product-characteristics section" data-tippy-parent>
+    <div class="product-characteristics__container">
+        <div class="block-head">
+            <div class="block-head__name">
+                <span class="block-head__number">06</span>
+                Характеристики
+            </div>
+        </div>
+        <div class="product-characteristics__wrapper">
+            <h2 class="product-characteristics__title title">
+                Технические характиеристики
+            </h2>
+            <ul class="product-characteristics__items">
+                <li class="product-characteristics__item">
+                    <article class="characteristic-card">
+                        <span class="characteristic-card__name">
+                            Материал:
+                        </span>
+                        <div class="characteristic-card__info">
+                            <div class="characteristic-card__item">
+                                <button class="characteristic-card__value" type="button" data-tippy-content>
+                                    Экошпон
+                                    <svg aria-hidden>
+                                        <use xlink:href="img/sprite.svg#question">
+                                    </svg>
+                                </button>
+                                <div class="tooltip">
+                                    <p>
+                                        Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+                <li class="product-characteristics__item">
+                    <article class="characteristic-card">
+                        <span class="characteristic-card__name">
+                            Покрытие:
+                        </span>
+                        <div class="characteristic-card__info">
+                            <div class="characteristic-card__item">
+                                <span class="characteristic-card__value">
+                                    Термопластик
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+                <li class="product-characteristics__item">
+                    <article class="characteristic-card">
+                        <span class="characteristic-card__name">
+                            Декор:
+                        </span>
+                        <div class="characteristic-card__info">
+                            <div class="characteristic-card__item">
+                                <button class="characteristic-card__value" type="button" data-tippy-content>
+                                    Фрезеровка
+                                    <svg aria-hidden>
+                                        <use xlink:href="img/sprite.svg#question">
+                                    </svg>
+                                </button>
+                                <div class="tooltip">
+                                    <p>
+                                        Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+                <li class="product-characteristics__item">
+                    <article class="characteristic-card">
+                        <span class="characteristic-card__name">
+                            Стиль:
+                        </span>
+                        <div class="characteristic-card__info">
+                            <div class="characteristic-card__item">
+                                <button class="characteristic-card__value" type="button" data-tippy-content>
+                                    Минимализм
+                                    <svg aria-hidden>
+                                        <use xlink:href="img/sprite.svg#question">
+                                    </svg>
+                                </button>
+                                <div class="tooltip">
+                                    <p>
+                                        Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="characteristic-card__item">
+                                <button class="characteristic-card__value" type="button" data-tippy-content>
+                                    Лофт
+                                    <svg aria-hidden>
+                                        <use xlink:href="img/sprite.svg#question">
+                                    </svg>
+                                </button>
+                                <div class="tooltip">
+                                    <p>
+                                       Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+                <li class="product-characteristics__item">
+                    <article class="characteristic-card">
+                        <span class="characteristic-card__name">
+                            Стиль:
+                        </span>
+                        <div class="characteristic-card__info">
+                            <div class="characteristic-card__item">
+                                <span class="characteristic-card__value">
+                                    Современный
+                                </span>
+                            </div>
+                            <div class="characteristic-card__item">
+                                <span class="characteristic-card__value">
+                                    Современный
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+                    <section class="product-projects section">
+    <div class="block-head">
+        <div class="block-head__name">
+            <span class="block-head__number">07</span>
+            Проекты
+        </div>
+    </div>
+    <div class="product-projects__header">
+        <h2 class="product-projects__title title">
+            Реализованные проекты
+        </h2>
+        <div class="product-projects__controls">
+            <div class="product-projects__fraction swiper-pagination-fraction"></div>
+            <div class="product-projects__buttons">
+                <button class="product-projects__button product-projects__button--prev swiper-button-prev" type="button">
+                </button>
+                <button class="product-projects__button product-projects__button--next swiper-button-next" type="button">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="product-projects__wrapper">
+        <div class="product-projects__swiper swiper">
+            <ul class="product-projects__items swiper-wrapper">
+                <li class="product-projects__item swiper-slide">
+                    <article class="product-realize">
+    <a class="product-realize__image" href="img/blocks/products/kitchens/verona.jpg" data-fancybox="product-realize-gallery">
+        <picture>
+            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
+            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
+            <img class="product-realize__img" src="img/blocks/products/kitchens/verona.jpg" alt="Верона" loading="lazy">
+        </picture>
+    </a>
+    <div class="product-realize__content">
+        <div class="product-realize__info">
+            <span class="product-realize__price">1 170 000 ₽</span>
+            <span class="product-realize__subprice">
+                Стоимость проекта
+            </span>
+        </div>
+        <div class="product-realize__actions">
+            <button class="product-realize__button button button--decor" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
+                Хочу похожий
+                <span class="button__decor">
+                    <svg aria-hidden>
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </span>
+            </button>
+        </div>
+    </div>
+</article>
+                </li>
+                <li class="product-projects__item swiper-slide">
+                    <article class="product-realize">
+    <a class="product-realize__image" href="img/blocks/products/kitchens/arcobalena.jpg" data-fancybox="product-realize-gallery">
+        <picture>
+            <source srcset="img/blocks/products/kitchens/arcobalena.avif" type="image/avif">
+            <source srcset="img/blocks/products/kitchens/arcobalena.webp" type="image/webp">
+            <img class="product-realize__img" src="img/blocks/products/kitchens/arcobalena.jpg" alt="Акробалена" loading="lazy">
+        </picture>
+    </a>
+    <div class="product-realize__content">
+        <div class="product-realize__info">
+            <span class="product-realize__price">1 170 000 ₽</span>
+            <span class="product-realize__subprice">
+                Стоимость проекта
+            </span>
+        </div>
+        <div class="product-realize__actions">
+            <button class="product-realize__button button button--decor" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
+                Хочу похожий
+                <span class="button__decor">
+                    <svg aria-hidden>
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </span>
+            </button>
+        </div>
+    </div>
+</article>
+                </li>
+                <li class="product-projects__item swiper-slide">
+                    <article class="product-realize">
+    <a class="product-realize__image" href="img/blocks/products/kitchens/verona.jpg" data-fancybox="product-realize-gallery">
+        <picture>
+            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
+            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
+            <img class="product-realize__img" src="img/blocks/products/kitchens/verona.jpg" alt="Верона" loading="lazy">
+        </picture>
+    </a>
+    <div class="product-realize__content">
+        <div class="product-realize__info">
+            <span class="product-realize__price">1 170 000 ₽</span>
+            <span class="product-realize__subprice">
+                Стоимость проекта
+            </span>
+        </div>
+        <div class="product-realize__actions">
+            <button class="product-realize__button button button--decor" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
+                Хочу похожий
+                <span class="button__decor">
+                    <svg aria-hidden>
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </span>
+            </button>
+        </div>
+    </div>
+</article>
+                </li>
+                <li class="product-projects__item swiper-slide">
+                    <article class="product-realize">
+    <a class="product-realize__image" href="img/blocks/products/kitchens/arcobalena.jpg" data-fancybox="product-realize-gallery">
+        <picture>
+            <source srcset="img/blocks/products/kitchens/arcobalena.avif" type="image/avif">
+            <source srcset="img/blocks/products/kitchens/arcobalena.webp" type="image/webp">
+            <img class="product-realize__img" src="img/blocks/products/kitchens/arcobalena.jpg" alt="Акробалена" loading="lazy">
+        </picture>
+    </a>
+    <div class="product-realize__content">
+        <div class="product-realize__info">
+            <span class="product-realize__price">1 170 000 ₽</span>
+            <span class="product-realize__subprice">
+                Стоимость проекта
+            </span>
+        </div>
+        <div class="product-realize__actions">
+            <button class="product-realize__button button button--decor" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
+                Хочу похожий
+                <span class="button__decor">
+                    <svg aria-hidden>
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </span>
+            </button>
+        </div>
+    </div>
+</article>
+                </li>
+            </ul>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+                    <section class="addresses-block section">
     <h2 class="sr-only">Наши адреса</h2>
     <div class="tabs" data-tabs="addresses-block">
         <ul class="tabs__nav">
@@ -2293,6 +1738,166 @@
         </div>
     </div>
 </section>
+                    <section class="other-solutions section">
+    <div class="block-head">
+        <div class="block-head__name">
+            <span class="block-head__number">09</span>
+            Другие модели
+        </div>
+    </div>
+    <div class="other-solutions__header">
+        <h2 class="other-solutions__title title">
+            Другие кухонные решения
+        </h2>
+        <div class="other-solutions__controls">
+            <div class="other-solutions__fraction swiper-pagination-fraction"></div>
+            <div class="other-solutions__buttons">
+                <button class="other-solutions__button other-solutions__button--prev swiper-button-prev" type="button">
+                </button>
+                <button class="other-solutions__button other-solutions__button--next swiper-button-next" type="button">
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="other-solutions__wrapper">
+        <div class="other-solutions__swiper swiper">
+            <ul class="other-solutions__items swiper-wrapper">
+                <li class="other-solutions__item swiper-slide">
+                    <article class="solution-card">
+    <div class="solution-card__image">
+        <picture>
+            <source srcset="img/blocks/other-solutions/verona.avif" type="image/avif">
+            <source srcset="img/blocks/other-solutions/verona.webp" type="image/webp">
+            <img class="solution-card__img" src="img/blocks/other-solutions/verona.jpg" alt="Кухня Верона" width="1558" height="636" loading="lazy">
+        </picture>
+    </div>
+    <div class="solution-card__content">
+        <div>
+            <h3 class="solution-card__title">Верона</h3>
+            
+            <span class="solution-card__subtext">Tranche</span>
+            
+        </div>
+        <div class="solution-card__info">
+            <a class="solution-card__link button button--decor" href="#">
+                <span class="sr-only">Узнать подробнее</span>
+                <div class="button__decor" aria-hidden>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </div>
+            </a>
+            <span class="solution-card__title">405 000 ₽</span>
+            
+            <span class="solution-card__subtext">за кухню длиной 3 метра</span>
+            
+        </div>
+    </div>
+</article>
+                </li>
+                <li class="other-solutions__item swiper-slide">
+                    <article class="solution-card">
+    <div class="solution-card__image">
+        <picture>
+            <source srcset="img/blocks/other-solutions/verona.avif" type="image/avif">
+            <source srcset="img/blocks/other-solutions/verona.webp" type="image/webp">
+            <img class="solution-card__img" src="img/blocks/other-solutions/verona.jpg" alt="Кухня Верона" width="1558" height="636" loading="lazy">
+        </picture>
+    </div>
+    <div class="solution-card__content">
+        <div>
+            <h3 class="solution-card__title">Верона</h3>
+            
+        </div>
+        <div class="solution-card__info">
+            <a class="solution-card__link button button--decor" href="#">
+                <span class="sr-only">Узнать подробнее</span>
+                <div class="button__decor" aria-hidden>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </div>
+            </a>
+            <span class="solution-card__title">40 500 000 ₽</span>
+            
+            <span class="solution-card__subtext">за кухню длиной 3 метра</span>
+            
+        </div>
+    </div>
+</article>
+                </li>
+                <li class="other-solutions__item swiper-slide">
+                    <article class="solution-card">
+    <div class="solution-card__image">
+        <picture>
+            <source srcset="img/blocks/other-solutions/verona.avif" type="image/avif">
+            <source srcset="img/blocks/other-solutions/verona.webp" type="image/webp">
+            <img class="solution-card__img" src="img/blocks/other-solutions/verona.jpg" alt="Кухня Верона" width="1558" height="636" loading="lazy">
+        </picture>
+    </div>
+    <div class="solution-card__content">
+        <div>
+            <h3 class="solution-card__title">Верона</h3>
+            
+            <span class="solution-card__subtext">Tranche</span>
+            
+        </div>
+        <div class="solution-card__info">
+            <a class="solution-card__link button button--decor" href="#">
+                <span class="sr-only">Узнать подробнее</span>
+                <div class="button__decor" aria-hidden>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </div>
+            </a>
+            <span class="solution-card__title">405 000 ₽</span>
+            
+        </div>
+    </div>
+</article>
+                </li>
+                <li class="other-solutions__item swiper-slide">
+                    <article class="solution-card">
+    <div class="solution-card__image">
+        <picture>
+            <source srcset="img/blocks/other-solutions/verona.avif" type="image/avif">
+            <source srcset="img/blocks/other-solutions/verona.webp" type="image/webp">
+            <img class="solution-card__img" src="img/blocks/other-solutions/verona.jpg" alt="Кухня Верона" width="1558" height="636" loading="lazy">
+        </picture>
+    </div>
+    <div class="solution-card__content">
+        <div>
+            <h3 class="solution-card__title">Верона</h3>
+            
+        </div>
+        <div class="solution-card__info">
+            <a class="solution-card__link button button--decor" href="#">
+                <span class="sr-only">Узнать подробнее</span>
+                <div class="button__decor" aria-hidden>
+                    <svg>
+                        <use xlink:href="img/sprite.svg#arrows-double">
+                    </svg>
+                </div>
+            </a>
+            <span class="solution-card__title">405 000 ₽</span>
+            
+        </div>
+    </div>
+</article>
+                </li>
+            </ul>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+                </main>
+            </div>
+        </div>
+    </div>
+    <div class="page-wrapper">
+        <div class="page-wrapper__side"></div>
+        <div class="page-wrapper__blocks">
             <section class="questions section">
     <div class="questions__container">
         <form class="form" action="#">

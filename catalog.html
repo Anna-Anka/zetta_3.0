@@ -32,84 +32,101 @@
 
 <body class="body">
 
-<!-- 
- light - светлый фон, темный текст;  
- dark - темный фон, светлый текст ; 
--->
-<div class="overlay" data-menu-overlay aria-hidden></div>
-<header class="header header--fixed">
+<header class="header fixed-block header--fixed">
+    <div class="overlay" data-menu-overlay aria-hidden></div>
     <nav class="header__navigation">
         <div class="header__wrapper-logo">
-            <a class="header__logo logo" href="#">
+            <a class="logo" href="#">
                 <img class="logo__img" src="img/logo.svg" alt="Логотип" width="155" height="28">
             </a>
         </div>
 
         <div class="header__inner">
-            <div class="header__item header__item--buttons">
-                <button class="header__button button" type="button">
+            <div class="header__item">
+                <button class="header__button header__button--menu button" aria-expanded="false" aria-controls="menu-categories" type="button">
                     Кухни и мебель
-                    <svg class="button__icon">
+                    <svg class="button__icon" aria-hidden>
                         <use xlink:href="img/sprite.svg#plus">
                     </svg>
                 </button>
 
                 <a class="header__button header__button--link button" href="#">
                     Акции
-                    <svg class="button__icon">
+                    <svg class="button__icon" aria-hidden>
                         <use xlink:href="img/sprite.svg#arrows-double">
                     </svg>
                 </a>
             </div>
 
-            <div class="header__item header__item--contacts">
-                <button class="header__consultation button button--dark" type="button" data-graph-path="consultation">
+            <div class="header-consultation">
+                <button class="header-consultation__button button button--dark" aria-controls="modal-consultation" data-graph-path="consultation" type="button">
                     <span class="button__point" aria-hidden></span>
                     Консультация дизайнера
                 </button>
 
-                <a class="header__contact" href="tel:+74951011919">
+                <a class="header-consultation__contact" href="tel:+74951011919">
                     +7 (495)-101-19-19
                 </a>
             </div>
 
-            <button class="burger-button" aria-expanded="false" aria-controls="header-burger-menu" data-burger-button>
+            <button class="header__burger-button burger-button" aria-expanded="false" aria-controls="header-burger-menu" data-burger-button>
                 <span class="burger-button__text" aria-live="polite" data-burger-button-text>Меню</span>
+                <span class="burger-button__text">Меню</span>
                 <span class="burger-button__plate" aria-hidden>
                     <span class="burger-button__line"></span>
                 </span>
             </button>
         </div>
 
-        <div class="burger-menu" id="header-burger-menu" data-menu>
-    <div class="burger-menu__buttons">
-        <button class="burger-menu__button button button--dark" type="button">
-            <span class="button__point" aria-hidden></span>
-            Консультация дизайнера
-        </button>
-        <button class="burger-menu__button button button--accent" type="button">
-            Записаться в салон
-            <svg class="button__icon">
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
+        <div class="burger-menu" id="header-burger-menu" data-fullscreen data-menu>
+    <div class="burger-menu__header">
+        <div class="header-consultation">
+            <button class="header-consultation__button button button--dark" type="button" aria-controls="modal-consultation" data-graph-path="consultation">
+                <span class="button__point" aria-hidden></span>
+                Консультация дизайнера
+            </button>
+
+            <a class="header-consultation__contact" href="tel:+74951011919">
+                +7 (495)-101-19-19
+            </a>
+        </div>
+
+        <button class="burger-button burger-button--active" aria-expanded aria-controls="header-burger-menu">
+            <span class="burger-button__text" aria-live="polite">Закрыть</span>
+            <span class="burger-button__plate" aria-hidden>
+                <span class="burger-button__line"></span>
+            </span>
         </button>
     </div>
-    <span class="burger-menu__title">Навигация</span>
-    <form class="burger-menu__search form" action="#">
-        <div class="form__item">
-            <label class="sr-only" for="burger-menu-search">
-                Введите, что вы хотите найти
-            </label>
-            <input class="form__field form__field--search" id="burger-menu-search" name="search" type="search" placeholder="Поиск по каталогу" required>
-            <button class="form__button-search" type="submit" aria-label="Найти">
-                <svg>
-                    <use xlink:href="img/sprite.svg#search">
+    <div class="burger-menu__body">
+        <div class="burger-menu__buttons">
+            <button class="burger-menu__button button button--dark" controls="modal-consultation" data-graph-path="consultation" type="button">
+                <span class="button__point" aria-hidden></span>
+                Консультация дизайнера
+            </button>
+            <button class="burger-menu__button button button--accent" data-graph-path="sign-up-salon" aria-controls="modal-salon" type="button">
+                Записаться в салон
+                <svg class="button__icon" aria-hidden>
+                    <use xlink:href="img/sprite.svg#arrows-double">
                 </svg>
             </button>
         </div>
-    </form>
-    <div class="burger-mobile burger-menu__mobile">
-        <div class="banner-card burger-mobile__block">
+        <span class="burger-menu__title">Навигация</span>
+        <form class="burger-menu__search form" action="#">
+            <div class="form__item">
+                <label class="sr-only" for="burger-menu-search">
+                    Введите, что вы хотите найти
+                </label>
+                <input class="form__field form__field--search" id="burger-menu-search" name="search" type="search" placeholder="Поиск по каталогу" required>
+                <button class="form__button-search" type="submit" aria-label="Найти">
+                    <svg aria-hidden>
+                        <use xlink:href="img/sprite.svg#search">
+                    </svg>
+                </button>
+            </div>
+        </form>
+        <div class="burger-mobile burger-menu__mobile">
+            <div class="banner-card burger-mobile__block">
     <div class="banner-card__content">
         <a class="banner-card__link" href="#">
             Кухонные решения
@@ -127,13 +144,13 @@
     </picture>
 </div>
 
-        <div class="burger-mobile__block burger-block">
-            <span class="burger-block__title">
-                Корпусная мебель
-            </span>
-            <ul class="burger-block__items burger-block__items--overflow">
-                <li class="burger-block__item">
-                    <div class="nav-card">
+            <div class="burger-mobile__block burger-block">
+                <span class="burger-block__title">
+                    Корпусная мебель
+                </span>
+                <ul class="burger-block__items burger-block__items--overflow">
+                    <li class="burger-block__item">
+                        <div class="nav-card">
     <a class="nav-card__link" href="#">Шкафы</a>
     <picture class="nav-card__picture">
         <source srcset="img/blocks/nav/sliding-wardrobe.avif" type="image/avif">
@@ -141,9 +158,9 @@
         <img class="nav-card__img" src="img/blocks/nav/sliding-wardrobe." alt="Шкаф-купе" width="137" height="137" loading="lazy">
     </picture>
 </div>
-                </li>
-                <li class="burger-block__item">
-                    <div class="nav-card">
+                    </li>
+                    <li class="burger-block__item">
+                        <div class="nav-card">
     <a class="nav-card__link" href="#">Гостинные</a>
     <picture class="nav-card__picture">
         <source srcset="img/blocks/nav/wardrobe-living.avif" type="image/avif">
@@ -151,9 +168,9 @@
         <img class="nav-card__img" src="img/blocks/nav/wardrobe-living." alt="Стенка для гостиной" width="137" height="137" loading="lazy">
     </picture>
 </div>
-                </li>
-                <li class="burger-block__item">
-                    <div class="nav-card">
+                    </li>
+                    <li class="burger-block__item">
+                        <div class="nav-card">
     <a class="nav-card__link" href="#">Гардеробные</a>
     <picture class="nav-card__picture">
         <source srcset="img/blocks/nav/closet-in-room.avif" type="image/avif">
@@ -161,9 +178,9 @@
         <img class="nav-card__img" src="img/blocks/nav/closet-in-room." alt="Шкаф-гардероб" width="137" height="137" loading="lazy">
     </picture>
 </div>
-                </li>
-                <li class="burger-block__item">
-                    <div class="nav-card">
+                    </li>
+                    <li class="burger-block__item">
+                        <div class="nav-card">
     <a class="nav-card__link" href="#">Прихожие</a>
     <picture class="nav-card__picture">
         <source srcset="img/blocks/nav/hallway.avif" type="image/avif">
@@ -171,9 +188,9 @@
         <img class="nav-card__img" src="img/blocks/nav/hallway." alt="Светлая прихожая" width="137" height="137" loading="lazy">
     </picture>
 </div>
-                </li>
-                <li class="burger-block__item">
-                    <div class="nav-card">
+                    </li>
+                    <li class="burger-block__item">
+                        <div class="nav-card">
     <a class="nav-card__link" href="#">Аксессуары для шкафов</a>
     <picture class="nav-card__picture">
         <source srcset="img/blocks/nav/clothes-rail.avif" type="image/avif">
@@ -181,13 +198,13 @@
         <img class="nav-card__img" src="img/blocks/nav/clothes-rail." alt="Штанга для одежды" width="137" height="137" loading="lazy">
     </picture>
 </div>
-                </li>
-            </ul>
-        </div>
+                    </li>
+                </ul>
+            </div>
 
-        <ul class="burger-mobile__block burger-banners">
-            <li class="burger-banners__item burger-banners__item--big">
-                <div class="banner-card banner-card--img-small banner-card--appliances">
+            <ul class="burger-mobile__block burger-banners">
+                <li class="burger-banners__item burger-banners__item--big">
+                    <div class="banner-card banner-card--img-small banner-card--appliances">
     <div class="banner-card__content">
         <a class="banner-card__link" href="#">
             Бытовая техника
@@ -200,25 +217,25 @@
         <img class="banner-card__img" src="img/banners/household-appliances.jpg" alt="Духовка" width="400" height="190" loading="lazy">
     </picture>
 </div>
-            </li>
-            <li class="burger-banners__item burger-banners__item--small">
-                <div class="burger-banners__card burger-banners__card--light">
-                    <span class="burger-banners__icon" style="background-image: url('img/icons/percent.svg');" aria-hidden></span>
-                    <span class="burger-banners__subtitle">
-                        Акции и скидки
-                    </span>
-                </div>
-            </li>
-            <li class="burger-banners__item burger-banners__item--small">
-                <div class="burger-banners__card burger-banners__card--dark">
-                    <span class="burger-banners__icon" style="background-image: url('img/icons/marker.svg');" aria-hidden></span>
-                    <span class="burger-banners__subtitle">
-                        Адреса салонов
-                    </span>
-                </div>
-            </li>
-            <li class="burger-banners__item burger-banners__item--washes burger-banners__item--big">
-                <div class="banner-card banner-card--img-small banner-card--border">
+                </li>
+                <li class="burger-banners__item burger-banners__item--small">
+                    <div class="burger-banners__card burger-banners__card--light">
+                        <span class="burger-banners__icon" style="background-image: url('img/icons/percent.svg');" aria-hidden></span>
+                        <span class="burger-banners__subtitle">
+                            Акции и скидки
+                        </span>
+                    </div>
+                </li>
+                <li class="burger-banners__item burger-banners__item--small">
+                    <div class="burger-banners__card burger-banners__card--dark">
+                        <span class="burger-banners__icon" style="background-image: url('img/icons/marker.svg');" aria-hidden></span>
+                        <span class="burger-banners__subtitle">
+                            Адреса салонов
+                        </span>
+                    </div>
+                </li>
+                <li class="burger-banners__item burger-banners__item--washes burger-banners__item--big">
+                    <div class="banner-card banner-card--img-small banner-card--border">
     <div class="banner-card__content">
         <a class="banner-card__link" href="#">
             Мойки и акссуары
@@ -231,9 +248,9 @@
         <img class="banner-card__img" src="img/banners/washes.jpg" alt="Мойка" width="400" height="190" loading="lazy">
     </picture>
 </div>
-            </li>
-            <li class="burger-banners__item burger-banners__item--big">
-                <div class="banner-card ">
+                </li>
+                <li class="burger-banners__item burger-banners__item--big">
+                    <div class="banner-card ">
     <div class="banner-card__content">
         <a class="banner-card__link" href="#">
             Реализованные проекты
@@ -246,162 +263,162 @@
         <img class="banner-card__img" src="img/banners/kitchen2.jpg" alt="Кухня" width="400" height="190" loading="lazy">
     </picture>
 </div>
+                </li>
+            </ul>
+
+            <div class="burger-mobile__block burger-block burger-block--large">
+                <ul class="burger-block__items">
+                    <li class="burger-block__item">
+                        <div class="nav-card nav-card--large">
+                            <a class="nav-card__link" href="#">
+                                Cashback 25%
+                            </a>
+                            <span class="nav-card__bg" style="background-image: url('img/blocks/nav/cashback.jpg');" aria-hidden></span>
+                        </div>
+                    </li>
+                    <li class="burger-block__item">
+                        <div class="nav-card nav-card--large">
+                            <a class="nav-card__link" href="#">
+                                Гарантия 12 лет
+                            </a>
+                            <span class="nav-card__bg" style="background-image: url('img/blocks/nav/guarantee.jpg');" aria-hidden></span>
+                        </div>
+                    </li>
+                    <li class="burger-block__item">
+                        <div class="nav-card nav-card--large">
+                            <a class="nav-card__link" href="#">
+                                О компании
+                            </a>
+                            <span class="nav-card__bg" style="background-image: url('img/blocks/nav/about.jpg');" aria-hidden></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <ul class="nav-menu">
+            <li class="nav-menu__category">
+                <span class="nav-menu__title">
+                    Клиентам
+                </span>
+                <ul class="nav-menu__items">
+                    <li>
+                        <a href="#" data-menu-link>Адреса салонов</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>3D проекты</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Доставка</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Замер помещения</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Гарантия 12 лет</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Монтаж мебели</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Покупателям</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-menu__category">
+                <span class="nav-menu__title">
+                    О компании
+                </span>
+                <ul class="nav-menu__items">
+                    <li>
+                        <a href="#" data-menu-link>Производство</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>История компании</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Миссия и ценности</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Замер помещения</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Работа в Zetta</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Франшиза</a>
+                    </li>
+                    <li>
+                        <a href="#" data-menu-link>Блог</a>
+                    </li>
+                </ul>
             </li>
         </ul>
-
-        <div class="burger-mobile__block burger-block burger-block--large">
-            <ul class="burger-block__items">
-                <li class="burger-block__item">
-                    <div class="nav-card nav-card--large">
-                        <a class="nav-card__link" href="#">
-                            Cashback 25%
+        <div class="burger-menu__contacts">
+            <div class="navigation-connection">
+                <ul class="navigation-connection__contacts">
+                    <li class="navigation-connection__contact">
+                        <a class="navigation-connection__link" href="tel:+70070000880">
+                            +7 (007)-000-08-80
                         </a>
-                        <span class="nav-card__bg" style="background-image: url('img/blocks/nav/cashback.jpg');" aria-hidden></span>
-                    </div>
-                </li>
-                <li class="burger-block__item">
-                    <div class="nav-card nav-card--large">
-                        <a class="nav-card__link" href="#">
-                            Гарантия 12 лет
+                    </li>
+                    <li class="navigation-connection__contact">
+                        <a class="navigation-connection__link" href="mailto:info@zetta.ru">
+                            info@zetta.ru
                         </a>
-                        <span class="nav-card__bg" style="background-image: url('img/blocks/nav/guarantee.jpg');" aria-hidden></span>
-                    </div>
-                </li>
-                <li class="burger-block__item">
-                    <div class="nav-card nav-card--large">
-                        <a class="nav-card__link" href="#">
-                            О компании
+                    </li>
+                </ul>
+                <ul class="socials burger-menu__socials">
+                    <li class="socials__item">
+                        <a class="socials__link" href="#" target="_blank" aria-label="ВКонтакте">
+                            <svg aria-hidden>
+                                <use xlink:href="img/sprite.svg#vk">
+                            </svg>
                         </a>
-                        <span class="nav-card__bg" style="background-image: url('img/blocks/nav/about.jpg');" aria-hidden></span>
-                    </div>
-                </li>
-            </ul>
+                    </li>
+                    <li class="socials__item">
+                        <a class="socials__link" href="#" target="_blank" aria-label="youtube">
+                            <svg aria-hidden>
+                                <use xlink:href="img/sprite.svg#youtube">
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="socials burger-menu__socials burger-menu__socials--mobile">
+                    <li class="socials__item">
+                        <a class="socials__link" href="#" target="_blank" aria-label="whatsapp">
+                            <svg aria-hidden>
+                                <use xlink:href="img/sprite.svg#whatsapp">
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="socials__item">
+                        <a class="socials__link" href="#" target="_blank" aria-label="telegram">
+                            <svg aria-hidden>
+                                <use xlink:href="img/sprite.svg#telegram">
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <button class="burger-menu__button burger-menu__button--desktop button button--accent" data-graph-path="sign-up-salon" aria-controls="modal-salon" type="button">
+                Записаться в салон
+                <svg aria-hidden>
+                    <use xlink:href="img/sprite.svg#arrows-double">
+                </svg>
+            </button>
         </div>
-
-    </div>
-
-    <ul class="nav-menu">
-        <li class="nav-menu__category">
-            <span class="nav-menu__title">
-                Клиентам
+        <div class="burger-menu__bottom">
+            <a class="burger-menu__privacy" href="#" data-menu-link>
+                Политика конфиденциальности
+            </a>
+            <span>
+                Copyright © 1998-2023 Zetta. All rights reserved
             </span>
-            <ul class="nav-menu__items">
-                <li>
-                    <a href="#" data-menu-link>Адреса салонов</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>3D проекты</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Доставка</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Замер помещения</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Гарантия 12 лет</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Монтаж мебели</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Покупателям</a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-menu__category">
-            <span class="nav-menu__title">
-                О компании
-            </span>
-            <ul class="nav-menu__items">
-                <li>
-                    <a href="#" data-menu-link>Производство</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>История компании</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Миссия и ценности</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Замер помещения</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Работа в Zetta</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Франшиза</a>
-                </li>
-                <li>
-                    <a href="#" data-menu-link>Блог</a>
-                </li>
-            </ul>
-        </li>
-    </ul>
-    <div class="burger-menu__contacts">
-        <div class="navigation-connection">
-            <ul class="navigation-connection__contacts">
-                <li class="navigation-connection__contact">
-                    <a class="navigation-connection__link" href="tel:+70070000880">
-                        +7 (007)-000-08-80
-                    </a>
-                </li>
-                <li class="navigation-connection__contact">
-                    <a class="navigation-connection__link" href="mailto:info@zetta.ru">
-                        info@zetta.ru
-                    </a>
-                </li>
-            </ul>
-            <ul class="socials burger-menu__socials">
-                <li class="socials__item">
-                    <a class="socials__link" href="#" target="_blank" aria-label="ВКонтакте">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#vk">
-                        </svg>
-                    </a>
-                </li>
-                <li class="socials__item">
-                    <a class="socials__link" href="#" target="_blank" aria-label="youtube">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#youtube">
-                        </svg>
-                    </a>
-                </li>
-            </ul>
-            <ul class="socials burger-menu__socials burger-menu__socials--mobile">
-                <li class="socials__item">
-                    <a class="socials__link" href="#" target="_blank" aria-label="whatsapp">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#whatsapp">
-                        </svg>
-                    </a>
-                </li>
-                <li class="socials__item">
-                    <a class="socials__link" href="#" target="_blank" aria-label="telegram">
-                        <svg>
-                            <use xlink:href="img/sprite.svg#telegram">
-                        </svg>
-                    </a>
-                </li>
-            </ul>
         </div>
-        <button class="burger-menu__button burger-menu__button--desktop button button--accent" type="button">
-            Записаться в салон
-            <svg>
-                <use xlink:href="img/sprite.svg#arrows-double">
-            </svg>
-        </button>
-    </div>
-    <div class="burger-menu__bottom">
-        <a class="burger-menu__privacy" href="#" data-menu-link>
-            Политика конфиденциальности
-        </a>
-        <span>
-            Copyright © 1998-2023 Zetta. All rights reserved
-        </span>
     </div>
 </div>
-        <div class="menu-categories">
+        <div class="menu-categories" id="menu-categories" aria-hidden="true">
     <span class="menu-categories__title">
         Категории
     </span>
@@ -472,7 +489,7 @@
                 </label>
                 <input class="form__field form__field--search" id="nav-menu-search" name="search" type="search" placeholder="Поиск по каталогу" required>
                 <button class="form__button-search" type="submit" aria-label="Найти">
-                    <svg>
+                    <svg aria-hidden>
                         <use xlink:href="img/sprite.svg#search">
                     </svg>
                 </button>
@@ -483,8 +500,8 @@
     </nav>
 </header>
 
-<nav class="side-menu">
-    <ul class="side-menu__items side-menu__items--arrows" data-color>
+<nav class="side-menu fixed-block ">
+    <ul class="side-menu__items side-menu__items--arrows" data-color="dark">
         <li>
             <a class="side-menu__link" href="#">
                 Каталог
@@ -507,7 +524,7 @@
         </li>
     </ul>
 
-    <ul class="side-menu__items side-menu__items--dots" data-color>
+    <ul class="side-menu__items side-menu__items--dots" data-color="dark">
         <li>
             <a class="side-menu__link" href="#">
                 Портфолио
@@ -541,23 +558,23 @@
     </ul>
 
     <div class="navigation-connection">
-        <ul class="socials" data-color>
+        <ul class="socials" data-color="dark">
             <li class="socials__item">
                 <a class="socials__link" href="#" target="_blank" aria-label="whatsapp">
-                    <svg>
+                    <svg aria-hidden>
                         <use xlink:href="img/sprite.svg#whatsapp">
                     </svg>
                 </a>
             </li>
             <li class="socials__item">
                 <a class="socials__link" href="#" target="_blank" aria-label="telegram">
-                    <svg>
+                    <svg aria-hidden>
                         <use xlink:href="img/sprite.svg#telegram">
                     </svg>
                 </a>
             </li>
         </ul>
-        <ul class="navigation-connection__contacts" data-color>
+        <ul class="navigation-connection__contacts" data-color="dark">
             <li class="navigation-connection__contact">
                 <a class="navigation-connection__link" href="tel:+70070000880">
                     +7 (007)-000-08-80
@@ -569,17 +586,17 @@
                 </a>
             </li>
         </ul>
-        <p class="navigation-connection__text" data-color>
+        <p class="navigation-connection__text" data-color="dark">
             Ежедневно с 11:00 до 21:00
         </p>
     </div>
 </nav>
 
 <div class="wrapper">
-    <nav class="menu-mobile">
+    <nav class="menu-mobile fixed-block">
     <ul class="menu-mobile__items">
         <li class="menu-mobile__item">
-            <a class="menu-mobile__link" href="#">
+            <a class="menu-mobile__link menu-mobile__link--active" href="#">
                 <span class="menu-mobile__icon" aria-hidden>
                     <svg>
                         <use xlink:href="img/sprite.svg#burger">
@@ -609,62 +626,244 @@
             </a>
         </li>
         <li class="menu-mobile__item">
-            <a class="menu-mobile__link menu-mobile__link--dark" href="#">
+            <button class="menu-mobile__link menu-mobile__link--dark" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
                 <span class="menu-mobile__icon" aria-hidden>
                     <svg>
                         <use xlink:href="img/sprite.svg#arrows-double">
                     </svg>
                 </span>
                 Хочу проект
-            </a>
+            </button>
         </li>
     </ul>
 </nav>
 
     <div class="graph-modal">
-        <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="consultation">
+    <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="consultation" id="modal-consultation">
     <div class="graph-modal__box">
-        <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно"></button>
-        <form class="graph-modal__form form" action="#">
-            <div class="form__header">
-                <span class="form__title">
-                    Консультация дизайнера
-                </span>
-                <div class="form__text">
-                    <p>
-                        Оставьте заявку, наши менеджеры свяжутся с вами в течение ближайшего времени
-                    </p>
-                </div>
+    <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно" type="button"></button>
+    <form class="graph-modal__form form" action="#">
+        <div class="form__header">
+            <span class="form__title">
+                Консультация дизайнера
+            </span>
+            <div class="form__text">
+                 <p> Оставьте заявку, наши менеджеры свяжутся с вами в течение ближайшего времени </p> 
             </div>
-            <div class="form__items">
-                <div class="form__item">
-                    <label class="sr-only" for="consultation-name">Введите ваше имя</label>
-                    <input class="form__field" id="consultation-name" name="name" type="text" placeholder="Имя" required>
-                </div>
-                <div class="form__item">
-                    <label class="sr-only" for="consultation-phone">Введите номер телефона</label>
-                    <input class="form__field" id="consultation-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
-                </div>
-            </div>
-            <div class="form__bottom">
-                <button class="form__button button button--dark" type="submit">
-                    Отправить заявку
-                    <svg>
-                        <use xlink:href="img/sprite.svg#arrows-double">
-                    </svg>
-                </button>
-                <p>
-                    Нажимая на кнопку, вы принимаете условия 
-                    <a href="#">
-                        публичной оферты
-                    </a> .
-                </p>
-            </div>
-        </form>
-    </div>
-</div>
+        </div>
+
         
-    </div>
+
+        <div class="form__items">
+            <div class="form__item">
+                <label class="sr-only" for="consultation-name">
+                    Введите ваше имя
+                </label>
+                <input class="form__field" id="consultation-name" name="name" type="text" placeholder="Имя" required>
+            </div>
+            <div class="form__item">
+                <label class="sr-only" for="consultation-phone">
+                    Введите номер телефона
+                </label>
+                <input class="form__field" id="consultation-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            
+        </div>
+        <div class="form__bottom">
+            <button class="form__button button button--dark" type="submit">
+                Отправить заявку
+                <svg aria-hidden>
+                    <use xlink:href="img/sprite.svg#arrows-double">
+                </svg>
+            </button>
+            <p>
+                Нажимая на кнопку, вы принимаете условия 
+                <a href="#">публичной оферты</a> .
+            </p>
+        </div>
+    </form>
+</div>
+</div>
+    <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="sign-up-salon" id="modal-salon">
+    <div class="graph-modal__box">
+    <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно" type="button"></button>
+    <form class="graph-modal__form form" action="#">
+        <div class="form__header">
+            <span class="form__title">
+                Записаться в салон
+            </span>
+            <div class="form__text">
+                 <p> Оставьте заявку, наши менеджеры свяжутся с вами в течение ближайшего времени </p> 
+            </div>
+        </div>
+
+        
+
+        <div class="form__items">
+            <div class="form__item">
+                <label class="sr-only" for="salon-name">
+                    Введите ваше имя
+                </label>
+                <input class="form__field" id="salon-name" name="name" type="text" placeholder="Имя" required>
+            </div>
+            <div class="form__item">
+                <label class="sr-only" for="salon-phone">
+                    Введите номер телефона
+                </label>
+                <input class="form__field" id="salon-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            
+        </div>
+        <div class="form__bottom">
+            <button class="form__button button button--dark" type="submit">
+                Отправить заявку
+                <svg aria-hidden>
+                    <use xlink:href="img/sprite.svg#arrows-double">
+                </svg>
+            </button>
+            <p>
+                Нажимая на кнопку, вы принимаете условия 
+                <a href="#">публичной оферты</a> .
+            </p>
+        </div>
+    </form>
+</div>
+</div>
+    <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="order-calc" id="modal-order-calc">
+    <div class="graph-modal__box">
+    <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно" type="button"></button>
+    <form class="graph-modal__form form" action="#">
+        <div class="form__header">
+            <span class="form__title">
+                Заказать онлайн-просчет
+            </span>
+            <div class="form__text">
+                 <p> Оставьте заявку, наши менеджеры свяжутся с вами в течение ближайшего времени </p> 
+            </div>
+        </div>
+
+        
+        <div class="form__tabs">
+            <div>
+                <input class="form__hidden" type="radio" name="order" id="order-calc-project" checked>
+                <label class="form__box" for="order-calc-project">
+                    Бесплатный 3D дизайн-проект
+                </label>
+            </div>
+            <div>
+                <input class="form__hidden" type="radio" name="order" id="order-calc-design">
+                <label class="form__box" for="order-calc-design">
+                    Бесплатный вызов дизайнера
+                </label>
+            </div>
+        </div>
+        
+
+        <div class="form__items">
+            <div class="form__item">
+                <label class="sr-only" for="order-calc-name">
+                    Введите ваше имя
+                </label>
+                <input class="form__field" id="order-calc-name" name="name" type="text" placeholder="Имя" required>
+            </div>
+            <div class="form__item">
+                <label class="sr-only" for="order-calc-phone">
+                    Введите номер телефона
+                </label>
+                <input class="form__field" id="order-calc-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            
+            <div class="form__item">
+                <label class="sr-only" for="order-calc-email">
+                    Введите почту
+                </label>
+                <input class="form__field" id="order-calc-email" name="email" type="email" placeholder="Почта" required>
+            </div>
+            
+        </div>
+        <div class="form__bottom">
+            <button class="form__button button button--dark" type="submit">
+                Отправить заявку
+                <svg aria-hidden>
+                    <use xlink:href="img/sprite.svg#arrows-double">
+                </svg>
+            </button>
+            <p>
+                Нажимая на кнопку, вы принимаете условия 
+                <a href="#">публичной оферты</a> .
+            </p>
+        </div>
+    </form>
+</div>
+</div>
+    <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="order-project" id="modal-order-project">
+    <div class="graph-modal__box">
+    <button class="graph-modal__close js-modal-close" aria-label="Закрыть модальное окно" type="button"></button>
+    <form class="graph-modal__form form" action="#">
+        <div class="form__header">
+            <span class="form__title">
+                Заказать проект
+            </span>
+            <div class="form__text">
+                 <p> Оставьте заявку, наши менеджеры свяжутся с вами в течение ближайшего времени </p> 
+            </div>
+        </div>
+
+        
+        <div class="form__tabs">
+            <div>
+                <input class="form__hidden" type="radio" name="order" id="order-project-project" checked>
+                <label class="form__box" for="order-project-project">
+                    Бесплатный 3D дизайн-проект
+                </label>
+            </div>
+            <div>
+                <input class="form__hidden" type="radio" name="order" id="order-project-design">
+                <label class="form__box" for="order-project-design">
+                    Бесплатный вызов дизайнера
+                </label>
+            </div>
+        </div>
+        
+
+        <div class="form__items">
+            <div class="form__item">
+                <label class="sr-only" for="order-project-name">
+                    Введите ваше имя
+                </label>
+                <input class="form__field" id="order-project-name" name="name" type="text" placeholder="Имя" required>
+            </div>
+            <div class="form__item">
+                <label class="sr-only" for="order-project-phone">
+                    Введите номер телефона
+                </label>
+                <input class="form__field" id="order-project-phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            
+            <div class="form__item">
+                <label class="sr-only" for="order-project-email">
+                    Введите почту
+                </label>
+                <input class="form__field" id="order-project-email" name="email" type="email" placeholder="Почта" required>
+            </div>
+            
+        </div>
+        <div class="form__bottom">
+            <button class="form__button button button--dark" type="submit">
+                Отправить заявку
+                <svg aria-hidden>
+                    <use xlink:href="img/sprite.svg#arrows-double">
+                </svg>
+            </button>
+            <p>
+                Нажимая на кнопку, вы принимаете условия 
+                <a href="#">публичной оферты</a> .
+            </p>
+        </div>
+    </form>
+</div>
+</div>
+</div>
 
     <div class="main">
         <div class="page-wrapper">
@@ -683,7 +882,7 @@
 </div>
 
                 <main>
-                    <section class="catalog" data-products-parent>
+                    <section class="catalog" data-tippy-parent>
     <h1 class="heading">
         Каталог кухонь
     </h1>
@@ -734,7 +933,7 @@
         <picture>
             <source srcset="img/blocks/products/kitchens/arcobalena.avif" type="image/avif">
             <source srcset="img/blocks/products/kitchens/arcobalena.webp" type="image/webp">
-            <img class="product-card__img" src="img/blocks/products/kitchens/arcobalena." alt="Кухня" width="605" height="410" loading="lazy">
+            <img class="product-card__img" src="img/blocks/products/kitchens/arcobalena.jpg" alt="Кухня" loading="lazy">
         </picture>
     </a>
     <div class="product-card__content">
@@ -744,12 +943,12 @@
             </a>
             
             <button class="product-card__question" type="button" data-tippy-content>
-                Tranche
-                <svg>
+                <span>Tranche</span>
+                <svg aria-hidden>
                     <use xlink:href="img/sprite.svg#question">
                 </svg>
             </button>
-            <div class="product-card__answer">
+            <div class="tooltip">
                 <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
             </div>
             
@@ -764,13 +963,13 @@
     <div class="product-card__footer">
         <a class="product-card__link button button--border" href="#">
             Подробнее о модели
-            <svg>
+            <svg aria-hidden>
                 <use xlink:href="img/sprite.svg#arrows-double">
             </svg>
         </a>
-        <button class="product-card__button button button--secondary" type="button">
+        <button class="product-card__button button button--secondary" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
             Заказать проект
-            <svg>
+            <svg aria-hidden>
                 <use xlink:href="img/sprite.svg#arrows-double">
             </svg>
         </button>
@@ -783,7 +982,7 @@
         <picture>
             <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
             <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
-            <img class="product-card__img" src="img/blocks/products/kitchens/verona." alt="Кухня" width="605" height="410" loading="lazy">
+            <img class="product-card__img" src="img/blocks/products/kitchens/verona.jpg" alt="Кухня" loading="lazy">
         </picture>
     </a>
     <div class="product-card__content">
@@ -793,12 +992,12 @@
             </a>
             
             <button class="product-card__question" type="button" data-tippy-content>
-                Tranche
-                <svg>
+                <span>Tranche</span>
+                <svg aria-hidden>
                     <use xlink:href="img/sprite.svg#question">
                 </svg>
             </button>
-            <div class="product-card__answer">
+            <div class="tooltip">
                 <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
             </div>
             
@@ -811,13 +1010,13 @@
     <div class="product-card__footer">
         <a class="product-card__link button button--border" href="#">
             Подробнее о модели
-            <svg>
+            <svg aria-hidden>
                 <use xlink:href="img/sprite.svg#arrows-double">
             </svg>
         </a>
-        <button class="product-card__button button button--secondary" type="button">
+        <button class="product-card__button button button--secondary" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
             Заказать проект
-            <svg>
+            <svg aria-hidden>
                 <use xlink:href="img/sprite.svg#arrows-double">
             </svg>
         </button>
@@ -830,7 +1029,7 @@
         <picture>
             <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
             <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
-            <img class="product-card__img" src="img/blocks/products/kitchens/verona." alt="Кухня" width="605" height="410" loading="lazy">
+            <img class="product-card__img" src="img/blocks/products/kitchens/verona.jpg" alt="Кухня" loading="lazy">
         </picture>
     </a>
     <div class="product-card__content">
@@ -848,13 +1047,13 @@
     <div class="product-card__footer">
         <a class="product-card__link button button--border" href="#">
             Подробнее о модели
-            <svg>
+            <svg aria-hidden>
                 <use xlink:href="img/sprite.svg#arrows-double">
             </svg>
         </a>
-        <button class="product-card__button button button--secondary" type="button">
+        <button class="product-card__button button button--secondary" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
             Заказать проект
-            <svg>
+            <svg aria-hidden>
                 <use xlink:href="img/sprite.svg#arrows-double">
             </svg>
         </button>
@@ -867,7 +1066,7 @@
         <picture>
             <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
             <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
-            <img class="product-card__img" src="img/blocks/products/kitchens/verona." alt="Кухня" width="605" height="410" loading="lazy">
+            <img class="product-card__img" src="img/blocks/products/kitchens/verona.jpg" alt="Кухня" loading="lazy">
         </picture>
     </a>
     <div class="product-card__content">
@@ -877,12 +1076,12 @@
             </a>
             
             <button class="product-card__question" type="button" data-tippy-content>
-                Эмаль
-                <svg>
+                <span>Эмаль</span>
+                <svg aria-hidden>
                     <use xlink:href="img/sprite.svg#question">
                 </svg>
             </button>
-            <div class="product-card__answer">
+            <div class="tooltip">
                 <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов.</p> <p>Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p> 
             </div>
             
@@ -895,13 +1094,13 @@
     <div class="product-card__footer">
         <a class="product-card__link button button--border" href="#">
             Подробнее о модели
-            <svg>
+            <svg aria-hidden>
                 <use xlink:href="img/sprite.svg#arrows-double">
             </svg>
         </a>
-        <button class="product-card__button button button--secondary" type="button">
+        <button class="product-card__button button button--secondary" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
             Заказать проект
-            <svg>
+            <svg aria-hidden>
                 <use xlink:href="img/sprite.svg#arrows-double">
             </svg>
         </button>
@@ -914,7 +1113,7 @@
         <picture>
             <source srcset="img/blocks/products/kitchens/arcobalena.avif" type="image/avif">
             <source srcset="img/blocks/products/kitchens/arcobalena.webp" type="image/webp">
-            <img class="product-card__img" src="img/blocks/products/kitchens/arcobalena." alt="Кухня" width="605" height="410" loading="lazy">
+            <img class="product-card__img" src="img/blocks/products/kitchens/arcobalena.jpg" alt="Кухня" loading="lazy">
         </picture>
     </a>
     <div class="product-card__content">
@@ -924,12 +1123,12 @@
             </a>
             
             <button class="product-card__question" type="button" data-tippy-content>
-                Tranche
-                <svg>
+                <span>Tranche</span>
+                <svg aria-hidden>
                     <use xlink:href="img/sprite.svg#question">
                 </svg>
             </button>
-            <div class="product-card__answer">
+            <div class="tooltip">
                 <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
             </div>
             
@@ -944,13 +1143,13 @@
     <div class="product-card__footer">
         <a class="product-card__link button button--border" href="#">
             Подробнее о модели
-            <svg>
+            <svg aria-hidden>
                 <use xlink:href="img/sprite.svg#arrows-double">
             </svg>
         </a>
-        <button class="product-card__button button button--secondary" type="button">
+        <button class="product-card__button button button--secondary" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
             Заказать проект
-            <svg>
+            <svg aria-hidden>
                 <use xlink:href="img/sprite.svg#arrows-double">
             </svg>
         </button>
@@ -963,7 +1162,7 @@
         <picture>
             <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
             <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
-            <img class="product-card__img" src="img/blocks/products/kitchens/verona." alt="Кухня" width="605" height="410" loading="lazy">
+            <img class="product-card__img" src="img/blocks/products/kitchens/verona.jpg" alt="Кухня" loading="lazy">
         </picture>
     </a>
     <div class="product-card__content">
@@ -973,12 +1172,12 @@
             </a>
             
             <button class="product-card__question" type="button" data-tippy-content>
-                Tranche
-                <svg>
+                <span>Tranche</span>
+                <svg aria-hidden>
                     <use xlink:href="img/sprite.svg#question">
                 </svg>
             </button>
-            <div class="product-card__answer">
+            <div class="tooltip">
                 <p>Премиальная фурнитура Grass (Австрия) гарантирует 100% надежность всех механизмов. Петли и ящики Grass закрываются плавно и бесшумно, широко открываются и рассчитаны на 65 000 открытий/закрытий</p>
             </div>
             
@@ -991,13 +1190,13 @@
     <div class="product-card__footer">
         <a class="product-card__link button button--border" href="#">
             Подробнее о модели
-            <svg>
+            <svg aria-hidden>
                 <use xlink:href="img/sprite.svg#arrows-double">
             </svg>
         </a>
-        <button class="product-card__button button button--secondary" type="button">
+        <button class="product-card__button button button--secondary" data-graph-path="order-project" aria-controls="modal-order-project" type="button">
             Заказать проект
-            <svg>
+            <svg aria-hidden>
                 <use xlink:href="img/sprite.svg#arrows-double">
             </svg>
         </button>
@@ -1044,7 +1243,7 @@
         <div class="form__bottom">
             <button class="form__button button button--dark" type="submit">
                 Отправить заявку
-                <svg>
+                <svg aria-hidden>
                     <use xlink:href="img/sprite.svg#arrows-double">
                 </svg>
             </button>
@@ -1208,7 +1407,7 @@
                 <span class="addresses-block__subtext">
                     Оставьте заявку на сайте, и приходите в наш салон.
                 </span>
-                <button class="addresses-block__button button button--decor" type="button">
+                <button class="addresses-block__button button button--decor" data-graph-path="sign-up-salon" aria-controls="modal-salon" type="button">
                     Записаться в салон
                     <span class="button__decor" aria-hidden>
                         <svg>
@@ -1246,7 +1445,7 @@
             <div class="form__bottom">
                 <button class="form__button button button--dark" type="submit">
                     Получить консультацию
-                    <svg>
+                    <svg aria-hidden>
                         <use xlink:href="img/sprite.svg#arrows-double">
                     </svg>
                 </button>
@@ -1259,7 +1458,7 @@
             </div>
         </form>
         <div class="questions__list">
-            <h2 class="questions__title title">
+            <h2 class="title">
                 Вопрос-ответ
             </h2>
 
@@ -1267,7 +1466,7 @@
                 <li class="spollers__item">
                     <button class="spollers__button" type="button" data-spoller-button>
     Срок изготовления проекта?
-    <svg class="spolleres__icon">
+    <svg aria-hidden>
         <use xlink:href="img/sprite.svg#close">
     </svg>
 </button>
@@ -1278,7 +1477,7 @@
                 <li class="spollers__item">
                     <button class="spollers__button" type="button" data-spoller-button>
     Сколько лет гарантия?
-    <svg class="spolleres__icon">
+    <svg aria-hidden>
         <use xlink:href="img/sprite.svg#close">
     </svg>
 </button>
@@ -1289,7 +1488,7 @@
                 <li class="spollers__item">
                     <button class="spollers__button" type="button" data-spoller-button>
     Как заказать индивидуальный проект?
-    <svg class="spolleres__icon">
+    <svg aria-hidden>
         <use xlink:href="img/sprite.svg#close">
     </svg>
 </button>
@@ -1300,7 +1499,7 @@
                 <li class="spollers__item">
                     <button class="spollers__button" type="button" data-spoller-button>
     Есть ли доставка?
-    <svg class="spolleres__icon">
+    <svg aria-hidden>
         <use xlink:href="img/sprite.svg#close">
     </svg>
 </button>
@@ -1311,7 +1510,7 @@
                 <li class="spollers__item">
                     <button class="spollers__button" type="button" data-spoller-button>
     Как выполнить замер?
-    <svg class="spolleres__icon">
+    <svg aria-hidden>
         <use xlink:href="img/sprite.svg#close">
     </svg>
 </button>
@@ -1333,14 +1532,14 @@
                 <ul class="socials">
                     <li class="socials__item">
                         <a class="socials__link" href="#" target="_blank" aria-label="whatsapp">
-                            <svg>
+                            <svg aria-hidden>
                                 <use xlink:href="img/sprite.svg#whatsapp">
                             </svg>
                         </a>
                     </li>
                     <li class="socials__item">
                         <a class="socials__link" href="#" target="_blank" aria-label="telegram">
-                            <svg>
+                            <svg aria-hidden>
                                 <use xlink:href="img/sprite.svg#telegram">
                             </svg>
                         </a>
