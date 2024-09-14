@@ -13,11 +13,15 @@
 		position: absolute;
 		left: 0;
 		bottom: -1px;
-		z-index: 6;
+		z-index: 5;
 		width: 100%;
 		height: 1px;
 		background-color: var(--color-grey-200);
 		transition: background-color 0.3s;
+
+		@include mq(lg) {
+			z-index: 6;
+		}
 	}
 
 	&--fixed {

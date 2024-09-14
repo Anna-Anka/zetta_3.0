@@ -1,13 +1,12 @@
 import {disableScroll} from '../utils/_disable-scroll.js';
 import {enableScroll} from '../utils/_enable-scroll.js';
-import {throttle} from '../utils/_throttle.js';
 
 export const manageMenuCategories = () => {
     const header = document.querySelector('.header')
     const button = document.querySelector('.header__button--menu')
     const menu = document.querySelector('.menu-categories')
 
-    const headerIsTransparent = header.classList.contains('header--transparent');
+    const headerIsTransparent = header?.classList.contains('header--transparent');
 
     let menuIsOpen = false
 

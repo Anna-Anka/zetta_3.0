@@ -12,17 +12,16 @@ export const burger = () => {
     let headerIsTransparent;
 
     const checkClass = () => {
-        console.log(headerIsTransparent)
-        if (burgerButton.classList.contains('burger-button--active')) {
-            burgerButton.setAttribute('aria-expanded', 'true');
+        if (burgerButton?.classList.contains('burger-button--active')) {
+            burgerButton?.setAttribute('aria-expanded', 'true');
             burgerButtonText.innerHTML = 'Закрыть';
-            if (header.classList.contains('header--transparent')) {
-                header.classList.remove('header--transparent');
+            if (header?.classList.contains('header--transparent')) {
+                header?.classList.remove('header--transparent');
                 headerIsTransparent = true;
             }
             disableScroll();
         } else {
-            burgerButton.setAttribute('aria-expanded', 'false');
+            burgerButton?.setAttribute('aria-expanded', 'false');
             burgerButtonText.innerHTML = 'Меню';
             headerIsTransparent && header.classList.add('header--transparent');
             enableScroll();
@@ -36,26 +35,25 @@ export const burger = () => {
         header.classList.remove('header--burger');
     }
 
-    burgerButton.addEventListener('click', () => {
-        burgerButton.classList.toggle('burger-button--active');
-        menu.classList.toggle('burger-menu--active');
-        overlay.classList.toggle('overlay--active');
-        header.classList.toggle('header--burger');
-        // header.classList.remove('header--transparent');
+    burgerButton?.addEventListener('click', () => {
+        burgerButton?.classList.toggle('burger-button--active');
+        menu?.classList.toggle('burger-menu--active');
+        overlay?.classList.toggle('overlay--active');
+        header?.classList.toggle('header--burger');
         checkClass();
     });
 
-    menuBurgerButton.addEventListener('click', () => {
+    menuBurgerButton?.addEventListener('click', () => {
         hideBurger();
         checkClass();
     })
 
-    overlay.addEventListener('click', () => {
+    overlay?.addEventListener('click', () => {
         hideBurger();
         checkClass();
     });
 
-    menuLinks.forEach((link) => {
+    menuLinks?.forEach((link) => {
         link.addEventListener('click', () => {
             hideBurger();
             enableScroll();

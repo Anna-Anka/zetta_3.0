@@ -63,6 +63,26 @@
 		width: 36px;
 		height: 36px;
 		background-color: var(--color-orange-400);
+		transition:
+			background-color 0.3s,
+			box-shadow 0.3s;
+
+		&:focus-visible {
+			@include focus-visible;
+
+			background-color: var(--color-white);
+
+			&::before,
+			&::after {
+				background-color: var(--color-dark-600);
+			}
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: var(--color-orange-600);
+			}
+		}
 
 		&::before,
 		&::after {
@@ -70,6 +90,9 @@
 			position: absolute;
 			border-radius: 2px;
 			background-color: var(--color-white);
+			transition:
+				background-color 0.3s,
+				opacity 0.3s;
 		}
 
 		&::before {
@@ -78,7 +101,6 @@
 			width: 1px;
 			height: 8px;
 			transform: translate(50%, -50%);
-			transition: opacity 0.3s;
 		}
 
 		&::after {

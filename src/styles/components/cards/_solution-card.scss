@@ -16,17 +16,26 @@
 		position: absolute;
 		inset: 0;
 
-		&::before {
-			content: '';
-			position: absolute;
-			inset: 0;
-			background-image: linear-gradient(
-				360deg,
-				#000 0%,
-				rgba(0, 0, 0, 0) 76.67%
-			);
-			opacity: 0.5;
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+					opacity: 0.8;
+				}
+			}
 		}
+
+		// &::before {
+		// 	content: '';
+		// 	position: absolute;
+		// 	inset: 0;
+		// 	background-image: linear-gradient(
+		// 		360deg,
+		// 		#000 0%,
+		// 		rgba(0, 0, 0, 0) 76.67%
+		// 	);
+		// 	opacity: 0.5;
+		// 	transition: opacity 0.3s;
+		// }
 	}
 
 	&__img {
@@ -84,9 +93,43 @@
 
 	&__link {
 		margin-bottom: 20px;
+		outline: 0;
+
+		&:focus-visible {
+			&::after {
+				border-color: var(--color-orange-400);
+			}
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				&::before {
+					opacity: 0.8;
+				}
+			}
+		}
+
+		&::after {
+			@include link-cover;
+
+			border: 1px solid transparent;
+			transition: border-color 0.3s;
+		}
 
 		&::before {
-			@include link-cover;
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			background-image: linear-gradient(
+				360deg,
+				#000 0%,
+				rgba(0, 0, 0, 0) 76.67%
+			);
+			opacity: 0.5;
+			transition:
+				opacity 0.3s,
+				box-shadow 0.3s;
 		}
 	}
 

@@ -116,3 +116,11 @@
 		display: none;
 	}
 }
+
+@mixin blackout {
+	content: '';
+	position: absolute;
+	background-color: var(--color-black);
+	opacity: 0;
+	transition: opacity 0.3s;
+}

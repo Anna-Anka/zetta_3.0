@@ -30,8 +30,22 @@
 
 	&__value {
 		display: flex;
+		border-radius: 4px;
 		color: var(--color-dark-600);
+		transition: box-shadow 0.3s;
 		gap: 6px;
+
+		&:focus-visible {
+			@include focus-visible;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				svg {
+					color: var(--color-dark-600);
+				}
+			}
+		}
 
 		@include mq(sm) {
 			gap: 2px;
@@ -40,6 +54,8 @@
 		svg {
 			width: 18px;
 			height: 18px;
+			color: var(--color-grey-400);
+			transition: color 0.3s;
 
 			@include mq(sm) {
 				width: 15px;

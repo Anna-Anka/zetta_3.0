@@ -14,13 +14,10 @@
 		transition: box-shadow 0.3s;
 
 		&::before {
-			content: '';
-			position: absolute;
+			@include blackout;
+
 			inset: 0;
 			z-index: 2;
-			background-color: var(--color-black);
-			opacity: 0;
-			transition: opacity 0.3s;
 		}
 
 		&:focus-visible {

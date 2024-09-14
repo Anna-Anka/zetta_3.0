@@ -30,6 +30,18 @@
 		background-color: transparent;
 		transition: border-color 0.3s;
 
+		@media (any-hover: hover) {
+			&:hover {
+				border-color: var(--color-grey-500);
+				background-color: transparent;
+
+				&::before {
+					background-color: var(--color-dark-600);
+					opacity: 1;
+				}
+			}
+		}
+
 		@include mq(sm) {
 			width: 18px;
 			height: 18px;
@@ -48,7 +60,8 @@
 			transform: translate(-50%, -50%);
 			transition:
 				opacity 0.3s,
-				background-color 0.3s;
+				background-color 0.3s,
+				opacity 0.3s;
 
 			@include mq(sm) {
 				width: 2px;

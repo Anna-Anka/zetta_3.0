@@ -54,6 +54,20 @@
 				border-color: var(--color-dark-600);
 			}
 		}
+
+		&:focus-visible {
+			& + .form__box {
+				border-color: var(--color-orange-400);
+			}
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				& + .form__box {
+					border-color: var(--color-grey-400);
+				}
+			}
+		}
 	}
 
 	&__box {
@@ -63,6 +77,7 @@
 		width: 100%;
 		font-size: 14px;
 		text-align: center;
+		color: var(--color-dark-600);
 
 		@include mq(sm) {
 			padding: 22px;

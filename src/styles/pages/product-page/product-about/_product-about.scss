@@ -55,7 +55,13 @@
 		@include question-button(8px, 22px);
 
 		align-items: flex-start;
+		border-radius: 4px;
 		font-size: 18px;
+		transition: box-shadow 0.3s;
+
+		&:focus-visible {
+			@include focus-visible;
+		}
 
 		span {
 			@include link-border-bottom;
@@ -91,6 +97,12 @@
 
 	&__detail {
 		@include link-border-bottom;
+
+		@media (any-hover: hover) {
+			&:hover {
+				border-bottom-color: var(--color-grey-200);
+			}
+		}
 
 		@include mq(lg) {
 			text-align: right;

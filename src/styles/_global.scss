@@ -32,10 +32,6 @@ body {
 	}
 }
 
-.lock {
-	overflow: hidden;
-}
-
 .sr-only {
 	position: absolute;
 	clip-path: inset(100%);
@@ -50,6 +46,7 @@ body {
 }
 
 .disable-scroll {
+	position: relative;
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -70,7 +67,7 @@ body {
 	opacity: 0;
 
 	&--active {
-		z-index: 6;
+		z-index: 5;
 		display: block;
 		opacity: 0.5;
 	}

@@ -1,6 +1,16 @@
 .product-characteristics {
 	@include container;
 
+	.block-head {
+		&__name {
+			background-color: var(--color-white);
+		}
+
+		&__number {
+			background-color: var(--color-grey-100);
+		}
+	}
+
 	&__container {
 		padding: 30px 30px 85px;
 		background-color: var(--color-grey-100);
