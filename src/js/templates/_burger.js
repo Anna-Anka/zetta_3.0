@@ -9,15 +9,22 @@ export const burger = () => {
     const menuLinks = document.querySelectorAll('[data-menu-link]');
     const overlay = document.querySelector('[data-menu-overlay]');
     const header = document.querySelector('.header');
+    let headerIsTransparent;
 
     const checkClass = () => {
+        console.log(headerIsTransparent)
         if (burgerButton.classList.contains('burger-button--active')) {
             burgerButton.setAttribute('aria-expanded', 'true');
             burgerButtonText.innerHTML = 'Закрыть';
+            if (header.classList.contains('header--transparent')) {
+                header.classList.remove('header--transparent');
+                headerIsTransparent = true;
+            }
             disableScroll();
         } else {
             burgerButton.setAttribute('aria-expanded', 'false');
             burgerButtonText.innerHTML = 'Меню';
+            headerIsTransparent && header.classList.add('header--transparent');
             enableScroll();
         }
     };
@@ -34,6 +41,7 @@ export const burger = () => {
         menu.classList.toggle('burger-menu--active');
         overlay.classList.toggle('overlay--active');
         header.classList.toggle('header--burger');
+        // header.classList.remove('header--transparent');
         checkClass();
     });
 
