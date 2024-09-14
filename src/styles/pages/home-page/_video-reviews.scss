@@ -1,22 +1,6 @@
 .video-reviews {
 	@include container;
 
-	&__wrapper {
-		position: relative;
-		overflow: hidden;
-	}
-
-	&__title {
-		@include mq(md, min) {
-			margin-right: 200px;
-		}
-	}
-
-	&__swiper {
-		position: static;
-		overflow: visible;
-	}
-
 	&__items {
 		@include mq(lg) {
 			margin-bottom: 30px;
@@ -25,24 +9,6 @@
 		@include mq(sm) {
 			margin-bottom: 20px;
 		}
-	}
-
-	&__controls {
-		@include flex-alignment(15px, flex-start, center);
-
-		position: absolute;
-		right: 0;
-		top: 10px;
-
-		@include mq(md) {
-			display: none;
-		}
-	}
-
-	&__buttons {
-		@include flex-simple(8px);
-
-		padding: 2px 0;
 	}
 
 	&__button {
@@ -75,11 +41,7 @@
 
 	&__content {
 		@include mq(lg, min) {
-			width: 33%;
-		}
-
-		@include mq(md, min) {
-			width: 50%;
+			width: 37%;
 		}
 	}
 

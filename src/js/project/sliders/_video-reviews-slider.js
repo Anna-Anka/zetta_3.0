@@ -11,13 +11,8 @@ if (document.querySelector('.video-reviews__swiper')) {
         slidesPerGroup: 1,
         slidesPerView: 1,
 
-        navigation: {
-            nextEl: '.video-reviews__button--next',
-            prevEl: '.video-reviews__button--prev',
-        },
-
         breakpoints: {
-            768: {
+            992: {
                 pagination: {
                     el: '.swiper-pagination-fraction',
                     type: 'fraction',
@@ -30,6 +25,11 @@ if (document.querySelector('.video-reviews__swiper')) {
                     renderFraction: function (currentClass, totalClass) {
                         return `<span class="${currentClass}"></span> / <span class="${totalClass}"></span>`
                     }
+                },
+
+                navigation: {
+                    nextEl: '.video-reviews__button--next',
+                    prevEl: '.video-reviews__button--prev',
                 },
             },
             0: {

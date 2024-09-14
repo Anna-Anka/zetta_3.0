@@ -105,3 +105,41 @@
 .swiper-button-prev {
 	transform: rotate(180deg);
 }
+
+.swiper-header {
+	@include flex-alignment(40px, space-between, flex-end);
+
+	margin-bottom: 36px;
+
+	@include mq(sm) {
+		margin-bottom: 20px;
+	}
+
+	&__title {
+		margin-bottom: 0;
+	}
+
+	&__controls {
+		@include flex-alignment(15px, flex-start, center);
+
+		@include mq(lg) {
+			display: none;
+		}
+	}
+
+	&__buttons {
+		@include flex-simple(8px);
+
+		padding: 2px 0;
+	}
+}
+
+.swiper-outer {
+	position: relative;
+	overflow: hidden;
+
+	.swiper {
+		position: static;
+		overflow: visible;
+	}
+}
