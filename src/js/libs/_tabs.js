@@ -19,7 +19,6 @@ class GraphTabsWithPagination extends GraphTabs {
     init() {
         super.init();
 
-        console.log(this.tabs)
         this.counterTabCurrent = this.tabs.querySelector('.tabs__counter-current');
         this.counterTabTotal = this.tabs.querySelector('.tabs__counter-total');
         this.panels = this.tabs.querySelectorAll('.tabs__panel');
@@ -84,7 +83,7 @@ class GraphTabsWithPagination extends GraphTabs {
     };
 
     updateCirclesPosition() {
-        if (this.wrappersPoints.length > 0) {
+        if (this.wrappersPoints?.length > 0) {
                     this.wrappersPoints.forEach((container) => {
             const circles = container.querySelectorAll('.tabs__point');
             const radius = this.wrappersPoints[0].offsetWidth / 2;
@@ -129,7 +128,6 @@ class GraphTabsWithPagination extends GraphTabs {
     updatePoints() {
         this.wrappersPoints.forEach((container) => {
             const points = container.querySelectorAll('.tabs__point')
-            console.log(points)
 
             points.forEach((point, index) => {
                 index === this.currentIndex ? point.classList.add('tabs__point--active') : point.classList.remove('tabs__point--active')
