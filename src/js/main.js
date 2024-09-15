@@ -8,3 +8,10 @@ import './project/index.js'
 // import './includes/templates.js';
 // import './includes/project.js';
 
+
+// const button = document.querySelector('.header__inner .header-consultation__button')
+// button.addEventListener('click', (event) => {
+//     console.log('click')
+//     event.preventDefault();
+// })
+
