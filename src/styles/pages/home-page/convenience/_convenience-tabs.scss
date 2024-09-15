@@ -88,6 +88,9 @@
 			height: 36px;
 			color: currentcolor;
 			background-color: var(--color-grey-100);
+			transition:
+				box-shadow 0.3s,
+				background-color 0.3s;
 
 			&::before {
 				@include bg-properties(contain);
@@ -100,6 +103,21 @@
 				height: 20px;
 				background-image: url('../img/sprite.svg#arrow');
 				transform: translate(50%, -50%);
+			}
+
+			&:disabled {
+				opacity: 0.5;
+				pointer-events: none;
+			}
+
+			&:focus-visible {
+				@include focus-visible;
+			}
+
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: var(--color-grey-300);
+				}
 			}
 
 			&--prev {
