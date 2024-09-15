@@ -9889,6 +9889,7 @@ new graph_modal__WEBPACK_IMPORTED_MODULE_0__["default"]();
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var graph_tabs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! graph-tabs */ "./node_modules/graph-tabs/src/graph-tabs.js");
+/* harmony import */ var _utils_throttle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/_throttle.js */ "./src/js/utils/_throttle.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
 function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
@@ -9905,6 +9906,7 @@ function _superPropBase(t, o) { for (; !{}.hasOwnProperty.call(t, o) && null !==
 function _getPrototypeOf(t) { return _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf.bind() : function (t) { return t.__proto__ || Object.getPrototypeOf(t); }, _getPrototypeOf(t); }
 function _inherits(t, e) { if ("function" != typeof e && null !== e) throw new TypeError("Super expression must either be null or a function"); t.prototype = Object.create(e && e.prototype, { constructor: { value: t, writable: !0, configurable: !0 } }), Object.defineProperty(t, "prototype", { writable: !1 }), e && _setPrototypeOf(t, e); }
 function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function (t, e) { return t.__proto__ = e, t; }, _setPrototypeOf(t, e); }
+
 
 if (document.querySelector('[data-tabs="addresses-block"]')) {
   new graph_tabs__WEBPACK_IMPORTED_MODULE_0__["default"]('addresses-block');
@@ -9928,17 +9930,15 @@ var GraphTabsWithPagination = /*#__PURE__*/function (_GraphTabs) {
       _superPropGet(GraphTabsWithPagination, "init", this, 3)([]);
       this.counterTabCurrent = this.tabs.querySelector('.tabs__counter-current');
       this.counterTabTotal = this.tabs.querySelector('.tabs__counter-total');
-      this.wrappersPoints = this.tabs.querySelectorAll('.convenience__points');
-      this.wrappersPoints.forEach(function (wrapper) {
-        setTimeout(function () {
-          var points = wrapper.querySelectorAll('.convenience__point');
-          points[0].classList.add('convenience__point--active');
-        });
-      });
-      this.updateCounter();
+      this.panels = this.tabs.querySelectorAll('.tabs__panel');
+      this.wrappersPoints = this.tabs.querySelectorAll('.tabs__points');
       this.prevBtn = this.tabs.querySelector('.tabs__controls-btn--prev');
       this.nextBtn = this.tabs.querySelector('.tabs__controls-btn--next');
       this.prevBtn.disabled = true;
+      this.initPoints();
+      this.addPointActive();
+      this.updateCounter();
+      this.arrangeConveniencePoints();
     }
   }, {
     key: "check",
@@ -9956,6 +9956,62 @@ var GraphTabsWithPagination = /*#__PURE__*/function (_GraphTabs) {
       this.nextBtn.addEventListener('click', function () {
         return _this2.showNextTab();
       });
+    }
+  }, {
+    key: "initPoints",
+    value: function initPoints() {
+      var _this3 = this;
+      this.panels.forEach(function (panel) {
+        var pointsWrapper = panel.querySelector('.tabs__points');
+        for (var i = 0; i < _this3.panels.length; i++) {
+          pointsWrapper.append(_this3.createPoint());
+        }
+        ;
+      });
+    }
+  }, {
+    key: "addPointActive",
+    value: function addPointActive() {
+      this.wrappersPoints.forEach(function (wrapper) {
+        var points = wrapper.querySelectorAll('.tabs__point');
+        points[0].classList.add('tabs__point--active');
+      });
+    }
+  }, {
+    key: "createPoint",
+    value: function createPoint() {
+      var fragment = document.createDocumentFragment();
+      var point = document.createElement('span');
+      point.classList.add('tabs__point');
+      fragment.appendChild(point);
+      return fragment;
+    }
+  }, {
+    key: "arrangeConveniencePoints",
+    value: function arrangeConveniencePoints() {
+      var _this$wrappersPoints;
+      if (((_this$wrappersPoints = this.wrappersPoints) === null || _this$wrappersPoints === void 0 ? void 0 : _this$wrappersPoints.length) > 0 && this.wrappersPoints[0].querySelector('.tabs__point')) {
+        this.updateCirclesPosition();
+        var throttledUpdate = (0,_utils_throttle_js__WEBPACK_IMPORTED_MODULE_1__.throttle)(this.updateCirclesPosition);
+        window.addEventListener('resize', throttledUpdate);
+      }
+    }
+  }, {
+    key: "updateCirclesPosition",
+    value: function updateCirclesPosition() {
+      var _this$wrappersPoints2,
+        _this4 = this;
+      if (((_this$wrappersPoints2 = this.wrappersPoints) === null || _this$wrappersPoints2 === void 0 ? void 0 : _this$wrappersPoints2.length) > 0) {
+        this.wrappersPoints.forEach(function (container) {
+          var circles = container.querySelectorAll('.tabs__point');
+          var radius = _this4.wrappersPoints[0].offsetWidth / 2;
+          var rotation = 360 / circles.length;
+          circles.forEach(function (circle, i) {
+            var position = "rotate(".concat(i * rotation, "deg) translate(").concat(radius, "px) rotate(-").concat(i * rotation, "deg)");
+            circle.style.transform = position;
+          });
+        });
+      }
     }
   }, {
     key: "showPreviousTab",
@@ -9991,12 +10047,11 @@ var GraphTabsWithPagination = /*#__PURE__*/function (_GraphTabs) {
   }, {
     key: "updatePoints",
     value: function updatePoints() {
-      var _this3 = this;
+      var _this5 = this;
       this.wrappersPoints.forEach(function (container) {
-        var points = container.querySelectorAll('.convenience__point');
-        console.log(points);
+        var points = container.querySelectorAll('.tabs__point');
         points.forEach(function (point, index) {
-          index === _this3.currentIndex ? point.classList.add('convenience__point--active') : point.classList.remove('convenience__point--active');
+          index === _this5.currentIndex ? point.classList.add('tabs__point--active') : point.classList.remove('tabs__point--active');
         });
       });
     }
@@ -10153,76 +10208,6 @@ var changeBlogImages = function changeBlogImages() {
 
 /***/ }),
 
-/***/ "./src/js/project/_convenience.js":
-/*!****************************************!*\
-  !*** ./src/js/project/_convenience.js ***!
-  \****************************************/
-/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   arrangeConveniencePoints: () => (/* binding */ arrangeConveniencePoints),
-/* harmony export */   createConveniencePoints: () => (/* binding */ createConveniencePoints)
-/* harmony export */ });
-/* harmony import */ var _utils_throttle_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/_throttle.js */ "./src/js/utils/_throttle.js");
-
-var createConveniencePoints = function createConveniencePoints() {
-  if (document.querySelector('[data-tabs="convenience-block"]')) {
-    var tabs = document.querySelector('[data-tabs="convenience-block"]');
-    var panels = tabs.querySelectorAll('.tabs__panel');
-    var createPoint = function createPoint() {
-      var fragment = document.createDocumentFragment();
-      var point = document.createElement('span');
-      point.classList.add('convenience__point');
-      fragment.appendChild(point);
-      return fragment;
-    };
-    panels.forEach(function (panel) {
-      var pointsWrapper = panel.querySelector('.convenience__points');
-      for (var i = 0; i < panels.length; i++) {
-        pointsWrapper.append(createPoint());
-      }
-    });
-  }
-};
-var arrangeConveniencePoints = function arrangeConveniencePoints() {
-  var containers = document.querySelectorAll('.convenience__points');
-  var updateCirclesPosition = function updateCirclesPosition() {
-    containers.forEach(function (container) {
-      var circles = container.querySelectorAll('.convenience__point');
-      var radius = containers[0].offsetWidth / 2;
-      var rotation = 360 / circles.length;
-      circles.forEach(function (circle, i) {
-        var position = "rotate(".concat(i * rotation, "deg) translate(").concat(radius, "px) rotate(-").concat(i * rotation, "deg)");
-        circle.style.transform = position;
-      });
-    });
-  };
-  if (containers.length > 0 && containers[0].querySelector('.convenience__point')) {
-    updateCirclesPosition();
-    var throttledUpdate = (0,_utils_throttle_js__WEBPACK_IMPORTED_MODULE_0__.throttle)(updateCirclesPosition);
-    window.addEventListener('resize', throttledUpdate);
-  }
-};
-
-// export const changeActiveConveniencePoint = () => {
-//     if (document.querySelector('.convenience__point')) {
-//         const tabs = document.querySelector('[data-tabs="convenience-block"]')
-//         const panels = tabs.querySelectorAll('.tabs__panel')
-//         panels.forEach((panel, index) => {
-//             const points = panel.querySelectorAll('.convenience__point')
-//             if (panel.contains.classList('tabs__panel--active')) {
-
-//             } else {
-
-//             }
-//         })
-//     }
-// }
-
-/***/ }),
-
 /***/ "./src/js/project/_fixed-header.js":
 /*!*****************************************!*\
   !*** ./src/js/project/_fixed-header.js ***!
@@ -10241,6 +10226,7 @@ var fixedHeader = function fixedHeader() {
   var hero = document.querySelector('.hero-home');
   var menu = document.querySelector('.menu-categories');
   var burger = document.querySelector('.burger-menu');
+  var consultationModal = document.querySelector("[data-graph-target='consultation']");
   if (hero && header) {
     var heroHeight = hero.offsetHeight;
     var changeClasses = function changeClasses() {
@@ -10250,7 +10236,9 @@ var fixedHeader = function fixedHeader() {
           header.classList.add('header--fixed');
           header.classList.remove('header--transparent');
         } else {
-          header.classList.remove('header--fixed');
+          if (!consultationModal.classList.contains('graph-modal-open')) {
+            header.classList.remove('header--fixed');
+          }
           header.classList.add('header--transparent');
         }
       }
@@ -10355,8 +10343,8 @@ var changeColorSideMenu = function changeColorSideMenu() {
   var burger = document.querySelector('.burger-menu');
   if (sideMenu && hero) {
     var blocks = sideMenu.querySelectorAll('[data-color]');
-    var heroHeight = hero.offsetHeight;
     var changeClasses = function changeClasses() {
+      var heroHeight = hero.offsetHeight;
       if (!(menu !== null && menu !== void 0 && menu.classList.contains('menu-categories--active')) && !(burger !== null && burger !== void 0 && burger.classList.contains('burger-menu--active'))) {
         if (blocks.length) {
           var scrollDistance = window.scrollY;
@@ -10365,13 +10353,18 @@ var changeColorSideMenu = function changeColorSideMenu() {
 
             // scrollDistance - сколько проскролили
 
+            console.log(topPosition);
+            console.log(heroHeight);
+            console.log(scrollDistance);
             if (topPosition + 120 > heroHeight && scrollDistance + topPosition < heroHeight) {
               block.setAttribute('data-color', 'light');
             } else {
-              if (scrollDistance > heroHeight - (topPosition + 120)) {
+              if (scrollDistance > heroHeight - (topPosition + 120) && scrollDistance !== 0) {
                 block.setAttribute('data-color', 'dark');
+                console.log('a');
               } else {
                 block.setAttribute('data-color', 'light');
+                console.log('b');
               }
             }
           });
@@ -10381,6 +10374,7 @@ var changeColorSideMenu = function changeColorSideMenu() {
     changeClasses();
     var changeClassesTrottle = (0,_utils_throttle_js__WEBPACK_IMPORTED_MODULE_0__.throttle)(changeClasses);
     window.addEventListener('scroll', changeClassesTrottle);
+    window.addEventListener('resize', changeClassesTrottle);
   }
 };
 
@@ -10406,8 +10400,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _menu_categories_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./_menu-categories.js */ "./src/js/project/_menu-categories.js");
 /* harmony import */ var _side_menu_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./_side-menu.js */ "./src/js/project/_side-menu.js");
 /* harmony import */ var _blog_images_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./_blog-images.js */ "./src/js/project/_blog-images.js");
-/* harmony import */ var _convenience_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./_convenience.js */ "./src/js/project/_convenience.js");
-
 
 
 
@@ -10424,8 +10416,6 @@ __webpack_require__.r(__webpack_exports__);
 (0,_menu_categories_js__WEBPACK_IMPORTED_MODULE_9__.manageMenuCategories)();
 (0,_side_menu_js__WEBPACK_IMPORTED_MODULE_10__.changeColorSideMenu)();
 (0,_blog_images_js__WEBPACK_IMPORTED_MODULE_11__.changeBlogImages)();
-(0,_convenience_js__WEBPACK_IMPORTED_MODULE_12__.createConveniencePoints)();
-(0,_convenience_js__WEBPACK_IMPORTED_MODULE_12__.arrangeConveniencePoints)();
 
 /***/ }),
 
@@ -10446,15 +10436,22 @@ if (document.querySelector('.blog-block__swiper')) {
   new swiper__WEBPACK_IMPORTED_MODULE_0__["default"]('.blog-block__swiper', {
     loop: true,
     speed: 800,
-    navigation: {
-      nextEl: '.blog-block__button--next',
-      prevEl: '.blog-block__button--prev'
-    },
     pagination: {
-      el: '.swiper-pagination',
+      el: '.blog-block__pagination',
       clickable: true
     },
     breakpoints: {
+      992: {
+        slidesPerGroup: 3,
+        slidesPerView: 3,
+        navigation: {
+          nextEl: '.blog-block__button--next',
+          prevEl: '.blog-block__button--prev'
+        },
+        pagination: {
+          el: null
+        }
+      },
       768: {
         slidesPerGroup: 3,
         slidesPerView: 3
@@ -10594,12 +10591,8 @@ if (document.querySelector('.other-solutions__swiper')) {
     spaceBetween: 10,
     slidesPerGroup: 1,
     slidesPerView: 1,
-    navigation: {
-      nextEl: '.other-solutions__button--next',
-      prevEl: '.other-solutions__button--prev'
-    },
     breakpoints: {
-      768: {
+      992: {
         pagination: {
           el: '.other-solutions__fraction',
           type: 'fraction',
@@ -10612,11 +10605,15 @@ if (document.querySelector('.other-solutions__swiper')) {
           renderFraction: function renderFraction(currentClass, totalClass) {
             return "<span class=\"".concat(currentClass, "\"></span> / <span class=\"").concat(totalClass, "\"></span>");
           }
+        },
+        navigation: {
+          nextEl: '.other-solutions__button--next',
+          prevEl: '.other-solutions__button--prev'
         }
       },
       0: {
         pagination: {
-          el: '.swiper-pagination',
+          el: '.other-solutions__pagination',
           clickable: true
         }
       }
@@ -10677,12 +10674,12 @@ if (document.querySelector('.product-projects__swiper')) {
     loop: true,
     speed: 800,
     spaceBetween: 20,
-    navigation: {
-      nextEl: '.product-projects__button--next',
-      prevEl: '.product-projects__button--prev'
+    pagination: {
+      el: '.product-projects__pagination',
+      clickable: true
     },
     breakpoints: {
-      768: {
+      992: {
         slidesPerGroup: 2,
         slidesPerView: 2,
         spaceBetween: 20,
@@ -10698,16 +10695,21 @@ if (document.querySelector('.product-projects__swiper')) {
           renderFraction: function renderFraction(currentClass, totalClass) {
             return "<span class=\"".concat(currentClass, "\"></span> / <span class=\"").concat(totalClass, "\"></span>");
           }
+        },
+        navigation: {
+          nextEl: '.product-projects__button--next',
+          prevEl: '.product-projects__button--prev'
         }
+      },
+      768: {
+        slidesPerGroup: 2,
+        slidesPerView: 2,
+        spaceBetween: 20
       },
       0: {
         slidesPerGroup: 1,
         slidesPerView: 1,
-        spaceBetween: 10,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true
-        }
+        spaceBetween: 10
       }
     }
   });
@@ -10733,21 +10735,25 @@ if (document.querySelector('.reviews__swiper')) {
     loop: true,
     speed: 800,
     spaceBetween: 15,
-    navigation: {
-      nextEl: '.reviews__button--next',
-      prevEl: '.reviews__button--prev'
-    },
     pagination: {
-      el: '.swiper-pagination',
+      el: '.reviews__pagination',
       clickable: true
     },
     breakpoints: {
       992: {
         slidesPerGroup: 4,
-        slidesPerView: 4
+        slidesPerView: 4,
+        navigation: {
+          nextEl: '.reviews__button--next',
+          prevEl: '.reviews__button--prev'
+        },
+        pagination: {
+          el: null
+        }
       },
       768: {
-        slidesPerGroup: 2.2,
+        slidesPerGroup: 2,
+        slidesPerView: 2.2,
         spaceBetween: 15
       },
       360: {
@@ -10789,7 +10795,7 @@ if (document.querySelector('.video-reviews__swiper')) {
     breakpoints: {
       992: {
         pagination: {
-          el: '.swiper-pagination-fraction',
+          el: '.video-reviews__fraction',
           type: 'fraction',
           formatFractionCurrent: function formatFractionCurrent(number) {
             return number > 9 ? number : '0' + number;
@@ -10808,7 +10814,7 @@ if (document.querySelector('.video-reviews__swiper')) {
       },
       0: {
         pagination: {
-          el: '.swiper-pagination',
+          el: '.video-reviews__pagination',
           clickable: true
         }
       }
@@ -21927,6 +21933,12 @@ __webpack_require__.r(__webpack_exports__);
 // import './includes/utils.js';
 // import './includes/templates.js';
 // import './includes/project.js';
+
+// const button = document.querySelector('.header__inner .header-consultation__button')
+// button.addEventListener('click', (event) => {
+//     console.log('click')
+//     event.preventDefault();
+// })
 })();
 
 /******/ })()

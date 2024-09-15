@@ -32,30 +32,9 @@
 
 <body class="body">
 
-<!-- TODO: aria: 
- 0) консультация дизайнера прыгает наверх (попробовать e.preventDefault())
- 0) проверить все через скринридер
- 1) связь в спойлере;
-2) При открытой модалке (с меню), бурегр-меню первыми на фокус должны быть элементы в них
-3) При открытом бургре меню фокус на закрыть 
- 5) сделать так, чтобы лишние скрипты не работали на мобилках
- 6) дизейбл кнопок (стрелок) в табах
- 7) в логике convenience не нравится, что использую setTimeout. Нужно попробовать отрисовывать точки внутри класса
- 7) в мобильном бургер-меню focus и hover на карточки
- 8) неактивная хлебная крошка может быть в фокусе
- 8) fixedHeader, changeColorSideMenu учитывать, что высота экрана может меняться
- 9) fixedHeader, changeColorSideMenu оптимизация 
- 10) проверить хлебные крошки и мобильное меню на переполнение и вск остальное
- 11) ругается stylelint
- 13) чтобы на одном разрешение у всех слайдеров убирались стрелки
- 14) попробовать controls позиционирвоать не на абсолюте + в слайдере постараться не дублировать стили (сделать примерно как в других решениях на странице товара)
- 16) ДЛЯ product-projects и другие решения сделать что-то, чтобы не дублировать стили
- 17) unique-quality и guarantee-block что-то придумать, чтобы не дублирвать стили
--->
-
 <h1 class="sr-only">Фабрика Zetta — производство кухонь!</h1>
 
-<header class="header fixed-block header--transparent">
+<header class="header header--transparent">
     <div class="overlay" data-menu-overlay aria-hidden></div>
     <nav class="header__navigation">
         <div class="header__wrapper-logo">
@@ -244,17 +223,17 @@
                 <li class="burger-banners__item burger-banners__item--small">
                     <div class="burger-banners__card burger-banners__card--light">
                         <span class="burger-banners__icon" style="background-image: url('img/icons/percent.svg');" aria-hidden></span>
-                        <span class="burger-banners__subtitle">
+                        <a class="burger-banners__link" href="#">
                             Акции и скидки
-                        </span>
+                        </a>
                     </div>
                 </li>
                 <li class="burger-banners__item burger-banners__item--small">
                     <div class="burger-banners__card burger-banners__card--dark">
                         <span class="burger-banners__icon" style="background-image: url('img/icons/marker.svg');" aria-hidden></span>
-                        <span class="burger-banners__subtitle">
+                        <a class="burger-banners__link" href="#">
                             Адреса салонов
-                        </span>
+                        </a>
                     </div>
                 </li>
                 <li class="burger-banners__item burger-banners__item--washes burger-banners__item--big">
@@ -1491,7 +1470,7 @@
                 Видео-обзоры
             </h2>
             <div class="swiper-header__controls">
-                <div class="swiper-pagination-fraction"></div>
+                <div class="video-reviews__fraction swiper-pagination-fraction"></div>
                 <div class="swiper-header__buttons">
                     <button class="video-reviews__button video-reviews__button--prev swiper-button-prev" type="button">
                     </button>
@@ -1500,57 +1479,55 @@
                 </div>
             </div>
         </div>
-        <div class="swiper-outer">
-            <div class="swiper">
-                <ul class="video-reviews__items swiper-wrapper">
-                    <li class="video-reviews__item swiper-slide">
-                        <div class="video-reviews__card">
-                            <div class="video-reviews__video"></div>
-                            <div class="video-reviews__content">
-                                <h3 class="video-reviews__subtitle">
-                                    Как выбрать фурнитуру и корпус?
-                                </h3>
-                                <div class="video-reviews__text">
-                                    <p>
+        <div class="video-reviews__swiper swiper">
+            <ul class="video-reviews__items swiper-wrapper">
+                <li class="video-reviews__item swiper-slide">
+                    <div class="video-reviews__card">
+                        <div class="video-reviews__video"></div>
+                        <div class="video-reviews__content">
+                            <h3 class="video-reviews__subtitle">
+                                Как выбрать фурнитуру и корпус?
+                            </h3>
+                            <div class="video-reviews__text">
+                                <p>
                                         Рассказываем о главных критериях на примере кухни “Вектор”.
                                     </p>
-                                </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="video-reviews__item swiper-slide">
-                        <div class="video-reviews__card">
-                            <div class="video-reviews__video"></div>
-                            <div class="video-reviews__content">
-                                <h3 class="video-reviews__subtitle">
-                                    Как выбрать фурнитуру и корпус?
-                                </h3>
-                                <div class="video-reviews__text">
-                                    <p>
+                    </div>
+                </li>
+                <li class="video-reviews__item swiper-slide">
+                    <div class="video-reviews__card">
+                        <div class="video-reviews__video"></div>
+                        <div class="video-reviews__content">
+                            <h3 class="video-reviews__subtitle">
+                                Как выбрать фурнитуру и корпус?
+                            </h3>
+                            <div class="video-reviews__text">
+                                <p>
                                         Рассказываем о главных критериях на примере кухни “Вектор”.
                                     </p>
-                                </div>
                             </div>
                         </div>
-                    </li>
-                    <li class="video-reviews__item swiper-slide">
-                        <div class="video-reviews__card">
-                            <div class="video-reviews__video"></div>
-                            <div class="video-reviews__content">
-                                <h3 class="video-reviews__subtitle">
-                                    Как выбрать фурнитуру и корпус?
-                                </h3>
-                                <div class="video-reviews__text">
-                                    <p>
+                    </div>
+                </li>
+                <li class="video-reviews__item swiper-slide">
+                    <div class="video-reviews__card">
+                        <div class="video-reviews__video"></div>
+                        <div class="video-reviews__content">
+                            <h3 class="video-reviews__subtitle">
+                                Как выбрать фурнитуру и корпус?
+                            </h3>
+                            <div class="video-reviews__text">
+                                <p>
                                         Рассказываем о главных критериях на примере кухни “Вектор”.
                                     </p>
-                                </div>
                             </div>
                         </div>
-                    </li>
-                </ul>
-                <div class="swiper-pagination"></div>
-            </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="video-reviews__pagination swiper-pagination"></div>
         </div>
     </div>
 </section>
@@ -1606,7 +1583,7 @@
         
     </div>
     <div class="convenience__image">
-        <div class="convenience__points" aria-hidden>
+        <div class="tabs__points" aria-hidden>
 
         </div>
         <picture>
@@ -1632,7 +1609,7 @@
         
     </div>
     <div class="convenience__image">
-        <div class="convenience__points" aria-hidden>
+        <div class="tabs__points" aria-hidden>
 
         </div>
         <picture>
@@ -1657,7 +1634,7 @@
         
     </div>
     <div class="convenience__image">
-        <div class="convenience__points" aria-hidden>
+        <div class="tabs__points" aria-hidden>
 
         </div>
         <picture>
@@ -1687,7 +1664,7 @@
         
     </div>
     <div class="convenience__image">
-        <div class="convenience__points" aria-hidden>
+        <div class="tabs__points" aria-hidden>
 
         </div>
         <picture>
@@ -1717,7 +1694,7 @@
         
     </div>
     <div class="convenience__image">
-        <div class="convenience__points" aria-hidden>
+        <div class="tabs__points" aria-hidden>
 
         </div>
         <picture>
@@ -1785,61 +1762,68 @@
     </div>
 </section>
                 <section class="blog-block section">
-    <div class="blog-block__wrapper">
-        <h2 class="blog-block__title title">
+    <div class="swiper-header">
+        <h2 class="swiper-header__title title">
             Блог
         </h2>
-        <div class="blog-block__inner" data-blog-images="blog-home-page">
-            <div class="blog-block__item blog-block__item--picture">
-                <div class="blog-block__images">
-                    <div class="blog-block__image blog-block__image--active">
-                        <picture>
-                            <source srcset="img/blocks/blog/1.avif" type="image/avif">
-                            <source srcset="img/blocks/blog/1.webp" type="image/webp">
-                            <img class="blog-block__img" src="img/blocks/blog/1.jpg" alt="девушка" loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="blog-block__image">
-                        <picture>
-                            <source srcset="img/blocks/facades-production/big.avif" type="image/avif">
-                            <source srcset="img/blocks/facades-production/big.webp" type="image/webp">
-                            <img class="blog-block__img" src="img/blocks/facades-production/big.jpg" alt="Производство" loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="blog-block__image">
-                        <picture>
-                            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
-                            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
-                            <img class="blog-block__img" src="img/blocks/products/kitchens/verona.jpg" alt="девушка" loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="blog-block__image">
-                        <picture>
-                            <source srcset="img/blocks/blog/1.avif" type="image/avif">
-                            <source srcset="img/blocks/blog/1.webp" type="image/webp">
-                            <img class="blog-block__img" src="img/blocks/blog/1.jpg" alt="девушка" loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="blog-block__image">
-                        <picture>
-                            <source srcset="img/blocks/facades-production/big.avif" type="image/avif">
-                            <source srcset="img/blocks/facades-production/big.webp" type="image/webp">
-                            <img class="blog-block__img" src="img/blocks/facades-production/big.jpg" alt="Производство" loading="lazy">
-                        </picture>
-                    </div>
-                    <div class="blog-block__image">
-                        <picture>
-                            <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
-                            <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
-                            <img class="blog-block__img" src="img/blocks/products/kitchens/verona.jpg" alt="девушка" loading="lazy">
-                        </picture>
-                    </div>
+        <div class="swiper-header__buttons">
+            <button class="blog-block__button blog-block__button--prev swiper-button-prev" type="button">
+            </button>
+            <button class="blog-block__button blog-block__button--next swiper-button-next" type="button">
+            </button>
+        </div>
+    </div>
+    <div class="blog-block__inner" data-blog-images="blog-home-page">
+        <div class="blog-block__item blog-block__item--picture">
+            <div class="blog-block__images">
+                <div class="blog-block__image blog-block__image--active">
+                    <picture>
+                        <source srcset="img/blocks/blog/1.avif" type="image/avif">
+                        <source srcset="img/blocks/blog/1.webp" type="image/webp">
+                        <img class="blog-block__img" src="img/blocks/blog/1.jpg" alt="девушка" loading="lazy">
+                    </picture>
+                </div>
+                <div class="blog-block__image">
+                    <picture>
+                        <source srcset="img/blocks/facades-production/big.avif" type="image/avif">
+                        <source srcset="img/blocks/facades-production/big.webp" type="image/webp">
+                        <img class="blog-block__img" src="img/blocks/facades-production/big.jpg" alt="Производство" loading="lazy">
+                    </picture>
+                </div>
+                <div class="blog-block__image">
+                    <picture>
+                        <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
+                        <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
+                        <img class="blog-block__img" src="img/blocks/products/kitchens/verona.jpg" alt="девушка" loading="lazy">
+                    </picture>
+                </div>
+                <div class="blog-block__image">
+                    <picture>
+                        <source srcset="img/blocks/blog/1.avif" type="image/avif">
+                        <source srcset="img/blocks/blog/1.webp" type="image/webp">
+                        <img class="blog-block__img" src="img/blocks/blog/1.jpg" alt="девушка" loading="lazy">
+                    </picture>
+                </div>
+                <div class="blog-block__image">
+                    <picture>
+                        <source srcset="img/blocks/facades-production/big.avif" type="image/avif">
+                        <source srcset="img/blocks/facades-production/big.webp" type="image/webp">
+                        <img class="blog-block__img" src="img/blocks/facades-production/big.jpg" alt="Производство" loading="lazy">
+                    </picture>
+                </div>
+                <div class="blog-block__image">
+                    <picture>
+                        <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
+                        <source srcset="img/blocks/products/kitchens/verona.webp" type="image/webp">
+                        <img class="blog-block__img" src="img/blocks/products/kitchens/verona.jpg" alt="девушка" loading="lazy">
+                    </picture>
                 </div>
             </div>
-            <div class="blog-block__swiper swiper">
-                <ul class="blog-block__items swiper-wrapper">
-                    <li class="blog-block__item swiper-slide">
-                        <article class="blog-card">
+        </div>
+        <div class="blog-block__swiper swiper">
+            <ul class="blog-block__items swiper-wrapper">
+                <li class="blog-block__item swiper-slide">
+                    <article class="blog-card">
     <h3 class="blog-card__title subtitle">Секреты долгожительства многолетней кухни</h3>
     <time datetime="2022-02-27">
         27.02.2022
@@ -1853,9 +1837,9 @@
         </span>
     </a>
 </article>
-                    </li>
-                    <li class="blog-block__item swiper-slide">
-                        <article class="blog-card">
+                </li>
+                <li class="blog-block__item swiper-slide">
+                    <article class="blog-card">
     <h3 class="blog-card__title subtitle">Умная техника в помощь</h3>
     <time datetime="2022-02-27">
         27.02.2022
@@ -1869,9 +1853,9 @@
         </span>
     </a>
 </article>
-                    </li>
-                    <li class="blog-block__item swiper-slide">
-                        <article class="blog-card">
+                </li>
+                <li class="blog-block__item swiper-slide">
+                    <article class="blog-card">
     <h3 class="blog-card__title subtitle">Как правильно выбрать посуду для кухни?</h3>
     <time datetime="2022-02-27">
         27.02.2022
@@ -1885,9 +1869,9 @@
         </span>
     </a>
 </article>
-                    </li>
-                    <li class="blog-block__item swiper-slide">
-                        <article class="blog-card">
+                </li>
+                <li class="blog-block__item swiper-slide">
+                    <article class="blog-card">
     <h3 class="blog-card__title subtitle">Секреты долгожительства многолетней кухни</h3>
     <time datetime="2022-02-27">
         27.02.2022
@@ -1901,9 +1885,9 @@
         </span>
     </a>
 </article>
-                    </li>
-                    <li class="blog-block__item swiper-slide">
-                        <article class="blog-card">
+                </li>
+                <li class="blog-block__item swiper-slide">
+                    <article class="blog-card">
     <h3 class="blog-card__title subtitle">Умная техника в помощь</h3>
     <time datetime="2022-02-27">
         27.02.2022
@@ -1917,9 +1901,9 @@
         </span>
     </a>
 </article>
-                    </li>
-                    <li class="blog-block__item swiper-slide">
-                        <article class="blog-card">
+                </li>
+                <li class="blog-block__item swiper-slide">
+                    <article class="blog-card">
     <h3 class="blog-card__title subtitle">Как правильно выбрать посуду для кухни?</h3>
     <time datetime="2022-02-27">
         27.02.2022
@@ -1933,28 +1917,28 @@
         </span>
     </a>
 </article>
-                    </li>
-                </ul>
-                <div class="swiper-pagination"></div>
-                <div class="blog-block__buttons">
-                    <button class="blog-block__button blog-block__button--prev swiper-button-prev" type="button">
-                    </button>
-                    <button class="blog-block__button blog-block__button--next swiper-button-next" type="button">
-                    </button>
-                </div>
-            </div>
+                </li>
+            </ul>
+            <div class="blog-block__pagination swiper-pagination"></div>
         </div>
     </div>
 </section>
                 <section class="reviews section">
-    <div class="reviews__wrapper">
-        <h2 class="reviews__title title">
+    <div class="swiper-header">
+        <h2 class="swiper-header__title title">
             Отзывы о нас
         </h2>
-        <div class="reviews__swiper swiper">
-            <ul class="reviews__items swiper-wrapper">
-                <li class="reviews__item swiper-slide">
-                    <article class="review-card">
+        <div class="swiper-header__buttons">
+            <button class="reviews__button reviews__button--prev swiper-button-prev" type="button">
+            </button>
+            <button class="reviews__button reviews__button--next swiper-button-next" type="button">
+            </button>
+        </div>
+    </div>
+    <div class="reviews__swiper swiper">
+        <ul class="reviews__items swiper-wrapper">
+            <li class="reviews__item swiper-slide">
+                <article class="review-card">
     <div class="review-card__header">
         <span class="review-card__count">16 отзывов</span>
         <div class="review-card__info">
@@ -1971,9 +1955,9 @@
         </span>
     </a>
 </article>
-                </li>
-                <li class="reviews__item swiper-slide">
-                    <article class="review-card">
+            </li>
+            <li class="reviews__item swiper-slide">
+                <article class="review-card">
     <div class="review-card__header">
         <span class="review-card__count">174 отзывов</span>
         <div class="review-card__info">
@@ -1990,9 +1974,9 @@
         </span>
     </a>
 </article>
-                </li>
-                <li class="reviews__item swiper-slide">
-                    <article class="review-card">
+            </li>
+            <li class="reviews__item swiper-slide">
+                <article class="review-card">
     <div class="review-card__header">
         <span class="review-card__count">529 отзывов</span>
         <div class="review-card__info">
@@ -2009,9 +1993,9 @@
         </span>
     </a>
 </article>
-                </li>
-                <li class="reviews__item swiper-slide">
-                    <article class="review-card">
+            </li>
+            <li class="reviews__item swiper-slide">
+                <article class="review-card">
     <div class="review-card__header">
         <span class="review-card__count">59 отзывов</span>
         <div class="review-card__info">
@@ -2028,9 +2012,9 @@
         </span>
     </a>
 </article>
-                </li>
-                <li class="reviews__item swiper-slide">
-                    <article class="review-card">
+            </li>
+            <li class="reviews__item swiper-slide">
+                <article class="review-card">
     <div class="review-card__header">
         <span class="review-card__count">4 отзыва</span>
         <div class="review-card__info">
@@ -2047,16 +2031,9 @@
         </span>
     </a>
 </article>
-                </li>
-            </ul>
-            <div class="swiper-pagination"></div>
-            <div class="reviews__buttons">
-                <button class="reviews__button reviews__button--prev swiper-button-prev" type="button">
-                </button>
-                <button class="reviews__button reviews__button--next swiper-button-next" type="button">
-                </button>
-            </div>
-        </div>
+            </li>
+        </ul>
+        <div class="reviews__pagination swiper-pagination"></div>
     </div>
 </section>
                 <section class="media section">

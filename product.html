@@ -32,7 +32,7 @@
 
 <body class="body">
 
-<header class="header fixed-block header--fixed">
+<header class="header header--fixed">
     <div class="overlay" data-menu-overlay aria-hidden></div>
     <nav class="header__navigation">
         <div class="header__wrapper-logo">
@@ -221,17 +221,17 @@
                 <li class="burger-banners__item burger-banners__item--small">
                     <div class="burger-banners__card burger-banners__card--light">
                         <span class="burger-banners__icon" style="background-image: url('img/icons/percent.svg');" aria-hidden></span>
-                        <span class="burger-banners__subtitle">
+                        <a class="burger-banners__link" href="#">
                             Акции и скидки
-                        </span>
+                        </a>
                     </div>
                 </li>
                 <li class="burger-banners__item burger-banners__item--small">
                     <div class="burger-banners__card burger-banners__card--dark">
                         <span class="burger-banners__icon" style="background-image: url('img/icons/marker.svg');" aria-hidden></span>
-                        <span class="burger-banners__subtitle">
+                        <a class="burger-banners__link" href="#">
                             Адреса салонов
-                        </span>
+                        </a>
                     </div>
                 </li>
                 <li class="burger-banners__item burger-banners__item--washes burger-banners__item--big">
@@ -877,10 +877,9 @@
              <li class="breadcrumbs__item">
             <a class="breadcrumbs__link" href="#">Каталог</a>
             </li>
-             <li class="breadcrumbs__item">
-            <a class="breadcrumbs__link" href="#">Велла</a>
-            </li>
             
+             <li class="breadcrumbs__item" aria-current="page">Велла</li>
+                
     </ul>
 </div>
 
@@ -1440,13 +1439,13 @@
             Проекты
         </div>
     </div>
-    <div class="product-projects__header">
-        <h2 class="product-projects__title title">
+    <div class="swiper-header">
+        <h2 class="swiper-header__title title">
             Реализованные проекты
         </h2>
-        <div class="product-projects__controls">
+        <div class="swiper-header__controls">
             <div class="product-projects__fraction swiper-pagination-fraction"></div>
-            <div class="product-projects__buttons">
+            <div class="swiper-header__buttons">
                 <button class="product-projects__button product-projects__button--prev swiper-button-prev" type="button">
                 </button>
                 <button class="product-projects__button product-projects__button--next swiper-button-next" type="button">
@@ -1454,11 +1453,10 @@
             </div>
         </div>
     </div>
-    <div class="product-projects__wrapper">
-        <div class="product-projects__swiper swiper">
-            <ul class="product-projects__items swiper-wrapper">
-                <li class="product-projects__item swiper-slide">
-                    <article class="product-realize">
+    <div class="product-projects__swiper swiper">
+        <ul class="product-projects__items swiper-wrapper">
+            <li class="product-projects__item swiper-slide">
+                <article class="product-realize">
     <a class="product-realize__image" href="img/blocks/products/kitchens/verona.jpg" data-fancybox="product-realize-gallery">
         <picture>
             <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
@@ -1485,9 +1483,9 @@
         </div>
     </div>
 </article>
-                </li>
-                <li class="product-projects__item swiper-slide">
-                    <article class="product-realize">
+            </li>
+            <li class="product-projects__item swiper-slide">
+                <article class="product-realize">
     <a class="product-realize__image" href="img/blocks/products/kitchens/arcobalena.jpg" data-fancybox="product-realize-gallery">
         <picture>
             <source srcset="img/blocks/products/kitchens/arcobalena.avif" type="image/avif">
@@ -1514,9 +1512,9 @@
         </div>
     </div>
 </article>
-                </li>
-                <li class="product-projects__item swiper-slide">
-                    <article class="product-realize">
+            </li>
+            <li class="product-projects__item swiper-slide">
+                <article class="product-realize">
     <a class="product-realize__image" href="img/blocks/products/kitchens/verona.jpg" data-fancybox="product-realize-gallery">
         <picture>
             <source srcset="img/blocks/products/kitchens/verona.avif" type="image/avif">
@@ -1543,9 +1541,9 @@
         </div>
     </div>
 </article>
-                </li>
-                <li class="product-projects__item swiper-slide">
-                    <article class="product-realize">
+            </li>
+            <li class="product-projects__item swiper-slide">
+                <article class="product-realize">
     <a class="product-realize__image" href="img/blocks/products/kitchens/arcobalena.jpg" data-fancybox="product-realize-gallery">
         <picture>
             <source srcset="img/blocks/products/kitchens/arcobalena.avif" type="image/avif">
@@ -1572,10 +1570,9 @@
         </div>
     </div>
 </article>
-                </li>
-            </ul>
-            <div class="swiper-pagination"></div>
-        </div>
+            </li>
+        </ul>
+        <div class="product-projects__pagination swiper-pagination"></div>
     </div>
 </section>
                     <section class="addresses-block section">
@@ -1745,13 +1742,13 @@
             Другие модели
         </div>
     </div>
-    <div class="other-solutions__header">
-        <h2 class="other-solutions__title title">
+    <div class="swiper-header">
+        <h2 class="swiper-header__title title">
             Другие кухонные решения
         </h2>
-        <div class="other-solutions__controls">
+        <div class="swiper-header__controls">
             <div class="other-solutions__fraction swiper-pagination-fraction"></div>
-            <div class="other-solutions__buttons">
+            <div class="swiper-header__buttons">
                 <button class="other-solutions__button other-solutions__button--prev swiper-button-prev" type="button">
                 </button>
                 <button class="other-solutions__button other-solutions__button--next swiper-button-next" type="button">
@@ -1759,11 +1756,10 @@
             </div>
         </div>
     </div>
-    <div class="other-solutions__wrapper">
-        <div class="other-solutions__swiper swiper">
-            <ul class="other-solutions__items swiper-wrapper">
-                <li class="other-solutions__item swiper-slide">
-                    <article class="solution-card">
+    <div class="other-solutions__swiper swiper">
+        <ul class="other-solutions__items swiper-wrapper">
+            <li class="other-solutions__item swiper-slide">
+                <article class="solution-card">
     <div class="solution-card__image">
         <picture>
             <source srcset="img/blocks/other-solutions/verona.avif" type="image/avif">
@@ -1794,9 +1790,9 @@
         </div>
     </div>
 </article>
-                </li>
-                <li class="other-solutions__item swiper-slide">
-                    <article class="solution-card">
+            </li>
+            <li class="other-solutions__item swiper-slide">
+                <article class="solution-card">
     <div class="solution-card__image">
         <picture>
             <source srcset="img/blocks/other-solutions/verona.avif" type="image/avif">
@@ -1825,9 +1821,9 @@
         </div>
     </div>
 </article>
-                </li>
-                <li class="other-solutions__item swiper-slide">
-                    <article class="solution-card">
+            </li>
+            <li class="other-solutions__item swiper-slide">
+                <article class="solution-card">
     <div class="solution-card__image">
         <picture>
             <source srcset="img/blocks/other-solutions/verona.avif" type="image/avif">
@@ -1856,9 +1852,9 @@
         </div>
     </div>
 </article>
-                </li>
-                <li class="other-solutions__item swiper-slide">
-                    <article class="solution-card">
+            </li>
+            <li class="other-solutions__item swiper-slide">
+                <article class="solution-card">
     <div class="solution-card__image">
         <picture>
             <source srcset="img/blocks/other-solutions/verona.avif" type="image/avif">
@@ -1885,10 +1881,9 @@
         </div>
     </div>
 </article>
-                </li>
-            </ul>
-            <div class="swiper-pagination"></div>
-        </div>
+            </li>
+        </ul>
+        <div class="other-solutions__pagination swiper-pagination"></div>
     </div>
 </section>
                 </main>
