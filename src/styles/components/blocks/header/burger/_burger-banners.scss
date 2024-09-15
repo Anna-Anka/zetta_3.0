@@ -28,6 +28,8 @@
 	&__card {
 		@include flex-alignment(5px, center, center, column);
 
+		position: relative;
+		z-index: 1;
 		border-radius: 18px;
 		padding: 20px 45px;
 		width: 100%;
@@ -59,11 +61,41 @@
 		}
 	}
 
-	&__subtitle {
+	&__link {
 		@include title;
 
+		border-radius: 4px;
 		text-align: center;
 		color: var(--color-white);
+		transition: box-shadow 0.3s;
+
+		&:focus-visible {
+			outline: 0;
+			box-shadow: 0 0 0 2px var(--color-white);
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				&::after {
+					opacity: 0.4;
+				}
+			}
+		}
+
+		&::before {
+			@include link-cover;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			z-index: -1;
+			border-radius: 18px;
+			background-color: var(--color-black);
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
 
 		@include mq(sm) {
 			font-size: 14px;

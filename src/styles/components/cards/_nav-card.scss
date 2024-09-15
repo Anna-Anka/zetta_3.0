@@ -24,7 +24,21 @@
 	&__link {
 		@include title(14px, -0.03em);
 
+		border-radius: 4px;
 		text-align: center;
+		transition:
+			color 0.3s,
+			box-shadow 0.3s;
+
+		&:focus-visible {
+			@include focus-visible;
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				color: var(--color-orange-400);
+			}
+		}
 
 		&::before {
 			@include link-cover;
