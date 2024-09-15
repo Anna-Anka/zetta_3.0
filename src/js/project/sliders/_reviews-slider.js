@@ -9,13 +9,8 @@ if (document.querySelector('.reviews__swiper')) {
         speed: 800,
         spaceBetween: 15,
 
-        navigation: {
-            nextEl: '.reviews__button--next',
-            prevEl: '.reviews__button--prev',
-        },
-
         pagination: {
-            el: '.swiper-pagination',
+            el: '.reviews__pagination',
             clickable: true,
         },
 
@@ -23,10 +18,20 @@ if (document.querySelector('.reviews__swiper')) {
             992: {
                 slidesPerGroup: 4,
                 slidesPerView: 4,
+
+                navigation: {
+                    nextEl: '.reviews__button--next',
+                    prevEl: '.reviews__button--prev',
+                },
+
+                pagination: {
+                    el: null,
+                },
             },
 
             768: {
-                slidesPerGroup: 2.2,
+                slidesPerGroup: 2,
+                slidesPerView: 2.2,
                 spaceBetween: 15,
             },
 

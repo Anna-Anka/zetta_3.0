@@ -8,30 +8,18 @@
 		padding-top: 120px;
 	}
 
-	&__wrapper {
-		position: relative;
-		overflow: hidden;
-	}
-
-	&__title {
-		@include mq(md, min) {
-			padding-right: 150px;
+	.swiper-header {
+		&__buttons {
+			@include mq(lg) {
+				display: none;
+			}
 		}
-	}
-
-	&__swiper {
-		position: static;
-		overflow: visible;
-	}
-
-	&__buttons {
-		@include swiper-buttons;
 	}
 
 	&__items {
 		align-items: stretch;
 
-		@include mq(md) {
+		@include mq(lg) {
 			margin-bottom: 30px;
 		}
 
@@ -43,11 +31,5 @@
 	&__item {
 		height: auto;
 		min-height: 268px;
-	}
-
-	.swiper-pagination {
-		@include mq(md, min) {
-			display: none;
-		}
 	}
 }

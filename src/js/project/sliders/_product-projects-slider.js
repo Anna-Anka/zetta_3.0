@@ -9,13 +9,13 @@ if (document.querySelector('.product-projects__swiper')) {
         speed: 800,
         spaceBetween: 20,
 
-        navigation: {
-            nextEl: '.product-projects__button--next',
-            prevEl: '.product-projects__button--prev',
+        pagination: {
+            el: '.product-projects__pagination',
+            clickable: true,
         },
 
         breakpoints: {
-            768: {
+            992: {
                 slidesPerGroup: 2,
                 slidesPerView: 2,
                 spaceBetween: 20,
@@ -33,16 +33,21 @@ if (document.querySelector('.product-projects__swiper')) {
                         return `<span class="${currentClass}"></span> / <span class="${totalClass}"></span>`
                     }
                 },
+
+                navigation: {
+                    nextEl: '.product-projects__button--next',
+                    prevEl: '.product-projects__button--prev',
+                },
+            }, 
+            768: {
+                slidesPerGroup: 2,
+                slidesPerView: 2,
+                spaceBetween: 20,
             },
             0: {
                 slidesPerGroup: 1,
                 slidesPerView: 1,
                 spaceBetween: 10,
-
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
             },
         },
     });

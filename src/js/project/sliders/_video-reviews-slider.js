@@ -14,7 +14,7 @@ if (document.querySelector('.video-reviews__swiper')) {
         breakpoints: {
             992: {
                 pagination: {
-                    el: '.swiper-pagination-fraction',
+                    el: '.video-reviews__fraction',
                     type: 'fraction',
                     formatFractionCurrent: function (number) {
                         return number > 9 ? number : ('0' + number);
@@ -34,7 +34,7 @@ if (document.querySelector('.video-reviews__swiper')) {
             },
             0: {
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: '.video-reviews__pagination',
                     clickable: true,
                 },
             },

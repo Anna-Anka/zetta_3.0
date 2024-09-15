@@ -8,17 +8,25 @@ if (document.querySelector('.blog-block__swiper')) {
         loop: true,
         speed: 800,
 
-        navigation: {
-            nextEl: '.blog-block__button--next',
-            prevEl: '.blog-block__button--prev',
-        },
-
         pagination: {
-            el: '.swiper-pagination',
+            el: '.blog-block__pagination',
             clickable: true,
         },
-
+        
         breakpoints: {
+            992: {
+                slidesPerGroup: 3,
+                slidesPerView: 3,
+
+                navigation: {
+                    nextEl: '.blog-block__button--next',
+                    prevEl: '.blog-block__button--prev',
+                },
+
+                pagination: {
+                    el: null,
+                },
+            },
             768: {
                 slidesPerGroup: 3,
                 slidesPerView: 3,

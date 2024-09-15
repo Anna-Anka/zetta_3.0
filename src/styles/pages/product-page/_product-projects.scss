@@ -1,42 +1,12 @@
 .product-projects {
 	@include container;
 
-	&__wrapper {
-		position: relative;
-		overflow: hidden;
-	}
-
-	&__header {
-		@include flex-alignment(40px, space-between, flex-end);
-
-		margin-bottom: 36px;
-
-		@include mq(sm) {
-			margin-bottom: 20px;
+	.swiper-header {
+		&__controls {
+			@include mq(lg) {
+				display: none;
+			}
 		}
-	}
-
-	&__title {
-		margin-bottom: 0;
-	}
-
-	&__controls {
-		@include flex-alignment(15px, flex-start, center);
-
-		@include mq(md) {
-			display: none;
-		}
-	}
-
-	&__swiper {
-		position: static;
-		overflow: visible;
-	}
-
-	&__buttons {
-		@include flex-simple(8px);
-
-		padding: 2px 0;
 	}
 
 	&__button {
@@ -44,7 +14,7 @@
 	}
 
 	&__items {
-		@include mq(md) {
+		@include mq(lg) {
 			margin-bottom: 20px;
 		}
 	}

@@ -5,13 +5,13 @@
             Проекты
         </div>
     </div>
-    <div class="product-projects__header">
-        <h2 class="product-projects__title title">
+    <div class="swiper-header">
+        <h2 class="swiper-header__title title">
             Реализованные проекты
         </h2>
-        <div class="product-projects__controls">
+        <div class="swiper-header__controls">
             <div class="product-projects__fraction swiper-pagination-fraction"></div>
-            <div class="product-projects__buttons">
+            <div class="swiper-header__buttons">
                 <button class="product-projects__button product-projects__button--prev swiper-button-prev" type="button">
                 </button>
                 <button class="product-projects__button product-projects__button--next swiper-button-next" type="button">
@@ -19,39 +19,37 @@
             </div>
         </div>
     </div>
-    <div class="product-projects__wrapper">
-        <div class="product-projects__swiper swiper">
-            <ul class="product-projects__items swiper-wrapper">
-                <li class="product-projects__item swiper-slide">
-                    @include('../../components/cards/_product-realize-card.html', {
-                    'img' : 'verona',
-                    'alt' : 'Верона',
-                    'price' : '1 170 000 ₽',
-                    })
-                </li>
-                <li class="product-projects__item swiper-slide">
-                    @include('../../components/cards/_product-realize-card.html', {
-                    'img' : 'arcobalena',
-                    'alt' : 'Акробалена',
-                    'price' : '1 170 000 ₽',
-                    })
-                </li>
-                <li class="product-projects__item swiper-slide">
-                    @include('../../components/cards/_product-realize-card.html', {
-                    'img' : 'verona',
-                    'alt' : 'Верона',
-                    'price' : '1 170 000 ₽',
-                    })
-                </li>
-                <li class="product-projects__item swiper-slide">
-                    @include('../../components/cards/_product-realize-card.html', {
-                    'img' : 'arcobalena',
-                    'alt' : 'Акробалена',
-                    'price' : '1 170 000 ₽',
-                    })
-                </li>
-            </ul>
-            <div class="swiper-pagination"></div>
-        </div>
+    <div class="product-projects__swiper swiper">
+        <ul class="product-projects__items swiper-wrapper">
+            <li class="product-projects__item swiper-slide">
+                @include('../../components/cards/_product-realize-card.html', {
+                'img' : 'verona',
+                'alt' : 'Верона',
+                'price' : '1 170 000 ₽',
+                })
+            </li>
+            <li class="product-projects__item swiper-slide">
+                @include('../../components/cards/_product-realize-card.html', {
+                'img' : 'arcobalena',
+                'alt' : 'Акробалена',
+                'price' : '1 170 000 ₽',
+                })
+            </li>
+            <li class="product-projects__item swiper-slide">
+                @include('../../components/cards/_product-realize-card.html', {
+                'img' : 'verona',
+                'alt' : 'Верона',
+                'price' : '1 170 000 ₽',
+                })
+            </li>
+            <li class="product-projects__item swiper-slide">
+                @include('../../components/cards/_product-realize-card.html', {
+                'img' : 'arcobalena',
+                'alt' : 'Акробалена',
+                'price' : '1 170 000 ₽',
+                })
+            </li>
+        </ul>
+        <div class="product-projects__pagination swiper-pagination"></div>
     </div>
 </section>

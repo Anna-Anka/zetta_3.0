@@ -1,21 +1,11 @@
 .blog-block {
 	@include container;
 
-	@include mq(lg) {
-		padding-right: 0;
-	}
-
-	&__wrapper {
-		position: relative;
-		overflow: hidden;
-	}
-
-	&__title {
-		margin-right: 150px;
-
-		@include mq(lg) {
-			margin-right: 0;
-			padding-right: 20px;
+	.swiper-header {
+		&__buttons {
+			@include mq(lg) {
+				display: none;
+			}
 		}
 	}
 
@@ -25,9 +15,7 @@
 		}
 	}
 
-	&__swiper {
-		position: static;
-		overflow: hidden;
+	.swiper-outer {
 		width: 75%;
 
 		@include mq(lg) {
@@ -39,7 +27,7 @@
 	&__items {
 		align-items: stretch;
 
-		@include mq(md) {
+		@include mq(lg) {
 			margin-bottom: 30px;
 		}
 
@@ -102,11 +90,5 @@
 
 	&__button {
 		background-color: var(--color-grey-100);
-	}
-
-	.swiper-pagination {
-		@include mq(lg, min) {
-			display: none;
-		}
 	}
 }

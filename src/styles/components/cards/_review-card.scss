@@ -52,6 +52,7 @@
 		height: 30px;
 		max-width: 120px;
 		object-fit: contain;
+		object-position: left center;
 
 		@include mq(sm) {
 			height: 20px;

@@ -11,13 +11,8 @@ if (document.querySelector('.other-solutions__swiper')) {
         slidesPerGroup: 1,
         slidesPerView: 1,
 
-        navigation: {
-            nextEl: '.other-solutions__button--next',
-            prevEl: '.other-solutions__button--prev',
-        },
-
         breakpoints: {
-            768: {
+            992: {
                 pagination: {
                     el: '.other-solutions__fraction',
                     type: 'fraction',
@@ -31,10 +26,15 @@ if (document.querySelector('.other-solutions__swiper')) {
                         return `<span class="${currentClass}"></span> / <span class="${totalClass}"></span>`
                     }
                 },
+
+                navigation: {
+                    nextEl: '.other-solutions__button--next',
+                    prevEl: '.other-solutions__button--prev',
+                },
             },
             0: {
                 pagination: {
-                    el: '.swiper-pagination',
+                    el: '.other-solutions__pagination',
                     clickable: true,
                 },
             },

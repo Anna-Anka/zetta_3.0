@@ -5,13 +5,13 @@
             Другие модели
         </div>
     </div>
-    <div class="other-solutions__header">
-        <h2 class="other-solutions__title title">
+    <div class="swiper-header">
+        <h2 class="swiper-header__title title">
             Другие кухонные решения
         </h2>
-        <div class="other-solutions__controls">
+        <div class="swiper-header__controls">
             <div class="other-solutions__fraction swiper-pagination-fraction"></div>
-            <div class="other-solutions__buttons">
+            <div class="swiper-header__buttons">
                 <button class="other-solutions__button other-solutions__button--prev swiper-button-prev" type="button">
                 </button>
                 <button class="other-solutions__button other-solutions__button--next swiper-button-next" type="button">
@@ -19,47 +19,45 @@
             </div>
         </div>
     </div>
-    <div class="other-solutions__wrapper">
-        <div class="other-solutions__swiper swiper">
-            <ul class="other-solutions__items swiper-wrapper">
-                <li class="other-solutions__item swiper-slide">
-                    @include('../../components/cards/_solution-card.html', {
-                    'img' : 'verona',
-                    'alt' : 'Кухня Верона',
-                    'title' : 'Верона',
-                    'subtitle' : 'Tranche',
-                    'price' : '405 000 ₽',
-                    'detail' : 'за кухню длиной 3 метра'
-                    })
-                </li>
-                <li class="other-solutions__item swiper-slide">
-                    @include('../../components/cards/_solution-card.html', {
-                    'img' : 'verona',
-                    'alt' : 'Кухня Верона',
-                    'title' : 'Верона',
-                    'price' : '40 500 000 ₽',
-                    'detail' : 'за кухню длиной 3 метра'
-                    })
-                </li>
-                <li class="other-solutions__item swiper-slide">
-                    @include('../../components/cards/_solution-card.html', {
-                    'img' : 'verona',
-                    'alt' : 'Кухня Верона',
-                    'title' : 'Верона',
-                    'subtitle' : 'Tranche',
-                    'price' : '405 000 ₽',
-                    })
-                </li>
-                <li class="other-solutions__item swiper-slide">
-                    @include('../../components/cards/_solution-card.html', {
-                    'img' : 'verona',
-                    'alt' : 'Кухня Верона',
-                    'title' : 'Верона',
-                    'price' : '405 000 ₽',
-                    })
-                </li>
-            </ul>
-            <div class="swiper-pagination"></div>
-        </div>
+    <div class="other-solutions__swiper swiper">
+        <ul class="other-solutions__items swiper-wrapper">
+            <li class="other-solutions__item swiper-slide">
+                @include('../../components/cards/_solution-card.html', {
+                'img' : 'verona',
+                'alt' : 'Кухня Верона',
+                'title' : 'Верона',
+                'subtitle' : 'Tranche',
+                'price' : '405 000 ₽',
+                'detail' : 'за кухню длиной 3 метра'
+                })
+            </li>
+            <li class="other-solutions__item swiper-slide">
+                @include('../../components/cards/_solution-card.html', {
+                'img' : 'verona',
+                'alt' : 'Кухня Верона',
+                'title' : 'Верона',
+                'price' : '40 500 000 ₽',
+                'detail' : 'за кухню длиной 3 метра'
+                })
+            </li>
+            <li class="other-solutions__item swiper-slide">
+                @include('../../components/cards/_solution-card.html', {
+                'img' : 'verona',
+                'alt' : 'Кухня Верона',
+                'title' : 'Верона',
+                'subtitle' : 'Tranche',
+                'price' : '405 000 ₽',
+                })
+            </li>
+            <li class="other-solutions__item swiper-slide">
+                @include('../../components/cards/_solution-card.html', {
+                'img' : 'verona',
+                'alt' : 'Кухня Верона',
+                'title' : 'Верона',
+                'price' : '405 000 ₽',
+                })
+            </li>
+        </ul>
+        <div class="other-solutions__pagination swiper-pagination"></div>
     </div>
 </section>
