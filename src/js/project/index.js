@@ -10,11 +10,8 @@ import { fixedHeader } from './_fixed-header.js';
 import { manageMenuCategories } from './_menu-categories.js';
 import { changeColorSideMenu } from './_side-menu.js';
 import { changeBlogImages } from './_blog-images.js';
-import { createConveniencePoints, arrangeConveniencePoints } from './_convenience.js';
 
 fixedHeader();
 manageMenuCategories();
 changeColorSideMenu();
 changeBlogImages();
-createConveniencePoints();
-arrangeConveniencePoints();
