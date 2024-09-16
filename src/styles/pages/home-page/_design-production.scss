@@ -98,8 +98,6 @@
 	}
 
 	&__item {
-		aspect-ratio: 1 / 1;
-
 		@include mq(md, min) {
 			flex: 1 1 33.333%;
 		}

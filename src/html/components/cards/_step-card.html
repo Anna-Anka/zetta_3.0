@@ -1,9 +1,11 @@
 <article class="step-card">
-    <span class="step-card__number">@number</span>
-    <div class="step-card__content">
-        <h3 class="step-card__title">@title</h3>
-        <div class="step-card__text">
-            @for (var i = 0; i < text.length; i++) { <p> `+text[i]+` </p> }
+    <div class="step-card__wrapper">
+        <span class="step-card__number">@number</span>
+        <div class="step-card__content">
+            <h3 class="step-card__title">@title</h3>
+            <div class="step-card__text">
+                @for (var i = 0; i < text.length; i++) { <p> `+text[i]+` </p> }
+            </div>
         </div>
     </div>
 </article>

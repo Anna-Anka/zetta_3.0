@@ -4,6 +4,7 @@
 	&__contact {
 		@include link-border-bottom;
 
+		white-space: nowrap;
 		transition:
 			color 0.3s,
 			border-bottom-color 0.3s,

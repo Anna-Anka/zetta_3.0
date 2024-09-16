@@ -12,6 +12,7 @@
 
 	&__item {
 		padding: 2px;
+		white-space: nowrap;
 
 		&:not(:last-child) {
 			position: relative;

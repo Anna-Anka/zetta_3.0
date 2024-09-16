@@ -1,28 +1,38 @@
 .step-card {
-	@include flex-alignment(12px, center, center);
-
+	display: flex;
+	overflow: hidden;
 	border: 1px solid var(--color-grey-200);
 	border-radius: 50%;
-	padding: 20px;
 	width: 100%;
-	height: 100%;
+	aspect-ratio: 1 / 1;
 
-	@include mq(lg) {
-		flex-direction: column;
+	&__wrapper {
+		@include flex-alignment(12px, center, flex-start);
+
+		align-self: center;
+		padding: 40px;
+		width: 100%;
+
+		@include mq(lg) {
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 
 	&__number {
 		@include title(18px, -0.03em);
 		@include flex-alignment;
 
-		flex-basis: 60px;
+		flex-shrink: 0;
 		border-radius: 50%;
 		padding: 8px;
+		width: 60px;
+		height: 60px;
 		background-color: var(--color-grey-100);
-		aspect-ratio: 1 / 1;
 
 		@include mq(lg) {
-			flex-basis: 50px;
+			width: 50px;
+			height: 50px;
 			font-size: 14px;
 		}
 	}
@@ -50,6 +60,12 @@
 	}
 
 	&__text {
+		@include line-clamp(10);
+
+		@include mq(lg) {
+			@include line-clamp(6);
+		}
+
 		@include mq(md) {
 			font-size: 12px;
 		}

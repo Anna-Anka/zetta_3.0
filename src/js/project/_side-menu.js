@@ -19,19 +19,13 @@ export const changeColorSideMenu = () => {
 
                         // scrollDistance - сколько проскролили
 
-                        console.log(topPosition)
-                        console.log(heroHeight)
-                        console.log(scrollDistance)
-
                         if (topPosition + 120 > heroHeight && scrollDistance + topPosition < heroHeight) {
                             block.setAttribute('data-color', 'light')
                         } else {
                             if (scrollDistance > heroHeight - (topPosition + 120) && scrollDistance !== 0) {
                                 block.setAttribute('data-color', 'dark')
-                                console.log('a')
                             } else {
                                 block.setAttribute('data-color', 'light')
-                                console.log('b')
                             }
                         }
                     })

@@ -1,0 +1,40 @@
+.descr-block {
+	@include flex-alignment(40px, space-between, flex-start);
+
+	margin-bottom: 35px;
+
+	@include mq(md) {
+		flex-direction: column;
+		margin-bottom: 20px;
+		gap: 5px;
+	}
+
+	&__title {
+		margin-bottom: 0;
+
+		@include mq(md, min) {
+			flex-basis: 25%;
+		}
+	}
+
+	&__info {
+		@include mq(md, min) {
+			flex-basis: 50%;
+		}
+	}
+
+	&__text {
+		@include mq(lg, min) {
+			width: 64%;
+		}
+
+		@include mq(sm) {
+			font-size: 12px;
+			letter-spacing: -0.03em;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 8px;
+		}
+	}
+}
