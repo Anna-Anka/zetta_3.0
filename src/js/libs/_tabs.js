@@ -76,15 +76,16 @@ class GraphTabsWithPagination extends GraphTabs {
         if (this.wrappersPoints?.length > 0 && this.wrappersPoints[0].querySelector('.tabs__point')) {
             this.updateCirclesPosition();
 
-            const throttledUpdate = throttle(this.updateCirclesPosition);
+            const throttledUpdate = throttle(this.updateCirclesPosition.bind(this));
+
+            this.updateCirclesPosition();
 
             window.addEventListener('resize', throttledUpdate);
         }
     };
 
     updateCirclesPosition() {
-        if (this.wrappersPoints?.length > 0) {
-                    this.wrappersPoints.forEach((container) => {
+        this.wrappersPoints.forEach((container) => {
             const circles = container.querySelectorAll('.tabs__point');
             const radius = this.wrappersPoints[0].offsetWidth / 2;
             const rotation = 360 / circles.length;
@@ -94,7 +95,6 @@ class GraphTabsWithPagination extends GraphTabs {
                 circle.style.transform = position;
             });
         });
-        }
     }
 
     showPreviousTab() {

@@ -3,6 +3,7 @@ import { uniqArray } from './_uniq-array.js';
 export function dataMediaQueries(array, dataSetValue) {
     const media = Array.from(array).filter((item) => {
         if (item.dataset[dataSetValue]) {
+            console.log(item.dataset[dataSetValue])
             return item.dataset[dataSetValue].split(',')[0];
         }
     });
