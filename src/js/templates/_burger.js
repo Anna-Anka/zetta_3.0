@@ -15,6 +15,8 @@ export const burger = () => {
         if (burgerButton?.classList.contains('burger-button--active')) {
             burgerButton?.setAttribute('aria-expanded', 'true');
             burgerButtonText.innerHTML = 'Закрыть';
+            burgerButton.focus();
+            
             if (header?.classList.contains('header--transparent')) {
                 header?.classList.remove('header--transparent');
                 headerIsTransparent = true;
