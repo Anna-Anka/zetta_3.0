@@ -47,14 +47,14 @@
             <div class="header__item">
                 <button class="header__button header__button--menu button" aria-expanded="false" aria-controls="menu-categories" type="button">
                     Кухни и мебель
-                    <svg class="button__icon" aria-hidden>
+                    <svg aria-hidden>
                         <use xlink:href="img/sprite.svg#plus">
                     </svg>
                 </button>
 
                 <a class="header__button header__button--link button" href="#">
                     Акции
-                    <svg class="button__icon" aria-hidden>
+                    <svg aria-hidden>
                         <use xlink:href="img/sprite.svg#arrows-double">
                     </svg>
                 </a>
@@ -445,7 +445,7 @@
                     </li>
                 </ul>
             </li>
-            <li class="nav-menu__category">
+            <!-- <li class="nav-menu__category">
                 <span class="nav-menu__title">
                     Корпусная мебель
                 </span>
@@ -482,9 +482,9 @@
                         <a href="#">Мойки и аксессуары</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
         </ul>
-        <form class="menu-categories__search form" action="#">
+        <!-- <form class="menu-categories__search form" action="#">
             <div class="form__item">
                 <label class="sr-only" for="nav-menu-search">
                     Введите, что вы хотите найти
@@ -496,13 +496,13 @@
                     </svg>
                 </button>
             </div>
-        </form>
+        </form> -->
     </div>
 </div>
     </nav>
 </header>
 
-<nav class="side-menu fixed-block ">
+<nav class="side-menu fix-block ">
     <ul class="side-menu__items side-menu__items--arrows" data-color="dark">
         <li>
             <a class="side-menu__link" href="#">
@@ -595,7 +595,7 @@
 </nav>
 
 <div class="wrapper">
-    <nav class="menu-mobile fixed-block">
+    <nav class="menu-mobile fix-block">
     <ul class="menu-mobile__items">
         <li class="menu-mobile__item">
             <a class="menu-mobile__link menu-mobile__link--active" href="#">
@@ -1430,33 +1430,39 @@
     <ul class="design-production__items">
         <li class="design-production__item">
             <article class="step-card">
-    <span class="step-card__number">1</span>
-    <div class="step-card__content">
-        <h3 class="step-card__title">Как видите вы:</h3>
-        <div class="step-card__text">
-             <p> Дизайнер сделает рендер по вашим задумкам и желаниям </p> 
+    <div class="step-card__wrapper">
+        <span class="step-card__number">1</span>
+        <div class="step-card__content">
+            <h3 class="step-card__title">Как видите вы:</h3>
+            <div class="step-card__text">
+                 <p> Дизайнер сделает рендер по вашим задумкам и желаниям </p> 
+            </div>
         </div>
     </div>
 </article>
         </li>
         <li class="design-production__item">
             <article class="step-card">
-    <span class="step-card__number">2</span>
-    <div class="step-card__content">
-        <h3 class="step-card__title">Как видит дизайнер:</h3>
-        <div class="step-card__text">
-             <p> Ваша кухня, но исключительно видение дизайнера </p> 
+    <div class="step-card__wrapper">
+        <span class="step-card__number">2</span>
+        <div class="step-card__content">
+            <h3 class="step-card__title">Как видит дизайнер:</h3>
+            <div class="step-card__text">
+                 <p> Ваша кухня, но исключительно видение дизайнера </p> 
+            </div>
         </div>
     </div>
 </article>
         </li>
         <li class="design-production__item">
             <article class="step-card">
-    <span class="step-card__number">3</span>
-    <div class="step-card__content">
-        <h3 class="step-card__title">Бюджетная версия</h3>
-        <div class="step-card__text">
-             <p> Ваша кухня, но максимально удешевленный проект. </p> 
+    <div class="step-card__wrapper">
+        <span class="step-card__number">3</span>
+        <div class="step-card__content">
+            <h3 class="step-card__title">Бюджетная версия</h3>
+            <div class="step-card__text">
+                 <p> Ваша кухня, но максимально удешевленный проект. </p> 
+            </div>
         </div>
     </div>
 </article>
@@ -1483,45 +1489,53 @@
             <ul class="video-reviews__items swiper-wrapper">
                 <li class="video-reviews__item swiper-slide">
                     <div class="video-reviews__card">
-                        <div class="video-reviews__video"></div>
+                        <div class="video-reviews__wrapper">
+                            <div class="video-reviews__video">
+                                <iframe src="https://vk.com/video_ext.php?oid=-219054695&id=456239611&hd=2&autoplay=1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
                         <div class="video-reviews__content">
                             <h3 class="video-reviews__subtitle">
                                 Как выбрать фурнитуру и корпус?
                             </h3>
                             <div class="video-reviews__text">
                                 <p>
-                                        Рассказываем о главных критериях на примере кухни “Вектор”.
-                                    </p>
+                                    Рассказываем о главных критериях на примере кухни “Вектор”.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li class="video-reviews__item swiper-slide">
                     <div class="video-reviews__card">
-                        <div class="video-reviews__video"></div>
+                        <div class="video-reviews__video">
+                            <iframe src="https://vk.com/video_ext.php?oid=-219054695&id=456239611&hd=2&autoplay=1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+                        </div>
                         <div class="video-reviews__content">
                             <h3 class="video-reviews__subtitle">
                                 Как выбрать фурнитуру и корпус?
                             </h3>
                             <div class="video-reviews__text">
                                 <p>
-                                        Рассказываем о главных критериях на примере кухни “Вектор”.
-                                    </p>
+                                    Рассказываем о главных критериях на примере кухни “Вектор”.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </li>
                 <li class="video-reviews__item swiper-slide">
                     <div class="video-reviews__card">
-                        <div class="video-reviews__video"></div>
+                        <div class="video-reviews__video">
+                            <iframe src="https://vk.com/video_ext.php?oid=-219054695&id=456239611&hd=2&autoplay=1" allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;" frameborder="0" allowfullscreen></iframe>
+                        </div>
                         <div class="video-reviews__content">
                             <h3 class="video-reviews__subtitle">
                                 Как выбрать фурнитуру и корпус?
                             </h3>
                             <div class="video-reviews__text">
                                 <p>
-                                        Рассказываем о главных критериях на примере кухни “Вектор”.
-                                    </p>
+                                    Рассказываем о главных критериях на примере кухни “Вектор”.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -2313,7 +2327,7 @@
                 Вопрос-ответ
             </h2>
 
-            <ul class="spollers" data-spollers data-one-spoller>
+            <ul class="spollers" data-spollers="questions-spollers" data-one-spoller>
                 <li class="spollers__item">
                     <button class="spollers__button" type="button" data-spoller-button>
     Срок изготовления проекта?
