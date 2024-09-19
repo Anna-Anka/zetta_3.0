@@ -1,4 +1,3 @@
-import { node } from 'webpack';
 import { disableScroll, enableScroll, globalVars } from '../utils/index.js';
 
 export const burger = () => {
@@ -67,17 +66,13 @@ export const burger = () => {
 
     const focusCatch = (e) => {
         const nodes = menu.querySelectorAll(globalVars.focusEl);
-        console.log(nodes)
         const nodesArray = Array.prototype.slice.call(nodes);
-        console.log(nodesArray)
         const focusedItemIndex = nodesArray.indexOf(document.activeElement)
         if (e.shiftKey && focusedItemIndex === 0) {
-            console.log(nodesArray)
             nodesArray[nodesArray.length - 1].focus();
             e.preventDefault();
         }
         if (!e.shiftKey && focusedItemIndex === nodesArray.length - 1) {
-            console.log(nodesArray)
             nodesArray[0].focus();
             e.preventDefault();
         }
