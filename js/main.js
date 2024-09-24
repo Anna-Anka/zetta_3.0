@@ -9858,12 +9858,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// if (document.querySelector('input[type="tel"]')) {
-//     let inputs = document.querySelectorAll('input[type="tel"]')
-//     let im = new Inputmask('+7 (999) 999-99-99')
-//     im.mask(inputs)
-// }
-
 /***/ }),
 
 /***/ "./src/js/libs/_modals.js":
@@ -11077,14 +11071,12 @@ function spollers() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   burger: () => (/* reexport safe */ _burger_js__WEBPACK_IMPORTED_MODULE_1__.burger)
-/* harmony export */ });
 /* harmony import */ var _spollers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./_spollers.js */ "./src/js/templates/_spollers.js");
 /* harmony import */ var _burger_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./_burger.js */ "./src/js/templates/_burger.js");
 
 
 (0,_spollers_js__WEBPACK_IMPORTED_MODULE_0__.spollers)();
+(0,_burger_js__WEBPACK_IMPORTED_MODULE_1__.burger)();
 
 /***/ }),
 
@@ -21993,12 +21985,11 @@ var __webpack_exports__ = {};
   !*** ./src/js/main.js ***!
   \************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _templates_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./templates/index.js */ "./src/js/templates/index.js");
-/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/index.js */ "./src/js/utils/index.js");
-/* harmony import */ var _libs_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./libs/index.js */ "./src/js/libs/index.js");
+/* harmony import */ var _utils_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/index.js */ "./src/js/utils/index.js");
+/* harmony import */ var _libs_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./libs/index.js */ "./src/js/libs/index.js");
+/* harmony import */ var _templates_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./templates/index.js */ "./src/js/templates/index.js");
 /* harmony import */ var _project_index_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./project/index.js */ "./src/js/project/index.js");
 
-(0,_templates_index_js__WEBPACK_IMPORTED_MODULE_0__.burger)();
 
 
 
