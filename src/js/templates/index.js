@@ -1,5 +1,5 @@
 import { spollers } from './_spollers.js'
-
-export {burger} from './_burger.js'
+import {burger} from './_burger.js'
 
 spollers();
+burger();
