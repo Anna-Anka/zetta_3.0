@@ -1,4 +1,4 @@
-export const webpTask = () => {
+export const webpTask = (done) => {
     const { plugins, paths } = global.app
 
     return plugins.gulp.src([`${paths.images.src}/**/*.{jpg,jpeg,png}`, ...paths.images.srcExceptions ])
@@ -8,5 +8,8 @@ export const webpTask = () => {
         .pipe(plugins.debug({
             title: 'Images',
         }))
-        .on('end', plugins.browsersync.reload);
+        .on('end', () => {
+            plugins.browsersync.reload();
+            done();
+        });
 };

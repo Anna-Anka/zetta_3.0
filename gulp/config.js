@@ -12,7 +12,7 @@ import webpack from 'webpack';
 import webpackStream from 'webpack-stream';
 import gulpif from 'gulp-if';
 import svg from 'gulp-svg-sprite';
-import dartsass from 'sass';
+import * as dartsass from 'sass';
 import gulpsass from 'gulp-sass';
 import mincss from 'gulp-clean-css';
 import groupmedia from 'gulp-group-css-media-queries';
@@ -31,7 +31,7 @@ import deploy from 'gh-pages';
 import filter from 'gulp-filter';
 
 export const plugins = {
-    gulp, debug, deleteAsync, imagemin, imageminPngquant, svgo, imageminZopfli, imageminMozjpeg, imageminGiflossy, newer, browsersync, webpack, webpackStream, gulpif, svg, gulpsass, dartsass, mincss, groupmedia, autoprefixer, sourcemaps, plumber, include, webp, ttf2woff, ttf2woff2, path, notify, zip, avif, deploy, filter,
+    gulp, debug, deleteAsync, imagemin, imageminPngquant, svgo, imageminZopfli, imageminMozjpeg, imageminGiflossy, newer, browsersync, webpack, webpackStream, gulpif, svg, gulpsass, dartsass, mincss, groupmedia, autoprefixer, sourcemaps, plumber, include, webp, ttf2woff, ttf2woff2, path, notify, zip, avif, deploy, filter, 
 };
 
 const devFolder = './src';
